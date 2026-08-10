@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import http.client
 import json
 import re
+import time
 import urllib.request
 from pathlib import Path
 
@@ -39,11 +41,25 @@ def pick(row, aliases):
     return None
 
 
-def fetch_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as response:
-        payload = json.load(response)
-    return payload if isinstance(payload, list) else payload.get("data", [])
+def fetch_json(url, attempts=4):
+    last = None
+    for attempt in range(1, attempts + 1):
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": UA,
+                "Accept": "application/json",
+                "Accept-Encoding": "identity",
+                "Connection": "close",
+            })
+            with urllib.request.urlopen(req, timeout=45) as response:
+                raw = response.read()
+            payload = json.loads(raw.decode("utf-8-sig"))
+            return payload if isinstance(payload, list) else payload.get("data", [])
+        except (http.client.IncompleteRead, json.JSONDecodeError, OSError) as exc:
+            last = exc
+            if attempt < attempts:
+                time.sleep(attempt * 1.5)
+    raise last
 
 
 def tpex_industries():
@@ -72,14 +88,12 @@ def cluster_key(item):
 
 def diversified_queue(candidates, limit=10, max_per_cluster=2):
     selected, counts = [], {}
-    # First pass: enforce diversity.
     for item in candidates:
         key = cluster_key(item)
         if counts.get(key, 0) >= max_per_cluster: continue
         selected.append(dict(item))
         counts[key] = counts.get(key, 0) + 1
         if len(selected) == limit: return selected
-    # Second pass: fill remaining slots without dropping strong discovery signals.
     chosen = {x["ticker"] for x in selected}
     for item in candidates:
         if item["ticker"] in chosen: continue
@@ -127,10 +141,11 @@ def main():
         "tpex_profile_rows": row_count,
         "tpex_mapped_candidates": mapped,
         "tpex_profile_keys_sample": profile_keys,
+        "retry_policy": "4 attempts, identity encoding, connection close"
     }
-    screen.setdefault("notes", []).append(
-        "Deep Research Top 10 is diversity-aware; Top 50 remains raw ranking. Extreme revenue growth + low PE is flagged for normalized-cycle review rather than automatically rewarded as buyable alpha."
-    )
+    notes = screen.setdefault("notes", [])
+    note = "Deep Research Top 10 is diversity-aware; Top 50 remains raw ranking. Extreme revenue growth + low PE is flagged for normalized-cycle review rather than automatically rewarded as buyable alpha."
+    if note not in notes: notes.append(note)
     write("data/screen.json", screen)
     print(f"screen refined; tpex mapped={mapped}; deep={[x['ticker'] for x in queue]}")
 
