@@ -1,202 +1,186 @@
-# Taiwan Alpha Stock Selection
+# Taiwan Alpha Stock Selection Engine
 
 **Live Dashboard:** https://linwuyen.github.io/stock/
 
-這個 repository 用來維護台股 Alpha 選股框架、每週研究結果與 GitHub Pages 儀表板。
+這個 repository 維護台股 Alpha 選股、估值、證據、歷史快照、配置模擬與模型校準。目標不是預測短期漲跌，而是找出「市場預期低於基本面改善速度」且相對於持有台積電仍有足夠 **Net Alpha Spread** 的標的。
 
-目標不是預測短期漲跌，而是在可承受風險下，尋找「市場預期低於基本面實際改善速度」的股票，並以固定規則持續驗證 thesis。
+> Decision chain: **Evidence → Reproducible Score → Confidence → Fair Value → Expected Return → Alpha Spread vs TSMC → Risk Sizing → Realized Alpha → Calibration**
 
 ## 1. 第一性原理
 
-Alpha 來源必須至少符合其中一種：
+Alpha 來源至少符合一項：
 
 1. 盈餘成長速度高於市場目前隱含預期。
-2. 估值低於可持續的 normalized earnings 所合理支持的區間。
-3. 產品/產業結構改變尚未完全反映在獲利與估值。
-4. 市場錯把暫時性問題當永久問題，或錯把週期高峰當永久成長。
+2. Forward / normalized valuation 低於可持續盈餘支持的合理區間。
+3. 產品或產業結構改變尚未完全反映在獲利與估值。
+4. 市場錯把暫時問題當永久問題，或把週期高峰誤認成永久成長。
 
 不因「跌很多」、「題材熱門」、「法人買超」單獨買進。
 
-## 2. 資料來源優先順序
+## 2. Alpha Score 與 Confidence Score 分離
 
-每週更新時優先採用：
+### Alpha Score（100）
 
-1. 公開資訊觀測站（MOPS）：季報、月營收、重大訊息。
-2. 臺灣證券交易所（TWSE）：收盤價、本益比、股價淨值比、殖利率。
-3. 公司官方 Investor Relations / 法說會簡報。
-4. 必要時才用可靠媒體或研究資料補充。
+| 因子 | 權重 |
+|---|---:|
+| Earnings acceleration | 30 |
+| Revenue quality | 20 |
+| Valuation | 25 |
+| Structural catalyst | 15 |
+| Balance sheet / cash flow | 10 |
 
-任何數據若無法用第一手資料驗證，標記為「待驗證」。
+每檔股票在 `factor_scores` 保存子分數；風險扣分放在 `penalties`。CI 強制：
 
-## 3. Alpha Score（100 分）
+`score = sum(factor_scores) + sum(penalties)`
 
-| 因子 | 權重 | 核心問題 |
-|---|---:|---|
-| Earnings acceleration | 25 | EPS / 營業利益是否持續加速？ |
-| Revenue quality | 15 | 營收成長是否能轉成毛利、營益與現金流？ |
-| Valuation | 25 | Forward / normalized PE 是否仍有安全邊際？ |
-| Structural catalyst | 15 | 是否存在 12–24 個月可驗證的產品/產業催化劑？ |
-| Balance sheet / cash flow | 10 | 淨負債、FCF、營運資金是否健康？ |
-| Circle of competence | 10 | 是否能從工程/產業知識形成額外判斷優勢？ |
+### Confidence Score（100）
 
-### 風險扣分
+| 因子 | 權重 |
+|---|---:|
+| Evidence quality | 30 |
+| Forecast visibility | 25 |
+| Circle of competence | 20 |
+| Thesis clarity | 15 |
+| Data freshness | 10 |
 
-- 週期高峰但以 peak EPS 估值：-5 ~ -20
-- Forward PE 已反映極高成長：-5 ~ -20
-- 毛利率下降、營收成長但 EPS 不成長：-5 ~ -15
-- 客戶/產品集中度過高：-5 ~ -10
-- FCF 明顯落後會計盈餘：-5 ~ -10
-- Thesis 依賴單一未驗證事件：-5 ~ -15
+Circle of competence 不再提高 Alpha Score；它只提高我們對判斷的可信度。
 
-## 4. 分級
+## 3. Buy Gate
 
-- **A (>= 75)**：Alpha 候選，可進一步評估買點與部位。
-- **B (65–74)**：Watch，基本面有吸引力但估值或證據不足。
-- **C (50–64)**：觀察，不建立新部位。
-- **D (< 50)**：排除。
+只有全部成立才可顯示 `BUY CANDIDATE`：
 
-A 級不等於立即買進。買進仍需估值與風險條件同時成立。
+- Alpha Score ≥ 75
+- Confidence Score ≥ 65
+- valuation model = `COMPLETE`
+- Base-case margin of safety ≥ 20%
+- Expected return 相對 TSMC 的 Alpha Spread ≥ 8%
+- 必要 evidence 為第一手且 VERIFIED
+- freshness 通過
+- thesis 未 invalidated
 
-## 5. 初始 Universe（2026-08-10）
+否則高分股只能是 `VERIFY`，不是買進訊號。
 
-### A / 優先研究
+## 4. 台積電 3000 元的正確角色
 
-- **2301 光寶科**：AI power / BBU / Power Shelf / HVDC，重點驗證 AI 電源成長能否持續轉成 margin expansion 與 EPS。
-- **2376 技嘉**：AI server 成長與相對較低估值，重點驗證 server 營收能否持續轉成 EPS 與現金流。
-- **2382 廣達**：AI server 營收成長強，但需確認營收成長與 EPS 成長之間的落差是否收斂。
+`TSMC = 3000` 只是 **event trigger**：要求當週重新跑完整估值與比較，不代表自動賣出。
 
-### B / 週期型或等待確認
+真正比較：
 
-- **2451 創見**：記憶體週期高 Beta；禁止直接使用 peak trailing EPS，必須以 normalized EPS 估值。
-- **3515 華擎**：等待 server / AI 相關營運對 EPS 的持續性證據。
-- **3081 聯亞**：成長性高，但估值與最新財報需同步重估，避免追高。
+`Net Alpha Spread = Candidate Expected Return - TSMC Expected Return`
 
-### 高估值觀察池
+如果候選股沒有明顯勝過繼續持有台積電，最優行動可以是 **不換股**。
 
-- 2383 台光電
-- 2360 致茂
-- 3450 聯鈞
-- 6442 光聖
-- 2308 台達電
-- 2368 金像電
+## 5. Valuation Engine
 
-高估值不代表公司差，只表示必須要求更高的 earnings growth 與更大的估值安全邊際才可升級。
+每檔候選與 TSMC 使用相同 schema：
 
-## 6. 每週固定檢查
+- TTM EPS（可由 price / TTM PE 衍生，僅作參考）
+- Forward EPS
+- Normalized EPS
+- Forward PE / Normalized PE
+- Bear / Base / Bull EPS、multiple、fair value、probability
+- Expected Fair Value
+- Expected Return
+- Margin of Safety
 
-每週重新取得最新資料，而不是沿用前一週數字：
+Forward / normalized inputs未由第一手資料完成時，`valuation_model.status = VERIFY`，Rotation Gate 必須 BLOCKED。
 
-1. 最新收盤價與 TTM PE/PB。
-2. 最新月營收與 YoY / MoM。
-3. 最新季 EPS、毛利率、營益率。
-4. 營業現金流與 FCF（財報公布後更新）。
-5. 公司法說/重大訊息是否改變 thesis。
-6. 重新估當年度 / 次年度 normalized EPS。
-7. 重算 Forward PE 與 Alpha Score。
-8. 比較上週：升級、降級、新增、剔除。
-9. 明確列出 thesis invalidation condition。
+## 6. Evidence / Audit Trail
 
-## 7. 買進 Gate
+`stocks[].evidence[]` 保存：
 
-只有同時符合以下條件才進入「可買候選」：
+- metric / value / period
+- observed_at
+- source_type / source_url
+- quality: `FIRST_PARTY` / `SECONDARY` / `INFERRED`
+- status: `VERIFIED` / `VERIFY`
 
-- Alpha Score >= 75。
-- Forward / normalized valuation 有至少約 20% 安全邊際。
-- EPS / Operating Profit 趨勢未惡化。
-- 現金流沒有明顯反證。
-- 沒有出現 thesis invalidation condition。
+資料優先順序：MOPS → TWSE → 公司 IR / 法說 → 可靠次級資料。歷史 snapshot 是當時判斷，不因後續結果而回寫。
 
-不因達到 A 級而一次買滿；採分批方式，並以新財報/里程碑作為加碼條件。
+## 7. Freshness 分層
 
-## 8. 台積電 3000 元事件
+- Market price：目標 ≤ 1 trading day；週末容忍最多 3 calendar days
+- Monthly revenue：≤ 45 days
+- Financial statements：≤ 130 days
+- Event / IR check：≤ 14 days
 
-「台積電到 3000 元賣出一張」與「立刻買入 Alpha 股」是兩個獨立決策。
+不能再用一個「10 天」同時代表價格與基本面 freshness。
 
-台積電到達 3000 元當週，必須用當時最新資料重新跑完整 Alpha Score。若沒有股票通過 Buy Gate，資金保持現金，不為了換股而換股。
+## 8. Universe Screen
 
-## 9. 每週輸出格式
+`data/screen.json` 定義全市場候選漏斗：
 
-每週報告固定輸出：
+**TWSE/TPEx non-financial → liquidity/size/growth/valuation screen → Top 50 → Deep Research Top 10 → Alpha Ranking**
 
-| Rank | 股票 | Alpha Score | Grade | 最新估值 | Earnings trend | Thesis | 變化 | Action |
-|---|---|---:|---|---|---|---|---|---|
+目前 seed universe 只是起點；每週 automation 必須掃描新標的，避免 selection bias。
 
-並附：
+## 9. Risk-adjusted Position Sizing
 
-- Top 3 Alpha candidate
-- 新增 / 剔除名單
-- 最大風險
-- 下週需要驗證的事件
-- 若台積電本週到 3000 元，資金應如何分配（只給研究建議，不執行交易）
+完整模型可用時，sandbox 依下列方向產生相對權重：
 
-## 10. Dashboard v2
+`raw weight ∝ positive Alpha Spread × Confidence / downside risk`
 
-GitHub Pages 由 `index.html`、`styles.css`、`app.js` 與 JSON 資料驅動。功能包括：
+再套：
 
-- 每週 Alpha Ranking。
-- 與前一份 snapshot 比較的排名 ↑↓、Score、Grade 與 Action 變化。
-- 最近最多 26 份 snapshot 的 Alpha Score 歷史曲線。
-- 台積電 3000 元事件 Gate。
-- 300 萬元資金配置 sandbox，可修改資金與權重。
-- Buy Gate、單一持股上限、現金底線與資料過期檢查。
+- 單股上限 25%
+- 現金底線 20%
+- 不通過 Buy Gate 的股票權重 = 0
 
-模擬器只計算研究部位，不建立或送出交易。
+資料不足時可顯示 fallback research allocation，但 Rotation Gate 保持 BLOCKED。
 
-## 11. 資料契約
+## 10. Performance / Model Calibration
 
-### `data/alpha.json`
+`data/performance.json` 追蹤進入 A / BUY 狀態後的：
 
-目前 schema version 為 2。每週至少更新：
+- 1W
+- 4W
+- 13W
+- 26W
+- 52W
 
-- `meta.as_of`
-- `meta.market_data_as_of`
-- `meta.next_review`
-- `tsmc.reference_price`
-- `tsmc.reference_price_date`
-- `stocks[].rank / score / grade / action`
-- `stocks[].reference_price / reference_price_date`
-- `stocks[].pe_ttm / earnings_trend / valuation`
-- `stocks[].thesis / risk / next_check`
-- `watchlist`
+excess return（股票報酬 - TSMC 報酬）。`scripts/rebuild_performance.py` 從歷史 snapshot 重建資料；樣本不足前禁止為了漂亮結果調參。
 
-`rotation_model` 的 guardrails 是風險規則，不應因單週市場情緒任意放寬。
+閉環：
+
+**Decision → Actual Return → Score bucket predictive power → Calibration**
+
+## 11. Repository Data Contract
+
+### `data/alpha.json` — schema v3
+主決策資料：score decomposition、confidence、valuation、risk、evidence、TSMC benchmark、freshness、decision policy。
+
+### `data/screen.json`
+全市場 screen 規則與本週候選漏斗。
+
+### `data/performance.json`
+Realized Alpha / calibration 結果。
 
 ### `data/history/YYYY-MM-DD.json`
-
-每週保存當週決策快照。歷史 snapshot 是「當時的判斷」，不得事後改寫成最新事實，除非修正資料錯誤並留下 commit 紀錄。
+每週保存當時 snapshot。未來 snapshot 至少保存 benchmark price，以及每檔 rank / score / confidence / action / reference_price，供績效重建。
 
 ### `data/history/index.json`
+歷史 snapshot 索引；日期必須唯一且排序。
 
-網站不掃描目錄，因此每次新增 snapshot 都必須同步：
+## 12. CI Decision Integrity
 
-1. 新增 snapshot 路徑。
-2. 依日期排序。
-3. 更新 `latest`。
+`.github/workflows/pages.yml` 不只檢查 JSON 格式，還驗證：
 
-## 12. 每週更新原子流程
+- Alpha Score 可由 factor scores + penalties 重算
+- Confidence 可由 confidence factors 重算
+- Grade 與 threshold 一致
+- Rank 按 Score 遞減
+- Action 必須符合 Buy Gate
+- Bear/Base/Bull complete 時 FV ≈ EPS × multiple
+- allocation = 100%、cash floor、single-stock cap
+- market data 與 review date freshness
+- history index / snapshot 一致
+- performance.json 與歷史資料可重建結果一致
 
-每週研究完成後：
+驗證成功才部署 GitHub Pages。
 
-1. 先以第一手資料重算 Alpha。
-2. 更新 `data/alpha.json`。
-3. 建立或更新 `data/history/YYYY-MM-DD.json`。
-4. 更新 `data/history/index.json`。
-5. 提交到 `main`。
-6. GitHub Actions 驗證 JS、JSON、權重、ticker、history index 與 snapshot。
-7. 驗證成功後部署 GitHub Pages。
+## 13. 更新節奏
 
-如果其中任一步驟缺資料，寧可保留 `WATCH / VERIFY`，不要用舊資料補洞。
+- **Weekly full scan**：每週一重新抓第一手資料、重算 universe / valuation / score / ranking / history / performance。
+- **Event watch**：工作日檢查財報、月營收、法說、重大訊息；有 material change 才重算受影響標的並更新網站。
 
-## 13. 預設 Rotation Sandbox Guardrails
-
-- 預設資金：NT$3,000,000。
-- 預設只配置通過 Buy Gate 的 A 級候選。
-- 單一股票上限：25%。
-- 現金底線：20%。
-- 資料超過 10 天未更新：配置 Gate 直接 BLOCKED。
-- 台積電未達 3000：狀態維持 PREVIEW。
-- 台積電達 3000 且所有 guardrail 通過：僅顯示 READY FOR REVIEW，不自動交易。
-
----
-
-本框架是研究與決策紀錄，不構成自動交易系統。
+本系統是研究與決策紀錄，不構成自動交易系統，也不會送出交易。
