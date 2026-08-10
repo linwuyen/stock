@@ -6,7 +6,9 @@
     "benchmark": "2330",
     "primary_cohort": "BUY_CANDIDATE",
     "return_type": "PRICE_RETURN_EX_DIVIDENDS",
-    "method": "Primary calibration measures forward stock price return minus TSMC price return for actual BUY_CANDIDATE entries at 1/4/13/26/52 weeks. A-grade names are tracked separately as diagnostics. Cash dividends are not yet included, so this dataset must not be described as total return."
+    "method": "Primary calibration measures forward stock price return minus TSMC price return for actual BUY_CANDIDATE entry transitions at 1/4/13/26/52 weeks. A-grade entry transitions are tracked separately as diagnostics. Cash dividends are not yet included, so this dataset must not be described as total return.",
+    "primary_entry_count": 0,
+    "a_grade_entry_count": 2
   },
   "minimum_samples_for_calibration": 30,
   "horizons": [
