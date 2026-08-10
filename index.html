@@ -3,190 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="台股 Alpha 選股儀表板：以盈餘成長、估值、現金流與結構性催化劑持續重算排名。" />
-  <title>Taiwan Alpha Selection</title>
+  <meta name="description" content="台股 Alpha Engine：可重算分數、估值、證據、風險與相對台積電 Alpha Spread 的投資研究儀表板。" />
+  <title>Taiwan Alpha Engine</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="shell">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">TAIWAN EQUITY RESEARCH</p>
-        <h1>Alpha Selection Dashboard</h1>
-        <p class="sub">找「市場預期低於基本面改善速度」的台股。排名、估值與 thesis 每週重新驗證；不追題材，不為了換股而換股。</p>
-      </div>
-      <div class="freshness" id="freshness">載入資料中…</div>
-    </header>
+    <header class="hero"><div><p class="eyebrow">TAIWAN EQUITY RESEARCH · ENGINE V3</p><h1>Alpha Selection Engine</h1><p class="sub">把「看起來便宜」改成可追溯、可重算、可證偽的決策流程：Evidence → Score → Fair Value → Alpha Spread → Sizing → Realized Alpha → Calibration。</p></div><div class="freshness" id="freshness">載入資料中…</div></header>
 
     <section class="kpis" aria-label="核心指標">
-      <article class="kpi">
-        <span>Top Alpha</span>
-        <strong id="topAlpha">—</strong>
-        <small id="topAlphaScore">—</small>
-      </article>
-      <article class="kpi">
-        <span>Buy Gate</span>
-        <strong>≥ 75</strong>
-        <small>且需估值安全邊際</small>
-      </article>
-      <article class="kpi">
-        <span>TSMC Rotation Trigger</span>
-        <strong id="triggerPrice">3,000</strong>
-        <small id="triggerStatus">—</small>
-      </article>
-      <article class="kpi">
-        <span>Review Cadence</span>
-        <strong>Weekly</strong>
-        <small id="nextReview">—</small>
-      </article>
+      <article class="kpi"><span>Top Alpha</span><strong id="topAlpha">—</strong><small id="topAlphaScore">—</small></article>
+      <article class="kpi"><span>Top Net Alpha Spread</span><strong id="topSpread">—</strong><small id="topSpreadMeta">vs TSMC</small></article>
+      <article class="kpi"><span>Buy Gate</span><strong id="buyGate">≥ 75</strong><small id="buyGateMeta">Score + Confidence + Valuation</small></article>
+      <article class="kpi"><span>Review Cadence</span><strong>Weekly + Events</strong><small id="nextReview">—</small></article>
     </section>
 
-    <section class="panel trigger-panel">
-      <div class="panel-title">
-        <div>
-          <p class="eyebrow">EVENT GATE</p>
-          <h2>台積電 3,000 換股觸發</h2>
-        </div>
-        <span class="status-pill" id="tsmcPill">未觸發</span>
-      </div>
-      <div class="progress-track"><div class="progress-bar" id="tsmcProgress"></div></div>
-      <div class="progress-meta">
-        <span id="tsmcReference">—</span>
-        <span>觸發後只重跑選股與配置評估，不自動交易</span>
-      </div>
-    </section>
+    <section class="panel trigger-panel"><div class="panel-title"><div><p class="eyebrow">BENCHMARK / EVENT GATE</p><h2>台積電 3,000：只觸發重估，不觸發賣出</h2></div><span class="status-pill" id="tsmcPill">載入中</span></div><div class="progress-track"><div class="progress-bar" id="tsmcProgress"></div></div><div class="progress-meta"><span id="tsmcReference">—</span><span id="tsmcExpectedReturn">TSMC Expected Return：—</span></div><div class="benchmark-grid" id="benchmarkGrid"></div></section>
 
-    <section class="panel">
-      <div class="panel-title table-title">
-        <div>
-          <p class="eyebrow">WEEKLY RANKING</p>
-          <h2>Alpha Ranking</h2>
-        </div>
-        <div class="filters" role="group" aria-label="篩選">
-          <button class="filter active" data-filter="ALL">全部</button>
-          <button class="filter" data-filter="A">A 級</button>
-          <button class="filter" data-filter="WATCH">Watch</button>
-        </div>
-      </div>
+    <section class="panel"><div class="panel-title table-title"><div><p class="eyebrow">DECISION TABLE</p><h2>Alpha Ranking</h2></div><div class="filters" role="group" aria-label="篩選"><button class="filter active" data-filter="ALL">全部</button><button class="filter" data-filter="A">A 級</button><button class="filter" data-filter="BUYABLE">通過 Gate</button><button class="filter" data-filter="WATCH">Watch / Verify</button></div></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>週變動</th><th>股票</th><th>Alpha</th><th>Confidence</th><th>價格</th><th>Fwd PE</th><th>Exp. Return</th><th>Alpha Spread</th><th>MOS</th><th>Action</th></tr></thead><tbody id="rankingBody"></tbody></table></div><p class="panel-note" id="rankBaseline">載入歷史基準…</p></section>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>週變動</th>
-              <th>股票</th>
-              <th>Score</th>
-              <th>Grade</th>
-              <th>參考價</th>
-              <th>TTM PE</th>
-              <th>Earnings</th>
-              <th>Valuation</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="rankingBody"></tbody>
-        </table>
-      </div>
-      <p class="panel-note" id="rankBaseline">排名變動載入中…</p>
-    </section>
+    <section class="grid-two analytics-grid"><article class="panel chart-panel"><div class="panel-title chart-title"><div><p class="eyebrow">ALPHA HISTORY</p><h2>Alpha Score 歷史曲線</h2></div><label class="select-label">股票<select id="historyTicker"></select></label></div><div class="chart-wrap" id="historyChart"></div><div class="chart-meta" id="historyMeta"></div></article><article class="panel change-panel"><p class="eyebrow">WEEKLY DELTA</p><h2>本週升降級</h2><div id="weeklyChanges" class="change-list"></div></article></section>
 
-    <section class="grid-two analytics-grid">
-      <article class="panel chart-panel">
-        <div class="panel-title chart-title">
-          <div>
-            <p class="eyebrow">ALPHA HISTORY</p>
-            <h2>Alpha Score 歷史曲線</h2>
-          </div>
-          <label class="select-label">股票
-            <select id="historyTicker" aria-label="選擇歷史曲線股票"></select>
-          </label>
-        </div>
-        <div class="chart-wrap" id="historyChart" aria-live="polite"></div>
-        <div class="chart-meta" id="historyMeta"></div>
-      </article>
+    <section class="grid-two"><article class="panel"><div class="panel-title"><div><p class="eyebrow">REPRODUCIBLE SCORE</p><h2>Score Decomposition</h2></div><label class="select-label">股票<select id="scoreTicker"></select></label></div><div id="scoreDecomposition"></div></article><article class="panel"><div class="panel-title"><div><p class="eyebrow">VALUATION ENGINE</p><h2>Bear / Base / Bull</h2></div><label class="select-label">股票<select id="valuationTicker"></select></label></div><div id="valuationModel"></div></article></section>
 
-      <article class="panel change-panel">
-        <p class="eyebrow">WEEKLY DELTA</p>
-        <h2>本週升降級</h2>
-        <div id="weeklyChanges" class="change-list"></div>
-      </article>
-    </section>
+    <section class="panel evidence-panel"><div class="panel-title"><div><p class="eyebrow">AUDIT TRAIL</p><h2>Evidence & Source Provenance</h2></div><label class="select-label">股票<select id="evidenceTicker"></select></label></div><div id="evidenceList"></div></section>
 
-    <section class="panel simulator-panel">
-      <div class="panel-title simulator-title">
-        <div>
-          <p class="eyebrow">ROTATION SANDBOX</p>
-          <h2>台積 3,000 後資金配置模擬器</h2>
-          <p class="panel-copy">預設模擬賣出一張台積電取得 300 萬元。只計算研究配置與部位大小，不送出交易。</p>
-        </div>
-        <span class="status-pill" id="simulationStatus">Preview</span>
-      </div>
+    <section class="panel simulator-panel"><div class="panel-title simulator-title"><div><p class="eyebrow">RISK-ADJUSTED ROTATION SANDBOX</p><h2>台積 3,000 後 300 萬配置模擬器</h2><p class="panel-copy">優先使用 Net Alpha Spread × Confidence ÷ Downside 產生權重，再套單股上限與現金底線；資料不完整時退回保守 fallback，永不自動交易。</p></div><span class="status-pill" id="simulationStatus">Preview</span></div><div class="sim-controls"><label><span>可配置資金</span><div class="money-input"><span>NT$</span><input id="capitalInput" type="number" min="0" step="10000" inputmode="numeric" /></div></label><div class="sim-rule"><span>配置模式</span><strong id="allocationMode">—</strong><small>Risk adjusted / Fallback</small></div><div class="sim-rule"><span>現金底線</span><strong id="cashFloor">—</strong><small>避免被迫交易</small></div></div><div class="allocation-list" id="allocationList"></div><div class="sim-summary"><div><span>股票配置</span><strong id="investedAmount">—</strong></div><div><span>保留現金</span><strong id="cashAmount">—</strong></div><div><span>Gate 結果</span><strong id="gateResult">—</strong></div></div><p class="panel-note" id="allocationWarning">—</p></section>
 
-      <div class="sim-controls">
-        <label>
-          <span>可配置資金</span>
-          <div class="money-input"><span>NT$</span><input id="capitalInput" type="number" min="0" step="10000" inputmode="numeric" /></div>
-        </label>
-        <div class="sim-rule">
-          <span>配置總和</span>
-          <strong id="allocationTotal">—</strong>
-          <small id="allocationWarning">—</small>
-        </div>
-        <div class="sim-rule">
-          <span>現金底線</span>
-          <strong id="cashFloor">—</strong>
-          <small>不為了換股把現金打滿</small>
-        </div>
-      </div>
+    <section class="grid-two"><article class="panel"><div class="panel-title"><div><p class="eyebrow">UNIVERSE SCREEN</p><h2>全市場候選漏斗</h2></div><span class="status-pill" id="screenStatus">—</span></div><div id="screenRules" class="method-list"></div><div id="screenCandidates" class="screen-list"></div></article><article class="panel"><div class="panel-title"><div><p class="eyebrow">MODEL FEEDBACK</p><h2>Realized Alpha Calibration</h2></div><span class="status-pill" id="calibrationStatus">—</span></div><div id="performanceSummary"></div></article></section>
 
-      <div class="allocation-list" id="allocationList"></div>
+    <section><div class="section-head"><div><p class="eyebrow">THESIS CARDS</p><h2>研究重點</h2></div><p>Alpha 與 Confidence 分離；缺來源或估值模型時只能 VERIFY，不因總分高就升級買進。</p></div><div class="cards" id="stockCards"></div></section>
 
-      <div class="sim-summary">
-        <div><span>股票配置</span><strong id="investedAmount">—</strong></div>
-        <div><span>保留現金</span><strong id="cashAmount">—</strong></div>
-        <div><span>Gate 結果</span><strong id="gateResult">—</strong></div>
-      </div>
-      <p class="panel-note">若候選股未通過 Buy Gate、資料過期、配置超過單一持股上限或現金低於底線，模擬器會直接標示風險；不會把「台積到 3,000」視為必須換股。</p>
-    </section>
+    <section class="grid-two"><article class="panel"><p class="eyebrow">ALPHA METHODOLOGY</p><h2>Alpha Score</h2><div id="methodology" class="method-list"></div></article><article class="panel"><p class="eyebrow">CONFIDENCE METHODOLOGY</p><h2>Confidence Score</h2><div id="confidenceMethodology" class="method-list"></div></article></section>
 
-    <section>
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">THESIS CARDS</p>
-          <h2>研究重點</h2>
-        </div>
-        <p>每週只因新證據改變分數，不因股價情緒改 thesis。</p>
-      </div>
-      <div class="cards" id="stockCards"></div>
-    </section>
+    <section class="panel source-panel"><p class="eyebrow">DATA DISCIPLINE</p><h2>Freshness / Decision Integrity</h2><p>市場價格與基本面資料使用不同 freshness。市場價格目標不超過 1 個交易日（週末最多 3 個 calendar days）；月營收、季報、法說各自有獨立 freshness。任何必要證據缺漏時，系統應降級成 VERIFY，而不是用舊資料補洞。</p><div class="data-meta" id="dataMeta"></div></section>
 
-    <section class="grid-two">
-      <article class="panel">
-        <p class="eyebrow">METHODOLOGY</p>
-        <h2>Alpha Score</h2>
-        <div id="methodology" class="method-list"></div>
-      </article>
-      <article class="panel">
-        <p class="eyebrow">EXPENSIVE / VERIFY</p>
-        <h2>高估值觀察池</h2>
-        <div id="watchlist" class="watch-list"></div>
-      </article>
-    </section>
-
-    <section class="panel source-panel">
-      <p class="eyebrow">DATA DISCIPLINE</p>
-      <h2>資料更新原則</h2>
-      <p>每週更新優先使用 MOPS、TWSE 與公司官方 IR / 法說。若最新資料無法第一手驗證，標記待驗證；禁止把舊數字帶進下一次換股決策。歷史 snapshot 僅用於比較當時決策，不覆寫成最新事實。</p>
-      <div class="data-meta" id="dataMeta"></div>
-    </section>
-
-    <footer>
-      <span>Research dashboard only. No automatic trading.</span>
-      <a href="https://github.com/linwuyen/stock">GitHub Repository ↗</a>
-    </footer>
+    <footer><span>Research system only. No automatic trading.</span><a href="https://github.com/linwuyen/stock">GitHub Repository ↗</a></footer>
   </main>
+  <script src="engine.js" defer></script>
   <script src="app.js" defer></script>
-  <script src="simulator-input-guard.js" defer></script>
 </body>
 </html>
