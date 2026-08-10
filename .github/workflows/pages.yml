@@ -9,7 +9,7 @@ on:
       - '*.js'
       - 'data/**'
       - 'scripts/**'
-      - '.github/workflows/pages.yml'
+      - '.github/workflows/**'
       - 'README.md'
   push:
     branches: [main]
@@ -19,7 +19,7 @@ on:
       - '*.js'
       - 'data/**'
       - 'scripts/**'
-      - '.github/workflows/pages.yml'
+      - '.github/workflows/**'
       - 'README.md'
   workflow_dispatch:
 
@@ -37,10 +37,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Frontend syntax
+      - name: Static syntax
         run: |
           node --check engine.js
           node --check app.js
+          node --check screen-v4.js
+          python -m py_compile scripts/*.py
+      - name: Evaluate alert transition state in validation workspace
+        run: python scripts/sync_alert_state.py
       - name: Decision-engine invariants
         run: python scripts/validate.py
       - name: Performance dataset consistency

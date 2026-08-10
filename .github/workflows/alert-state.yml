@@ -1,0 +1,42 @@
+name: Sync Alpha Alert State
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/alpha.json'
+      - 'scripts/sync_alert_state.py'
+      - '.github/workflows/alert-state.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alpha-alert-state
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Sync transition state
+        run: python scripts/sync_alert_state.py
+      - name: Validate
+        run: |
+          python scripts/validate.py
+          python scripts/rebuild_performance.py --check
+      - name: Commit alert state
+        run: |
+          if git diff --quiet -- data/alerts.json; then
+            echo 'No alert-state change.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/alerts.json
+          git commit -m 'data: sync alpha alert transitions'
+          git push

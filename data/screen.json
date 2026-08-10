@@ -1,26 +1,48 @@
 {
   "meta": {
-    "schema_version": 1,
+    "schema_version": 2,
     "as_of": "2026-08-10",
-    "status": "SEED",
-    "coverage": "TWSE/TPEx non-financial common stocks; weekly automation must refresh full-market screen."
+    "generated_at": null,
+    "status": "BOOTSTRAP_PENDING_FIRST_FULL_SCAN",
+    "coverage": "TWSE + TPEx current common-stock issuer universe; non-financial discovery screen.",
+    "promotion_enabled_by_market": {"TWSE": false, "TPEX": false},
+    "fail_closed": true
   },
   "rules": {
     "exclude_sectors": ["Financials"],
-    "min_market_cap_twd_billion": 10,
-    "min_median_daily_turnover_twd_million": 20,
     "revenue_yoy_pct_min": 15,
-    "eps_yoy_pct_min": 15,
-    "forward_pe_soft_cap": 35,
-    "exception": "Forward PE > 35 only when verified EPS growth >= 35% and valuation MOS remains >= 20%.",
-    "research_funnel": "Full market → quantitative screen → top 50 → deep research top 10 → Alpha ranking"
+    "ttm_pe_soft_cap": 35,
+    "high_growth_pe_exception_revenue_yoy_pct": 35,
+    "earnings_gate": "positive latest reported EPS OR revenue YoY >= 35% with EARNINGS_VERIFY flag",
+    "liquidity": {
+      "target_median_daily_turnover_twd_million": 20,
+      "established_after_observations": 10,
+      "bootstrap_latest_day_floor_twd_million": 5,
+      "window_observations": 20
+    },
+    "market_cap": {
+      "mode": "SOFT_ONLY",
+      "reason": "Do not impose an asymmetric market-cap hard filter unless an authoritative comparable field is available for both TWSE and TPEx."
+    },
+    "screen_is_not_buy_gate": true,
+    "research_funnel": "Full TWSE/TPEx issuer universe → quantitative screen → Top 50 → deep research Top 10 + incumbent VERIFY/BUY → Alpha Engine Buy Gate",
+    "universe_policy": "Deep research queue is Top 10 screen candidates plus incumbent BUY/VERIFY names; screen ranking never directly creates BUY CANDIDATE."
   },
-  "candidates": [
-    {"ticker":"2301","name":"光寶科","status":"SEED","reason":"AI power structural catalyst + prior score A"},
-    {"ticker":"2376","name":"技嘉","status":"SEED","reason":"AI server growth / valuation mismatch candidate"},
-    {"ticker":"2382","name":"廣達","status":"SEED","reason":"AI server scale; verify earnings conversion"},
-    {"ticker":"2451","name":"創見","status":"SEED","reason":"cyclical screen; normalized EPS required"},
-    {"ticker":"3515","name":"華擎","status":"SEED","reason":"server optionality; evidence incomplete"},
-    {"ticker":"3081","name":"聯亞","status":"VERIFY","reason":"structural optical growth; valuation pending"}
+  "source_health": {},
+  "coverage_counts": {},
+  "candidates": [],
+  "deep_research_queue": [],
+  "incumbent_research": [
+    {"ticker":"2301","name":"光寶科","alpha_action":"VERIFY","screen_status":"PENDING_FIRST_FULL_SCAN"},
+    {"ticker":"2376","name":"技嘉","alpha_action":"VERIFY","screen_status":"PENDING_FIRST_FULL_SCAN"},
+    {"ticker":"2382","name":"廣達","alpha_action":"WATCH","screen_status":"PENDING_FIRST_FULL_SCAN"},
+    {"ticker":"2451","name":"創見","alpha_action":"WATCH","screen_status":"PENDING_FIRST_FULL_SCAN"},
+    {"ticker":"3515","name":"華擎","alpha_action":"WATCH","screen_status":"PENDING_FIRST_FULL_SCAN"},
+    {"ticker":"3081","name":"聯亞","alpha_action":"WATCH","screen_status":"PENDING_FIRST_FULL_SCAN"}
+  ],
+  "notes": [
+    "This file no longer represents a manually curated seed universe.",
+    "The first successful market-scan workflow replaces the bootstrap state with live Top 50 and Top 10 queues.",
+    "If an official market source is degraded, promotion from that market is disabled instead of silently using stale data."
   ]
 }
