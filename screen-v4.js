@@ -2,7 +2,6 @@
   'use strict';
   const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
   const fmt=new Intl.NumberFormat('zh-TW',{maximumFractionDigits:2});
-  const money=v=>v==null?'—':new Intl.NumberFormat('zh-TW',{style:'currency',currency:'TWD',maximumFractionDigits:0}).format(v);
 
   function sourceSummary(screen){
     const health=screen.source_health||{};
@@ -10,7 +9,9 @@
       const rows=health[market]||{};
       const failed=Object.entries(rows).filter(([,v])=>!v?.ok).map(([k])=>k);
       const promotion=screen.meta?.promotion_enabled_by_market?.[market];
-      return `<div class="change-row ${failed.length?'down':'up'}"><strong>${market} · ${failed.length?'DEGRADED':'HEALTHY'}</strong><small>Promotion ${promotion?'ON':'OFF'}${failed.length?` · failed: ${esc(failed.join(', '))}`:''}</small></div>`;
+      const coverage=screen.coverage_counts?.[market];
+      const incomeRatio=coverage?.income_coverage_ratio;
+      return `<div class="change-row ${failed.length?'down':'up'}"><strong>${market} · ${failed.length?'DEGRADED':'HEALTHY'}</strong><small>Promotion ${promotion?'ON':'OFF'}${incomeRatio==null?'':` · current income coverage ${fmt.format(incomeRatio*100)}%`}${failed.length?` · failed: ${esc(failed.join(', '))}`:''}</small></div>`;
     }).join('');
   }
 
@@ -30,15 +31,21 @@
       ['Coverage',screen.meta?.coverage||'—'],
       ['Promotion',`TWSE ${promotion.TWSE?'ON':'OFF'} · TPEx ${promotion.TPEX?'ON':'OFF'}`],
       ['Funnel',screen.rules?.research_funnel||'—'],
+      ['Ranking',`${screen.rules?.ranking?.primary||'screen_priority'} primary · legacy Screen Score secondary`],
       ['Top 50',`${top50.length} names`],
       ['Deep research',`${deep.length} names`],
       ['Liquidity',`20-observation median target ${screen.rules?.liquidity?.target_median_daily_turnover_twd_million??'—'}M; bootstrap floor ${screen.rules?.liquidity?.bootstrap_latest_day_floor_twd_million??'—'}M`],
+      ['Earnings coverage','Missing current EPS row may use positive official TTM PE only as discovery proxy; Deep Research must verify filings'],
       ['Market cap',`${screen.rules?.market_cap?.mode||'—'} · asymmetric hard filter disabled`],
       ['Decision boundary','Screen can nominate research only; it can never create BUY_CANDIDATE']
     ].map(([a,b])=>`<div class="method-row"><span>${esc(a)}</span><strong>${esc(b)}</strong></div>`).join('');
 
     const source=sourceSummary(screen);
-    const queue=deep.length?deep.map((x,i)=>`<div class="watch-row"><span>#${i+1} ${esc(x.ticker)} ${esc(x.name)} <small>${esc(x.market||'')}</small></span><small>Screen ${fmt.format(x.screen_score)} · Rev YoY ${x.revenue_yoy_pct==null?'—':fmt.format(x.revenue_yoy_pct)+'%'} · PE ${x.pe_ttm==null?'VERIFY':fmt.format(x.pe_ttm)+'x'} · ${esc(x.liquidity_mode||'')}</small></div>`).join(''):'<div class="empty-state">等待第一次成功的全市場掃描；Bootstrap 名單不視為市場 Top 10。</div>';
+    const queue=deep.length?deep.map((x,i)=>{
+      const proxy=x.profitability_basis==='POSITIVE_TTM_PE_PROXY'?' · EPS proxy→VERIFY':'';
+      const cycle=(x.flags||[]).includes('CYCLE_EXTREME_GROWTH_LOW_PE')?' · CYCLE FLAG':'';
+      return `<div class="watch-row"><span>#${i+1} ${esc(x.ticker)} ${esc(x.name)} <small>${esc(x.market||'')} · ${esc(x.industry||'industry?')}</small></span><small>Priority ${x.screen_priority==null?'—':fmt.format(x.screen_priority)} · Screen ${fmt.format(x.screen_score)} · Rev YoY ${x.revenue_yoy_pct==null?'—':fmt.format(x.revenue_yoy_pct)+'%'} · PE ${x.pe_ttm==null?'VERIFY':fmt.format(x.pe_ttm)+'x'}${proxy}${cycle}</small></div>`;
+    }).join(''):'<div class="empty-state">等待第一次成功的全市場掃描；Bootstrap 名單不視為市場 Top 10。</div>';
     candidates.innerHTML=`<div class="change-list">${source}</div><div class="panel-note">Deep Research Queue</div>${queue}`;
   }
 
