@@ -1,10 +1,12 @@
 {
   "meta": {
-    "schema_version": 1,
+    "schema_version": 2,
     "as_of": "2026-08-10",
     "status": "INSUFFICIENT_HISTORY",
     "benchmark": "2330",
-    "method": "For each entry into A/BUY states, measure stock total-price return minus TSMC return at 1/4/13/26/52 weeks. Do not recalibrate until minimum sample thresholds are met."
+    "primary_cohort": "BUY_CANDIDATE",
+    "return_type": "PRICE_RETURN_EX_DIVIDENDS",
+    "method": "Primary calibration measures forward stock price return minus TSMC price return for actual BUY_CANDIDATE entries at 1/4/13/26/52 weeks. A-grade names are tracked separately as diagnostics. Cash dividends are not yet included, so this dataset must not be described as total return."
   },
   "minimum_samples_for_calibration": 30,
   "horizons": [
@@ -14,6 +16,15 @@
     {"weeks":26,"sample_size":0,"mean_excess_return_pct":null},
     {"weeks":52,"sample_size":0,"mean_excess_return_pct":null}
   ],
+  "diagnostic_cohorts": {
+    "A_GRADE": [
+      {"weeks":1,"sample_size":0,"mean_excess_return_pct":null},
+      {"weeks":4,"sample_size":0,"mean_excess_return_pct":null},
+      {"weeks":13,"sample_size":0,"mean_excess_return_pct":null},
+      {"weeks":26,"sample_size":0,"mean_excess_return_pct":null},
+      {"weeks":52,"sample_size":0,"mean_excess_return_pct":null}
+    ]
+  },
   "score_buckets": [],
   "calibration_actions": []
 }
