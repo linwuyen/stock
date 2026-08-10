@@ -2,14 +2,20 @@
   "meta": {
     "schema_version": 2,
     "as_of": "2026-08-10",
-    "generated_at": "2026-08-10T13:39:32+08:00",
+    "generated_at": "2026-08-10T13:44:19+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx current common-stock issuer universe; non-financial discovery screen.",
     "promotion_enabled_by_market": {
       "TWSE": true,
       "TPEX": true
     },
-    "fail_closed": true
+    "fail_closed": true,
+    "industry_enrichment": {
+      "tpex_status": "ERROR:IncompleteRead:IncompleteRead(310904 bytes read, 759756 more expected)",
+      "tpex_profile_rows": 0,
+      "tpex_mapped_candidates": 0,
+      "tpex_profile_keys_sample": []
+    }
   },
   "rules": {
     "exclude_sectors": [
@@ -32,7 +38,12 @@
     },
     "screen_is_not_buy_gate": true,
     "research_funnel": "Full TWSE/TPEx issuer universe → quantitative screen → Top 50 → deep research Top 10 + incumbent VERIFY/BUY → Alpha Engine Buy Gate",
-    "universe_policy": "Deep research queue is Top 10 screen candidates plus incumbent BUY/VERIFY names; screen ranking never directly creates BUY CANDIDATE."
+    "universe_policy": "Deep research queue is Top 10 screen candidates plus incumbent BUY/VERIFY names; screen ranking never directly creates BUY CANDIDATE.",
+    "deep_research_diversity": {
+      "max_per_industry_cluster_first_pass": 2,
+      "fill_remaining_by_screen_rank": true,
+      "reason": "Prevent one cyclical/industry regime from consuming the whole Deep Research queue while preserving Top 50 raw discovery signals."
+    }
   },
   "source_health": {
     "TWSE": {
@@ -45,7 +56,7 @@
         "ok": true,
         "rows": 1377,
         "url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-        "new_market_snapshot": true
+        "new_market_snapshot": false
       },
       "valuation": {
         "ok": true,
@@ -73,7 +84,7 @@
         "ok": true,
         "rows": 1012,
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes",
-        "new_market_snapshot": true
+        "new_market_snapshot": false
       },
       "valuation": {
         "ok": true,
@@ -99,7 +110,7 @@
       "revenue": 1081,
       "income": 271,
       "valuation": 1082,
-      "new_market_snapshot": true
+      "new_market_snapshot": false
     },
     "TPEX": {
       "profiles": 890,
@@ -107,7 +118,7 @@
       "revenue": 891,
       "income": 203,
       "valuation": 888,
-      "new_market_snapshot": true
+      "new_market_snapshot": false
     }
   },
   "candidates": [
@@ -130,11 +141,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 1
+      "rank": 1,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": true
     },
     {
       "ticker": "3006",
@@ -155,11 +170,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 2
+      "rank": 2,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": true
     },
     {
       "ticker": "3260",
@@ -180,11 +199,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 3
+      "rank": 3,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": true
     },
     {
       "ticker": "4973",
@@ -205,11 +228,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 4
+      "rank": 4,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": true
     },
     {
       "ticker": "5289",
@@ -230,11 +257,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 5
+      "rank": 5,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "8271",
@@ -255,11 +286,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 6
+      "rank": 6,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "2408",
@@ -280,11 +315,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 7
+      "rank": 7,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "7711",
@@ -305,11 +343,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 8
+      "rank": 8,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": true
     },
     {
       "ticker": "2072",
@@ -330,11 +371,15 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 9
+      "rank": 9,
+      "research_industry_key": "IND:35",
+      "deep_research_selected": true
     },
     {
       "ticker": "3028",
@@ -355,11 +400,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 10
+      "rank": 10,
+      "research_industry_key": "IND:29",
+      "deep_research_selected": true
     },
     {
       "ticker": "4916",
@@ -380,11 +428,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 11
+      "rank": 11,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": true
     },
     {
       "ticker": "5351",
@@ -405,11 +456,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 12
+      "rank": 12,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "2520",
@@ -430,11 +484,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 13
+      "rank": 13,
+      "research_industry_key": "IND:14",
+      "deep_research_selected": true
     },
     {
       "ticker": "1714",
@@ -455,11 +512,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 14
+      "rank": 14,
+      "research_industry_key": "IND:21",
+      "deep_research_selected": true
     },
     {
       "ticker": "2347",
@@ -480,11 +540,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 15
+      "rank": 15,
+      "research_industry_key": "IND:29",
+      "deep_research_selected": false
     },
     {
       "ticker": "2344",
@@ -505,11 +568,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 16
+      "rank": 16,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "3231",
@@ -530,11 +596,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 17
+      "rank": 17,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": false
     },
     {
       "ticker": "5288",
@@ -555,11 +624,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 18
+      "rank": 18,
+      "research_industry_key": "IND:05",
+      "deep_research_selected": false
     },
     {
       "ticker": "5490",
@@ -580,11 +652,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 19
+      "rank": 19,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "4967",
@@ -605,11 +680,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 20
+      "rank": 20,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "6279",
@@ -630,11 +708,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 21
+      "rank": 21,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "6782",
@@ -655,11 +736,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 22
+      "rank": 22,
+      "research_industry_key": "IND:22",
+      "deep_research_selected": false
     },
     {
       "ticker": "2103",
@@ -680,11 +764,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 23
+      "rank": 23,
+      "research_industry_key": "IND:11",
+      "deep_research_selected": false
     },
     {
       "ticker": "2546",
@@ -705,11 +792,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 24
+      "rank": 24,
+      "research_industry_key": "IND:14",
+      "deep_research_selected": false
     },
     {
       "ticker": "3515",
@@ -730,11 +820,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 25
+      "rank": 25,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": false
     },
     {
       "ticker": "4760",
@@ -755,11 +848,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 26
+      "rank": 26,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "2414",
@@ -780,11 +876,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 27
+      "rank": 27,
+      "research_industry_key": "IND:29",
+      "deep_research_selected": false
     },
     {
       "ticker": "3556",
@@ -805,11 +904,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 28
+      "rank": 28,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "5508",
@@ -830,11 +932,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 29
+      "rank": 29,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "6585",
@@ -855,11 +960,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 30
+      "rank": 30,
+      "research_industry_key": "IND:20",
+      "deep_research_selected": false
     },
     {
       "ticker": "6716",
@@ -880,11 +988,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 31
+      "rank": 31,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "8131",
@@ -905,11 +1016,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 32
+      "rank": 32,
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "9927",
@@ -930,11 +1044,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 33
+      "rank": 33,
+      "research_industry_key": "IND:20",
+      "deep_research_selected": false
     },
     {
       "ticker": "2345",
@@ -955,11 +1072,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 34
+      "rank": 34,
+      "research_industry_key": "IND:27",
+      "deep_research_selected": false
     },
     {
       "ticker": "2476",
@@ -980,11 +1100,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 35
+      "rank": 35,
+      "research_industry_key": "IND:28",
+      "deep_research_selected": false
     },
     {
       "ticker": "3088",
@@ -1005,11 +1128,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 36
+      "rank": 36,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "3324",
@@ -1030,11 +1156,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 37
+      "rank": 37,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "8210",
@@ -1055,11 +1184,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 38
+      "rank": 38,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": false
     },
     {
       "ticker": "3704",
@@ -1080,11 +1212,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 39
+      "rank": 39,
+      "research_industry_key": "IND:27",
+      "deep_research_selected": false
     },
     {
       "ticker": "6197",
@@ -1105,11 +1240,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 40
+      "rank": 40,
+      "research_industry_key": "IND:28",
+      "deep_research_selected": false
     },
     {
       "ticker": "6642",
@@ -1130,11 +1268,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 41
+      "rank": 41,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "8103",
@@ -1155,11 +1296,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 42
+      "rank": 42,
+      "research_industry_key": "IND:28",
+      "deep_research_selected": false
     },
     {
       "ticker": "1342",
@@ -1180,11 +1324,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 43
+      "rank": 43,
+      "research_industry_key": "IND:20",
+      "deep_research_selected": false
     },
     {
       "ticker": "1605",
@@ -1205,11 +1352,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 44
+      "rank": 44,
+      "research_industry_key": "IND:06",
+      "deep_research_selected": false
     },
     {
       "ticker": "2362",
@@ -1230,11 +1380,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 45
+      "rank": 45,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": false
     },
     {
       "ticker": "2610",
@@ -1255,11 +1408,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 46
+      "rank": 46,
+      "research_industry_key": "IND:15",
+      "deep_research_selected": false
     },
     {
       "ticker": "3526",
@@ -1280,11 +1436,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 47
+      "rank": 47,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "4953",
@@ -1305,11 +1464,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 48
+      "rank": 48,
+      "research_industry_key": "UNKNOWN:TPEX",
+      "deep_research_selected": false
     },
     {
       "ticker": "6206",
@@ -1330,11 +1492,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 49
+      "rank": 49,
+      "research_industry_key": "IND:25",
+      "deep_research_selected": false
     },
     {
       "ticker": "6285",
@@ -1355,11 +1520,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 50
+      "rank": 50,
+      "research_industry_key": "IND:27",
+      "deep_research_selected": false
     }
   ],
   "deep_research_queue": [
@@ -1382,11 +1550,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 1
+      "rank": 1,
+      "research_industry_key": "IND:24"
     },
     {
       "ticker": "3006",
@@ -1407,11 +1578,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 2
+      "rank": 2,
+      "research_industry_key": "IND:24"
     },
     {
       "ticker": "3260",
@@ -1432,11 +1606,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 3
+      "rank": 3,
+      "research_industry_key": "UNKNOWN:TPEX"
     },
     {
       "ticker": "4973",
@@ -1457,86 +1634,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 4
-    },
-    {
-      "ticker": "5289",
-      "name": "宜鼎國際股份有限公司",
-      "market": "TPEX",
-      "industry": "",
-      "screen_score": 100.0,
-      "reference_price": 1500.0,
-      "revenue_yoy_pct": 696.3074675286877,
-      "cumulative_revenue_yoy_pct": 530.8648879235284,
-      "pe_ttm": 8.33,
-      "latest_reported_eps": 166.45,
-      "latest_daily_turnover_twd": 11797410000.0,
-      "median_turnover_twd": 11797410000.0,
-      "liquidity_observations": 1,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "market_cap_twd": null,
-      "data_quality_score": 10.0,
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 5
-    },
-    {
-      "ticker": "8271",
-      "name": "宇瞻科技股份有限公司",
-      "market": "TWSE",
-      "industry": "24",
-      "screen_score": 100.0,
-      "reference_price": 235.5,
-      "revenue_yoy_pct": 200.6454415625155,
-      "cumulative_revenue_yoy_pct": 251.10999196482837,
-      "pe_ttm": 5.86,
-      "latest_reported_eps": 35.51,
-      "latest_daily_turnover_twd": 2256934783.0,
-      "median_turnover_twd": 2256934783.0,
-      "liquidity_observations": 1,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "market_cap_twd": null,
-      "data_quality_score": 10.0,
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 6
-    },
-    {
-      "ticker": "2408",
-      "name": "南亞科技股份有限公司",
-      "market": "TWSE",
-      "industry": "24",
-      "screen_score": 97.0,
-      "reference_price": 457.0,
-      "revenue_yoy_pct": 621.3354284927444,
-      "cumulative_revenue_yoy_pct": 643.1170392921229,
-      "pe_ttm": 17.73,
-      "latest_reported_eps": 23.38,
-      "latest_daily_turnover_twd": 32106124944.0,
-      "median_turnover_twd": 32106124944.0,
-      "liquidity_observations": 1,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "market_cap_twd": null,
-      "data_quality_score": 10.0,
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 7
+      "rank": 4,
+      "research_industry_key": "UNKNOWN:TPEX"
     },
     {
       "ticker": "7711",
@@ -1557,11 +1662,13 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 8
+      "rank": 8,
+      "research_industry_key": "IND:25"
     },
     {
       "ticker": "2072",
@@ -1582,11 +1689,14 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
+        "CYCLE_EXTREME_GROWTH_LOW_PE"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 9
+      "rank": 9,
+      "research_industry_key": "IND:35"
     },
     {
       "ticker": "3028",
@@ -1607,11 +1717,94 @@
       "data_quality_score": 10.0,
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 10
+      "rank": 10,
+      "research_industry_key": "IND:29"
+    },
+    {
+      "ticker": "4916",
+      "name": "事欣科技股份有限公司",
+      "market": "TWSE",
+      "industry": "25",
+      "screen_score": 95.0,
+      "reference_price": 108.0,
+      "revenue_yoy_pct": 80.52350065869514,
+      "cumulative_revenue_yoy_pct": 48.63403792846589,
+      "pe_ttm": 16.54,
+      "latest_reported_eps": 5.45,
+      "latest_daily_turnover_twd": 548865665.0,
+      "median_turnover_twd": 548865665.0,
+      "liquidity_observations": 1,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "market_cap_twd": null,
+      "data_quality_score": 10.0,
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 11,
+      "research_industry_key": "IND:25"
+    },
+    {
+      "ticker": "2520",
+      "name": "冠德建設股份有限公司",
+      "market": "TWSE",
+      "industry": "14",
+      "screen_score": 93.0,
+      "reference_price": 34.7,
+      "revenue_yoy_pct": 52.3105385295913,
+      "cumulative_revenue_yoy_pct": 31.38789796597349,
+      "pe_ttm": 10.33,
+      "latest_reported_eps": 1.87,
+      "latest_daily_turnover_twd": 54730809.0,
+      "median_turnover_twd": 54730809.0,
+      "liquidity_observations": 1,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "market_cap_twd": null,
+      "data_quality_score": 10.0,
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 13,
+      "research_industry_key": "IND:14"
+    },
+    {
+      "ticker": "1714",
+      "name": "和桐化學股份有限公司",
+      "market": "TWSE",
+      "industry": "21",
+      "screen_score": 92.0,
+      "reference_price": 15.75,
+      "revenue_yoy_pct": 73.41431351726915,
+      "cumulative_revenue_yoy_pct": 58.39990415923418,
+      "pe_ttm": 13.35,
+      "latest_reported_eps": 0.89,
+      "latest_daily_turnover_twd": 759436452.0,
+      "median_turnover_twd": 759436452.0,
+      "liquidity_observations": 1,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "market_cap_twd": null,
+      "data_quality_score": 10.0,
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 14,
+      "research_industry_key": "IND:21"
     }
   ],
   "incumbent_research": [
@@ -1667,6 +1860,7 @@
   "notes": [
     "Market-cap hard filtering is intentionally disabled until a symmetric authoritative field is available for both markets.",
     "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
-    "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue."
+    "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
+    "Deep Research Top 10 is diversity-aware; Top 50 remains raw ranking. Extreme revenue growth + low PE is flagged for normalized-cycle review rather than automatically rewarded as buyable alpha."
   ]
 }
