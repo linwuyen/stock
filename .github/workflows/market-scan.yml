@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/scan_market.py'
+      - 'scripts/refine_screen.py'
       - '.github/workflows/market-scan.yml'
 
 permissions:
@@ -35,6 +36,10 @@ jobs:
           code=$?
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
+
+      - name: Enrich industry mapping and diversify Deep Research queue
+        if: steps.scanner.outputs.exit_code == '0'
+        run: python scripts/refine_screen.py
 
       - name: Sync alert state in validation workspace
         run: python scripts/sync_alert_state.py
