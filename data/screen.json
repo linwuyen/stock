@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "schema_version": 1,
+    "as_of": "2026-08-10",
+    "status": "SEED",
+    "coverage": "TWSE/TPEx non-financial common stocks; weekly automation must refresh full-market screen."
+  },
+  "rules": {
+    "exclude_sectors": ["Financials"],
+    "min_market_cap_twd_billion": 10,
+    "min_median_daily_turnover_twd_million": 20,
+    "revenue_yoy_pct_min": 15,
+    "eps_yoy_pct_min": 15,
+    "forward_pe_soft_cap": 35,
+    "exception": "Forward PE > 35 only when verified EPS growth >= 35% and valuation MOS remains >= 20%.",
+    "research_funnel": "Full market → quantitative screen → top 50 → deep research top 10 → Alpha ranking"
+  },
+  "candidates": [
+    {"ticker":"2301","name":"光寶科","status":"SEED","reason":"AI power structural catalyst + prior score A"},
+    {"ticker":"2376","name":"技嘉","status":"SEED","reason":"AI server growth / valuation mismatch candidate"},
+    {"ticker":"2382","name":"廣達","status":"SEED","reason":"AI server scale; verify earnings conversion"},
+    {"ticker":"2451","name":"創見","status":"SEED","reason":"cyclical screen; normalized EPS required"},
+    {"ticker":"3515","name":"華擎","status":"SEED","reason":"server optionality; evidence incomplete"},
+    {"ticker":"3081","name":"聯亞","status":"VERIFY","reason":"structural optical growth; valuation pending"}
+  ]
+}
