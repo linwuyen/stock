@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": 2,
     "as_of": "2026-08-10",
-    "generated_at": "2026-08-10T13:44:19+08:00",
+    "generated_at": "2026-08-10T13:47:26+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx current common-stock issuer universe; non-financial discovery screen.",
     "promotion_enabled_by_market": {
@@ -11,10 +11,44 @@
     },
     "fail_closed": true,
     "industry_enrichment": {
-      "tpex_status": "ERROR:IncompleteRead:IncompleteRead(310904 bytes read, 759756 more expected)",
-      "tpex_profile_rows": 0,
-      "tpex_mapped_candidates": 0,
-      "tpex_profile_keys_sample": []
+      "tpex_status": "OK",
+      "tpex_profile_rows": 890,
+      "tpex_mapped_candidates": 15,
+      "tpex_profile_keys_sample": [
+        "AccountingFirm",
+        "Address",
+        "CPA.CharteredPublicAccountant.First",
+        "CPA.CharteredPublicAccountant.Second",
+        "Chairman",
+        "CompanyAbbreviation",
+        "CompanyName",
+        "Date",
+        "DateOfIncorporation",
+        "DateOfListing",
+        "DeputySpokesperson",
+        "EmailAddress",
+        "Fax",
+        "GeneralManager",
+        "IssueShares",
+        "Paidin.Capital.NTDollars",
+        "ParValueOfCommonStock",
+        "PreferredStock.shares",
+        "PreparationOfFinancialReportType",
+        "PrivateStock.shares",
+        "Registration",
+        "SecuritiesCompanyCode",
+        "SecuritiesIndustryCode",
+        "Spokesman",
+        "StockTransferAgent",
+        "StockTransferAgentAddress",
+        "StockTransferAgentTelephone",
+        "Symbol",
+        "Telephone",
+        "TitleOfSpokesman",
+        "UnifiedBusinessNo.",
+        "WebAddress"
+      ],
+      "retry_policy": "4 attempts, identity encoding, connection close"
     }
   },
   "rules": {
@@ -184,7 +218,7 @@
       "ticker": "3260",
       "name": "威剛科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "24",
       "screen_score": 100.0,
       "reference_price": 416.0,
       "revenue_yoy_pct": 212.0575633036068,
@@ -206,14 +240,14 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 3,
-      "research_industry_key": "UNKNOWN:TPEX",
-      "deep_research_selected": true
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "4973",
       "name": "廣穎電通股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "24",
       "screen_score": 100.0,
       "reference_price": 156.0,
       "revenue_yoy_pct": 197.3016513672852,
@@ -235,14 +269,14 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 4,
-      "research_industry_key": "UNKNOWN:TPEX",
-      "deep_research_selected": true
+      "research_industry_key": "IND:24",
+      "deep_research_selected": false
     },
     {
       "ticker": "5289",
       "name": "宜鼎國際股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "25",
       "screen_score": 100.0,
       "reference_price": 1500.0,
       "revenue_yoy_pct": 696.3074675286877,
@@ -264,8 +298,8 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 5,
-      "research_industry_key": "UNKNOWN:TPEX",
-      "deep_research_selected": false
+      "research_industry_key": "IND:25",
+      "deep_research_selected": true
     },
     {
       "ticker": "8271",
@@ -435,13 +469,13 @@
       "promotion_eligible": true,
       "rank": 11,
       "research_industry_key": "IND:25",
-      "deep_research_selected": true
+      "deep_research_selected": false
     },
     {
       "ticker": "5351",
       "name": "鈺創科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "24",
       "screen_score": 95.0,
       "reference_price": 104.0,
       "revenue_yoy_pct": 657.475703416452,
@@ -462,7 +496,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 12,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:24",
       "deep_research_selected": false
     },
     {
@@ -547,7 +581,7 @@
       "promotion_eligible": true,
       "rank": 15,
       "research_industry_key": "IND:29",
-      "deep_research_selected": false
+      "deep_research_selected": true
     },
     {
       "ticker": "2344",
@@ -631,13 +665,13 @@
       "promotion_eligible": true,
       "rank": 18,
       "research_industry_key": "IND:05",
-      "deep_research_selected": false
+      "deep_research_selected": true
     },
     {
       "ticker": "5490",
       "name": "同亨科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "25",
       "screen_score": 91.0,
       "reference_price": 30.7,
       "revenue_yoy_pct": 50.21828582898434,
@@ -658,7 +692,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 19,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:25",
       "deep_research_selected": false
     },
     {
@@ -693,7 +727,7 @@
       "ticker": "6279",
       "name": "胡連精密股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "28",
       "screen_score": 90.0,
       "reference_price": 126.5,
       "revenue_yoy_pct": 41.197509393265186,
@@ -714,7 +748,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 21,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
     {
@@ -833,7 +867,7 @@
       "ticker": "4760",
       "name": "勤凱科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "31",
       "screen_score": 89.0,
       "reference_price": 236.5,
       "revenue_yoy_pct": 64.80071504237289,
@@ -854,7 +888,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 26,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:31",
       "deep_research_selected": false
     },
     {
@@ -889,7 +923,7 @@
       "ticker": "3556",
       "name": "禾瑞亞科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "24",
       "screen_score": 88.0,
       "reference_price": 63.8,
       "revenue_yoy_pct": 66.86296504019442,
@@ -910,14 +944,14 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 28,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:24",
       "deep_research_selected": false
     },
     {
       "ticker": "5508",
       "name": "永信建設開發股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "14",
       "screen_score": 88.0,
       "reference_price": 53.5,
       "revenue_yoy_pct": 329.3384989210039,
@@ -938,7 +972,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 29,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:14",
       "deep_research_selected": false
     },
     {
@@ -973,7 +1007,7 @@
       "ticker": "6716",
       "name": "應廣科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "24",
       "screen_score": 88.0,
       "reference_price": 95.7,
       "revenue_yoy_pct": 60.57521512066967,
@@ -994,7 +1028,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 31,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:24",
       "deep_research_selected": false
     },
     {
@@ -1113,7 +1147,7 @@
       "ticker": "3088",
       "name": "艾訊股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "25",
       "screen_score": 87.0,
       "reference_price": 136.5,
       "revenue_yoy_pct": 48.37063812295742,
@@ -1134,14 +1168,14 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 36,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:25",
       "deep_research_selected": false
     },
     {
       "ticker": "3324",
       "name": "雙鴻科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "31",
       "screen_score": 87.0,
       "reference_price": 1015.0,
       "revenue_yoy_pct": 62.130201162932195,
@@ -1162,7 +1196,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 37,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:31",
       "deep_research_selected": false
     },
     {
@@ -1253,7 +1287,7 @@
       "ticker": "6642",
       "name": "富致科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "28",
       "screen_score": 86.0,
       "reference_price": 80.7,
       "revenue_yoy_pct": 52.48711059472805,
@@ -1274,7 +1308,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 41,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
     {
@@ -1421,7 +1455,7 @@
       "ticker": "3526",
       "name": "凡甲科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "28",
       "screen_score": 85.0,
       "reference_price": 282.5,
       "revenue_yoy_pct": 29.721548677475077,
@@ -1442,14 +1476,14 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 47,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
     {
       "ticker": "4953",
       "name": "緯致科技股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "30",
       "screen_score": 85.0,
       "reference_price": 125.5,
       "revenue_yoy_pct": 37.06624693342404,
@@ -1470,7 +1504,7 @@
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 48,
-      "research_industry_key": "UNKNOWN:TPEX",
+      "research_industry_key": "IND:30",
       "deep_research_selected": false
     },
     {
@@ -1588,18 +1622,18 @@
       "research_industry_key": "IND:24"
     },
     {
-      "ticker": "3260",
-      "name": "威剛科技股份有限公司",
+      "ticker": "5289",
+      "name": "宜鼎國際股份有限公司",
       "market": "TPEX",
-      "industry": "",
+      "industry": "25",
       "screen_score": 100.0,
-      "reference_price": 416.0,
-      "revenue_yoy_pct": 212.0575633036068,
-      "cumulative_revenue_yoy_pct": 183.33210046161716,
-      "pe_ttm": 5.38,
-      "latest_reported_eps": 62.46,
-      "latest_daily_turnover_twd": 8362730500.0,
-      "median_turnover_twd": 8362730500.0,
+      "reference_price": 1500.0,
+      "revenue_yoy_pct": 696.3074675286877,
+      "cumulative_revenue_yoy_pct": 530.8648879235284,
+      "pe_ttm": 8.33,
+      "latest_reported_eps": 166.45,
+      "latest_daily_turnover_twd": 11797410000.0,
+      "median_turnover_twd": 11797410000.0,
       "liquidity_observations": 1,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "market_cap_twd": null,
@@ -1612,36 +1646,8 @@
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 3,
-      "research_industry_key": "UNKNOWN:TPEX"
-    },
-    {
-      "ticker": "4973",
-      "name": "廣穎電通股份有限公司",
-      "market": "TPEX",
-      "industry": "",
-      "screen_score": 100.0,
-      "reference_price": 156.0,
-      "revenue_yoy_pct": 197.3016513672852,
-      "cumulative_revenue_yoy_pct": 112.07588512408356,
-      "pe_ttm": 8.8,
-      "latest_reported_eps": 15.29,
-      "latest_daily_turnover_twd": 675199500.0,
-      "median_turnover_twd": 675199500.0,
-      "liquidity_observations": 1,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "market_cap_twd": null,
-      "data_quality_score": 10.0,
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED",
-        "CYCLE_EXTREME_GROWTH_LOW_PE"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 4,
-      "research_industry_key": "UNKNOWN:TPEX"
+      "rank": 5,
+      "research_industry_key": "IND:25"
     },
     {
       "ticker": "7711",
@@ -1726,33 +1732,6 @@
       "research_industry_key": "IND:29"
     },
     {
-      "ticker": "4916",
-      "name": "事欣科技股份有限公司",
-      "market": "TWSE",
-      "industry": "25",
-      "screen_score": 95.0,
-      "reference_price": 108.0,
-      "revenue_yoy_pct": 80.52350065869514,
-      "cumulative_revenue_yoy_pct": 48.63403792846589,
-      "pe_ttm": 16.54,
-      "latest_reported_eps": 5.45,
-      "latest_daily_turnover_twd": 548865665.0,
-      "median_turnover_twd": 548865665.0,
-      "liquidity_observations": 1,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "market_cap_twd": null,
-      "data_quality_score": 10.0,
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
-        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 11,
-      "research_industry_key": "IND:25"
-    },
-    {
       "ticker": "2520",
       "name": "冠德建設股份有限公司",
       "market": "TWSE",
@@ -1805,6 +1784,60 @@
       "promotion_eligible": true,
       "rank": 14,
       "research_industry_key": "IND:21"
+    },
+    {
+      "ticker": "2347",
+      "name": "聯強國際股份有限公司",
+      "market": "TWSE",
+      "industry": "29",
+      "screen_score": 92.0,
+      "reference_price": 93.4,
+      "revenue_yoy_pct": 135.4532611228886,
+      "cumulative_revenue_yoy_pct": 77.39100370968649,
+      "pe_ttm": 12.78,
+      "latest_reported_eps": 4.12,
+      "latest_daily_turnover_twd": 474832270.0,
+      "median_turnover_twd": 474832270.0,
+      "liquidity_observations": 1,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "market_cap_twd": null,
+      "data_quality_score": 10.0,
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 15,
+      "research_industry_key": "IND:29"
+    },
+    {
+      "ticker": "5288",
+      "name": "開曼商豐祥控股股份有限公司",
+      "market": "TWSE",
+      "industry": "05",
+      "screen_score": 91.0,
+      "reference_price": 192.5,
+      "revenue_yoy_pct": 71.58654077170728,
+      "cumulative_revenue_yoy_pct": 28.97151163964546,
+      "pe_ttm": 12.83,
+      "latest_reported_eps": 8.03,
+      "latest_daily_turnover_twd": 49362680.0,
+      "median_turnover_twd": 49362680.0,
+      "liquidity_observations": 1,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "market_cap_twd": null,
+      "data_quality_score": 10.0,
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 18,
+      "research_industry_key": "IND:05"
     }
   ],
   "incumbent_research": [
