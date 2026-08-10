@@ -13,7 +13,7 @@
       <div>
         <p class="eyebrow">TAIWAN EQUITY RESEARCH</p>
         <h1>Alpha Selection Dashboard</h1>
-        <p class="sub">找「市場預期低於基本面改善速度」的台股，不追題材，不為了換股而換股。</p>
+        <p class="sub">找「市場預期低於基本面改善速度」的台股。排名、估值與 thesis 每週重新驗證；不追題材，不為了換股而換股。</p>
       </div>
       <div class="freshness" id="freshness">載入資料中…</div>
     </header>
@@ -52,7 +52,7 @@
       <div class="progress-track"><div class="progress-bar" id="tsmcProgress"></div></div>
       <div class="progress-meta">
         <span id="tsmcReference">—</span>
-        <span>觸發後只重跑選股，不自動交易</span>
+        <span>觸發後只重跑選股與配置評估，不自動交易</span>
       </div>
     </section>
 
@@ -74,9 +74,11 @@
           <thead>
             <tr>
               <th>Rank</th>
+              <th>週變動</th>
               <th>股票</th>
               <th>Score</th>
               <th>Grade</th>
+              <th>參考價</th>
               <th>TTM PE</th>
               <th>Earnings</th>
               <th>Valuation</th>
@@ -86,6 +88,66 @@
           <tbody id="rankingBody"></tbody>
         </table>
       </div>
+      <p class="panel-note" id="rankBaseline">排名變動載入中…</p>
+    </section>
+
+    <section class="grid-two analytics-grid">
+      <article class="panel chart-panel">
+        <div class="panel-title chart-title">
+          <div>
+            <p class="eyebrow">ALPHA HISTORY</p>
+            <h2>Alpha Score 歷史曲線</h2>
+          </div>
+          <label class="select-label">股票
+            <select id="historyTicker" aria-label="選擇歷史曲線股票"></select>
+          </label>
+        </div>
+        <div class="chart-wrap" id="historyChart" aria-live="polite"></div>
+        <div class="chart-meta" id="historyMeta"></div>
+      </article>
+
+      <article class="panel change-panel">
+        <p class="eyebrow">WEEKLY DELTA</p>
+        <h2>本週升降級</h2>
+        <div id="weeklyChanges" class="change-list"></div>
+      </article>
+    </section>
+
+    <section class="panel simulator-panel">
+      <div class="panel-title simulator-title">
+        <div>
+          <p class="eyebrow">ROTATION SANDBOX</p>
+          <h2>台積 3,000 後資金配置模擬器</h2>
+          <p class="panel-copy">預設模擬賣出一張台積電取得 300 萬元。只計算研究配置與部位大小，不送出交易。</p>
+        </div>
+        <span class="status-pill" id="simulationStatus">Preview</span>
+      </div>
+
+      <div class="sim-controls">
+        <label>
+          <span>可配置資金</span>
+          <div class="money-input"><span>NT$</span><input id="capitalInput" type="number" min="0" step="10000" inputmode="numeric" /></div>
+        </label>
+        <div class="sim-rule">
+          <span>配置總和</span>
+          <strong id="allocationTotal">—</strong>
+          <small id="allocationWarning">—</small>
+        </div>
+        <div class="sim-rule">
+          <span>現金底線</span>
+          <strong id="cashFloor">—</strong>
+          <small>不為了換股把現金打滿</small>
+        </div>
+      </div>
+
+      <div class="allocation-list" id="allocationList"></div>
+
+      <div class="sim-summary">
+        <div><span>股票配置</span><strong id="investedAmount">—</strong></div>
+        <div><span>保留現金</span><strong id="cashAmount">—</strong></div>
+        <div><span>Gate 結果</span><strong id="gateResult">—</strong></div>
+      </div>
+      <p class="panel-note">若候選股未通過 Buy Gate、資料過期、配置超過單一持股上限或現金低於底線，模擬器會直接標示風險；不會把「台積到 3,000」視為必須換股。</p>
     </section>
 
     <section>
@@ -115,7 +177,7 @@
     <section class="panel source-panel">
       <p class="eyebrow">DATA DISCIPLINE</p>
       <h2>資料更新原則</h2>
-      <p>每週更新優先使用 MOPS、TWSE 與公司官方 IR / 法說。若最新資料無法第一手驗證，標記待驗證；禁止把舊數字帶進下一次換股決策。</p>
+      <p>每週更新優先使用 MOPS、TWSE 與公司官方 IR / 法說。若最新資料無法第一手驗證，標記待驗證；禁止把舊數字帶進下一次換股決策。歷史 snapshot 僅用於比較當時決策，不覆寫成最新事實。</p>
       <div class="data-meta" id="dataMeta"></div>
     </section>
 
