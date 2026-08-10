@@ -39,7 +39,8 @@ def implied_action(stock,data):
     if stock.get('thesis_status')=='INVALIDATED': return 'AVOID'
     er,mos=valuation(stock); ber,_=valuation(data['benchmark_asset']); spread=None if er is None or ber is None else er-ber
     complete=stock.get('valuation_model',{}).get('status')=='COMPLETE'
-    buy=(stock['score']>=data['methodology']['buy_gate'] and stock['confidence_score']>=data['decision_policy']['min_confidence_score'] and complete and mos is not None and mos>=data['decision_policy']['min_margin_of_safety_pct'] and spread is not None and spread>=data['decision_policy']['min_alpha_spread_pct'] and evidence_ok(stock,data['decision_policy']['required_evidence_metrics']))
+    benchmark_complete=data['benchmark_asset'].get('valuation_model',{}).get('status')=='COMPLETE' and ber is not None
+    buy=(stock['score']>=data['methodology']['buy_gate'] and stock['confidence_score']>=data['decision_policy']['min_confidence_score'] and benchmark_complete and complete and mos is not None and mos>=data['decision_policy']['min_margin_of_safety_pct'] and spread is not None and spread>=data['decision_policy']['min_alpha_spread_pct'] and evidence_ok(stock,data['decision_policy']['required_evidence_metrics']))
     if buy:return 'BUY CANDIDATE'
     if stock['score']>=data['methodology']['buy_gate']:return 'VERIFY'
     if stock['score']>=data['methodology']['grade_thresholds']['B']:return 'WATCH'
