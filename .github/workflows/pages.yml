@@ -43,6 +43,8 @@ jobs:
           node --check app.js
           node --check screen-v4.js
           python -m py_compile scripts/*.py
+      - name: Evaluate alert transition state in validation workspace
+        run: python scripts/sync_alert_state.py
       - name: Decision-engine invariants
         run: python scripts/validate.py
       - name: Performance dataset consistency
