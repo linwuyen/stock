@@ -1,0 +1,11 @@
+{
+  "meta": {"as_of":"2026-08-10","market_data_as_of":"2026-08-07","type":"weekly-alpha-snapshot"},
+  "stocks": [
+    {"rank":1,"ticker":"2301","name":"光寶科","score":82,"grade":"A","action":"BUY CANDIDATE"},
+    {"rank":2,"ticker":"2376","name":"技嘉","score":79,"grade":"A","action":"BUY CANDIDATE"},
+    {"rank":3,"ticker":"2382","name":"廣達","score":76,"grade":"A","action":"BUY CANDIDATE"},
+    {"rank":4,"ticker":"2451","name":"創見","score":70,"grade":"B","action":"WATCH"},
+    {"rank":5,"ticker":"3515","name":"華擎","score":67,"grade":"B","action":"WATCH"},
+    {"rank":6,"ticker":"3081","name":"聯亞","score":65,"grade":"B","action":"WATCH"}
+  ]
+}
