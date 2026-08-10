@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="台股 Alpha 選股儀表板：以盈餘成長、估值、現金流與結構性催化劑持續重算排名。" />
+  <title>Taiwan Alpha Selection</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">TAIWAN EQUITY RESEARCH</p>
+        <h1>Alpha Selection Dashboard</h1>
+        <p class="sub">找「市場預期低於基本面改善速度」的台股，不追題材，不為了換股而換股。</p>
+      </div>
+      <div class="freshness" id="freshness">載入資料中…</div>
+    </header>
+
+    <section class="kpis" aria-label="核心指標">
+      <article class="kpi">
+        <span>Top Alpha</span>
+        <strong id="topAlpha">—</strong>
+        <small id="topAlphaScore">—</small>
+      </article>
+      <article class="kpi">
+        <span>Buy Gate</span>
+        <strong>≥ 75</strong>
+        <small>且需估值安全邊際</small>
+      </article>
+      <article class="kpi">
+        <span>TSMC Rotation Trigger</span>
+        <strong id="triggerPrice">3,000</strong>
+        <small id="triggerStatus">—</small>
+      </article>
+      <article class="kpi">
+        <span>Review Cadence</span>
+        <strong>Weekly</strong>
+        <small id="nextReview">—</small>
+      </article>
+    </section>
+
+    <section class="panel trigger-panel">
+      <div class="panel-title">
+        <div>
+          <p class="eyebrow">EVENT GATE</p>
+          <h2>台積電 3,000 換股觸發</h2>
+        </div>
+        <span class="status-pill" id="tsmcPill">未觸發</span>
+      </div>
+      <div class="progress-track"><div class="progress-bar" id="tsmcProgress"></div></div>
+      <div class="progress-meta">
+        <span id="tsmcReference">—</span>
+        <span>觸發後只重跑選股，不自動交易</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title table-title">
+        <div>
+          <p class="eyebrow">WEEKLY RANKING</p>
+          <h2>Alpha Ranking</h2>
+        </div>
+        <div class="filters" role="group" aria-label="篩選">
+          <button class="filter active" data-filter="ALL">全部</button>
+          <button class="filter" data-filter="A">A 級</button>
+          <button class="filter" data-filter="WATCH">Watch</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>股票</th>
+              <th>Score</th>
+              <th>Grade</th>
+              <th>TTM PE</th>
+              <th>Earnings</th>
+              <th>Valuation</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">THESIS CARDS</p>
+          <h2>研究重點</h2>
+        </div>
+        <p>每週只因新證據改變分數，不因股價情緒改 thesis。</p>
+      </div>
+      <div class="cards" id="stockCards"></div>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel">
+        <p class="eyebrow">METHODOLOGY</p>
+        <h2>Alpha Score</h2>
+        <div id="methodology" class="method-list"></div>
+      </article>
+      <article class="panel">
+        <p class="eyebrow">EXPENSIVE / VERIFY</p>
+        <h2>高估值觀察池</h2>
+        <div id="watchlist" class="watch-list"></div>
+      </article>
+    </section>
+
+    <section class="panel source-panel">
+      <p class="eyebrow">DATA DISCIPLINE</p>
+      <h2>資料更新原則</h2>
+      <p>每週更新優先使用 MOPS、TWSE 與公司官方 IR / 法說。若最新資料無法第一手驗證，標記待驗證；禁止把舊數字帶進下一次換股決策。</p>
+      <div class="data-meta" id="dataMeta"></div>
+    </section>
+
+    <footer>
+      <span>Research dashboard only. No automatic trading.</span>
+      <a href="https://github.com/linwuyen/stock">GitHub Repository ↗</a>
+    </footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
