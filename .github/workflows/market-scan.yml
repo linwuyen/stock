@@ -9,8 +9,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/scan_market.py'
+      - 'scripts/run_market_scan.py'
       - 'scripts/refine_screen.py'
       - 'scripts/validate_screen_priority.py'
+      - 'scripts/validate_source_resilience.py'
       - '.github/workflows/market-scan.yml'
 
 permissions:
@@ -28,12 +30,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run official TWSE + TPEx scanner
+      - name: Run resilient official TWSE + TPEx scanner
         id: scanner
         shell: bash
         run: |
           set +e
-          python scripts/scan_market.py
+          python scripts/run_market_scan.py
           code=$?
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
           exit 0
@@ -50,6 +52,7 @@ jobs:
           python -m py_compile scripts/*.py
           python scripts/validate.py
           python scripts/validate_screen_priority.py
+          python scripts/validate_source_resilience.py
           python scripts/rebuild_performance.py --check
 
       - name: Commit scanner state and diagnostics
