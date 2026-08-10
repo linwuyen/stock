@@ -1,11 +1,1 @@
-{
-  "meta": {"as_of":"2026-08-10","market_data_as_of":"2026-08-07","type":"weekly-alpha-snapshot"},
-  "stocks": [
-    {"rank":1,"ticker":"2301","name":"光寶科","score":82,"grade":"A","action":"BUY CANDIDATE"},
-    {"rank":2,"ticker":"2376","name":"技嘉","score":79,"grade":"A","action":"BUY CANDIDATE"},
-    {"rank":3,"ticker":"2382","name":"廣達","score":76,"grade":"A","action":"BUY CANDIDATE"},
-    {"rank":4,"ticker":"2451","name":"創見","score":70,"grade":"B","action":"WATCH"},
-    {"rank":5,"ticker":"3515","name":"華擎","score":67,"grade":"B","action":"WATCH"},
-    {"rank":6,"ticker":"3081","name":"聯亞","score":65,"grade":"B","action":"WATCH"}
-  ]
-}
+{"meta":{"as_of":"2026-08-10","market_data_as_of":"2026-08-07","type":"weekly-alpha-snapshot","schema_version":3},"benchmark_asset":{"ticker":"2330","name":"台積電","reference_price":2370,"expected_return_pct":36.13},"stocks":[{"rank":1,"ticker":"2301","name":"光寶科","score":84,"confidence_score":89,"grade":"A","action":"VERIFY","reference_price":247,"expected_return_pct":21.3,"alpha_spread_pct":-14.83},{"rank":2,"ticker":"2376","name":"技嘉","score":80,"confidence_score":70,"grade":"A","action":"VERIFY","reference_price":344,"expected_return_pct":49.06,"alpha_spread_pct":12.93},{"rank":3,"ticker":"2382","name":"廣達","score":73,"confidence_score":68,"grade":"B","action":"WATCH","reference_price":298,"expected_return_pct":18.29,"alpha_spread_pct":-17.84},{"rank":4,"ticker":"2451","name":"創見","score":70,"confidence_score":65,"grade":"B","action":"WATCH","reference_price":297,"expected_return_pct":3.96,"alpha_spread_pct":-32.17},{"rank":5,"ticker":"3515","name":"華擎","score":67,"confidence_score":56,"grade":"B","action":"WATCH","reference_price":212.5,"expected_return_pct":22.59,"alpha_spread_pct":-13.54},{"rank":6,"ticker":"3081","name":"聯亞","score":65,"confidence_score":45,"grade":"B","action":"WATCH","reference_price":null,"expected_return_pct":null,"alpha_spread_pct":null}]}
