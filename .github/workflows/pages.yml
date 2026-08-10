@@ -1,6 +1,14 @@
-name: Deploy Alpha Dashboard
+name: Validate and Deploy Alpha Dashboard
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - 'app.js'
+      - 'data/**'
+      - '.github/workflows/pages.yml'
   push:
     branches: [main]
     paths:
@@ -17,14 +25,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -84,6 +89,17 @@ jobs:
 
           print(f"Validated {len(data['stocks'])} Alpha candidates and {len(snapshots)} history snapshots")
           PY
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
