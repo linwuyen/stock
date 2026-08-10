@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import hashlib
 import json
 import math
 import re
@@ -54,8 +55,8 @@ def write(path, obj):
 
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        payload = json.load(r)
+    with urllib.request.urlopen(req, timeout=30) as response:
+        payload = json.load(response)
     if isinstance(payload, list):
         return payload
     if isinstance(payload, dict):
@@ -69,7 +70,7 @@ def fetch(url):
 
 
 def norm_key(value):
-    return re.sub(r"[\s()（）()\-_/:%％,.]", "", str(value)).lower()
+    return re.sub(r"[\s()（）\-_/:%％,.]", "", str(value)).lower()
 
 
 def pick(row, aliases):
@@ -141,9 +142,21 @@ def latest_rows(rows):
     return out
 
 
+def quote_fingerprint(rows):
+    normalized = []
+    for row in rows:
+        code = code_of(row)
+        if not code:
+            continue
+        price = num(pick(row, ["ClosingPrice", "Close", "收盤價", "最後成交價", "收盤"]))
+        turnover = num(pick(row, ["TradeValue", "TransactionAmount", "成交金額", "成交值", "TradeAmount"]))
+        normalized.append((code, price, turnover))
+    payload = json.dumps(sorted(normalized), ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest() if normalized else None
+
+
 def score_revenue(yoy):
-    if yoy is None:
-        return 0
+    if yoy is None: return 0
     if yoy >= 50: return 40
     if yoy >= 35: return 35
     if yoy >= 25: return 30
@@ -154,8 +167,7 @@ def score_revenue(yoy):
 
 
 def score_pe(pe, revenue_yoy):
-    if pe is None:
-        return 4 if (revenue_yoy or 0) >= 35 else 0
+    if pe is None: return 4 if (revenue_yoy or 0) >= 35 else 0
     if pe <= 0: return 0
     if pe <= 12: return 25
     if pe <= 18: return 22
@@ -188,20 +200,19 @@ def quality_score(fields):
     return round(10 * present / len(fields), 2)
 
 
-def update_liquidity(history, market, code, turnover):
-    if turnover is None:
-        return [], None
+def update_liquidity(history, market, code, turnover, append_snapshot):
     key = f"{market}:{code}"
     series = history.setdefault("series", {}).setdefault(key, [])
-    series = [x for x in series if x.get("date") != TODAY]
-    series.append({"date": TODAY, "turnover_twd": round(turnover, 2)})
-    series = sorted(series, key=lambda x: x["date"])[-20:]
-    history["series"][key] = series
+    if append_snapshot and turnover is not None:
+        series = [x for x in series if x.get("date") != TODAY]
+        series.append({"date": TODAY, "turnover_twd": round(turnover, 2)})
+        series = sorted(series, key=lambda x: x["date"])[-20:]
+        history["series"][key] = series
     values = [float(x["turnover_twd"]) for x in series if x.get("turnover_twd") is not None]
     return series, statistics.median(values) if values else None
 
 
-def scan_market(market, datasets, history):
+def scan_market(market, datasets, history, append_liquidity):
     profiles = latest_rows(datasets.get("profiles", []))
     quotes = latest_rows(datasets.get("quotes", []))
     valuation = latest_rows(datasets.get("valuation", []))
@@ -211,35 +222,33 @@ def scan_market(market, datasets, history):
     coverage = {"profiles": len(profiles), "quotes": len(quotes), "revenue": len(revenue), "income": len(income), "valuation": len(valuation)}
 
     for code, profile in profiles.items():
-        if not CODE_RE.match(code):
-            continue
         industry = industry_of(profile)
-        if is_financial(industry):
+        if not CODE_RE.match(code) or is_financial(industry):
             continue
         quote, rev, inc, val = quotes.get(code, {}), revenue.get(code, {}), income.get(code, {}), valuation.get(code, {})
         name = name_of(profile) or name_of(quote) or name_of(rev) or code
-        price = num(pick(quote, ["ClosingPrice", "Close", "收盤價", "最後成交價", "收盤"]));
+        price = num(pick(quote, ["ClosingPrice", "Close", "收盤價", "最後成交價", "收盤"]))
         turnover = num(pick(quote, ["TradeValue", "TransactionAmount", "成交金額", "成交值", "TradeAmount"]))
         pe = num(pick(val, ["PEratio", "PriceEarningRatio", "本益比", "P/E", "PERatio"]))
         rev_yoy = num(pick(rev, ["營業收入-去年同月增減(%)", "營業收入去年同月增減(%)", "去年同月增減(%)", "RevenueYoY", "YoY(%)"]))
         cum_rev_yoy = num(pick(rev, ["累計營業收入-前期比較增減(%)", "累計營業收入前期比較增減(%)", "累計年增率(%)", "CumulativeRevenueYoY"]))
         eps = num(pick(inc, ["基本每股盈餘（元）", "基本每股盈餘(元)", "基本每股盈餘", "EPS", "BasicEarningsPerShare"]))
         market_cap = num(pick(quote, ["MarketValue", "MarketCap", "市值"])) or num(pick(profile, ["MarketValue", "MarketCap", "市值"]))
-        series, median_turnover = update_liquidity(history, market, code, turnover)
+        series, median_turnover = update_liquidity(history, market, code, turnover, append_liquidity)
         observations = len(series)
 
-        liquidity_established = observations >= 10
-        liquidity_pass = (median_turnover or 0) >= 20_000_000 if liquidity_established else (turnover or 0) >= 5_000_000
+        liquidity_pass = (median_turnover or 0) >= 20_000_000 if observations >= 10 else (turnover or 0) >= 5_000_000
         revenue_pass = rev_yoy is not None and rev_yoy >= 15
         earnings_pass = (eps is not None and eps > 0) or (rev_yoy is not None and rev_yoy >= 35)
         valuation_pass = pe is None or pe <= 35 or (rev_yoy is not None and rev_yoy >= 35)
         if not (liquidity_pass and revenue_pass and earnings_pass and valuation_pass):
             continue
 
-        q = quality_score([price, turnover, pe, rev_yoy, eps])
-        screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + q, 2)
+        data_quality = quality_score([price, turnover, pe, rev_yoy, eps])
+        screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + data_quality, 2)
         flags = []
         if observations < 10: flags.append("LIQUIDITY_BOOTSTRAP")
+        if not append_liquidity: flags.append("NO_NEW_MARKET_SNAPSHOT")
         if pe is None: flags.append("VALUATION_VERIFY")
         if eps is None: flags.append("EARNINGS_VERIFY")
         if market_cap is None: flags.append("MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED")
@@ -259,28 +268,26 @@ def scan_market(market, datasets, history):
             "liquidity_observations": observations,
             "liquidity_mode": "MEDIAN_20D" if observations >= 10 else "BOOTSTRAP_LATEST_DAY",
             "market_cap_twd": market_cap,
-            "data_quality_score": q,
+            "data_quality_score": data_quality,
             "flags": flags,
             "status": "SCREEN_PASS",
             "promotion_eligible": True,
         })
 
     candidates.sort(key=lambda x: (-x["screen_score"], -(x.get("revenue_yoy_pct") or -999), x["ticker"]))
-    for i, item in enumerate(candidates, 1):
-        item["rank"] = i
+    for i, item in enumerate(candidates, 1): item["rank"] = i
     return candidates, coverage
 
 
 def main():
     previous = load("data/screen.json", {"candidates": []})
     alpha = load("data/alpha.json", {"stocks": []})
-    history = load("data/liquidity-history.json", {"schema_version": 1, "as_of": None, "series": {}})
-    source_health = {}
-    fetched = {}
+    history = load("data/liquidity-history.json", {"schema_version": 1, "as_of": None, "window": 20, "series": {}, "market_state": {}})
+    history.setdefault("market_state", {})
+    source_health, fetched = {}, {}
 
     for market, endpoints in SOURCES.items():
-        fetched[market] = {}
-        source_health[market] = {}
+        fetched[market], source_health[market] = {}, {}
         for label, url in endpoints.items():
             try:
                 rows = fetch(url)
@@ -290,9 +297,7 @@ def main():
                 fetched[market][label] = []
                 source_health[market][label] = {"ok": False, "error": f"{type(exc).__name__}: {exc}", "url": url}
 
-    all_candidates = []
-    coverage = {}
-    promotion_by_market = {}
+    all_candidates, coverage, promotion_by_market = [], {}, {}
     critical = {"profiles", "quotes", "valuation", "revenue", "income"}
     previous_by_market = {market: [x for x in previous.get("candidates", []) if x.get("market") == market] for market in SOURCES}
 
@@ -300,7 +305,14 @@ def main():
         market_ok = all(source_health[market].get(label, {}).get("ok") for label in critical)
         promotion_by_market[market] = market_ok
         if market_ok:
-            candidates, market_coverage = scan_market(market, fetched[market], history)
+            fingerprint = quote_fingerprint(fetched[market]["quotes"])
+            prior_state = history["market_state"].get(market, {})
+            new_snapshot = bool(fingerprint and fingerprint != prior_state.get("fingerprint"))
+            source_health[market]["quotes"]["new_market_snapshot"] = new_snapshot
+            if new_snapshot:
+                history["market_state"][market] = {"fingerprint": fingerprint, "last_new_snapshot_date": TODAY}
+            candidates, market_coverage = scan_market(market, fetched[market], history, append_liquidity=new_snapshot)
+            market_coverage["new_market_snapshot"] = new_snapshot
             coverage[market] = market_coverage
             all_candidates.extend(candidates)
         else:
@@ -309,7 +321,7 @@ def main():
                 stale = dict(old)
                 stale["status"] = "STALE_CARRYOVER"
                 stale["promotion_eligible"] = False
-                stale.setdefault("flags", []).append("SOURCE_DEGRADED")
+                stale["flags"] = list(dict.fromkeys(stale.get("flags", []) + ["SOURCE_DEGRADED"]))
                 all_candidates.append(stale)
 
     all_candidates.sort(key=lambda x: (not x.get("promotion_eligible", False), -float(x.get("screen_score") or 0), x.get("ticker", "")))
@@ -317,10 +329,10 @@ def main():
     top50 = eligible[:50]
     for i, item in enumerate(top50, 1): item["rank"] = i
     deep = [dict(x) for x in top50[:10]]
+    by_ticker = {x["ticker"]: x for x in all_candidates}
     incumbent = []
-    current_by_ticker = {x["ticker"]: x for x in all_candidates}
     for stock in alpha.get("stocks", []):
-        row = current_by_ticker.get(stock["ticker"])
+        row = by_ticker.get(stock["ticker"])
         incumbent.append({
             "ticker": stock["ticker"],
             "name": stock.get("name"),
@@ -352,6 +364,7 @@ def main():
                 "established_after_observations": 10,
                 "bootstrap_latest_day_floor_twd_million": 5,
                 "window_observations": 20,
+                "dedupe": "full-market quote fingerprint; unchanged market snapshots do not add observations",
             },
             "market_cap": {
                 "mode": "SOFT_ONLY",
@@ -368,7 +381,7 @@ def main():
         "incumbent_research": incumbent,
         "notes": [
             "Market-cap hard filtering is intentionally disabled until a symmetric authoritative field is available for both markets.",
-            "Liquidity uses a 20-observation rolling history once enough data exists; before that, a conservative latest-day bootstrap is labeled explicitly.",
+            "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
             "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
         ],
     }
