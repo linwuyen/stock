@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo("Asia/Taipei")
 NOW = datetime.now(TZ)
 TODAY = NOW.date().isoformat()
-UA = "linwuyen-alpha-engine/4.3 (+https://github.com/linwuyen/stock)"
+UA = "linwuyen-alpha-engine/4.4 (+https://github.com/linwuyen/stock)"
 
 TWSE = "https://openapi.twse.com.tw/v1"
 TPEX = "https://www.tpex.org.tw/openapi/v1"
@@ -36,8 +36,9 @@ SOURCES = {
     },
 }
 
-FINANCIAL_WORDS = ("金融", "銀行", "保險", "證券", "票券", "金控")
+FINANCIAL_WORDS = ("金融", "銀行", "保險", "證券", "票券", "金控", "投信", "期貨")
 CODE_RE = re.compile(r"^\d{4}$")
+GROWTH_WINSOR_PCT = 500.0
 
 
 def load(path, default):
@@ -118,8 +119,9 @@ def industry_of(row):
     return text(pick(row, ["產業別", "產業類別", "Industry", "IndustryName", "產業別名稱"]))
 
 
-def is_financial(industry):
-    return any(word in industry for word in FINANCIAL_WORDS)
+def is_financial(industry, name=""):
+    haystack = f"{industry} {name}"
+    return any(word in haystack for word in FINANCIAL_WORDS)
 
 
 def period_key(row):
@@ -212,9 +214,11 @@ def profitability_basis(eps, pe, revenue_yoy):
 
 
 def continuous_priority(revenue_yoy, cumulative_yoy, pe, eps, profitability, median_turnover, latest_turnover, observations, data_quality):
-    """Non-saturating discovery priority. It ranks research attention, not expected return or Buy eligibility."""
-    rev = max(0.0, float(revenue_yoy or 0))
-    cumulative = max(0.0, float(cumulative_yoy or 0))
+    """Robust, non-saturating discovery priority. It ranks research attention, not expected return or Buy eligibility."""
+    raw_rev = max(0.0, float(revenue_yoy or 0))
+    raw_cumulative = max(0.0, float(cumulative_yoy or 0))
+    rev = min(raw_rev, GROWTH_WINSOR_PCT)
+    cumulative = min(raw_cumulative, GROWTH_WINSOR_PCT)
     growth = 15.0 * math.log1p(rev / 15.0)
     consistency = 7.0 * math.log1p(cumulative / 15.0)
     if pe is None:
@@ -232,9 +236,10 @@ def continuous_priority(revenue_yoy, cumulative_yoy, pe, eps, profitability, med
     else:
         earnings = 0.0
     liquidity = float(liquidity_score(median_turnover, latest_turnover, observations))
-    cycle_penalty = 10.0 if rev >= 100 and pe is not None and 0 < pe <= 12 else 0.0
+    cycle_penalty = 10.0 if raw_rev >= 100 and pe is not None and 0 < pe <= 12 else 0.0
     missing_eps_penalty = 3.0 if eps is None else 0.0
-    return round(growth + consistency + valuation + earnings + liquidity + float(data_quality) - cycle_penalty - missing_eps_penalty, 4)
+    base_effect_penalty = 8.0 if raw_rev > GROWTH_WINSOR_PCT or raw_cumulative > GROWTH_WINSOR_PCT else 0.0
+    return round(growth + consistency + valuation + earnings + liquidity + float(data_quality) - cycle_penalty - missing_eps_penalty - base_effect_penalty, 4)
 
 
 def update_liquidity(history, market, code, turnover, append_snapshot):
@@ -260,10 +265,10 @@ def scan_market(market, datasets, history, append_liquidity):
 
     for code, profile in profiles.items():
         industry = industry_of(profile)
-        if not CODE_RE.match(code) or is_financial(industry):
-            continue
         quote, rev, inc, val = quotes.get(code, {}), revenue.get(code, {}), income.get(code, {}), valuation.get(code, {})
         name = name_of(profile) or name_of(quote) or name_of(rev) or code
+        if not CODE_RE.match(code) or is_financial(industry, name):
+            continue
         price = num(pick(quote, ["ClosingPrice", "Close", "收盤價", "最後成交價", "收盤"]))
         turnover = num(pick(quote, ["TradeValue", "TransactionAmount", "成交金額", "成交值", "TradeAmount"]))
         pe = num(pick(val, ["PEratio", "PriceEarningRatio", "本益比", "P/E", "PERatio"]))
@@ -284,6 +289,8 @@ def scan_market(market, datasets, history, append_liquidity):
         data_quality = quality_score([price, turnover, pe, rev_yoy, eps])
         screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + data_quality, 2)
         priority = continuous_priority(rev_yoy, cum_rev_yoy, pe, eps, earnings_basis, median_turnover, turnover, observations, data_quality)
+        priority_rev_yoy = min(max(0.0, float(rev_yoy or 0)), GROWTH_WINSOR_PCT)
+        priority_cum_yoy = min(max(0.0, float(cum_rev_yoy or 0)), GROWTH_WINSOR_PCT)
         flags = []
         if observations < 10: flags.append("LIQUIDITY_BOOTSTRAP")
         if not append_liquidity: flags.append("NO_NEW_MARKET_SNAPSHOT")
@@ -292,6 +299,8 @@ def scan_market(market, datasets, history, append_liquidity):
             flags.append("EARNINGS_FILING_NOT_IN_CURRENT_DATASET")
             if earnings_basis == "POSITIVE_TTM_PE_PROXY": flags.append("PROFITABILITY_PROXY_TTM_PE")
             if earnings_basis == "HIGH_GROWTH_EARNINGS_UNVERIFIED": flags.append("EARNINGS_VERIFY")
+        if (rev_yoy is not None and rev_yoy > GROWTH_WINSOR_PCT) or (cum_rev_yoy is not None and cum_rev_yoy > GROWTH_WINSOR_PCT):
+            flags.append("GROWTH_BASE_EFFECT_OUTLIER")
         if market_cap is None: flags.append("MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED")
         candidates.append({
             "ticker": code,
@@ -303,6 +312,8 @@ def scan_market(market, datasets, history, append_liquidity):
             "reference_price": price,
             "revenue_yoy_pct": rev_yoy,
             "cumulative_revenue_yoy_pct": cum_rev_yoy,
+            "priority_revenue_yoy_pct": priority_rev_yoy,
+            "priority_cumulative_revenue_yoy_pct": priority_cum_yoy,
             "pe_ttm": pe,
             "latest_reported_eps": eps,
             "profitability_basis": earnings_basis,
@@ -399,6 +410,7 @@ def main():
         },
         "rules": {
             "exclude_sectors": ["Financials"],
+            "financial_exclusion": "industry metadata OR issuer-name keywords: 金融/銀行/保險/證券/票券/金控/投信/期貨",
             "revenue_yoy_pct_min": 15,
             "ttm_pe_soft_cap": 35,
             "high_growth_pe_exception_revenue_yoy_pct": 35,
@@ -407,7 +419,8 @@ def main():
             "ranking": {
                 "primary": "screen_priority",
                 "secondary": "screen_score",
-                "screen_priority": "non-saturating log growth + cumulative consistency + valuation + profitability + liquidity + data quality - cycle/missing-EPS penalties",
+                "growth_winsorization_pct": GROWTH_WINSOR_PCT,
+                "screen_priority": "robust non-saturating log growth using 500% winsorized monthly/cumulative YoY + valuation + profitability + liquidity + data quality - cycle/missing-EPS/base-effect penalties",
                 "screen_score": "legacy bounded explainability score; no longer the primary ranking metric"
             },
             "liquidity": {
@@ -435,7 +448,8 @@ def main():
             "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
             "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
             "A missing row in the current income endpoint does not automatically exclude a profitable issuer from discovery when official TTM PE is positive; deep research must still verify the actual filed earnings before Alpha scoring.",
-            "screen_priority is intentionally non-saturating so extreme growth names do not collapse into large 100-point ties."
+            "screen_priority is non-saturating but winsorizes extreme monthly/cumulative growth at 500% and applies a base-effect penalty so lumpy or near-zero comparison periods cannot dominate research priority.",
+            "Financial issuer exclusion uses both industry metadata and issuer-name keywords because some official industry fields are numeric codes."
         ],
     }
     history["schema_version"] = 1
