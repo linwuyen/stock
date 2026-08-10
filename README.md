@@ -1,6 +1,6 @@
 # Taiwan Alpha Stock Selection
 
-這個 repository 用來維護台股 Alpha 選股框架與每週研究結果。
+這個 repository 用來維護台股 Alpha 選股框架、每週研究結果與 GitHub Pages 儀表板。
 
 目標不是預測短期漲跌，而是在可承受風險下，尋找「市場預期低於基本面實際改善速度」的股票，並以固定規則持續驗證 thesis。
 
@@ -89,7 +89,7 @@ A 級不等於立即買進。買進仍需估值與風險條件同時成立。
 3. 最新季 EPS、毛利率、營益率。
 4. 營業現金流與 FCF（財報公布後更新）。
 5. 公司法說/重大訊息是否改變 thesis。
-6. 重新估 2026E / 2027E normalized EPS。
+6. 重新估當年度 / 次年度 normalized EPS。
 7. 重算 Forward PE 與 Alpha Score。
 8. 比較上週：升級、降級、新增、剔除。
 9. 明確列出 thesis invalidation condition。
@@ -126,6 +126,74 @@ A 級不等於立即買進。買進仍需估值與風險條件同時成立。
 - 最大風險
 - 下週需要驗證的事件
 - 若台積電本週到 3000 元，資金應如何分配（只給研究建議，不執行交易）
+
+## 10. Dashboard v2
+
+GitHub Pages 由 `index.html`、`styles.css`、`app.js` 與 JSON 資料驅動。功能包括：
+
+- 每週 Alpha Ranking。
+- 與前一份 snapshot 比較的排名 ↑↓、Score、Grade 與 Action 變化。
+- 最近最多 26 份 snapshot 的 Alpha Score 歷史曲線。
+- 台積電 3000 元事件 Gate。
+- 300 萬元資金配置 sandbox，可修改資金與權重。
+- Buy Gate、單一持股上限、現金底線與資料過期檢查。
+
+模擬器只計算研究部位，不建立或送出交易。
+
+## 11. 資料契約
+
+### `data/alpha.json`
+
+目前 schema version 為 2。每週至少更新：
+
+- `meta.as_of`
+- `meta.market_data_as_of`
+- `meta.next_review`
+- `tsmc.reference_price`
+- `tsmc.reference_price_date`
+- `stocks[].rank / score / grade / action`
+- `stocks[].reference_price / reference_price_date`
+- `stocks[].pe_ttm / earnings_trend / valuation`
+- `stocks[].thesis / risk / next_check`
+- `watchlist`
+
+`rotation_model` 的 guardrails 是風險規則，不應因單週市場情緒任意放寬。
+
+### `data/history/YYYY-MM-DD.json`
+
+每週保存當週決策快照。歷史 snapshot 是「當時的判斷」，不得事後改寫成最新事實，除非修正資料錯誤並留下 commit 紀錄。
+
+### `data/history/index.json`
+
+網站不掃描目錄，因此每次新增 snapshot 都必須同步：
+
+1. 新增 snapshot 路徑。
+2. 依日期排序。
+3. 更新 `latest`。
+
+## 12. 每週更新原子流程
+
+每週研究完成後：
+
+1. 先以第一手資料重算 Alpha。
+2. 更新 `data/alpha.json`。
+3. 建立或更新 `data/history/YYYY-MM-DD.json`。
+4. 更新 `data/history/index.json`。
+5. 提交到 `main`。
+6. GitHub Actions 驗證 JS、JSON、權重、ticker、history index 與 snapshot。
+7. 驗證成功後部署 GitHub Pages。
+
+如果其中任一步驟缺資料，寧可保留 `WATCH / VERIFY`，不要用舊資料補洞。
+
+## 13. 預設 Rotation Sandbox Guardrails
+
+- 預設資金：NT$3,000,000。
+- 預設只配置通過 Buy Gate 的 A 級候選。
+- 單一股票上限：25%。
+- 現金底線：20%。
+- 資料超過 10 天未更新：配置 Gate 直接 BLOCKED。
+- 台積電未達 3000：狀態維持 PREVIEW。
+- 台積電達 3000 且所有 guardrail 通過：僅顯示 READY FOR REVIEW，不自動交易。
 
 ---
 
