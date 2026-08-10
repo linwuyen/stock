@@ -1,4 +1,4 @@
-name: Validate and Deploy Alpha Dashboard
+name: Validate and Deploy Alpha Engine
 
 on:
   pull_request:
@@ -8,7 +8,9 @@ on:
       - 'styles.css'
       - '*.js'
       - 'data/**'
+      - 'scripts/**'
       - '.github/workflows/pages.yml'
+      - 'README.md'
   push:
     branches: [main]
     paths:
@@ -16,7 +18,9 @@ on:
       - 'styles.css'
       - '*.js'
       - 'data/**'
+      - 'scripts/**'
       - '.github/workflows/pages.yml'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:
@@ -32,65 +36,15 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Validate frontend syntax
+      - uses: actions/checkout@v6
+      - name: Frontend syntax
         run: |
+          node --check engine.js
           node --check app.js
-          node --check simulator-input-guard.js
-
-      - name: Validate datasets
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          root = Path('.')
-          data = json.loads((root / 'data/alpha.json').read_text())
-          history_index = json.loads((root / 'data/history/index.json').read_text())
-
-          assert data['meta']['schema_version'] >= 2
-          assert data['meta']['as_of']
-          assert data['stocks']
-          assert data['methodology']['buy_gate'] >= 0
-
-          tickers = [s['ticker'] for s in data['stocks']]
-          ranks = [s['rank'] for s in data['stocks']]
-          assert len(tickers) == len(set(tickers)), 'duplicate stock ticker'
-          assert len(ranks) == len(set(ranks)), 'duplicate rank'
-          assert all(0 <= s['score'] <= 100 for s in data['stocks'])
-          assert all(s['grade'] in {'A', 'B', 'C', 'D'} for s in data['stocks'])
-
-          model = data['rotation_model']
-          allocations = model['allocations']
-          total_weight = sum(float(a['weight']) for a in allocations)
-          assert abs(total_weight - 100) < 1e-9, f'allocation sum={total_weight}'
-          valid_tickers = set(tickers) | {'CASH'}
-          assert all(a['ticker'] in valid_tickers for a in allocations), 'unknown allocation ticker'
-
-          cash = next((float(a['weight']) for a in allocations if a['ticker'] == 'CASH'), None)
-          assert cash is not None, 'CASH allocation missing'
-          assert cash >= model['guardrails']['cash_floor_pct'], 'cash below floor'
-          for allocation in allocations:
-              if allocation['ticker'] != 'CASH':
-                  assert allocation['weight'] <= model['guardrails']['max_single_stock_pct'], 'single-stock limit exceeded'
-
-          snapshots = history_index.get('snapshots', [])
-          assert snapshots, 'history index is empty'
-          dates = [entry['date'] for entry in snapshots]
-          assert dates == sorted(set(dates)), 'history dates must be unique and sorted'
-          assert history_index['latest'] == dates[-1], 'history latest does not match final snapshot date'
-
-          for entry in snapshots:
-              path = root / entry['path']
-              assert path.exists(), f'missing snapshot: {path}'
-              snapshot = json.loads(path.read_text())
-              assert snapshot['meta']['as_of'] == entry['date'], f'date mismatch: {path}'
-              assert all(0 <= s['score'] <= 100 for s in snapshot.get('stocks', []))
-
-          print(f"Validated {len(data['stocks'])} Alpha candidates and {len(snapshots)} history snapshots")
-          PY
+      - name: Decision-engine invariants
+        run: python scripts/validate.py
+      - name: Performance dataset consistency
+        run: python scripts/rebuild_performance.py --check
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -100,17 +54,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
