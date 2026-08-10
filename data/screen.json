@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": 2,
     "as_of": "2026-08-10",
-    "generated_at": "2026-08-10T13:47:26+08:00",
+    "generated_at": "2026-08-10T13:50:30+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx current common-stock issuer universe; non-financial discovery screen.",
     "promotion_enabled_by_market": {
@@ -48,7 +48,12 @@
         "UnifiedBusinessNo.",
         "WebAddress"
       ],
-      "retry_policy": "4 attempts, identity encoding, connection close"
+      "source_used": "TPEX_JSON",
+      "source_priority": [
+        "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+        "https://mopsfin.twse.com.tw/opendata/t187ap03_O.csv"
+      ],
+      "retry_policy": "4 attempts per source, identity encoding, connection close"
     }
   },
   "rules": {
