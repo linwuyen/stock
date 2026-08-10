@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Taiwan Alpha Selection",
+    "as_of": "2026-08-10",
+    "market_data_as_of": "2026-08-07",
+    "cadence": "weekly",
+    "next_review": "2026-08-17",
+    "benchmark": "TSMC 3000 rotation event",
+    "note": "Seed baseline. Weekly reviews must refresh first-party data before changing rank or action."
+  },
+  "tsmc": {
+    "ticker": "2330",
+    "name": "台積電",
+    "reference_price": 2370,
+    "reference_price_date": "2026-08-07",
+    "rotation_trigger": 3000,
+    "trigger_action": "Re-run the full Alpha ranking with current data; do not rotate automatically."
+  },
+  "methodology": {
+    "score_max": 100,
+    "buy_gate": 75,
+    "weights": {
+      "earnings_acceleration": 25,
+      "revenue_quality": 15,
+      "valuation": 25,
+      "structural_catalyst": 15,
+      "balance_sheet_cash_flow": 10,
+      "circle_of_competence": 10
+    }
+  },
+  "stocks": [
+    {
+      "rank": 1,
+      "ticker": "2301",
+      "name": "光寶科",
+      "score": 82,
+      "grade": "A",
+      "action": "BUY CANDIDATE",
+      "pe_ttm": 28.89,
+      "earnings_trend": "UP",
+      "valuation": "FAIR",
+      "thesis": "AI Power、BBU、Power Shelf 與 HVDC 需求若持續轉成營益率與 EPS，市場仍可能低估獲利結構改善。",
+      "risk": "AI 電源成長失速、毛利/營益率回落，或 HVDC 導入延後。",
+      "next_check": "最新月營收、下一季 EPS/營益率與 Power Shelf/HVDC 進度"
+    },
+    {
+      "rank": 2,
+      "ticker": "2376",
+      "name": "技嘉",
+      "score": 79,
+      "grade": "A",
+      "action": "BUY CANDIDATE",
+      "pe_ttm": 16.07,
+      "earnings_trend": "UP",
+      "valuation": "ATTRACTIVE",
+      "thesis": "AI Server 高成長與相對低估值形成成長/估值錯配，前提是營收能持續轉成 EPS 與現金流。",
+      "risk": "Server 營收高增但毛利率、營益率或現金流無法同步改善。",
+      "next_check": "下一季 EPS、毛利率、營益率與營業現金流"
+    },
+    {
+      "rank": 3,
+      "ticker": "2382",
+      "name": "廣達",
+      "score": 76,
+      "grade": "A",
+      "action": "BUY CANDIDATE",
+      "pe_ttm": 14.98,
+      "earnings_trend": "UP",
+      "valuation": "ATTRACTIVE",
+      "thesis": "AI Server 營收成長極強且估值不高；真正的 Alpha 關鍵是 EPS 成長追上營收成長。",
+      "risk": "低毛利 AI Server 拉高營收卻無法提高 EPS/FCF。",
+      "next_check": "下一季 EPS 成長率、毛利率與自由現金流"
+    },
+    {
+      "rank": 4,
+      "ticker": "2451",
+      "name": "創見",
+      "score": 70,
+      "grade": "B",
+      "action": "WATCH",
+      "pe_ttm": 5.17,
+      "earnings_trend": "UP",
+      "valuation": "CYCLICAL",
+      "thesis": "記憶體景氣與庫存利益帶來高 Beta 盈餘彈性，但必須以 normalized EPS 而非 peak trailing EPS 估值。",
+      "risk": "記憶體價格反轉導致毛利率與 EPS 快速均值回歸。",
+      "next_check": "DRAM/NAND 價格、庫存、毛利率與 normalized EPS"
+    },
+    {
+      "rank": 5,
+      "ticker": "3515",
+      "name": "華擎",
+      "score": 67,
+      "grade": "B",
+      "action": "WATCH",
+      "pe_ttm": 13.73,
+      "earnings_trend": "MIXED",
+      "valuation": "ATTRACTIVE",
+      "thesis": "估值不高且 Server/AI 業務具上行選擇權，但目前持續性證據仍不足。",
+      "risk": "AI/Server 貢獻未能連續反映在 EPS，成長只停留在單月營收。",
+      "next_check": "Q2/Q3 Server 營收占比、EPS 與營益率"
+    },
+    {
+      "rank": 6,
+      "ticker": "3081",
+      "name": "聯亞",
+      "score": 65,
+      "grade": "B",
+      "action": "WATCH",
+      "pe_ttm": null,
+      "earnings_trend": "UP",
+      "valuation": "VERIFY",
+      "thesis": "高速光通訊需求具結構性成長，但必須以最新財報重新估值，避免把高成長直接等同好買點。",
+      "risk": "估值已過度反映未來成長，或新產品/客戶放量低於預期。",
+      "next_check": "2026-08-12 Q2 財報/法說與最新 forward valuation"
+    }
+  ],
+  "watchlist": [
+    {"ticker": "2383", "name": "台光電", "reason": "高成長但估值要求高"},
+    {"ticker": "2360", "name": "致茂", "reason": "品質佳但估值偏高"},
+    {"ticker": "3450", "name": "聯鈞", "reason": "高成長、高估值"},
+    {"ticker": "6442", "name": "光聖", "reason": "高成長、高估值"},
+    {"ticker": "2308", "name": "台達電", "reason": "優質但估值偏高"},
+    {"ticker": "2368", "name": "金像電", "reason": "AI PCB 成長強，需等待更好估值"}
+  ]
+}
