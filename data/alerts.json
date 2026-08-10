@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "last_evaluated_at": null,
+  "active_buy_candidates": [],
+  "notifications": [],
+  "policy": {
+    "notify_only_on_transition_into_buy_candidate": true,
+    "notify_on_reentry_after_exit": true,
+    "dedupe_key": "ticker|buy_entry_sequence",
+    "never_notify_for_screen_only": true,
+    "never_execute_trade": true
+  }
+}
