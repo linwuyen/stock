@@ -20,7 +20,10 @@ assert "Alpha Engine" in rules.get("profitability_proxy_boundary", "")
 ranking = rules.get("ranking", {})
 enforce_outlier = "growth_winsorization_pct" in ranking
 enforce_financial = "financial_exclusion" in rules
+market_cap_rule = rules.get("market_cap", {})
+enforce_market_cap = market_cap_rule.get("mode") == "HARD_DERIVED"
 winsor = float(ranking.get("growth_winsorization_pct", 500))
+min_market_cap = float(market_cap_rule.get("min_twd", 0))
 
 candidates = screen.get("candidates", [])
 priorities = []
@@ -35,6 +38,14 @@ for item in candidates:
     if enforce_financial:
         assert industry not in FINANCIAL_INDUSTRY_CODES, f"financial industry code leaked into screen: {item.get('ticker')} {item.get('name')}"
         assert not any(word in haystack for word in FINANCIAL_WORDS), f"financial issuer leaked into screen: {item.get('ticker')} {item.get('name')}"
+
+    if enforce_market_cap:
+        cap = item.get("market_cap_twd")
+        assert cap is not None and float(cap) >= min_market_cap, f"market-cap gate failed: {item.get('ticker')} {cap}"
+        assert item.get("market_cap_source") in {"DERIVED_ISSUED_SHARES_X_CLOSE", "DIRECT_OFFICIAL_FIELD"}
+        if item.get("market_cap_source") == "DERIVED_ISSUED_SHARES_X_CLOSE":
+            assert item.get("issued_shares") is not None and float(item["issued_shares"]) > 0
+            assert "MARKET_CAP_DERIVED_OFFICIAL_INPUTS" in item.get("flags", [])
 
     basis = item.get("profitability_basis")
     if basis == "POSITIVE_TTM_PE_PROXY":
@@ -54,4 +65,4 @@ for item in candidates:
 
 assert priorities == sorted(priorities, reverse=True), "Top 50 must be ordered by robust screen_priority"
 assert len({round(x, 4) for x in priorities[:10]}) > 1 or len(priorities) <= 1, "screen_priority unexpectedly saturated across top names"
-print(f"screen priority PASS: {len(candidates)} candidates; financial={enforce_financial}; outlier={enforce_outlier}")
+print(f"screen priority PASS: {len(candidates)} candidates; financial={enforce_financial}; outlier={enforce_outlier}; market_cap={enforce_market_cap}")

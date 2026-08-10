@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo("Asia/Taipei")
 NOW = datetime.now(TZ)
 TODAY = NOW.date().isoformat()
-UA = "linwuyen-alpha-engine/4.4 (+https://github.com/linwuyen/stock)"
+UA = "linwuyen-alpha-engine/4.5 (+https://github.com/linwuyen/stock)"
 
 TWSE = "https://openapi.twse.com.tw/v1"
 TPEX = "https://www.tpex.org.tw/openapi/v1"
@@ -37,8 +37,10 @@ SOURCES = {
 }
 
 FINANCIAL_WORDS = ("金融", "銀行", "保險", "證券", "票券", "金控", "投信", "期貨")
+FINANCIAL_INDUSTRY_CODES = {"17"}
 CODE_RE = re.compile(r"^\d{4}$")
 GROWTH_WINSOR_PCT = 500.0
+MIN_MARKET_CAP_TWD = 10_000_000_000.0
 
 
 def load(path, default):
@@ -116,12 +118,30 @@ def name_of(row):
 
 
 def industry_of(row):
-    return text(pick(row, ["產業別", "產業類別", "Industry", "IndustryName", "產業別名稱"]))
+    return text(pick(row, ["產業別", "產業類別", "Industry", "IndustryName", "產業別名稱", "SecuritiesIndustryCode"]))
+
+
+def issued_shares_of(row):
+    return num(pick(row, [
+        "IssueShares",
+        "IssuedShares",
+        "已發行普通股數或TDR原股發行股數",
+        "已發行普通股數",
+        "發行股數",
+    ]))
 
 
 def is_financial(industry, name=""):
+    industry = str(industry or "").strip()
+    if industry in FINANCIAL_INDUSTRY_CODES:
+        return True
     haystack = f"{industry} {name}"
     return any(word in haystack for word in FINANCIAL_WORDS)
+
+
+def is_tdr(name):
+    upper = str(name or "").upper()
+    return "TDR" in upper or "-DR" in upper
 
 
 def period_key(row):
@@ -267,7 +287,7 @@ def scan_market(market, datasets, history, append_liquidity):
         industry = industry_of(profile)
         quote, rev, inc, val = quotes.get(code, {}), revenue.get(code, {}), income.get(code, {}), valuation.get(code, {})
         name = name_of(profile) or name_of(quote) or name_of(rev) or code
-        if not CODE_RE.match(code) or is_financial(industry, name):
+        if not CODE_RE.match(code) or is_financial(industry, name) or is_tdr(name):
             continue
         price = num(pick(quote, ["ClosingPrice", "Close", "收盤價", "最後成交價", "收盤"]))
         turnover = num(pick(quote, ["TradeValue", "TransactionAmount", "成交金額", "成交值", "TradeAmount"]))
@@ -275,18 +295,26 @@ def scan_market(market, datasets, history, append_liquidity):
         rev_yoy = num(pick(rev, ["營業收入-去年同月增減(%)", "營業收入去年同月增減(%)", "去年同月增減(%)", "RevenueYoY", "YoY(%)"]))
         cum_rev_yoy = num(pick(rev, ["累計營業收入-前期比較增減(%)", "累計營業收入前期比較增減(%)", "累計年增率(%)", "CumulativeRevenueYoY"]))
         eps = num(pick(inc, ["基本每股盈餘（元）", "基本每股盈餘(元)", "基本每股盈餘", "EPS", "BasicEarningsPerShare"]))
-        market_cap = num(pick(quote, ["MarketValue", "MarketCap", "市值"])) or num(pick(profile, ["MarketValue", "MarketCap", "市值"]))
+        issued_shares = issued_shares_of(profile)
+        direct_market_cap = num(pick(quote, ["MarketValue", "MarketCap", "市值"])) or num(pick(profile, ["MarketValue", "MarketCap", "市值"]))
+        if price is not None and issued_shares is not None and issued_shares > 0:
+            market_cap = price * issued_shares
+            market_cap_source = "DERIVED_ISSUED_SHARES_X_CLOSE"
+        else:
+            market_cap = direct_market_cap
+            market_cap_source = "DIRECT_OFFICIAL_FIELD" if direct_market_cap is not None else None
         series, median_turnover = update_liquidity(history, market, code, turnover, append_liquidity)
         observations = len(series)
 
         liquidity_pass = (median_turnover or 0) >= 20_000_000 if observations >= 10 else (turnover or 0) >= 5_000_000
+        market_cap_pass = market_cap is not None and market_cap >= MIN_MARKET_CAP_TWD
         revenue_pass = rev_yoy is not None and rev_yoy >= 15
         earnings_pass, earnings_basis = profitability_basis(eps, pe, rev_yoy)
         valuation_pass = pe is None or pe <= 35 or (rev_yoy is not None and rev_yoy >= 35)
-        if not (liquidity_pass and revenue_pass and earnings_pass and valuation_pass):
+        if not (liquidity_pass and market_cap_pass and revenue_pass and earnings_pass and valuation_pass):
             continue
 
-        data_quality = quality_score([price, turnover, pe, rev_yoy, eps])
+        data_quality = quality_score([price, turnover, market_cap, pe, rev_yoy, eps])
         screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + data_quality, 2)
         priority = continuous_priority(rev_yoy, cum_rev_yoy, pe, eps, earnings_basis, median_turnover, turnover, observations, data_quality)
         priority_rev_yoy = min(max(0.0, float(rev_yoy or 0)), GROWTH_WINSOR_PCT)
@@ -301,7 +329,7 @@ def scan_market(market, datasets, history, append_liquidity):
             if earnings_basis == "HIGH_GROWTH_EARNINGS_UNVERIFIED": flags.append("EARNINGS_VERIFY")
         if (rev_yoy is not None and rev_yoy > GROWTH_WINSOR_PCT) or (cum_rev_yoy is not None and cum_rev_yoy > GROWTH_WINSOR_PCT):
             flags.append("GROWTH_BASE_EFFECT_OUTLIER")
-        if market_cap is None: flags.append("MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED")
+        if market_cap_source == "DERIVED_ISSUED_SHARES_X_CLOSE": flags.append("MARKET_CAP_DERIVED_OFFICIAL_INPUTS")
         candidates.append({
             "ticker": code,
             "name": name,
@@ -317,11 +345,13 @@ def scan_market(market, datasets, history, append_liquidity):
             "pe_ttm": pe,
             "latest_reported_eps": eps,
             "profitability_basis": earnings_basis,
+            "issued_shares": issued_shares,
+            "market_cap_twd": round(market_cap, 2),
+            "market_cap_source": market_cap_source,
             "latest_daily_turnover_twd": turnover,
             "median_turnover_twd": round(median_turnover, 2) if median_turnover is not None else None,
             "liquidity_observations": observations,
             "liquidity_mode": "MEDIAN_20D" if observations >= 10 else "BOOTSTRAP_LATEST_DAY",
-            "market_cap_twd": market_cap,
             "data_quality_score": data_quality,
             "flags": flags,
             "status": "SCREEN_PASS",
@@ -410,7 +440,16 @@ def main():
         },
         "rules": {
             "exclude_sectors": ["Financials"],
-            "financial_exclusion": "industry metadata OR issuer-name keywords: 金融/銀行/保險/證券/票券/金控/投信/期貨",
+            "financial_exclusion": "industry code 17 OR issuer-name keywords: 金融/銀行/保險/證券/票券/金控/投信/期貨",
+            "exclude_instruments": ["TDR"],
+            "min_market_cap_twd_billion": 10,
+            "market_cap": {
+                "mode": "HARD_DERIVED",
+                "min_twd": MIN_MARKET_CAP_TWD,
+                "primary_formula": "official close × official issued common shares",
+                "fallback": "direct official market-cap field when issued shares is unavailable",
+                "reason": "TWSE and TPEx company basic datasets both expose issued common shares, so the 10B gate can be applied symmetrically."
+            },
             "revenue_yoy_pct_min": 15,
             "ttm_pe_soft_cap": 35,
             "high_growth_pe_exception_revenue_yoy_pct": 35,
@@ -430,12 +469,8 @@ def main():
                 "window_observations": 20,
                 "dedupe": "full-market quote fingerprint; unchanged market snapshots do not add observations",
             },
-            "market_cap": {
-                "mode": "SOFT_ONLY",
-                "reason": "No symmetric authoritative free market-cap field is assumed across TWSE and TPEx. Do not create cross-market selection bias by hard-filtering only one market.",
-            },
             "screen_is_not_buy_gate": True,
-            "research_funnel": "Full TWSE/TPEx issuer universe → quantitative screen → Top 50 → deep research Top 10 + incumbent VERIFY/BUY → Alpha Engine Buy Gate",
+            "research_funnel": "Full TWSE/TPEx common-stock issuer universe → non-financial + >=10B market cap + liquidity/growth/earnings/valuation screen → Top 50 → diverse Deep Research Top 10 + incumbent VERIFY/BUY → Alpha Engine Buy Gate",
             "universe_policy": "Deep research queue is Top 10 screen candidates plus incumbent BUY/VERIFY names; screen ranking never directly creates BUY CANDIDATE.",
         },
         "source_health": source_health,
@@ -444,12 +479,13 @@ def main():
         "deep_research_queue": deep,
         "incumbent_research": incumbent,
         "notes": [
-            "Market-cap hard filtering is intentionally disabled until a symmetric authoritative field is available for both markets.",
+            "Market cap is derived symmetrically from official close and official issued common shares for TWSE/TPEx; minimum is NT$10B.",
+            "TDRs are excluded because original-share count × TDR price is not a clean common-stock market-cap comparison.",
             "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
             "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
             "A missing row in the current income endpoint does not automatically exclude a profitable issuer from discovery when official TTM PE is positive; deep research must still verify the actual filed earnings before Alpha scoring.",
             "screen_priority is non-saturating but winsorizes extreme monthly/cumulative growth at 500% and applies a base-effect penalty so lumpy or near-zero comparison periods cannot dominate research priority.",
-            "Financial issuer exclusion uses both industry metadata and issuer-name keywords because some official industry fields are numeric codes."
+            "Financial issuer exclusion uses industry code 17 plus issuer-name keywords."
         ],
     }
     history["schema_version"] = 1

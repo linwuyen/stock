@@ -60,20 +60,23 @@ Evidence quality 30、Forecast visibility 25、Circle of competence 20、Thesis 
 
 漏斗：
 
-**TWSE + TPEx issuer universe → non-financial → growth / earnings / valuation / liquidity → Top 50 → Deep Research Top 10 + incumbent BUY/VERIFY → Alpha Engine**
+**TWSE + TPEx common-stock issuer universe → non-financial → market cap ≥ NT$10B → growth / earnings / valuation / liquidity → Top 50 → Deep Research Top 10 + incumbent BUY/VERIFY → Alpha Engine**
 
 重要邊界：
 
 - **Screen 永遠不能直接產生 BUY_CANDIDATE**；只負責 discovery。
 - 任一市場必要官方來源失敗時，該市場 `promotion = OFF`，舊資料只能 `STALE_CARRYOVER`。
-- Market cap 暫不做跨市場 hard filter，因為在未有對稱官方欄位前硬套會製造 TWSE/TPEx selection bias；目前只作 soft metadata。
+- TWSE 與 TPEx 公司基本資料都提供已發行普通股數；市值以 **官方收盤價 × 官方已發行普通股數** 對稱推導，恢復 **NT$10B hard gate**。若 issued shares 缺漏才退回直接官方市值欄位。
+- TDR 排除，因 TDR 價格 × 原股發行股數不是乾淨的普通股市值比較。
+- 金融保險業使用 **industry code 17 + 公司名稱關鍵字** 雙層排除，避免官方 numeric industry code 讓證券/保險公司漏進 non-financial screen。
 - 流動性最終使用 20 個「不同市場快照」的 turnover median；前 10 個 observation 前明確標記 bootstrap。
 - 使用全市場 quote fingerprint 去重，國定假日或重複執行不會灌入假的新 liquidity observation。
 - Top 50 保留 raw discovery；Deep Research Top 10 先做產業分散，同一 industry cluster 第一輪最多 2 檔，再按排名補滿。
 - TPEx 產業 enrichment 採 TPEx JSON 優先、官方 MOPS CSV fallback，避免單一路徑截斷使產業分散失效。
 - 最新損益表 endpoint 在任一時點可能只涵蓋當批新申報公司。若某公司本批沒有 EPS row，但官方 TTM PE > 0，Screen 可用 `POSITIVE_TTM_PE_PROXY` 作**純 discovery 盈利 proxy**；必須加 `EARNINGS_FILING_NOT_IN_CURRENT_DATASET`，Deep Research 仍要回到正式 filing 驗證盈餘，proxy 永遠不能滿足 Alpha Buy Gate。
-- 排名改用非飽和 `screen_priority`：log-scaled revenue growth + 累計成長一致性 + valuation + profitability + liquidity + data quality - cycle / missing-EPS penalties。舊 `screen_score` 僅保留作可解釋 secondary metric，不再讓多檔極端成長股一起卡在 100 分並靠單月 YoY 排序。
-- 極端 Revenue YoY + 低 PE + 正 EPS 會加 `CYCLE_EXTREME_GROWTH_LOW_PE`；它只要求 normalized-cycle review，不直接排除候選，也不代表可買。
+- 排名使用 `screen_priority`：growth、累計成長一致性、valuation、profitability、liquidity、data quality，再扣 cycle / missing-EPS / base-effect penalty。舊 `screen_score` 僅保留作 secondary explainability。
+- 單月或累計 YoY 超過 500% 時，priority input winsorize 到 500%，並加 `GROWTH_BASE_EFFECT_OUTLIER`；保留原始數值供 audit，避免低基期或營建交屋認列把研究排序無限放大。
+- 極端 Revenue YoY + 低 PE + 正 EPS 另加 `CYCLE_EXTREME_GROWTH_LOW_PE`；它只要求 normalized-cycle review，不直接排除候選，也不代表可買。
 
 `.github/workflows/market-scan.yml` 每個工作日台灣時間約 14:20 執行；scanner 或 workflow 合併 `main` 時也會立即跑一次。
 
@@ -134,7 +137,10 @@ Pages PR / push 必須先通過：
 - Bear/Base/Bull FV 一致性
 - Full-market screen schema、Top50/Top10、promotion fail-closed
 - Screen 不得寫 portfolio action
-- Live screen 必須按非飽和 `screen_priority` 排序；TTM PE profitability proxy 必須帶明確 flag 且不能冒充 reported EPS
+- Live screen 必須按 robust `screen_priority` 排序；TTM PE profitability proxy 必須帶明確 flag 且不能冒充 reported EPS
+- Financial industry code / name leakage 必須為 0
+- >500% growth outlier 必須被 flag，priority input 不得超過 winsor limit
+- `HARD_DERIVED` market-cap 模式下，每檔候選必須 ≥ NT$10B 且具有官方 issued-shares/close 或直接官方市值 provenance
 - Alerts active BUY set 與 Alpha Engine 一致，notification sequence 不重複
 - Event index 唯一且所有 event file 存在
 - History index/snapshot 一致
