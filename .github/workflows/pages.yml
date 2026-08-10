@@ -6,7 +6,7 @@ on:
     paths:
       - 'index.html'
       - 'styles.css'
-      - 'app.js'
+      - '*.js'
       - 'data/**'
       - '.github/workflows/pages.yml'
   push:
@@ -14,7 +14,7 @@ on:
     paths:
       - 'index.html'
       - 'styles.css'
-      - 'app.js'
+      - '*.js'
       - 'data/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -36,7 +36,9 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Validate frontend syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check simulator-input-guard.js
 
       - name: Validate datasets
         run: |
