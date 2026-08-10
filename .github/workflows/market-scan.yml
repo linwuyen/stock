@@ -29,8 +29,12 @@ jobs:
       - name: Run official TWSE + TPEx scanner
         run: python scripts/scan_market.py
 
+      - name: Sync alert state in validation workspace
+        run: python scripts/sync_alert_state.py
+
       - name: Validate repository invariants
         run: |
+          python -m py_compile scripts/*.py
           python scripts/validate.py
           python scripts/rebuild_performance.py --check
 
