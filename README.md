@@ -1,5 +1,7 @@
 # Taiwan Alpha Stock Selection
 
+**Live Dashboard:** https://linwuyen.github.io/stock/
+
 這個 repository 用來維護台股 Alpha 選股框架、每週研究結果與 GitHub Pages 儀表板。
 
 目標不是預測短期漲跌，而是在可承受風險下，尋找「市場預期低於基本面實際改善速度」的股票，並以固定規則持續驗證 thesis。
