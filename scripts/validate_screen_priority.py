@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 screen = json.loads((ROOT / "data/screen.json").read_text(encoding="utf-8"))
 FINANCIAL_WORDS = ("金融", "銀行", "保險", "證券", "票券", "金控", "投信", "期貨")
+FINANCIAL_INDUSTRY_CODES = {"17"}
 
 rules = screen.get("rules", {})
 status = screen.get("meta", {}).get("status")
@@ -26,7 +27,9 @@ for item in candidates:
     assert priority is not None, f"{item.get('ticker')} missing screen_priority"
     priorities.append(float(priority))
 
-    haystack = f"{item.get('industry','')} {item.get('name','')}"
+    industry = str(item.get("industry", "")).strip()
+    haystack = f"{industry} {item.get('name','')}"
+    assert industry not in FINANCIAL_INDUSTRY_CODES, f"financial industry code leaked into screen: {item.get('ticker')} {item.get('name')}"
     assert not any(word in haystack for word in FINANCIAL_WORDS), f"financial issuer leaked into screen: {item.get('ticker')} {item.get('name')}"
 
     basis = item.get("profitability_basis")
