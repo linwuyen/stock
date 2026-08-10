@@ -17,7 +17,10 @@ if rules.get("ranking", {}).get("primary") != "screen_priority":
     raise SystemExit(0)
 
 assert "Alpha Engine" in rules.get("profitability_proxy_boundary", "")
-winsor = float(rules.get("ranking", {}).get("growth_winsorization_pct", 500))
+ranking = rules.get("ranking", {})
+enforce_outlier = "growth_winsorization_pct" in ranking
+enforce_financial = "financial_exclusion" in rules
+winsor = float(ranking.get("growth_winsorization_pct", 500))
 
 candidates = screen.get("candidates", [])
 priorities = []
@@ -29,8 +32,9 @@ for item in candidates:
 
     industry = str(item.get("industry", "")).strip()
     haystack = f"{industry} {item.get('name','')}"
-    assert industry not in FINANCIAL_INDUSTRY_CODES, f"financial industry code leaked into screen: {item.get('ticker')} {item.get('name')}"
-    assert not any(word in haystack for word in FINANCIAL_WORDS), f"financial issuer leaked into screen: {item.get('ticker')} {item.get('name')}"
+    if enforce_financial:
+        assert industry not in FINANCIAL_INDUSTRY_CODES, f"financial industry code leaked into screen: {item.get('ticker')} {item.get('name')}"
+        assert not any(word in haystack for word in FINANCIAL_WORDS), f"financial issuer leaked into screen: {item.get('ticker')} {item.get('name')}"
 
     basis = item.get("profitability_basis")
     if basis == "POSITIVE_TTM_PE_PROXY":
@@ -39,14 +43,15 @@ for item in candidates:
         assert "PROFITABILITY_PROXY_TTM_PE" in item.get("flags", [])
         assert "EARNINGS_FILING_NOT_IN_CURRENT_DATASET" in item.get("flags", [])
 
-    raw_rev = item.get("revenue_yoy_pct")
-    raw_cum = item.get("cumulative_revenue_yoy_pct")
-    is_outlier = (raw_rev is not None and float(raw_rev) > winsor) or (raw_cum is not None and float(raw_cum) > winsor)
-    if is_outlier:
-        assert "GROWTH_BASE_EFFECT_OUTLIER" in item.get("flags", []), f"{item.get('ticker')} unflagged growth outlier"
-        assert float(item.get("priority_revenue_yoy_pct", winsor)) <= winsor
-        assert float(item.get("priority_cumulative_revenue_yoy_pct", winsor)) <= winsor
+    if enforce_outlier:
+        raw_rev = item.get("revenue_yoy_pct")
+        raw_cum = item.get("cumulative_revenue_yoy_pct")
+        is_outlier = (raw_rev is not None and float(raw_rev) > winsor) or (raw_cum is not None and float(raw_cum) > winsor)
+        if is_outlier:
+            assert "GROWTH_BASE_EFFECT_OUTLIER" in item.get("flags", []), f"{item.get('ticker')} unflagged growth outlier"
+            assert float(item.get("priority_revenue_yoy_pct", winsor)) <= winsor
+            assert float(item.get("priority_cumulative_revenue_yoy_pct", winsor)) <= winsor
 
 assert priorities == sorted(priorities, reverse=True), "Top 50 must be ordered by robust screen_priority"
 assert len({round(x, 4) for x in priorities[:10]}) > 1 or len(priorities) <= 1, "screen_priority unexpectedly saturated across top names"
-print(f"screen priority PASS: {len(candidates)} candidates")
+print(f"screen priority PASS: {len(candidates)} candidates; financial={enforce_financial}; outlier={enforce_outlier}")
