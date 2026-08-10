@@ -27,7 +27,14 @@ jobs:
           fetch-depth: 0
 
       - name: Run official TWSE + TPEx scanner
-        run: python scripts/scan_market.py
+        id: scanner
+        shell: bash
+        run: |
+          set +e
+          python scripts/scan_market.py
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
 
       - name: Sync alert state in validation workspace
         run: python scripts/sync_alert_state.py
@@ -38,14 +45,20 @@ jobs:
           python scripts/validate.py
           python scripts/rebuild_performance.py --check
 
-      - name: Commit scanner state
+      - name: Commit scanner state and diagnostics
         run: |
-          if git diff --quiet -- data/screen.json data/liquidity-history.json; then
+          if ! git diff --quiet -- data/screen.json data/liquidity-history.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add data/screen.json data/liquidity-history.json
+            git commit -m 'data: refresh full-market alpha screen'
+            git push
+          else
             echo 'No scanner changes.'
-            exit 0
           fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/screen.json data/liquidity-history.json
-          git commit -m 'data: refresh full-market alpha screen'
-          git push
+
+      - name: Fail workflow after diagnostics are persisted
+        if: steps.scanner.outputs.exit_code != '0'
+        run: |
+          echo "Scanner exited with code ${{ steps.scanner.outputs.exit_code }}. Diagnostic source_health was persisted first."
+          exit 1
