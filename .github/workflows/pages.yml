@@ -46,7 +46,9 @@ jobs:
       - name: Evaluate alert transition state in validation workspace
         run: python scripts/sync_alert_state.py
       - name: Decision-engine invariants
-        run: python scripts/validate.py
+        run: |
+          python scripts/validate.py
+          python scripts/validate_screen_priority.py
       - name: Performance dataset consistency
         run: python scripts/rebuild_performance.py --check
 

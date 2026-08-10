@@ -10,6 +10,7 @@ on:
     paths:
       - 'scripts/scan_market.py'
       - 'scripts/refine_screen.py'
+      - 'scripts/validate_screen_priority.py'
       - '.github/workflows/market-scan.yml'
 
 permissions:
@@ -48,6 +49,7 @@ jobs:
         run: |
           python -m py_compile scripts/*.py
           python scripts/validate.py
+          python scripts/validate_screen_priority.py
           python scripts/rebuild_performance.py --check
 
       - name: Commit scanner state and diagnostics

@@ -69,8 +69,13 @@ Evidence quality 30、Forecast visibility 25、Circle of competence 20、Thesis 
 - Market cap 暫不做跨市場 hard filter，因為在未有對稱官方欄位前硬套會製造 TWSE/TPEx selection bias；目前只作 soft metadata。
 - 流動性最終使用 20 個「不同市場快照」的 turnover median；前 10 個 observation 前明確標記 bootstrap。
 - 使用全市場 quote fingerprint 去重，國定假日或重複執行不會灌入假的新 liquidity observation。
+- Top 50 保留 raw discovery；Deep Research Top 10 先做產業分散，同一 industry cluster 第一輪最多 2 檔，再按排名補滿。
+- TPEx 產業 enrichment 採 TPEx JSON 優先、官方 MOPS CSV fallback，避免單一路徑截斷使產業分散失效。
+- 最新損益表 endpoint 在任一時點可能只涵蓋當批新申報公司。若某公司本批沒有 EPS row，但官方 TTM PE > 0，Screen 可用 `POSITIVE_TTM_PE_PROXY` 作**純 discovery 盈利 proxy**；必須加 `EARNINGS_FILING_NOT_IN_CURRENT_DATASET`，Deep Research 仍要回到正式 filing 驗證盈餘，proxy 永遠不能滿足 Alpha Buy Gate。
+- 排名改用非飽和 `screen_priority`：log-scaled revenue growth + 累計成長一致性 + valuation + profitability + liquidity + data quality - cycle / missing-EPS penalties。舊 `screen_score` 僅保留作可解釋 secondary metric，不再讓多檔極端成長股一起卡在 100 分並靠單月 YoY 排序。
+- 極端 Revenue YoY + 低 PE + 正 EPS 會加 `CYCLE_EXTREME_GROWTH_LOW_PE`；它只要求 normalized-cycle review，不直接排除候選，也不代表可買。
 
-`.github/workflows/market-scan.yml` 每個工作日台灣時間約 14:20 執行；scanner 或 workflow 首次合併 `main` 時也會立即跑一次。
+`.github/workflows/market-scan.yml` 每個工作日台灣時間約 14:20 執行；scanner 或 workflow 合併 `main` 時也會立即跑一次。
 
 ## 6. Valuation / Evidence / Freshness
 
@@ -129,6 +134,7 @@ Pages PR / push 必須先通過：
 - Bear/Base/Bull FV 一致性
 - Full-market screen schema、Top50/Top10、promotion fail-closed
 - Screen 不得寫 portfolio action
+- Live screen 必須按非飽和 `screen_priority` 排序；TTM PE profitability proxy 必須帶明確 flag 且不能冒充 reported EPS
 - Alerts active BUY set 與 Alpha Engine 一致，notification sequence 不重複
 - Event index 唯一且所有 event file 存在
 - History index/snapshot 一致

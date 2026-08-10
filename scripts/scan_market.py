@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo("Asia/Taipei")
 NOW = datetime.now(TZ)
 TODAY = NOW.date().isoformat()
-UA = "linwuyen-alpha-engine/4.0 (+https://github.com/linwuyen/stock)"
+UA = "linwuyen-alpha-engine/4.3 (+https://github.com/linwuyen/stock)"
 
 TWSE = "https://openapi.twse.com.tw/v1"
 TPEX = "https://www.tpex.org.tw/openapi/v1"
@@ -200,6 +200,43 @@ def quality_score(fields):
     return round(10 * present / len(fields), 2)
 
 
+def profitability_basis(eps, pe, revenue_yoy):
+    """Discovery-only profitability gate. Never substitutes for verified earnings in Alpha research."""
+    if eps is not None and eps > 0:
+        return True, "LATEST_REPORTED_EPS"
+    if pe is not None and pe > 0:
+        return True, "POSITIVE_TTM_PE_PROXY"
+    if revenue_yoy is not None and revenue_yoy >= 35:
+        return True, "HIGH_GROWTH_EARNINGS_UNVERIFIED"
+    return False, "NO_PROFITABILITY_SIGNAL"
+
+
+def continuous_priority(revenue_yoy, cumulative_yoy, pe, eps, profitability, median_turnover, latest_turnover, observations, data_quality):
+    """Non-saturating discovery priority. It ranks research attention, not expected return or Buy eligibility."""
+    rev = max(0.0, float(revenue_yoy or 0))
+    cumulative = max(0.0, float(cumulative_yoy or 0))
+    growth = 15.0 * math.log1p(rev / 15.0)
+    consistency = 7.0 * math.log1p(cumulative / 15.0)
+    if pe is None:
+        valuation = 4.0
+    elif pe <= 0:
+        valuation = 0.0
+    else:
+        valuation = 25.0 / (1.0 + pe / 20.0)
+    if eps is not None and eps > 0:
+        earnings = 8.0
+    elif profitability == "POSITIVE_TTM_PE_PROXY":
+        earnings = 5.0
+    elif profitability == "HIGH_GROWTH_EARNINGS_UNVERIFIED":
+        earnings = 2.0
+    else:
+        earnings = 0.0
+    liquidity = float(liquidity_score(median_turnover, latest_turnover, observations))
+    cycle_penalty = 10.0 if rev >= 100 and pe is not None and 0 < pe <= 12 else 0.0
+    missing_eps_penalty = 3.0 if eps is None else 0.0
+    return round(growth + consistency + valuation + earnings + liquidity + float(data_quality) - cycle_penalty - missing_eps_penalty, 4)
+
+
 def update_liquidity(history, market, code, turnover, append_snapshot):
     key = f"{market}:{code}"
     series = history.setdefault("series", {}).setdefault(key, [])
@@ -239,30 +276,36 @@ def scan_market(market, datasets, history, append_liquidity):
 
         liquidity_pass = (median_turnover or 0) >= 20_000_000 if observations >= 10 else (turnover or 0) >= 5_000_000
         revenue_pass = rev_yoy is not None and rev_yoy >= 15
-        earnings_pass = (eps is not None and eps > 0) or (rev_yoy is not None and rev_yoy >= 35)
+        earnings_pass, earnings_basis = profitability_basis(eps, pe, rev_yoy)
         valuation_pass = pe is None or pe <= 35 or (rev_yoy is not None and rev_yoy >= 35)
         if not (liquidity_pass and revenue_pass and earnings_pass and valuation_pass):
             continue
 
         data_quality = quality_score([price, turnover, pe, rev_yoy, eps])
         screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + data_quality, 2)
+        priority = continuous_priority(rev_yoy, cum_rev_yoy, pe, eps, earnings_basis, median_turnover, turnover, observations, data_quality)
         flags = []
         if observations < 10: flags.append("LIQUIDITY_BOOTSTRAP")
         if not append_liquidity: flags.append("NO_NEW_MARKET_SNAPSHOT")
         if pe is None: flags.append("VALUATION_VERIFY")
-        if eps is None: flags.append("EARNINGS_VERIFY")
+        if eps is None:
+            flags.append("EARNINGS_FILING_NOT_IN_CURRENT_DATASET")
+            if earnings_basis == "POSITIVE_TTM_PE_PROXY": flags.append("PROFITABILITY_PROXY_TTM_PE")
+            if earnings_basis == "HIGH_GROWTH_EARNINGS_UNVERIFIED": flags.append("EARNINGS_VERIFY")
         if market_cap is None: flags.append("MARKET_CAP_UNAVAILABLE_NOT_HARD_FILTERED")
         candidates.append({
             "ticker": code,
             "name": name,
             "market": market,
             "industry": industry,
+            "screen_priority": priority,
             "screen_score": screen_score,
             "reference_price": price,
             "revenue_yoy_pct": rev_yoy,
             "cumulative_revenue_yoy_pct": cum_rev_yoy,
             "pe_ttm": pe,
             "latest_reported_eps": eps,
+            "profitability_basis": earnings_basis,
             "latest_daily_turnover_twd": turnover,
             "median_turnover_twd": round(median_turnover, 2) if median_turnover is not None else None,
             "liquidity_observations": observations,
@@ -274,7 +317,7 @@ def scan_market(market, datasets, history, append_liquidity):
             "promotion_eligible": True,
         })
 
-    candidates.sort(key=lambda x: (-x["screen_score"], -(x.get("revenue_yoy_pct") or -999), x["ticker"]))
+    candidates.sort(key=lambda x: (-x["screen_priority"], -x["screen_score"], -(x.get("revenue_yoy_pct") or -999), x["ticker"]))
     for i, item in enumerate(candidates, 1): item["rank"] = i
     return candidates, coverage
 
@@ -313,6 +356,7 @@ def main():
                 history["market_state"][market] = {"fingerprint": fingerprint, "last_new_snapshot_date": TODAY}
             candidates, market_coverage = scan_market(market, fetched[market], history, append_liquidity=new_snapshot)
             market_coverage["new_market_snapshot"] = new_snapshot
+            market_coverage["income_coverage_ratio"] = round(market_coverage["income"] / market_coverage["profiles"], 4) if market_coverage["profiles"] else 0
             coverage[market] = market_coverage
             all_candidates.extend(candidates)
         else:
@@ -324,7 +368,7 @@ def main():
                 stale["flags"] = list(dict.fromkeys(stale.get("flags", []) + ["SOURCE_DEGRADED"]))
                 all_candidates.append(stale)
 
-    all_candidates.sort(key=lambda x: (not x.get("promotion_eligible", False), -float(x.get("screen_score") or 0), x.get("ticker", "")))
+    all_candidates.sort(key=lambda x: (not x.get("promotion_eligible", False), -float(x.get("screen_priority") or 0), -float(x.get("screen_score") or 0), x.get("ticker", "")))
     eligible = [x for x in all_candidates if x.get("promotion_eligible")]
     top50 = eligible[:50]
     for i, item in enumerate(top50, 1): item["rank"] = i
@@ -358,7 +402,14 @@ def main():
             "revenue_yoy_pct_min": 15,
             "ttm_pe_soft_cap": 35,
             "high_growth_pe_exception_revenue_yoy_pct": 35,
-            "earnings_gate": "positive latest reported EPS OR revenue YoY >= 35% with EARNINGS_VERIFY flag",
+            "earnings_gate": "positive latest reported EPS; if the current income dataset omits the issuer, positive official TTM PE may serve only as a discovery-level profitability proxy; very high growth without either remains EARNINGS_VERIFY",
+            "profitability_proxy_boundary": "POSITIVE_TTM_PE_PROXY can admit a name to Screen/Deep Research only. It never satisfies Alpha Engine earnings evidence or Buy Gate.",
+            "ranking": {
+                "primary": "screen_priority",
+                "secondary": "screen_score",
+                "screen_priority": "non-saturating log growth + cumulative consistency + valuation + profitability + liquidity + data quality - cycle/missing-EPS penalties",
+                "screen_score": "legacy bounded explainability score; no longer the primary ranking metric"
+            },
             "liquidity": {
                 "target_median_daily_turnover_twd_million": 20,
                 "established_after_observations": 10,
@@ -383,6 +434,8 @@ def main():
             "Market-cap hard filtering is intentionally disabled until a symmetric authoritative field is available for both markets.",
             "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
             "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
+            "A missing row in the current income endpoint does not automatically exclude a profitable issuer from discovery when official TTM PE is positive; deep research must still verify the actual filed earnings before Alpha scoring.",
+            "screen_priority is intentionally non-saturating so extreme growth names do not collapse into large 100-point ties."
         ],
     }
     history["schema_version"] = 1
