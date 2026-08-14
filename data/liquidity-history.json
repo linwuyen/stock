@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-08-10",
+  "as_of": "2026-08-14",
   "window": 20,
   "series": {
     "TWSE:1101": [
@@ -6524,413 +6524,689 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 164800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 509600.0
       }
     ],
     "TPEX:1259": [
       {
         "date": "2026-08-10",
         "turnover_twd": 479200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 996600.0
       }
     ],
     "TPEX:1264": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6388000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 776500.0
       }
     ],
     "TPEX:1268": [
       {
         "date": "2026-08-10",
         "turnover_twd": 38532000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2709500.0
       }
     ],
     "TPEX:1294": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2086200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 464400.0
       }
     ],
     "TPEX:1295": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2074700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1622700.0
       }
     ],
     "TPEX:1336": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4941900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5517350.0
       }
     ],
     "TPEX:1565": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7949800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7746400.0
       }
     ],
     "TPEX:1569": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13114350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12441450.0
       }
     ],
     "TPEX:1570": [
       {
         "date": "2026-08-10",
         "turnover_twd": 871850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1970800.0
       }
     ],
     "TPEX:1580": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4167000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11191000.0
       }
     ],
     "TPEX:1584": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23637050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3883050.0
       }
     ],
     "TPEX:1586": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2980800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 26501600.0
       }
     ],
     "TPEX:1591": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6890200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5564450.0
       }
     ],
     "TPEX:1593": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2595250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2195450.0
       }
     ],
     "TPEX:1595": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25446100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 34873700.0
       }
     ],
     "TPEX:1599": [
       {
         "date": "2026-08-10",
         "turnover_twd": 282700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 691050.0
       }
     ],
     "TPEX:1742": [
       {
         "date": "2026-08-10",
         "turnover_twd": 921400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 475350.0
       }
     ],
     "TPEX:1777": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5903700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1118100.0
       }
     ],
     "TPEX:1780": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3271950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1756500.0
       }
     ],
     "TPEX:1781": [
       {
         "date": "2026-08-10",
         "turnover_twd": 34050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 22100.0
       }
     ],
     "TPEX:1784": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4332000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5646400.0
       }
     ],
     "TPEX:1785": [
       {
         "date": "2026-08-10",
         "turnover_twd": 607150500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1196838000.0
       }
     ],
     "TPEX:1788": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3511500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3648000.0
       }
     ],
     "TPEX:1796": [
       {
         "date": "2026-08-10",
         "turnover_twd": 366550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 215900.0
       }
     ],
     "TPEX:1799": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3730200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3921650.0
       }
     ],
     "TPEX:1813": [
       {
         "date": "2026-08-10",
         "turnover_twd": 391250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 346100.0
       }
     ],
     "TPEX:1815": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2713024900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 353512600.0
       }
     ],
     "TPEX:2035": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 461600.0
       }
     ],
     "TPEX:2061": [
       {
         "date": "2026-08-10",
         "turnover_twd": 124602700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 132816900.0
       }
     ],
     "TPEX:2063": [
       {
         "date": "2026-08-10",
         "turnover_twd": 384100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 462300.0
       }
     ],
     "TPEX:2064": [
       {
         "date": "2026-08-10",
         "turnover_twd": 47200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24850.0
       }
     ],
     "TPEX:2065": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2308400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1261750.0
       }
     ],
     "TPEX:2066": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14998300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25741200.0
       }
     ],
     "TPEX:2067": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6410.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 192030.0
       }
     ],
     "TPEX:2070": [
       {
         "date": "2026-08-10",
         "turnover_twd": 83243900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 16411500.0
       }
     ],
     "TPEX:2073": [
       {
         "date": "2026-08-10",
         "turnover_twd": 26800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 51200.0
       }
     ],
     "TPEX:2221": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7145000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 38100200.0
       }
     ],
     "TPEX:2230": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4823400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2303150.0
       }
     ],
     "TPEX:2235": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 217100.0
       }
     ],
     "TPEX:2596": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5306650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1327950.0
       }
     ],
     "TPEX:2640": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1016000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5515000.0
       }
     ],
     "TPEX:2641": [
       {
         "date": "2026-08-10",
         "turnover_twd": 15941700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 22273600.0
       }
     ],
     "TPEX:2643": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2287100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5809800.0
       }
     ],
     "TPEX:2718": [
       {
         "date": "2026-08-10",
         "turnover_twd": 359100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8602000.0
       }
     ],
     "TPEX:2719": [
       {
         "date": "2026-08-10",
         "turnover_twd": 86600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 273200.0
       }
     ],
     "TPEX:2724": [
       {
         "date": "2026-08-10",
         "turnover_twd": 32450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1344400.0
       }
     ],
     "TPEX:2726": [
       {
         "date": "2026-08-10",
         "turnover_twd": 225620.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 87940.0
       }
     ],
     "TPEX:2729": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1116500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1454000.0
       }
     ],
     "TPEX:2732": [
       {
         "date": "2026-08-10",
         "turnover_twd": 894300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2280500.0
       }
     ],
     "TPEX:2734": [
       {
         "date": "2026-08-10",
         "turnover_twd": 886750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 984750.0
       }
     ],
     "TPEX:2736": [
       {
         "date": "2026-08-10",
         "turnover_twd": 206450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 469350.0
       }
     ],
     "TPEX:2740": [
       {
         "date": "2026-08-10",
         "turnover_twd": 30900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 119300.0
       }
     ],
     "TPEX:2743": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3737800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9193100.0
       }
     ],
     "TPEX:2745": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5131800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4682100.0
       }
     ],
     "TPEX:2751": [
       {
         "date": "2026-08-10",
         "turnover_twd": 258300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 107100.0
       }
     ],
     "TPEX:2752": [
       {
         "date": "2026-08-10",
         "turnover_twd": 700000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4684500.0
       }
     ],
     "TPEX:2754": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6148800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10988400.0
       }
     ],
     "TPEX:2755": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7192500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4274500.0
       }
     ],
     "TPEX:2756": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1075800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1009100.0
       }
     ],
     "TPEX:2916": [
       {
         "date": "2026-08-10",
         "turnover_twd": 864600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2205000.0
       }
     ],
     "TPEX:2924": [
       {
         "date": "2026-08-10",
         "turnover_twd": 207900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 16950.0
       }
     ],
     "TPEX:2926": [
       {
         "date": "2026-08-10",
         "turnover_twd": 152700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 304450.0
       }
     ],
     "TPEX:2937": [
       {
         "date": "2026-08-10",
         "turnover_twd": 624450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 752450.0
       }
     ],
     "TPEX:2941": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 30500.0
       }
     ],
     "TPEX:2947": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2061000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 937300.0
       }
     ],
     "TPEX:2948": [
       {
         "date": "2026-08-10",
         "turnover_twd": 818000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 111950.0
       }
     ],
     "TPEX:2949": [
       {
         "date": "2026-08-10",
         "turnover_twd": 120500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:3064": [
       {
         "date": "2026-08-10",
+        "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
         "turnover_twd": 0.0
       }
     ],
@@ -6938,11 +7214,19 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 36195500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 33432050.0
       }
     ],
     "TPEX:3067": [
       {
         "date": "2026-08-10",
+        "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
         "turnover_twd": 0.0
       }
     ],
@@ -6950,1620 +7234,2700 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 2759400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5183500.0
       }
     ],
     "TPEX:3073": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1938750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2568950.0
       }
     ],
     "TPEX:3078": [
       {
         "date": "2026-08-10",
         "turnover_twd": 38747000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 61585100.0
       }
     ],
     "TPEX:3081": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13754885000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4627200000.0
       }
     ],
     "TPEX:3083": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1492000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7104300.0
       }
     ],
     "TPEX:3085": [
       {
         "date": "2026-08-10",
         "turnover_twd": 58700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24400.0
       }
     ],
     "TPEX:3086": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3341950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3143750.0
       }
     ],
     "TPEX:3088": [
       {
         "date": "2026-08-10",
         "turnover_twd": 251419500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 109933000.0
       }
     ],
     "TPEX:3093": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18797400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17704300.0
       }
     ],
     "TPEX:3095": [
       {
         "date": "2026-08-10",
         "turnover_twd": 39400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 37550.0
       }
     ],
     "TPEX:3105": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8841148500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15574756500.0
       }
     ],
     "TPEX:3114": [
       {
         "date": "2026-08-10",
         "turnover_twd": 204557600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 31602700.0
       }
     ],
     "TPEX:3115": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8700.0
       }
     ],
     "TPEX:3118": [
       {
         "date": "2026-08-10",
         "turnover_twd": 256050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 63500.0
       }
     ],
     "TPEX:3122": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2344050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2178900.0
       }
     ],
     "TPEX:3128": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3418900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1019300.0
       }
     ],
     "TPEX:3131": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2115395000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2136480000.0
       }
     ],
     "TPEX:3141": [
       {
         "date": "2026-08-10",
         "turnover_twd": 239306800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 43796000.0
       }
     ],
     "TPEX:3147": [
       {
         "date": "2026-08-10",
         "turnover_twd": 424037000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 119220500.0
       }
     ],
     "TPEX:3152": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27227000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27497000.0
       }
     ],
     "TPEX:3158": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 418300.0
       }
     ],
     "TPEX:3162": [
       {
         "date": "2026-08-10",
         "turnover_twd": 69979500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 46444600.0
       }
     ],
     "TPEX:3163": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4406020000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1093099000.0
       }
     ],
     "TPEX:3169": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10424000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7870500.0
       }
     ],
     "TPEX:3171": [
       {
         "date": "2026-08-10",
         "turnover_twd": 528900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2623200.0
       }
     ],
     "TPEX:3176": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10212850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 14459300.0
       }
     ],
     "TPEX:3178": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2142700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5927800.0
       }
     ],
     "TPEX:3188": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3775950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5527300.0
       }
     ],
     "TPEX:3191": [
       {
         "date": "2026-08-10",
         "turnover_twd": 487300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 388200.0
       }
     ],
     "TPEX:3205": [
       {
         "date": "2026-08-10",
         "turnover_twd": 933150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3020800.0
       }
     ],
     "TPEX:3206": [
       {
         "date": "2026-08-10",
         "turnover_twd": 737100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3023650.0
       }
     ],
     "TPEX:3207": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7636200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7160550.0
       }
     ],
     "TPEX:3211": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3791123500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3812938000.0
       }
     ],
     "TPEX:3213": [
       {
         "date": "2026-08-10",
         "turnover_twd": 136112000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 41741000.0
       }
     ],
     "TPEX:3217": [
       {
         "date": "2026-08-10",
         "turnover_twd": 88751500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 251953000.0
       }
     ],
     "TPEX:3218": [
       {
         "date": "2026-08-10",
         "turnover_twd": 68879000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 90509500.0
       }
     ],
     "TPEX:3219": [
       {
         "date": "2026-08-10",
         "turnover_twd": 91725500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25728900.0
       }
     ],
     "TPEX:3221": [
       {
         "date": "2026-08-10",
         "turnover_twd": 159266900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 234206750.0
       }
     ],
     "TPEX:3224": [
       {
         "date": "2026-08-10",
         "turnover_twd": 807900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1157000.0
       }
     ],
     "TPEX:3226": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1082400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2747900.0
       }
     ],
     "TPEX:3227": [
       {
         "date": "2026-08-10",
         "turnover_twd": 398197500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 245491000.0
       }
     ],
     "TPEX:3228": [
       {
         "date": "2026-08-10",
         "turnover_twd": 35886500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 52926500.0
       }
     ],
     "TPEX:3230": [
       {
         "date": "2026-08-10",
         "turnover_twd": 20720400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24766900.0
       }
     ],
     "TPEX:3232": [
       {
         "date": "2026-08-10",
         "turnover_twd": 156050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 799750.0
       }
     ],
     "TPEX:3234": [
       {
         "date": "2026-08-10",
         "turnover_twd": 102902000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1121460500.0
       }
     ],
     "TPEX:3236": [
       {
         "date": "2026-08-10",
         "turnover_twd": 88223750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 352258650.0
       }
     ],
     "TPEX:3252": [
       {
         "date": "2026-08-10",
         "turnover_twd": 158550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 176400.0
       }
     ],
     "TPEX:3259": [
       {
         "date": "2026-08-10",
         "turnover_twd": 691650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 364650.0
       }
     ],
     "TPEX:3260": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8362730500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3212992500.0
       }
     ],
     "TPEX:3264": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2077516500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3873612500.0
       }
     ],
     "TPEX:3265": [
       {
         "date": "2026-08-10",
         "turnover_twd": 97148000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 640548500.0
       }
     ],
     "TPEX:3268": [
       {
         "date": "2026-08-10",
         "turnover_twd": 534450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2260250.0
       }
     ],
     "TPEX:3272": [
       {
         "date": "2026-08-10",
         "turnover_twd": 514050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 249150.0
       }
     ],
     "TPEX:3276": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2841700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1998850.0
       }
     ],
     "TPEX:3284": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6973100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4613100.0
       }
     ],
     "TPEX:3285": [
       {
         "date": "2026-08-10",
         "turnover_twd": 738050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1153650.0
       }
     ],
     "TPEX:3287": [
       {
         "date": "2026-08-10",
         "turnover_twd": 946000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 50325150.0
       }
     ],
     "TPEX:3288": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1092100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1035850.0
       }
     ],
     "TPEX:3289": [
       {
         "date": "2026-08-10",
         "turnover_twd": 172254500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 100217500.0
       }
     ],
     "TPEX:3290": [
       {
         "date": "2026-08-10",
         "turnover_twd": 24502900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 29881900.0
       }
     ],
     "TPEX:3293": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2009769000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1652959000.0
       }
     ],
     "TPEX:3294": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6396150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9114800.0
       }
     ],
     "TPEX:3297": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7996100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1025300.0
       }
     ],
     "TPEX:3303": [
       {
         "date": "2026-08-10",
         "turnover_twd": 29899400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15418600.0
       }
     ],
     "TPEX:3306": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5402600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1743050.0
       }
     ],
     "TPEX:3310": [
       {
         "date": "2026-08-10",
         "turnover_twd": 615200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 755100.0
       }
     ],
     "TPEX:3313": [
       {
         "date": "2026-08-10",
         "turnover_twd": 566700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1329650.0
       }
     ],
     "TPEX:3317": [
       {
         "date": "2026-08-10",
         "turnover_twd": 39881800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 59947700.0
       }
     ],
     "TPEX:3322": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4356350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2592150.0
       }
     ],
     "TPEX:3323": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19820450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11092400.0
       }
     ],
     "TPEX:3324": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4619035000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4567445000.0
       }
     ],
     "TPEX:3325": [
       {
         "date": "2026-08-10",
         "turnover_twd": 451950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1613550.0
       }
     ],
     "TPEX:3332": [
       {
         "date": "2026-08-10",
         "turnover_twd": 61900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 62500.0
       }
     ],
     "TPEX:3339": [
       {
         "date": "2026-08-10",
         "turnover_twd": 102396150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 44782450.0
       }
     ],
     "TPEX:3349": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1199550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4242500.0
       }
     ],
     "TPEX:3354": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1244500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3137450.0
       }
     ],
     "TPEX:3357": [
       {
         "date": "2026-08-10",
         "turnover_twd": 371434500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 936155500.0
       }
     ],
     "TPEX:3360": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7719000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 43327550.0
       }
     ],
     "TPEX:3362": [
       {
         "date": "2026-08-10",
         "turnover_twd": 187903500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 259029500.0
       }
     ],
     "TPEX:3363": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1626406000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3380373000.0
       }
     ],
     "TPEX:3372": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7286450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4532050.0
       }
     ],
     "TPEX:3373": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1895750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1571900.0
       }
     ],
     "TPEX:3374": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3745265500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4450705000.0
       }
     ],
     "TPEX:3379": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18842500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7733200.0
       }
     ],
     "TPEX:3388": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19690200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 87893700.0
       }
     ],
     "TPEX:3390": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9772200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2683300.0
       }
     ],
     "TPEX:3402": [
       {
         "date": "2026-08-10",
         "turnover_twd": 52747500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 34298000.0
       }
     ],
     "TPEX:3430": [
       {
         "date": "2026-08-10",
         "turnover_twd": 60977000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 136601000.0
       }
     ],
     "TPEX:3434": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3040200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3534900.0
       }
     ],
     "TPEX:3438": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9899200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3594300.0
       }
     ],
     "TPEX:3441": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1541122000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 986760600.0
       }
     ],
     "TPEX:3444": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41049700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 20685700.0
       }
     ],
     "TPEX:3455": [
       {
         "date": "2026-08-10",
         "turnover_twd": 136927500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 558274500.0
       }
     ],
     "TPEX:3465": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1046650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 359150.0
       }
     ],
     "TPEX:3466": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1781300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2193550.0
       }
     ],
     "TPEX:3467": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7541300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3228000.0
       }
     ],
     "TPEX:3479": [
       {
         "date": "2026-08-10",
         "turnover_twd": 165035500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 99352000.0
       }
     ],
     "TPEX:3483": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27427300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 26375300.0
       }
     ],
     "TPEX:3484": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12422900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6693400.0
       }
     ],
     "TPEX:3485": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25210000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 32952000.0
       }
     ],
     "TPEX:3489": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12330150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 18622550.0
       }
     ],
     "TPEX:3490": [
       {
         "date": "2026-08-10",
         "turnover_twd": 152841350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 114675450.0
       }
     ],
     "TPEX:3491": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3297910000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2877370000.0
       }
     ],
     "TPEX:3492": [
       {
         "date": "2026-08-10",
         "turnover_twd": 554350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2466000.0
       }
     ],
     "TPEX:3498": [
       {
         "date": "2026-08-10",
         "turnover_twd": 221353500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 246672000.0
       }
     ],
     "TPEX:3499": [
       {
         "date": "2026-08-10",
         "turnover_twd": 115700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 578550.0
       }
     ],
     "TPEX:3508": [
       {
         "date": "2026-08-10",
         "turnover_twd": 701750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1033550.0
       }
     ],
     "TPEX:3511": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3681900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5370800.0
       }
     ],
     "TPEX:3512": [
       {
         "date": "2026-08-10",
         "turnover_twd": 236000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 784050.0
       }
     ],
     "TPEX:3516": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1346700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 917400.0
       }
     ],
     "TPEX:3520": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5079450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5875200.0
       }
     ],
     "TPEX:3521": [
       {
         "date": "2026-08-10",
         "turnover_twd": 194600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 490000.0
       }
     ],
     "TPEX:3522": [
       {
         "date": "2026-08-10",
         "turnover_twd": 525550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 633950.0
       }
     ],
     "TPEX:3523": [
       {
         "date": "2026-08-10",
         "turnover_twd": 76400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 271450.0
       }
     ],
     "TPEX:3526": [
       {
         "date": "2026-08-10",
         "turnover_twd": 318238000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 92662500.0
       }
     ],
     "TPEX:3527": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4488200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4267500.0
       }
     ],
     "TPEX:3529": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2135905000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2706315000.0
       }
     ],
     "TPEX:3531": [
       {
         "date": "2026-08-10",
         "turnover_twd": 66050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:3537": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25323800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 203545200.0
       }
     ],
     "TPEX:3540": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2661700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3621100.0
       }
     ],
     "TPEX:3541": [
       {
         "date": "2026-08-10",
         "turnover_twd": 373650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 919250.0
       }
     ],
     "TPEX:3546": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10562900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8410200.0
       }
     ],
     "TPEX:3548": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7924600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10458200.0
       }
     ],
     "TPEX:3551": [
       {
         "date": "2026-08-10",
         "turnover_twd": 85656000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 71751000.0
       }
     ],
     "TPEX:3552": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6261800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5547950.0
       }
     ],
     "TPEX:3555": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5867500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8727000.0
       }
     ],
     "TPEX:3556": [
       {
         "date": "2026-08-10",
         "turnover_twd": 33950200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21673100.0
       }
     ],
     "TPEX:3558": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9151500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12907500.0
       }
     ],
     "TPEX:3564": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5511150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12955350.0
       }
     ],
     "TPEX:3567": [
       {
         "date": "2026-08-10",
         "turnover_twd": 950400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1390100.0
       }
     ],
     "TPEX:3570": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3136000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5587000.0
       }
     ],
     "TPEX:3577": [
       {
         "date": "2026-08-10",
         "turnover_twd": 203118500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 66722000.0
       }
     ],
     "TPEX:3580": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14778900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27644700.0
       }
     ],
     "TPEX:3581": [
       {
         "date": "2026-08-10",
         "turnover_twd": 135041500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 146784000.0
       }
     ],
     "TPEX:3587": [
       {
         "date": "2026-08-10",
         "turnover_twd": 199507500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 154665000.0
       }
     ],
     "TPEX:3594": [
       {
         "date": "2026-08-10",
         "turnover_twd": 442039800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 55657100.0
       }
     ],
     "TPEX:3597": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1099400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 879150.0
       }
     ],
     "TPEX:3609": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2302000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7118900.0
       }
     ],
     "TPEX:3611": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3363000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5640500.0
       }
     ],
     "TPEX:3615": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11764150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 54045600.0
       }
     ],
     "TPEX:3623": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8060900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 302100.0
       }
     ],
     "TPEX:3624": [
       {
         "date": "2026-08-10",
         "turnover_twd": 54289700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 714091300.0
       }
     ],
     "TPEX:3625": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5194100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2529600.0
       }
     ],
     "TPEX:3628": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1597100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3372800.0
       }
     ],
     "TPEX:3629": [
       {
         "date": "2026-08-10",
         "turnover_twd": 108000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 132500.0
       }
     ],
     "TPEX:3630": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17298050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10828650.0
       }
     ],
     "TPEX:3631": [
       {
         "date": "2026-08-10",
         "turnover_twd": 656800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7901800.0
       }
     ],
     "TPEX:3632": [
       {
         "date": "2026-08-10",
         "turnover_twd": 40000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:3646": [
       {
         "date": "2026-08-10",
         "turnover_twd": 70100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 279800.0
       }
     ],
     "TPEX:3663": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21286700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 29849100.0
       }
     ],
     "TPEX:3664": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13980.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 28650.0
       }
     ],
     "TPEX:3666": [
       {
         "date": "2026-08-10",
         "turnover_twd": 524850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 451800.0
       }
     ],
     "TPEX:3672": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 162100.0
       }
     ],
     "TPEX:3675": [
       {
         "date": "2026-08-10",
         "turnover_twd": 210627000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 263140000.0
       }
     ],
     "TPEX:3680": [
       {
         "date": "2026-08-10",
         "turnover_twd": 385031500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 619861500.0
       }
     ],
     "TPEX:3684": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10613600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3062800.0
       }
     ],
     "TPEX:3685": [
       {
         "date": "2026-08-10",
         "turnover_twd": 71197750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25475150.0
       }
     ],
     "TPEX:3687": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2515000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3299900.0
       }
     ],
     "TPEX:3689": [
       {
         "date": "2026-08-10",
         "turnover_twd": 243703000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 159832500.0
       }
     ],
     "TPEX:3691": [
       {
         "date": "2026-08-10",
         "turnover_twd": 45997500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 68254500.0
       }
     ],
     "TPEX:3693": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1315065000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 507734000.0
       }
     ],
     "TPEX:3707": [
       {
         "date": "2026-08-10",
         "turnover_twd": 148890300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 558684600.0
       }
     ],
     "TPEX:3709": [
       {
         "date": "2026-08-10",
         "turnover_twd": 49640200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 57444900.0
       }
     ],
     "TPEX:3710": [
       {
         "date": "2026-08-10",
         "turnover_twd": 999680.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1493480.0
       }
     ],
     "TPEX:3713": [
       {
         "date": "2026-08-10",
         "turnover_twd": 269900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 361000.0
       }
     ],
     "TPEX:4102": [
       {
         "date": "2026-08-10",
         "turnover_twd": 132600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 457800.0
       }
     ],
     "TPEX:4105": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41059500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 35820000.0
       }
     ],
     "TPEX:4107": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9559000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5712000.0
       }
     ],
     "TPEX:4109": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2977850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 703950.0
       }
     ],
     "TPEX:4111": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2622700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1913550.0
       }
     ],
     "TPEX:4113": [
       {
         "date": "2026-08-10",
         "turnover_twd": 928150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5966450.0
       }
     ],
     "TPEX:4114": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23573500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 26551100.0
       }
     ],
     "TPEX:4116": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1078350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 992250.0
       }
     ],
     "TPEX:4120": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3183350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1125300.0
       }
     ],
     "TPEX:4121": [
       {
         "date": "2026-08-10",
         "turnover_twd": 782650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 866200.0
       }
     ],
     "TPEX:4123": [
       {
         "date": "2026-08-10",
         "turnover_twd": 78253900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 355296200.0
       }
     ],
     "TPEX:4126": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3385800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1389200.0
       }
     ],
     "TPEX:4127": [
       {
         "date": "2026-08-10",
         "turnover_twd": 29337600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 23636400.0
       }
     ],
     "TPEX:4128": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11986700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 23557250.0
       }
     ],
     "TPEX:4129": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9611700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6598600.0
       }
     ],
     "TPEX:4131": [
       {
         "date": "2026-08-10",
         "turnover_twd": 550000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 382250.0
       }
     ],
     "TPEX:4138": [
       {
         "date": "2026-08-10",
         "turnover_twd": 408200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1731600.0
       }
     ],
     "TPEX:4139": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1474100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 666900.0
       }
     ],
     "TPEX:4147": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41240700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 106175800.0
       }
     ],
     "TPEX:4153": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1495950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 459750.0
       }
     ],
     "TPEX:4154": [
       {
         "date": "2026-08-10",
         "turnover_twd": 102550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12800.0
       }
     ],
     "TPEX:4157": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8816190.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7009420.0
       }
     ],
     "TPEX:4160": [
       {
         "date": "2026-08-10",
         "turnover_twd": 522700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 561150.0
       }
     ],
     "TPEX:4161": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1808450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1147450.0
       }
     ],
     "TPEX:4162": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21824500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25350900.0
       }
     ],
     "TPEX:4163": [
       {
         "date": "2026-08-10",
         "turnover_twd": 129423500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 16402500.0
       }
     ],
     "TPEX:4166": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2868600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1974800.0
       }
     ],
     "TPEX:4167": [
       {
         "date": "2026-08-10",
         "turnover_twd": 55753800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6018550.0
       }
     ],
     "TPEX:4168": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1885000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2096500.0
       }
     ],
     "TPEX:4171": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1064150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 963100.0
       }
     ],
     "TPEX:4173": [
       {
         "date": "2026-08-10",
         "turnover_twd": 706050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2656550.0
       }
     ],
     "TPEX:4174": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6499000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7952450.0
       }
     ],
     "TPEX:4175": [
       {
         "date": "2026-08-10",
         "turnover_twd": 50200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 860300.0
       }
     ],
     "TPEX:4183": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 392550.0
       }
     ],
     "TPEX:4188": [
       {
         "date": "2026-08-10",
         "turnover_twd": 202850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 237480.0
       }
     ],
     "TPEX:4192": [
       {
         "date": "2026-08-10",
         "turnover_twd": 486400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 93300.0
       }
     ],
     "TPEX:4198": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 286600.0
       }
     ],
     "TPEX:4205": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1045000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1821700.0
       }
     ],
     "TPEX:4207": [
       {
         "date": "2026-08-10",
         "turnover_twd": 594100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7936050.0
       }
     ],
     "TPEX:4303": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11951050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 44333450.0
       }
     ],
     "TPEX:4304": [
       {
         "date": "2026-08-10",
         "turnover_twd": 191050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 145300.0
       }
     ],
     "TPEX:4305": [
       {
         "date": "2026-08-10",
         "turnover_twd": 173800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 43650.0
       }
     ],
     "TPEX:4401": [
       {
         "date": "2026-08-10",
         "turnover_twd": 110550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 362500.0
       }
     ],
     "TPEX:4402": [
       {
         "date": "2026-08-10",
         "turnover_twd": 198450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 450750.0
       }
     ],
     "TPEX:4406": [
       {
         "date": "2026-08-10",
         "turnover_twd": 255600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 50300.0
       }
     ],
     "TPEX:4413": [
       {
         "date": "2026-08-10",
         "turnover_twd": 576300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1265950.0
       }
     ],
     "TPEX:4416": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1185300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1224750.0
       }
     ],
     "TPEX:4417": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6465800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7984850.0
       }
     ],
     "TPEX:4419": [
       {
         "date": "2026-08-10",
         "turnover_twd": 136650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 140550.0
       }
     ],
     "TPEX:4420": [
       {
         "date": "2026-08-10",
         "turnover_twd": 713750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 954550.0
       }
     ],
     "TPEX:4430": [
       {
         "date": "2026-08-10",
         "turnover_twd": 680800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 537050.0
       }
     ],
     "TPEX:4432": [
       {
         "date": "2026-08-10",
         "turnover_twd": 287450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1133600.0
       }
     ],
     "TPEX:4433": [
       {
         "date": "2026-08-10",
         "turnover_twd": 315450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 79900.0
       }
     ],
     "TPEX:4442": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7027300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9837700.0
       }
     ],
     "TPEX:4502": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 486650.0
       }
     ],
     "TPEX:4503": [
       {
         "date": "2026-08-10",
         "turnover_twd": 24376600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 22432200.0
       }
     ],
     "TPEX:4506": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3537500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4414500.0
       }
     ],
     "TPEX:4510": [
       {
         "date": "2026-08-10",
         "turnover_twd": 90737950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 233350250.0
       }
     ],
     "TPEX:4513": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18787600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15995550.0
       }
     ],
     "TPEX:4523": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1136150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7482300.0
       }
     ],
     "TPEX:4527": [
       {
         "date": "2026-08-10",
         "turnover_twd": 753950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 861450.0
       }
     ],
     "TPEX:4528": [
       {
         "date": "2026-08-10",
         "turnover_twd": 227950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 289850.0
       }
     ],
     "TPEX:4529": [
       {
         "date": "2026-08-10",
         "turnover_twd": 58060.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 162780.0
       }
     ],
     "TPEX:4530": [
       {
         "date": "2026-08-10",
         "turnover_twd": 74500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 256250.0
       }
     ],
     "TPEX:4533": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14187150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 94514300.0
       }
     ],
     "TPEX:4534": [
       {
         "date": "2026-08-10",
         "turnover_twd": 48692550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27380100.0
       }
     ],
     "TPEX:4535": [
       {
         "date": "2026-08-10",
         "turnover_twd": 281900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 203100.0
       }
     ],
     "TPEX:4538": [
       {
         "date": "2026-08-10",
         "turnover_twd": 192100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 401300.0
       }
     ],
     "TPEX:4541": [
       {
         "date": "2026-08-10",
         "turnover_twd": 141493400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 367767700.0
       }
     ],
     "TPEX:4542": [
       {
         "date": "2026-08-10",
         "turnover_twd": 318921500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 379681500.0
       }
     ],
     "TPEX:4543": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4251050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1630950.0
       }
     ],
     "TPEX:4549": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8579500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 18743800.0
       }
     ],
     "TPEX:4550": [
       {
         "date": "2026-08-10",
         "turnover_twd": 48800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 587200.0
       }
     ],
     "TPEX:4554": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1815000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2055500.0
       }
     ],
     "TPEX:4556": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8365800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 114793100.0
       }
     ],
     "TPEX:4558": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1273850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 471700.0
       }
     ],
     "TPEX:4561": [
       {
         "date": "2026-08-10",
         "turnover_twd": 33036350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 66060600.0
       }
     ],
     "TPEX:4563": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3736200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4219650.0
       }
     ],
     "TPEX:4568": [
       {
         "date": "2026-08-10",
         "turnover_twd": 157600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 515600.0
       }
     ],
     "TPEX:4577": [
       {
         "date": "2026-08-10",
         "turnover_twd": 45593700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25038000.0
       }
     ],
     "TPEX:4580": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4592900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3868700.0
       }
     ],
     "TPEX:4584": [
       {
         "date": "2026-08-10",
         "turnover_twd": 39700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 155800.0
       }
     ],
     "TPEX:4609": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62290.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4780.0
       }
     ],
     "TPEX:4702": [
       {
         "date": "2026-08-10",
         "turnover_twd": 230690.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 394230.0
       }
     ],
     "TPEX:4706": [
       {
         "date": "2026-08-10",
         "turnover_twd": 95700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 195100.0
       }
     ],
     "TPEX:4707": [
       {
         "date": "2026-08-10",
         "turnover_twd": 228787600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 313887250.0
       }
     ],
     "TPEX:4711": [
       {
         "date": "2026-08-10",
         "turnover_twd": 590400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2432750.0
       }
     ],
     "TPEX:4714": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4738900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6325800.0
       }
     ],
     "TPEX:4716": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6066100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21032850.0
       }
     ],
     "TPEX:4721": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23356100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 22723800.0
       }
     ],
     "TPEX:4726": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2033500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3006200.0
       }
     ],
     "TPEX:4728": [
       {
         "date": "2026-08-10",
         "turnover_twd": 778000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7068000.0
       }
     ],
     "TPEX:4729": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2090750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2471950.0
       }
     ],
     "TPEX:4735": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1809500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17922700.0
       }
     ],
     "TPEX:4741": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5185000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4301500.0
       }
     ],
     "TPEX:4743": [
       {
         "date": "2026-08-10",
         "turnover_twd": 51335800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 65044500.0
       }
     ],
     "TPEX:4744": [
       {
         "date": "2026-08-10",
         "turnover_twd": 86600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3167400.0
       }
     ],
     "TPEX:4745": [
       {
         "date": "2026-08-10",
         "turnover_twd": 194700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 170250.0
       }
     ],
     "TPEX:4747": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1496550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1773300.0
       }
     ],
     "TPEX:4749": [
       {
         "date": "2026-08-10",
         "turnover_twd": 531989000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 379813000.0
       }
     ],
     "TPEX:4754": [
       {
         "date": "2026-08-10",
         "turnover_twd": 254500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5472350.0
       }
     ],
     "TPEX:4760": [
       {
         "date": "2026-08-10",
         "turnover_twd": 89811000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 122560000.0
       }
     ],
     "TPEX:4767": [
       {
         "date": "2026-08-10",
         "turnover_twd": 53000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 211950.0
       }
     ],
     "TPEX:4768": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62917000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 70800500.0
       }
     ],
     "TPEX:4772": [
       {
         "date": "2026-08-10",
         "turnover_twd": 91963500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 111157000.0
       }
     ],
     "TPEX:4804": [],
@@ -8571,762 +9935,1270 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2078600.0
       }
     ],
     "TPEX:4903": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43895300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 30891750.0
       }
     ],
     "TPEX:4905": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2378400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3696000.0
       }
     ],
     "TPEX:4907": [
       {
         "date": "2026-08-10",
         "turnover_twd": 30333500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6173000.0
       }
     ],
     "TPEX:4908": [
       {
         "date": "2026-08-10",
         "turnover_twd": 492055500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 509607000.0
       }
     ],
     "TPEX:4909": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7737350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7731650.0
       }
     ],
     "TPEX:4911": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1685600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 255650.0
       }
     ],
     "TPEX:4923": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10897100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 14566250.0
       }
     ],
     "TPEX:4924": [
       {
         "date": "2026-08-10",
         "turnover_twd": 60550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 130430.0
       }
     ],
     "TPEX:4931": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3579028500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 592404500.0
       }
     ],
     "TPEX:4933": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14812400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5477300.0
       }
     ],
     "TPEX:4939": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1383463200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 912339100.0
       }
     ],
     "TPEX:4946": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7178800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2128700.0
       }
     ],
     "TPEX:4950": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 315300.0
       }
     ],
     "TPEX:4951": [
       {
         "date": "2026-08-10",
         "turnover_twd": 16707800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 13228500.0
       }
     ],
     "TPEX:4953": [
       {
         "date": "2026-08-10",
         "turnover_twd": 52725500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27841500.0
       }
     ],
     "TPEX:4966": [
       {
         "date": "2026-08-10",
         "turnover_twd": 747769000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 473022000.0
       }
     ],
     "TPEX:4971": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1326868500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 344421000.0
       }
     ],
     "TPEX:4972": [
       {
         "date": "2026-08-10",
         "turnover_twd": 98950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 67100.0
       }
     ],
     "TPEX:4973": [
       {
         "date": "2026-08-10",
         "turnover_twd": 675199500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 564917000.0
       }
     ],
     "TPEX:4974": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3091100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8998000.0
       }
     ],
     "TPEX:4979": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1124504500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15376013000.0
       }
     ],
     "TPEX:4991": [
       {
         "date": "2026-08-10",
         "turnover_twd": 556614000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4141404500.0
       }
     ],
     "TPEX:4995": [
       {
         "date": "2026-08-10",
         "turnover_twd": 634950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2305950.0
       }
     ],
     "TPEX:5009": [
       {
         "date": "2026-08-10",
         "turnover_twd": 45869250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 61320350.0
       }
     ],
     "TPEX:5011": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5456650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6806750.0
       }
     ],
     "TPEX:5013": [
       {
         "date": "2026-08-10",
         "turnover_twd": 492900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 265250.0
       }
     ],
     "TPEX:5014": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2712700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8140900.0
       }
     ],
     "TPEX:5015": [
       {
         "date": "2026-08-10",
         "turnover_twd": 278550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 132450.0
       }
     ],
     "TPEX:5016": [
       {
         "date": "2026-08-10",
         "turnover_twd": 48100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 416750.0
       }
     ],
     "TPEX:5201": [
       {
         "date": "2026-08-10",
         "turnover_twd": 476700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 949850.0
       }
     ],
     "TPEX:5202": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2045950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1395150.0
       }
     ],
     "TPEX:5205": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21700.0
       }
     ],
     "TPEX:5206": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4738550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3718350.0
       }
     ],
     "TPEX:5209": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7237500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3097500.0
       }
     ],
     "TPEX:5210": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3308850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3725250.0
       }
     ],
     "TPEX:5211": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5167450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 732350.0
       }
     ],
     "TPEX:5212": [
       {
         "date": "2026-08-10",
         "turnover_twd": 94400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 558750.0
       }
     ],
     "TPEX:5213": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6308300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9107800.0
       }
     ],
     "TPEX:5220": [
       {
         "date": "2026-08-10",
         "turnover_twd": 81800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 567250.0
       }
     ],
     "TPEX:5223": [
       {
         "date": "2026-08-10",
         "turnover_twd": 138150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 540950.0
       }
     ],
     "TPEX:5227": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14201850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 44169200.0
       }
     ],
     "TPEX:5228": [
       {
         "date": "2026-08-10",
         "turnover_twd": 50312200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 31137550.0
       }
     ],
     "TPEX:5230": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1599850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2163750.0
       }
     ],
     "TPEX:5245": [
       {
         "date": "2026-08-10",
         "turnover_twd": 973700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 434400.0
       }
     ],
     "TPEX:5251": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2829100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2655150.0
       }
     ],
     "TPEX:5263": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8075000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 28115600.0
       }
     ],
     "TPEX:5272": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1900950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1183500.0
       }
     ],
     "TPEX:5274": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2574475000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5463170000.0
       }
     ],
     "TPEX:5276": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 38400.0
       }
     ],
     "TPEX:5278": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1132050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1370350.0
       }
     ],
     "TPEX:5287": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1752500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15081500.0
       }
     ],
     "TPEX:5289": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11797410000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3174625000.0
       }
     ],
     "TPEX:5291": [
       {
         "date": "2026-08-10",
         "turnover_twd": 35286900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25472900.0
       }
     ],
     "TPEX:5299": [
       {
         "date": "2026-08-10",
         "turnover_twd": 52440700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 66967000.0
       }
     ],
     "TPEX:5301": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62760.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 107720.0
       }
     ],
     "TPEX:5302": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3853550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6390950.0
       }
     ],
     "TPEX:5309": [
       {
         "date": "2026-08-10",
         "turnover_twd": 67552900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 86137300.0
       }
     ],
     "TPEX:5310": [
       {
         "date": "2026-08-10",
         "turnover_twd": 75000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:5312": [
       {
         "date": "2026-08-10",
         "turnover_twd": 15355300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2948100.0
       }
     ],
     "TPEX:5314": [
       {
         "date": "2026-08-10",
         "turnover_twd": 148750400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 235869500.0
       }
     ],
     "TPEX:5315": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1961200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5235750.0
       }
     ],
     "TPEX:5321": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10083200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 64468100.0
       }
     ],
     "TPEX:5324": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1901800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4243750.0
       }
     ],
     "TPEX:5328": [
       {
         "date": "2026-08-10",
         "turnover_twd": 704954900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2574883800.0
       }
     ],
     "TPEX:5340": [
       {
         "date": "2026-08-10",
         "turnover_twd": 107644000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 402886900.0
       }
     ],
     "TPEX:5344": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3649100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 151350.0
       }
     ],
     "TPEX:5345": [
       {
         "date": "2026-08-10",
         "turnover_twd": 674950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1140850.0
       }
     ],
     "TPEX:5347": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3447912500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3129717000.0
       }
     ],
     "TPEX:5348": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 48250.0
       }
     ],
     "TPEX:5351": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6353817000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1088610500.0
       }
     ],
     "TPEX:5353": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1313050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 848400.0
       }
     ],
     "TPEX:5355": [
       {
         "date": "2026-08-10",
         "turnover_twd": 547540.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 181860.0
       }
     ],
     "TPEX:5356": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1204000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1687800.0
       }
     ],
     "TPEX:5364": [
       {
         "date": "2026-08-10",
         "turnover_twd": 574490.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 530690.0
       }
     ],
     "TPEX:5371": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1007437900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 526143100.0
       }
     ],
     "TPEX:5381": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6780750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5322800.0
       }
     ],
     "TPEX:5386": [
       {
         "date": "2026-08-10",
         "turnover_twd": 233124500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 223733500.0
       }
     ],
     "TPEX:5392": [
       {
         "date": "2026-08-10",
         "turnover_twd": 253118200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 64331450.0
       }
     ],
     "TPEX:5398": [
       {
         "date": "2026-08-10",
         "turnover_twd": 84500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 536700.0
       }
     ],
     "TPEX:5403": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2313000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6503700.0
       }
     ],
     "TPEX:5410": [
       {
         "date": "2026-08-10",
         "turnover_twd": 59650400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17545450.0
       }
     ],
     "TPEX:5425": [
       {
         "date": "2026-08-10",
         "turnover_twd": 384050600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1322056600.0
       }
     ],
     "TPEX:5426": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19003250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 43593650.0
       }
     ],
     "TPEX:5432": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14575000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 34558500.0
       }
     ],
     "TPEX:5438": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1512300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1811450.0
       }
     ],
     "TPEX:5439": [
       {
         "date": "2026-08-10",
         "turnover_twd": 526727500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 627022000.0
       }
     ],
     "TPEX:5443": [
       {
         "date": "2026-08-10",
         "turnover_twd": 86895600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 358737500.0
       }
     ],
     "TPEX:5450": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2045100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1232400.0
       }
     ],
     "TPEX:5452": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13059250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8878200.0
       }
     ],
     "TPEX:5455": [
       {
         "date": "2026-08-10",
         "turnover_twd": 200550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3687550.0
       }
     ],
     "TPEX:5457": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6512000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7086450.0
       }
     ],
     "TPEX:5460": [
       {
         "date": "2026-08-10",
         "turnover_twd": 491200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 629100.0
       }
     ],
     "TPEX:5464": [
       {
         "date": "2026-08-10",
         "turnover_twd": 77447600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 23966600.0
       }
     ],
     "TPEX:5465": [
       {
         "date": "2026-08-10",
         "turnover_twd": 885000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7422800.0
       }
     ],
     "TPEX:5468": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4627150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 28298850.0
       }
     ],
     "TPEX:5474": [
       {
         "date": "2026-08-10",
         "turnover_twd": 24768000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 29948500.0
       }
     ],
     "TPEX:5475": [
       {
         "date": "2026-08-10",
         "turnover_twd": 861654000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3741814000.0
       }
     ],
     "TPEX:5478": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7583700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 18937300.0
       }
     ],
     "TPEX:5481": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1268900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1217000.0
       }
     ],
     "TPEX:5483": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3186659500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 14566730000.0
       }
     ],
     "TPEX:5487": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1096750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2024750.0
       }
     ],
     "TPEX:5488": [
       {
         "date": "2026-08-10",
         "turnover_twd": 31724000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10626600.0
       }
     ],
     "TPEX:5489": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2518100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3858250.0
       }
     ],
     "TPEX:5490": [
       {
         "date": "2026-08-10",
         "turnover_twd": 103321050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24559300.0
       }
     ],
     "TPEX:5493": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3649100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6615600.0
       }
     ],
     "TPEX:5498": [
       {
         "date": "2026-08-10",
         "turnover_twd": 66999800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 214121900.0
       }
     ],
     "TPEX:5508": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25476900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15761100.0
       }
     ],
     "TPEX:5511": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9020700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25914900.0
       }
     ],
     "TPEX:5512": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3509650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7238190.0
       }
     ],
     "TPEX:5514": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 152150.0
       }
     ],
     "TPEX:5516": [
       {
         "date": "2026-08-10",
         "turnover_twd": 829850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6001250.0
       }
     ],
     "TPEX:5520": [
       {
         "date": "2026-08-10",
         "turnover_twd": 495900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 581900.0
       }
     ],
     "TPEX:5523": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2174950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 908250.0
       }
     ],
     "TPEX:5529": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3290200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2959950.0
       }
     ],
     "TPEX:5530": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7014800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 18649150.0
       }
     ],
     "TPEX:5536": [
       {
         "date": "2026-08-10",
         "turnover_twd": 663335000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1291757000.0
       }
     ],
     "TPEX:5543": [
       {
         "date": "2026-08-10",
         "turnover_twd": 395500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 50250.0
       }
     ],
     "TPEX:5547": [
       {
         "date": "2026-08-10",
         "turnover_twd": 469700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 161000.0
       }
     ],
     "TPEX:5548": [
       {
         "date": "2026-08-10",
         "turnover_twd": 599900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 878550.0
       }
     ],
     "TPEX:5601": [
       {
         "date": "2026-08-10",
         "turnover_twd": 146500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 208100.0
       }
     ],
     "TPEX:5603": [
       {
         "date": "2026-08-10",
         "turnover_twd": 197650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 917250.0
       }
     ],
     "TPEX:5604": [
       {
         "date": "2026-08-10",
         "turnover_twd": 153650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 885100.0
       }
     ],
     "TPEX:5609": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7988400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 31782200.0
       }
     ],
     "TPEX:5701": [
       {
         "date": "2026-08-10",
         "turnover_twd": 406670.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 294390.0
       }
     ],
     "TPEX:5703": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 43500.0
       }
     ],
     "TPEX:5704": [
       {
         "date": "2026-08-10",
         "turnover_twd": 87200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21600.0
       }
     ],
     "TPEX:5864": [
@@ -9345,19 +11217,36 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 205600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 173700.0
       }
     ],
     "TPEX:5903": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4047500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5564500.0
       }
     ],
-    "TPEX:5904": [],
+    "TPEX:5904": [
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2232168200.0
+      }
+    ],
     "TPEX:5905": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2652360.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2528440.0
       }
     ],
     "TPEX:6015": [
@@ -9406,1055 +11295,1759 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 7657550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5736500.0
       }
     ],
     "TPEX:6103": [
       {
         "date": "2026-08-10",
         "turnover_twd": 28550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 88500.0
       }
     ],
     "TPEX:6104": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41031400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 55759600.0
       }
     ],
     "TPEX:6109": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1104100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1816750.0
       }
     ],
     "TPEX:6111": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4089550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3698250.0
       }
     ],
     "TPEX:6113": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23810750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11884050.0
       }
     ],
     "TPEX:6114": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1805450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 438450.0
       }
     ],
     "TPEX:6118": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1006250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1807700.0
       }
     ],
     "TPEX:6121": [
       {
         "date": "2026-08-10",
         "turnover_twd": 216628000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 341963000.0
       }
     ],
     "TPEX:6122": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12117500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 14339200.0
       }
     ],
     "TPEX:6123": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1355400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2358100.0
       }
     ],
     "TPEX:6124": [
       {
         "date": "2026-08-10",
         "turnover_twd": 187800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 384900.0
       }
     ],
     "TPEX:6125": [
       {
         "date": "2026-08-10",
         "turnover_twd": 48626100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 26121200.0
       }
     ],
     "TPEX:6126": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10199900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11616950.0
       }
     ],
     "TPEX:6127": [
       {
         "date": "2026-08-10",
         "turnover_twd": 111051000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 326400600.0
       }
     ],
     "TPEX:6129": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6694100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4121100.0
       }
     ],
     "TPEX:6130": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1879150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 37614700.0
       }
     ],
     "TPEX:6134": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10806950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5971700.0
       }
     ],
     "TPEX:6138": [
       {
         "date": "2026-08-10",
         "turnover_twd": 306881000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 422706000.0
       }
     ],
     "TPEX:6140": [
       {
         "date": "2026-08-10",
         "turnover_twd": 898100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 576800.0
       }
     ],
     "TPEX:6143": [
       {
         "date": "2026-08-10",
         "turnover_twd": 31166000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 49691400.0
       }
     ],
     "TPEX:6144": [
       {
         "date": "2026-08-10",
         "turnover_twd": 52750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1865950.0
       }
     ],
     "TPEX:6146": [
       {
         "date": "2026-08-10",
         "turnover_twd": 61571500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 60230500.0
       }
     ],
     "TPEX:6147": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2078075000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5212654000.0
       }
     ],
     "TPEX:6148": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7209550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1918550.0
       }
     ],
     "TPEX:6150": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7134300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10232100.0
       }
     ],
     "TPEX:6151": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1642450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 19051600.0
       }
     ],
     "TPEX:6154": [
       {
         "date": "2026-08-10",
         "turnover_twd": 41100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 967650.0
       }
     ],
     "TPEX:6156": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19257150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 18859500.0
       }
     ],
     "TPEX:6158": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1602750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 299050.0
       }
     ],
     "TPEX:6160": [
       {
         "date": "2026-08-10",
         "turnover_twd": 634900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 394350.0
       }
     ],
     "TPEX:6161": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18527000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 13929200.0
       }
     ],
     "TPEX:6163": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13059450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 32149000.0
       }
     ],
     "TPEX:6167": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1876450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2162750.0
       }
     ],
     "TPEX:6169": [
       {
         "date": "2026-08-10",
         "turnover_twd": 167750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25600.0
       }
     ],
     "TPEX:6170": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6529550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5505900.0
       }
     ],
     "TPEX:6171": [
       {
         "date": "2026-08-10",
         "turnover_twd": 565350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24350.0
       }
     ],
     "TPEX:6173": [
       {
         "date": "2026-08-10",
         "turnover_twd": 886921000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7840532000.0
       }
     ],
     "TPEX:6174": [
       {
         "date": "2026-08-10",
         "turnover_twd": 55790250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 194005300.0
       }
     ],
     "TPEX:6175": [
       {
         "date": "2026-08-10",
         "turnover_twd": 83343200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 227542100.0
       }
     ],
     "TPEX:6179": [
       {
         "date": "2026-08-10",
         "turnover_twd": 31726950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 48802500.0
       }
     ],
     "TPEX:6180": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10777700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11586250.0
       }
     ],
     "TPEX:6182": [
       {
         "date": "2026-08-10",
         "turnover_twd": 496307000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3509624500.0
       }
     ],
     "TPEX:6185": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1443700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 752600.0
       }
     ],
     "TPEX:6186": [
       {
         "date": "2026-08-10",
         "turnover_twd": 30110100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 47728900.0
       }
     ],
     "TPEX:6187": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2850495000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7222525000.0
       }
     ],
     "TPEX:6188": [
       {
         "date": "2026-08-10",
         "turnover_twd": 51054900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 56606300.0
       }
     ],
     "TPEX:6190": [
       {
         "date": "2026-08-10",
         "turnover_twd": 79764200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 85099900.0
       }
     ],
     "TPEX:6194": [
       {
         "date": "2026-08-10",
         "turnover_twd": 741450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2234500.0
       }
     ],
     "TPEX:6195": [
       {
         "date": "2026-08-10",
         "turnover_twd": 514600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 847150.0
       }
     ],
     "TPEX:6198": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2236500.0
       }
     ],
     "TPEX:6199": [
       {
         "date": "2026-08-10",
         "turnover_twd": 42671000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 60572700.0
       }
     ],
     "TPEX:6203": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5422300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9998800.0
       }
     ],
     "TPEX:6204": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21005400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 30450000.0
       }
     ],
     "TPEX:6207": [
       {
         "date": "2026-08-10",
         "turnover_twd": 248488500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 508346500.0
       }
     ],
     "TPEX:6208": [
       {
         "date": "2026-08-10",
         "turnover_twd": 16078700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21908000.0
       }
     ],
     "TPEX:6210": [
       {
         "date": "2026-08-10",
         "turnover_twd": 171050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 377950.0
       }
     ],
     "TPEX:6212": [
       {
         "date": "2026-08-10",
         "turnover_twd": 58450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:6217": [
       {
         "date": "2026-08-10",
         "turnover_twd": 239324000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 147213500.0
       }
     ],
     "TPEX:6218": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8564300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17903700.0
       }
     ],
     "TPEX:6219": [
       {
         "date": "2026-08-10",
         "turnover_twd": 762850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1679000.0
       }
     ],
     "TPEX:6220": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3952350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7278700.0
       }
     ],
     "TPEX:6221": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1722150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 13994300.0
       }
     ],
     "TPEX:6222": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 421750.0
       }
     ],
     "TPEX:6223": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3872555000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3480630000.0
       }
     ],
     "TPEX:6227": [
       {
         "date": "2026-08-10",
         "turnover_twd": 37907500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 59369500.0
       }
     ],
     "TPEX:6228": [
       {
         "date": "2026-08-10",
         "turnover_twd": 54650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:6229": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2608050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 899450.0
       }
     ],
     "TPEX:6231": [
       {
         "date": "2026-08-10",
         "turnover_twd": 94660500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 53108000.0
       }
     ],
     "TPEX:6233": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2876400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3316850.0
       }
     ],
     "TPEX:6234": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10413200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15032200.0
       }
     ],
     "TPEX:6236": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 116050.0
       }
     ],
     "TPEX:6237": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4715850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7548550.0
       }
     ],
     "TPEX:6240": [
       {
         "date": "2026-08-10",
         "turnover_twd": 37650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 320300.0
       }
     ],
     "TPEX:6241": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4422250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1928550.0
       }
     ],
     "TPEX:6242": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 441300.0
       }
     ],
     "TPEX:6244": [
       {
         "date": "2026-08-10",
         "turnover_twd": 38180250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 150416000.0
       }
     ],
     "TPEX:6245": [
       {
         "date": "2026-08-10",
         "turnover_twd": 106889500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 41323500.0
       }
     ],
     "TPEX:6246": [
       {
         "date": "2026-08-10",
         "turnover_twd": 331650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2971150.0
       }
     ],
     "TPEX:6248": [
       {
         "date": "2026-08-10",
         "turnover_twd": 668000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1909150.0
       }
     ],
     "TPEX:6259": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11842300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 35141600.0
       }
     ],
     "TPEX:6261": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21750200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 36774200.0
       }
     ],
     "TPEX:6263": [
       {
         "date": "2026-08-10",
         "turnover_twd": 19894000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 29415000.0
       }
     ],
     "TPEX:6264": [
       {
         "date": "2026-08-10",
         "turnover_twd": 78060.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 211630.0
       }
     ],
     "TPEX:6265": [
       {
         "date": "2026-08-10",
         "turnover_twd": 313867900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 532325500.0
       }
     ],
     "TPEX:6266": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4590350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5704500.0
       }
     ],
     "TPEX:6270": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5115700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7545600.0
       }
     ],
     "TPEX:6274": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12816455000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4403715000.0
       }
     ],
     "TPEX:6275": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11124700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10238700.0
       }
     ],
     "TPEX:6276": [
       {
         "date": "2026-08-10",
         "turnover_twd": 854050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 961750.0
       }
     ],
     "TPEX:6279": [
       {
         "date": "2026-08-10",
         "turnover_twd": 440046000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 98786000.0
       }
     ],
     "TPEX:6284": [
       {
         "date": "2026-08-10",
         "turnover_twd": 64097600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 128410400.0
       }
     ],
     "TPEX:6290": [
       {
         "date": "2026-08-10",
         "turnover_twd": 717282500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 765482000.0
       }
     ],
     "TPEX:6291": [
       {
         "date": "2026-08-10",
         "turnover_twd": 150337500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 429337000.0
       }
     ],
     "TPEX:6292": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4675600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 42014100.0
       }
     ],
     "TPEX:6294": [
       {
         "date": "2026-08-10",
         "turnover_twd": 186900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3974350.0
       }
     ],
     "TPEX:6411": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17659400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25012800.0
       }
     ],
     "TPEX:6417": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10274000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10785500.0
       }
     ],
     "TPEX:6418": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2873600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3685000.0
       }
     ],
     "TPEX:6419": [
       {
         "date": "2026-08-10",
         "turnover_twd": 62904500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 146135000.0
       }
     ],
     "TPEX:6423": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3374500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1791400.0
       }
     ],
     "TPEX:6425": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7835900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17245300.0
       }
     ],
     "TPEX:6432": [
       {
         "date": "2026-08-10",
         "turnover_twd": 68193400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 234546800.0
       }
     ],
     "TPEX:6435": [
       {
         "date": "2026-08-10",
         "turnover_twd": 123992000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 344678500.0
       }
     ],
     "TPEX:6441": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6935900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2525950.0
       }
     ],
     "TPEX:6461": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2628200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2781150.0
       }
     ],
     "TPEX:6462": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43265000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24669500.0
       }
     ],
     "TPEX:6465": [
       {
         "date": "2026-08-10",
         "turnover_twd": 61123200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6943000.0
       }
     ],
     "TPEX:6469": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43002500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 19944100.0
       }
     ],
     "TPEX:6470": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1206300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1345750.0
       }
     ],
     "TPEX:6474": [
       {
         "date": "2026-08-10",
         "turnover_twd": 828250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4164450.0
       }
     ],
     "TPEX:6482": [
       {
         "date": "2026-08-10",
         "turnover_twd": 55300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 392450.0
       }
     ],
     "TPEX:6485": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18062700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 20847300.0
       }
     ],
     "TPEX:6486": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3711700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6564700.0
       }
     ],
     "TPEX:6488": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8114074000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9604011000.0
       }
     ],
     "TPEX:6492": [
       {
         "date": "2026-08-10",
         "turnover_twd": 20217750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 13861000.0
       }
     ],
     "TPEX:6494": [
       {
         "date": "2026-08-10",
         "turnover_twd": 15160300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5727300.0
       }
     ],
     "TPEX:6496": [
       {
         "date": "2026-08-10",
         "turnover_twd": 193200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 145700.0
       }
     ],
     "TPEX:6498": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5846100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6218800.0
       }
     ],
     "TPEX:6499": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14126700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 13268200.0
       }
     ],
     "TPEX:6506": [
       {
         "date": "2026-08-10",
         "turnover_twd": 512400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1641200.0
       }
     ],
     "TPEX:6508": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1479500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 766750.0
       }
     ],
     "TPEX:6509": [
       {
         "date": "2026-08-10",
         "turnover_twd": 53023200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 64483500.0
       }
     ],
     "TPEX:6510": [
       {
         "date": "2026-08-10",
         "turnover_twd": 857005000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1171410000.0
       }
     ],
     "TPEX:6512": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 281400.0
       }
     ],
     "TPEX:6516": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3478500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4315200.0
       }
     ],
     "TPEX:6517": [
       {
         "date": "2026-08-10",
         "turnover_twd": 29843800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 48700100.0
       }
     ],
     "TPEX:6523": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2800600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3846500.0
       }
     ],
     "TPEX:6527": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4106900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6148000.0
       }
     ],
     "TPEX:6530": [
       {
         "date": "2026-08-10",
         "turnover_twd": 55528900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 242200100.0
       }
     ],
     "TPEX:6532": [
       {
         "date": "2026-08-10",
         "turnover_twd": 96248600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 32564800.0
       }
     ],
     "TPEX:6535": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14353200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12019000.0
       }
     ],
     "TPEX:6538": [
       {
         "date": "2026-08-10",
         "turnover_twd": 268134000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 713222000.0
       }
     ],
     "TPEX:6542": [
       {
         "date": "2026-08-10",
         "turnover_twd": 472300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 46350.0
       }
     ],
     "TPEX:6546": [
       {
         "date": "2026-08-10",
         "turnover_twd": 21517200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 101174800.0
       }
     ],
     "TPEX:6547": [
       {
         "date": "2026-08-10",
         "turnover_twd": 255040650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 163635700.0
       }
     ],
     "TPEX:6548": [
       {
         "date": "2026-08-10",
         "turnover_twd": 223516400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 156030000.0
       }
     ],
     "TPEX:6556": [
       {
         "date": "2026-08-10",
         "turnover_twd": 803500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1856800.0
       }
     ],
     "TPEX:6560": [
       {
         "date": "2026-08-10",
         "turnover_twd": 484700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1790000.0
       }
     ],
     "TPEX:6561": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12847500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 21434000.0
       }
     ],
     "TPEX:6568": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7964500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9130500.0
       }
     ],
     "TPEX:6569": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3730400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3679500.0
       }
     ],
     "TPEX:6570": [
       {
         "date": "2026-08-10",
         "turnover_twd": 34448000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12086800.0
       }
     ],
     "TPEX:6574": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17183500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 19507500.0
       }
     ],
     "TPEX:6576": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5225900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11213300.0
       }
     ],
     "TPEX:6577": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4489700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5510400.0
       }
     ],
     "TPEX:6578": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1510450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 567700.0
       }
     ],
     "TPEX:6584": [
       {
         "date": "2026-08-10",
         "turnover_twd": 142966000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 330362000.0
       }
     ],
     "TPEX:6588": [
       {
         "date": "2026-08-10",
         "turnover_twd": 203682200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 220946700.0
       }
     ],
     "TPEX:6590": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2657800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 857700.0
       }
     ],
     "TPEX:6593": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1060700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 907400.0
       }
     ],
     "TPEX:6596": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5470200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 20027200.0
       }
     ],
     "TPEX:6597": [
       {
         "date": "2026-08-10",
         "turnover_twd": 325600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 277700.0
       }
     ],
     "TPEX:6603": [
       {
         "date": "2026-08-10",
         "turnover_twd": 28749000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 139174400.0
       }
     ],
     "TPEX:6609": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11080900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5086200.0
       }
     ],
     "TPEX:6612": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1699700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1972700.0
       }
     ],
     "TPEX:6613": [
       {
         "date": "2026-08-10",
         "turnover_twd": 681767000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 166959000.0
       }
     ],
     "TPEX:6615": [
       {
         "date": "2026-08-10",
         "turnover_twd": 412300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 511600.0
       }
     ],
     "TPEX:6616": [
       {
         "date": "2026-08-10",
         "turnover_twd": 172920.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 103400.0
       }
     ],
     "TPEX:6617": [
       {
         "date": "2026-08-10",
         "turnover_twd": 141594300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 42047000.0
       }
     ],
     "TPEX:6620": [
       {
         "date": "2026-08-10",
         "turnover_twd": 35283300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 29511400.0
       }
     ],
     "TPEX:6624": [
       {
         "date": "2026-08-10",
         "turnover_twd": 87900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 533800.0
       }
     ],
     "TPEX:6629": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1598000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4628000.0
       }
     ],
     "TPEX:6637": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2673200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1906700.0
       }
     ],
     "TPEX:6640": [
       {
         "date": "2026-08-10",
         "turnover_twd": 94524000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 223446000.0
       }
     ],
     "TPEX:6642": [
       {
         "date": "2026-08-10",
         "turnover_twd": 68935000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 68157300.0
       }
     ],
     "TPEX:6643": [
       {
         "date": "2026-08-10",
         "turnover_twd": 578772500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 238570000.0
       }
     ],
     "TPEX:6649": [
       {
         "date": "2026-08-10",
         "turnover_twd": 364350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 776650.0
       }
     ],
     "TPEX:6651": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18152500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 65130500.0
       }
     ],
     "TPEX:6654": [
       {
         "date": "2026-08-10",
         "turnover_twd": 8725000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10387000.0
       }
     ],
     "TPEX:6661": [
       {
         "date": "2026-08-10",
         "turnover_twd": 69550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 303600.0
       }
     ],
     "TPEX:6662": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1198350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 114300.0
       }
     ],
     "TPEX:6664": [
       {
         "date": "2026-08-10",
         "turnover_twd": 88401000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 80228500.0
       }
     ],
     "TPEX:6667": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43515500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 42456000.0
       }
     ],
     "TPEX:6679": [
       {
         "date": "2026-08-10",
         "turnover_twd": 67181000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 45249500.0
       }
     ],
     "TPEX:6680": [
       {
         "date": "2026-08-10",
+        "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
         "turnover_twd": 0.0
       }
     ],
@@ -10462,581 +13055,969 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 659395000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 846255000.0
       }
     ],
     "TPEX:6684": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3374650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4744100.0
       }
     ],
     "TPEX:6690": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2302500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 14796500.0
       }
     ],
     "TPEX:6692": [
       {
         "date": "2026-08-10",
         "turnover_twd": 682750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 793100.0
       }
     ],
     "TPEX:6693": [
       {
         "date": "2026-08-10",
         "turnover_twd": 106906000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 269158500.0
       }
     ],
     "TPEX:6697": [
       {
         "date": "2026-08-10",
         "turnover_twd": 637250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 786100.0
       }
     ],
     "TPEX:6703": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4064500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6931500.0
       }
     ],
     "TPEX:6708": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 75700.0
       }
     ],
     "TPEX:6712": [
       {
         "date": "2026-08-10",
         "turnover_twd": 54902000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 69337500.0
       }
     ],
     "TPEX:6716": [
       {
         "date": "2026-08-10",
         "turnover_twd": 20479800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 192603000.0
       }
     ],
     "TPEX:6720": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2599000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1652000.0
       }
     ],
     "TPEX:6721": [
       {
         "date": "2026-08-10",
         "turnover_twd": 416000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 720100.0
       }
     ],
     "TPEX:6725": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17302500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 60561500.0
       }
     ],
     "TPEX:6727": [
       {
         "date": "2026-08-10",
         "turnover_twd": 246228500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 257367500.0
       }
     ],
     "TPEX:6728": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3339000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2219500.0
       }
     ],
     "TPEX:6730": [
       {
         "date": "2026-08-10",
         "turnover_twd": 172100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 707650.0
       }
     ],
     "TPEX:6732": [
       {
         "date": "2026-08-10",
         "turnover_twd": 16958000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 16802000.0
       }
     ],
     "TPEX:6733": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1556350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3028800.0
       }
     ],
     "TPEX:6735": [
       {
         "date": "2026-08-10",
         "turnover_twd": 37498000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9926200.0
       }
     ],
     "TPEX:6739": [
       {
         "date": "2026-08-10",
         "turnover_twd": 92335000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 171105000.0
       }
     ],
     "TPEX:6741": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4957600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 20944700.0
       }
     ],
     "TPEX:6751": [
       {
         "date": "2026-08-10",
         "turnover_twd": 209850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 166700.0
       }
     ],
     "TPEX:6752": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1194200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 706000.0
       }
     ],
     "TPEX:6761": [
       {
         "date": "2026-08-10",
         "turnover_twd": 58405000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 225630500.0
       }
     ],
     "TPEX:6762": [
       {
         "date": "2026-08-10",
         "turnover_twd": 169000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 170000.0
       }
     ],
     "TPEX:6763": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25641950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5702500.0
       }
     ],
     "TPEX:6767": [
       {
         "date": "2026-08-10",
         "turnover_twd": 24700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 99100.0
       }
     ],
     "TPEX:6785": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2645800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3396200.0
       }
     ],
     "TPEX:6788": [
       {
         "date": "2026-08-10",
         "turnover_twd": 114979500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 73188000.0
       }
     ],
     "TPEX:6791": [
       {
         "date": "2026-08-10",
         "turnover_twd": 729500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2242000.0
       }
     ],
     "TPEX:6803": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11594000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15562000.0
       }
     ],
     "TPEX:6804": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2216000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4842350.0
       }
     ],
     "TPEX:6811": [
       {
         "date": "2026-08-10",
         "turnover_twd": 37332500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 49473000.0
       }
     ],
     "TPEX:6821": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2594250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8610050.0
       }
     ],
     "TPEX:6823": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7300200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4094900.0
       }
     ],
     "TPEX:6829": [
       {
         "date": "2026-08-10",
         "turnover_twd": 160986000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 269757500.0
       }
     ],
     "TPEX:6840": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2852000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 88495900.0
       }
     ],
     "TPEX:6841": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10665000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25212300.0
       }
     ],
     "TPEX:6843": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 39500.0
       }
     ],
     "TPEX:6844": [
       {
         "date": "2026-08-10",
         "turnover_twd": 903800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 490400.0
       }
     ],
     "TPEX:6846": [
       {
         "date": "2026-08-10",
         "turnover_twd": 424900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 969800.0
       }
     ],
     "TPEX:6855": [
       {
         "date": "2026-08-10",
         "turnover_twd": 343500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 474500.0
       }
     ],
     "TPEX:6856": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 406800.0
       }
     ],
     "TPEX:6859": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6549200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2368000.0
       }
     ],
     "TPEX:6865": [
       {
         "date": "2026-08-10",
         "turnover_twd": 49450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 101100.0
       }
     ],
     "TPEX:6870": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10386500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15849500.0
       }
     ],
     "TPEX:6872": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1045750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 307400.0
       }
     ],
     "TPEX:6874": [
       {
         "date": "2026-08-10",
         "turnover_twd": 927800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8438100.0
       }
     ],
     "TPEX:6875": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1245050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3860750.0
       }
     ],
     "TPEX:6877": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6447000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3072000.0
       }
     ],
     "TPEX:6881": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1802500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1000000.0
       }
     ],
     "TPEX:6884": [
       {
         "date": "2026-08-10",
         "turnover_twd": 445000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 341150.0
       }
     ],
     "TPEX:6894": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7682500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17661000.0
       }
     ],
     "TPEX:6895": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3593000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5053000.0
       }
     ],
     "TPEX:6899": [
       {
         "date": "2026-08-10",
         "turnover_twd": 659700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 862400.0
       }
     ],
     "TPEX:6903": [
       {
         "date": "2026-08-10",
         "turnover_twd": 95128500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 129782500.0
       }
     ],
     "TPEX:6904": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 120500.0
       }
     ],
     "TPEX:6907": [
       {
         "date": "2026-08-10",
         "turnover_twd": 844198000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 325365000.0
       }
     ],
     "TPEX:6910": [
       {
         "date": "2026-08-10",
         "turnover_twd": 74100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 550600.0
       }
     ],
     "TPEX:6913": [
       {
         "date": "2026-08-10",
         "turnover_twd": 327692500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 178859000.0
       }
     ],
     "TPEX:6922": [
       {
         "date": "2026-08-10",
         "turnover_twd": 33524500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 66713000.0
       }
     ],
     "TPEX:6925": [
       {
         "date": "2026-08-10",
         "turnover_twd": 751500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1020800.0
       }
     ],
     "TPEX:6929": [
       {
         "date": "2026-08-10",
         "turnover_twd": 262850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 288100.0
       }
     ],
     "TPEX:6945": [
       {
         "date": "2026-08-10",
         "turnover_twd": 30471900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 51797000.0
       }
     ],
     "TPEX:6953": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5187000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 11553000.0
       }
     ],
     "TPEX:6961": [
       {
         "date": "2026-08-10",
         "turnover_twd": 830200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 827300.0
       }
     ],
     "TPEX:6967": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2802000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1051500.0
       }
     ],
     "TPEX:6968": [
       {
         "date": "2026-08-10",
         "turnover_twd": 10013600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1308800.0
       }
     ],
     "TPEX:6971": [
       {
         "date": "2026-08-10",
         "turnover_twd": 509700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1168400.0
       }
     ],
     "TPEX:6982": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1978400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1169450.0
       }
     ],
     "TPEX:6983": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7528000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 12180500.0
       }
     ],
     "TPEX:6986": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2063250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2243500.0
       }
     ],
     "TPEX:6996": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9715000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8439500.0
       }
     ],
     "TPEX:6997": [
       {
         "date": "2026-08-10",
         "turnover_twd": 207300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:7402": [
       {
         "date": "2026-08-10",
         "turnover_twd": 22712500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 36291500.0
       }
     ],
     "TPEX:7547": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3527500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 598300.0
       }
     ],
     "TPEX:7556": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4222500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9108500.0
       }
     ],
     "TPEX:7584": [
       {
         "date": "2026-08-10",
         "turnover_twd": 25350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 53250.0
       }
     ],
     "TPEX:7642": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2134100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2045000.0
       }
     ],
     "TPEX:7703": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11132500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9364000.0
       }
     ],
     "TPEX:7704": [
       {
         "date": "2026-08-10",
         "turnover_twd": 9877300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2137500.0
       }
     ],
     "TPEX:7708": [
       {
         "date": "2026-08-10",
         "turnover_twd": 930400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3695400.0
       }
     ],
     "TPEX:7709": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4294900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5594900.0
       }
     ],
     "TPEX:7712": [
       {
         "date": "2026-08-10",
         "turnover_twd": 36059000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 32298500.0
       }
     ],
     "TPEX:7713": [
       {
         "date": "2026-08-10",
         "turnover_twd": 759000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 282300.0
       }
     ],
     "TPEX:7714": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23329500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 38322500.0
       }
     ],
     "TPEX:7715": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3954450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5226950.0
       }
     ],
     "TPEX:7716": [
       {
         "date": "2026-08-10",
         "turnover_twd": 443050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24000.0
       }
     ],
     "TPEX:7717": [
       {
         "date": "2026-08-10",
         "turnover_twd": 52378500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 71025000.0
       }
     ],
     "TPEX:7718": [
       {
         "date": "2026-08-10",
         "turnover_twd": 330750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2542450.0
       }
     ],
     "TPEX:7723": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4148900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8736450.0
       }
     ],
     "TPEX:7728": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5486000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5314000.0
       }
     ],
     "TPEX:7734": [
       {
         "date": "2026-08-10",
         "turnover_twd": 384605000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 654685000.0
       }
     ],
     "TPEX:7738": [
       {
         "date": "2026-08-10",
         "turnover_twd": 666500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4106500.0
       }
     ],
     "TPEX:7743": [
       {
         "date": "2026-08-10",
         "turnover_twd": 42400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 40850.0
       }
     ],
     "TPEX:7744": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43382500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 76057500.0
       }
     ],
     "TPEX:7747": [
       {
         "date": "2026-08-10",
+        "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
         "turnover_twd": 0.0
       }
     ],
@@ -11044,84 +14025,140 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 352850000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 223545000.0
       }
     ],
     "TPEX:7753": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1096000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 188050.0
       }
     ],
     "TPEX:7757": [
       {
         "date": "2026-08-10",
         "turnover_twd": 445800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3482300.0
       }
     ],
     "TPEX:7767": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1597400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9821150.0
       }
     ],
     "TPEX:7770": [
       {
         "date": "2026-08-10",
         "turnover_twd": 79350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 158450.0
       }
     ],
     "TPEX:7772": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3973100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3644100.0
       }
     ],
     "TPEX:7777": [
       {
         "date": "2026-08-10",
         "turnover_twd": 105418750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 61070850.0
       }
     ],
     "TPEX:7782": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 51050.0
       }
     ],
     "TPEX:7792": [
       {
         "date": "2026-08-10",
         "turnover_twd": 46353000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 603519000.0
       }
     ],
     "TPEX:7794": [
       {
         "date": "2026-08-10",
         "turnover_twd": 473150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 736750.0
       }
     ],
     "TPEX:7805": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17996000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 72546000.0
       }
     ],
     "TPEX:7810": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6731500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 35807000.0
       }
     ],
     "TPEX:7811": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2344500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1775600.0
       }
     ],
     "TPEX:7814": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1160000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1410550.0
       }
     ],
     "TPEX:7819": [
@@ -11134,720 +14171,1200 @@
       {
         "date": "2026-08-10",
         "turnover_twd": 1760000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1805500.0
       }
     ],
     "TPEX:7828": [
       {
         "date": "2026-08-10",
         "turnover_twd": 125760000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 521575000.0
       }
     ],
     "TPEX:7839": [
       {
         "date": "2026-08-10",
         "turnover_twd": 180800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 503250.0
       }
     ],
     "TPEX:7842": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4460900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 8553100.0
       }
     ],
     "TPEX:8024": [
       {
         "date": "2026-08-10",
         "turnover_twd": 375400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 757100.0
       }
     ],
     "TPEX:8027": [
       {
         "date": "2026-08-10",
         "turnover_twd": 340003500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 467486500.0
       }
     ],
     "TPEX:8032": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2591750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1706800.0
       }
     ],
     "TPEX:8034": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2890500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 999450.0
       }
     ],
     "TPEX:8038": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3501850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4322800.0
       }
     ],
     "TPEX:8040": [
       {
         "date": "2026-08-10",
         "turnover_twd": 39241000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 26840200.0
       }
     ],
     "TPEX:8042": [
       {
         "date": "2026-08-10",
         "turnover_twd": 446650000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 961502000.0
       }
     ],
     "TPEX:8043": [
       {
         "date": "2026-08-10",
         "turnover_twd": 384939500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2173841000.0
       }
     ],
     "TPEX:8044": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23942900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7610650.0
       }
     ],
     "TPEX:8047": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1661650.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 797800.0
       }
     ],
     "TPEX:8048": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6653400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3263400.0
       }
     ],
     "TPEX:8049": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3747000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7974800.0
       }
     ],
     "TPEX:8050": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1096976300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 180521300.0
       }
     ],
     "TPEX:8054": [
       {
         "date": "2026-08-10",
         "turnover_twd": 112780300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 96399600.0
       }
     ],
     "TPEX:8059": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1881550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1609500.0
       }
     ],
     "TPEX:8064": [
       {
         "date": "2026-08-10",
         "turnover_twd": 201659500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 296792500.0
       }
     ],
     "TPEX:8066": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 340300.0
       }
     ],
     "TPEX:8067": [
       {
         "date": "2026-08-10",
         "turnover_twd": 145450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 355200.0
       }
     ],
     "TPEX:8068": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2759200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3879650.0
       }
     ],
     "TPEX:8069": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3426438000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2129930000.0
       }
     ],
     "TPEX:8071": [
       {
         "date": "2026-08-10",
         "turnover_twd": 22153700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 68137900.0
       }
     ],
     "TPEX:8074": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27257500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 25066200.0
       }
     ],
     "TPEX:8076": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7972300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 10520850.0
       }
     ],
     "TPEX:8077": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 87950.0
       }
     ],
     "TPEX:8080": [
       {
         "date": "2026-08-10",
         "turnover_twd": 858950.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1426200.0
       }
     ],
     "TPEX:8083": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6494500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9077500.0
       }
     ],
     "TPEX:8084": [
       {
         "date": "2026-08-10",
         "turnover_twd": 7818750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27807300.0
       }
     ],
     "TPEX:8085": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1916050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1458400.0
       }
     ],
     "TPEX:8086": [
       {
         "date": "2026-08-10",
         "turnover_twd": 821686000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 282001500.0
       }
     ],
     "TPEX:8087": [
       {
         "date": "2026-08-10",
         "turnover_twd": 117900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4903350.0
       }
     ],
     "TPEX:8088": [
       {
         "date": "2026-08-10",
         "turnover_twd": 104627700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 51860050.0
       }
     ],
     "TPEX:8089": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1132500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1691550.0
       }
     ],
     "TPEX:8091": [
       {
         "date": "2026-08-10",
         "turnover_twd": 66192000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 139554000.0
       }
     ],
     "TPEX:8092": [
       {
         "date": "2026-08-10",
         "turnover_twd": 997900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 612300.0
       }
     ],
     "TPEX:8093": [
       {
         "date": "2026-08-10",
         "turnover_twd": 480300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2922650.0
       }
     ],
     "TPEX:8096": [
       {
         "date": "2026-08-10",
         "turnover_twd": 930262000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 719902000.0
       }
     ],
     "TPEX:8097": [
       {
         "date": "2026-08-10",
         "turnover_twd": 719600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2386500.0
       }
     ],
     "TPEX:8099": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4248500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2197700.0
       }
     ],
     "TPEX:8102": [
       {
         "date": "2026-08-10",
         "turnover_twd": 479000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1283000.0
       }
     ],
     "TPEX:8107": [
       {
         "date": "2026-08-10",
         "turnover_twd": 234500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1960900.0
       }
     ],
     "TPEX:8109": [
       {
         "date": "2026-08-10",
         "turnover_twd": 34792500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 16447500.0
       }
     ],
     "TPEX:8111": [
       {
         "date": "2026-08-10",
         "turnover_twd": 349755800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 109292900.0
       }
     ],
     "TPEX:8121": [
       {
         "date": "2026-08-10",
         "turnover_twd": 23328450.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 47629050.0
       }
     ],
     "TPEX:8147": [
       {
         "date": "2026-08-10",
         "turnover_twd": 16049000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 53745000.0
       }
     ],
     "TPEX:8155": [
       {
         "date": "2026-08-10",
         "turnover_twd": 157192000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 236540500.0
       }
     ],
     "TPEX:8171": [
       {
         "date": "2026-08-10",
         "turnover_twd": 565000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1205400.0
       }
     ],
     "TPEX:8176": [
       {
         "date": "2026-08-10",
         "turnover_twd": 609160.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2591270.0
       }
     ],
     "TPEX:8182": [
       {
         "date": "2026-08-10",
         "turnover_twd": 27068250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 125226850.0
       }
     ],
     "TPEX:8183": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4277350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 7289700.0
       }
     ],
     "TPEX:8227": [
       {
         "date": "2026-08-10",
         "turnover_twd": 33455500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 138086000.0
       }
     ],
     "TPEX:8234": [
       {
         "date": "2026-08-10",
         "turnover_twd": 117675300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 41216100.0
       }
     ],
     "TPEX:8240": [
       {
         "date": "2026-08-10",
         "turnover_twd": 16635550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9593200.0
       }
     ],
     "TPEX:8255": [
       {
         "date": "2026-08-10",
         "turnover_twd": 44580500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 140160500.0
       }
     ],
     "TPEX:8272": [
       {
         "date": "2026-08-10",
         "turnover_twd": 706000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 513500.0
       }
     ],
     "TPEX:8277": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1548540.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 889350.0
       }
     ],
     "TPEX:8279": [
       {
         "date": "2026-08-10",
         "turnover_twd": 628300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 622000.0
       }
     ],
     "TPEX:8284": [
       {
         "date": "2026-08-10",
         "turnover_twd": 497100.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4235200.0
       }
     ],
     "TPEX:8289": [
       {
         "date": "2026-08-10",
         "turnover_twd": 12603750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 71535600.0
       }
     ],
     "TPEX:8291": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2104750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2642700.0
       }
     ],
     "TPEX:8299": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13428430000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 15394435000.0
       }
     ],
     "TPEX:8342": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 354500.0
       }
     ],
     "TPEX:8349": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2732050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 5260450.0
       }
     ],
     "TPEX:8354": [
       {
         "date": "2026-08-10",
         "turnover_twd": 685300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 9304950.0
       }
     ],
     "TPEX:8358": [
       {
         "date": "2026-08-10",
         "turnover_twd": 11315236500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 20339023000.0
       }
     ],
     "TPEX:8383": [
       {
         "date": "2026-08-10",
         "turnover_twd": 129749700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 131755300.0
       }
     ],
     "TPEX:8390": [
       {
         "date": "2026-08-10",
         "turnover_twd": 31908700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 38498900.0
       }
     ],
     "TPEX:8401": [
       {
         "date": "2026-08-10",
         "turnover_twd": 455050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 624100.0
       }
     ],
     "TPEX:8403": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1904150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2249150.0
       }
     ],
     "TPEX:8409": [
       {
         "date": "2026-08-10",
         "turnover_twd": 218600.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 0.0
       }
     ],
     "TPEX:8410": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1583350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 604750.0
       }
     ],
     "TPEX:8415": [
       {
         "date": "2026-08-10",
         "turnover_twd": 14222250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 59670300.0
       }
     ],
     "TPEX:8416": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1005500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 170000.0
       }
     ],
     "TPEX:8421": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3964400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3850650.0
       }
     ],
     "TPEX:8423": [
       {
         "date": "2026-08-10",
         "turnover_twd": 216550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 212500.0
       }
     ],
     "TPEX:8424": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2618300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 483100.0
       }
     ],
     "TPEX:8426": [
       {
         "date": "2026-08-10",
         "turnover_twd": 192350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 298650.0
       }
     ],
     "TPEX:8431": [
       {
         "date": "2026-08-10",
         "turnover_twd": 13304900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 6743050.0
       }
     ],
     "TPEX:8432": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2291000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 557100.0
       }
     ],
     "TPEX:8433": [
       {
         "date": "2026-08-10",
         "turnover_twd": 601500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2476700.0
       }
     ],
     "TPEX:8435": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6379500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 701700.0
       }
     ],
     "TPEX:8436": [
       {
         "date": "2026-08-10",
         "turnover_twd": 99070500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 95780000.0
       }
     ],
     "TPEX:8437": [
       {
         "date": "2026-08-10",
         "turnover_twd": 146790.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 27630.0
       }
     ],
     "TPEX:8440": [
       {
         "date": "2026-08-10",
         "turnover_twd": 588800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 933950.0
       }
     ],
     "TPEX:8444": [
       {
         "date": "2026-08-10",
         "turnover_twd": 81400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 174090.0
       }
     ],
     "TPEX:8446": [
       {
         "date": "2026-08-10",
         "turnover_twd": 3584800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4452400.0
       }
     ],
     "TPEX:8450": [
       {
         "date": "2026-08-10",
         "turnover_twd": 465000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 192950.0
       }
     ],
     "TPEX:8455": [
       {
         "date": "2026-08-10",
         "turnover_twd": 48150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 24950.0
       }
     ],
     "TPEX:8472": [
       {
         "date": "2026-08-10",
         "turnover_twd": 2025200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1040900.0
       }
     ],
     "TPEX:8477": [
       {
         "date": "2026-08-10",
         "turnover_twd": 159500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 630850.0
       }
     ],
     "TPEX:8489": [
       {
         "date": "2026-08-10",
         "turnover_twd": 248400.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 503300.0
       }
     ],
     "TPEX:8905": [
       {
         "date": "2026-08-10",
         "turnover_twd": 136550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 701700.0
       }
     ],
     "TPEX:8906": [
       {
         "date": "2026-08-10",
         "turnover_twd": 79350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 670950.0
       }
     ],
     "TPEX:8908": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1307700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 479600.0
       }
     ],
     "TPEX:8916": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4870850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2168400.0
       }
     ],
     "TPEX:8917": [
       {
         "date": "2026-08-10",
         "turnover_twd": 0.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 53500.0
       }
     ],
     "TPEX:8921": [
       {
         "date": "2026-08-10",
         "turnover_twd": 17300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 17450.0
       }
     ],
     "TPEX:8923": [
       {
         "date": "2026-08-10",
         "turnover_twd": 18800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 168600.0
       }
     ],
     "TPEX:8924": [
       {
         "date": "2026-08-10",
         "turnover_twd": 4361500.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 3293300.0
       }
     ],
     "TPEX:8927": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6094250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1119750.0
       }
     ],
     "TPEX:8928": [
       {
         "date": "2026-08-10",
         "turnover_twd": 365250.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 898150.0
       }
     ],
     "TPEX:8929": [
       {
         "date": "2026-08-10",
         "turnover_twd": 80150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 147950.0
       }
     ],
     "TPEX:8930": [
       {
         "date": "2026-08-10",
         "turnover_twd": 711700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1166850.0
       }
     ],
     "TPEX:8931": [
       {
         "date": "2026-08-10",
         "turnover_twd": 571000.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 728900.0
       }
     ],
     "TPEX:8932": [
       {
         "date": "2026-08-10",
         "turnover_twd": 145932300.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 237878500.0
       }
     ],
     "TPEX:8933": [
       {
         "date": "2026-08-10",
         "turnover_twd": 416110.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 227310.0
       }
     ],
     "TPEX:8935": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1574550.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1862850.0
       }
     ],
     "TPEX:8936": [
       {
         "date": "2026-08-10",
         "turnover_twd": 43989700.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 119034300.0
       }
     ],
     "TPEX:8937": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1050350.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2299800.0
       }
     ],
     "TPEX:8938": [
       {
         "date": "2026-08-10",
         "turnover_twd": 5074800.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 4519600.0
       }
     ],
     "TPEX:8941": [
       {
         "date": "2026-08-10",
         "turnover_twd": 86750.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 1069700.0
       }
     ],
     "TPEX:8942": [
       {
         "date": "2026-08-10",
         "turnover_twd": 6488850.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 71394900.0
       }
     ],
     "TPEX:9949": [
       {
         "date": "2026-08-10",
         "turnover_twd": 447200.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 431200.0
       }
     ],
     "TPEX:9950": [
       {
         "date": "2026-08-10",
         "turnover_twd": 322050.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 72700.0
       }
     ],
     "TPEX:9951": [
       {
         "date": "2026-08-10",
         "turnover_twd": 529900.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 2133000.0
       }
     ],
     "TPEX:9960": [
       {
         "date": "2026-08-10",
         "turnover_twd": 273150.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 187900.0
       }
     ],
     "TPEX:9962": [
       {
         "date": "2026-08-10",
         "turnover_twd": 1088410.0
+      },
+      {
+        "date": "2026-08-14",
+        "turnover_twd": 518150.0
       }
     ]
   },
@@ -11857,8 +15374,8 @@
       "last_new_snapshot_date": "2026-08-10"
     },
     "TPEX": {
-      "fingerprint": "5cfb68a8bafaeaf51a54a6374f573e8cb2d7c5e50869e3c0990d5859831d1f71",
-      "last_new_snapshot_date": "2026-08-10"
+      "fingerprint": "ea0b97900f4f5c5850be3cd5b34b7ceaf4356982faac4a3fce14cf4f44b8b729",
+      "last_new_snapshot_date": "2026-08-14"
     }
   }
 }
