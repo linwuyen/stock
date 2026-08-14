@@ -47,7 +47,7 @@ jobs:
         run: python scripts/sync_alert_state.py
       - name: Decision-engine invariants
         run: |
-          python scripts/validate.py
+          python scripts/validate_runtime.py
           python scripts/validate_screen_priority.py
           python scripts/validate_source_resilience.py
       - name: Performance dataset consistency
