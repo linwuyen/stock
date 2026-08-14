@@ -16,6 +16,7 @@ on:
       - 'scripts/validate_runtime.py'
       - 'scripts/validate_screen_priority.py'
       - 'scripts/validate_source_resilience.py'
+      - 'scripts/validate_transport_semantics.py'
       - '.github/workflows/market-scan.yml'
 
 permissions:
@@ -54,6 +55,7 @@ jobs:
           python scripts/validate_runtime.py
           python scripts/validate_screen_priority.py
           python scripts/validate_source_resilience.py
+          python scripts/validate_transport_semantics.py
           python scripts/rebuild_performance.py --check
           find scripts -type d -name '__pycache__' -prune -exec rm -rf {} +
 
