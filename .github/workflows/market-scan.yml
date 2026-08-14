@@ -48,9 +48,6 @@ jobs:
         if: steps.scanner.outputs.exit_code == '0'
         run: python scripts/refine_screen.py
 
-      - name: Sync alert state in validation workspace
-        run: python scripts/sync_alert_state.py
-
       - name: Validate repository invariants
         run: |
           python -m py_compile scripts/*.py
@@ -58,6 +55,16 @@ jobs:
           python scripts/validate_screen_priority.py
           python scripts/validate_source_resilience.py
           python scripts/rebuild_performance.py --check
+
+      - name: Enforce scanner write scope
+        shell: bash
+        run: |
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -vE '^data/(screen\.json|liquidity-history\.json)$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo 'Unexpected scanner side effects; refusing to persist mixed state:'
+            git status --short
+            exit 1
+          fi
 
       - name: Commit scanner state and diagnostics
         run: |
