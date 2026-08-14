@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: alpha-market-scan
@@ -70,7 +71,9 @@ jobs:
           fi
 
       - name: Commit scanner state and diagnostics
+        id: persist
         run: |
+          echo 'pushed=false' >> "$GITHUB_OUTPUT"
           if ! git diff --quiet -- data/screen.json data/liquidity-history.json; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -78,9 +81,16 @@ jobs:
             git commit -m 'data: refresh full-market alpha screen'
             git pull --rebase origin main
             git push origin HEAD:main
+            echo 'pushed=true' >> "$GITHUB_OUTPUT"
           else
             echo 'No scanner changes.'
           fi
+
+      - name: Dispatch dashboard validation and Pages deploy
+        if: steps.persist.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
 
       - name: Fail workflow after diagnostics are persisted
         if: steps.scanner.outputs.exit_code != '0'
