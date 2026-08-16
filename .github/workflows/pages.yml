@@ -1,26 +1,28 @@
-name: Validate and Deploy Alpha Engine
+name: Validate and Deploy Security Engine V5
 
 on:
   pull_request:
     branches: [main]
     paths:
       - 'index.html'
-      - 'styles.css'
+      - 'v5.css'
       - '*.js'
       - 'data/**'
       - 'scripts/**'
       - '.github/workflows/**'
       - 'README.md'
+      - 'docs/**'
   push:
     branches: [main]
     paths:
       - 'index.html'
-      - 'styles.css'
+      - 'v5.css'
       - '*.js'
       - 'data/**'
       - 'scripts/**'
       - '.github/workflows/**'
       - 'README.md'
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -40,14 +42,18 @@ jobs:
       - name: Static syntax
         run: |
           node --check engine.js
+          node --check app-v5.js
           node --check app.js
           node --check screen-v4.js
           python -m py_compile scripts/*.py
-      - name: Evaluate alert transition state in validation workspace
-        run: python scripts/sync_alert_state.py
-      - name: Decision-engine invariants
+      - name: Normalize migration snapshot and build canonical security decisions
         run: |
-          python scripts/validate_runtime.py
+          python scripts/normalize_screen_v5.py
+          python scripts/build_alpha.py
+          python scripts/sync_alert_state.py
+      - name: Security-engine invariants
+        run: |
+          python scripts/validate.py
           python scripts/validate_screen_priority.py
           python scripts/validate_source_resilience.py
           python scripts/validate_transport_semantics.py
@@ -63,6 +69,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild canonical published decision artifacts
+        run: |
+          python scripts/normalize_screen_v5.py
+          python scripts/build_alpha.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

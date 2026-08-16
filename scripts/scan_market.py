@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo("Asia/Taipei")
 NOW = datetime.now(TZ)
 TODAY = NOW.date().isoformat()
-UA = "linwuyen-alpha-engine/4.5 (+https://github.com/linwuyen/stock)"
+UA = "linwuyen-alpha-engine/5.0 (+https://github.com/linwuyen/stock)"
 
 TWSE = "https://openapi.twse.com.tw/v1"
 TPEX = "https://www.tpex.org.tw/openapi/v1"
@@ -39,15 +39,15 @@ SOURCES = {
 FINANCIAL_WORDS = ("金融", "銀行", "保險", "證券", "票券", "金控", "投信", "期貨")
 FINANCIAL_INDUSTRY_CODES = {"17"}
 CODE_RE = re.compile(r"^\d{4}$")
-GROWTH_WINSOR_PCT = 500.0
+GROWTH_RANKING_CAP_PCT = 100.0
+EXTREME_GROWTH_PCT = 200.0
 MIN_MARKET_CAP_TWD = 10_000_000_000.0
+LANES = ("GROWTH", "INFLECTION", "MISPRICING_QUALITY")
 
 
 def load(path, default):
     p = ROOT / path
-    if not p.exists():
-        return default
-    return json.loads(p.read_text(encoding="utf-8"))
+    return default if not p.exists() else json.loads(p.read_text(encoding="utf-8"))
 
 
 def write(path, obj):
@@ -108,8 +108,7 @@ def text(value):
 
 
 def code_of(row):
-    value = pick(row, ["公司代號", "公司代碼", "Code", "SecuritiesCompanyCode", "股票代號", "證券代號"])
-    value = text(value)
+    value = text(pick(row, ["公司代號", "公司代碼", "Code", "SecuritiesCompanyCode", "股票代號", "證券代號"]))
     return value if CODE_RE.match(value) else None
 
 
@@ -122,21 +121,12 @@ def industry_of(row):
 
 
 def issued_shares_of(row):
-    return num(pick(row, [
-        "IssueShares",
-        "IssuedShares",
-        "已發行普通股數或TDR原股發行股數",
-        "已發行普通股數",
-        "發行股數",
-    ]))
+    return num(pick(row, ["IssueShares", "IssuedShares", "已發行普通股數或TDR原股發行股數", "已發行普通股數", "發行股數"]))
 
 
 def is_financial(industry, name=""):
     industry = str(industry or "").strip()
-    if industry in FINANCIAL_INDUSTRY_CODES:
-        return True
-    haystack = f"{industry} {name}"
-    return any(word in haystack for word in FINANCIAL_WORDS)
+    return industry in FINANCIAL_INDUSTRY_CODES or any(word in f"{industry} {name}" for word in FINANCIAL_WORDS)
 
 
 def is_tdr(name):
@@ -148,18 +138,14 @@ def period_key(row):
     year = num(pick(row, ["年度", "Year", "year"]))
     quarter = num(pick(row, ["季別", "Quarter", "季", "quarter"]))
     month = text(pick(row, ["資料年月", "年月", "YearMonth"]))
-    if year is not None and quarter is not None:
-        return (int(year), int(quarter), month)
-    return (0, 0, month)
+    return (int(year), int(quarter), month) if year is not None and quarter is not None else (0, 0, month)
 
 
 def latest_rows(rows):
     out = {}
     for row in rows:
         code = code_of(row)
-        if not code:
-            continue
-        if code not in out or period_key(row) >= period_key(out[code]):
+        if code and (code not in out or period_key(row) >= period_key(out[code])):
             out[code] = row
     return out
 
@@ -223,7 +209,6 @@ def quality_score(fields):
 
 
 def profitability_basis(eps, pe, revenue_yoy):
-    """Discovery-only profitability gate. Never substitutes for verified earnings in Alpha research."""
     if eps is not None and eps > 0:
         return True, "LATEST_REPORTED_EPS"
     if pe is not None and pe > 0:
@@ -233,33 +218,44 @@ def profitability_basis(eps, pe, revenue_yoy):
     return False, "NO_PROFITABILITY_SIGNAL"
 
 
-def continuous_priority(revenue_yoy, cumulative_yoy, pe, eps, profitability, median_turnover, latest_turnover, observations, data_quality):
-    """Robust, non-saturating discovery priority. It ranks research attention, not expected return or Buy eligibility."""
+def discovery_lane(revenue_yoy, cumulative_yoy, pe, eps):
+    if revenue_yoy is None:
+        return None
+    rev = float(revenue_yoy)
+    cum = float(cumulative_yoy) if cumulative_yoy is not None else None
+    if rev >= 25:
+        return "GROWTH"
+    acceleration = cum is None or rev >= cum + 5
+    if rev >= 15 and acceleration:
+        return "INFLECTION"
+    if rev >= 8 and eps is not None and eps > 0 and pe is not None and 0 < pe <= 20:
+        return "MISPRICING_QUALITY"
+    return None
+
+
+def lane_priority(lane, revenue_yoy, cumulative_yoy, pe, eps, profitability, median_turnover, latest_turnover, observations, data_quality):
     raw_rev = max(0.0, float(revenue_yoy or 0))
-    raw_cumulative = max(0.0, float(cumulative_yoy or 0))
-    rev = min(raw_rev, GROWTH_WINSOR_PCT)
-    cumulative = min(raw_cumulative, GROWTH_WINSOR_PCT)
-    growth = 15.0 * math.log1p(rev / 15.0)
-    consistency = 7.0 * math.log1p(cumulative / 15.0)
-    if pe is None:
-        valuation = 4.0
-    elif pe <= 0:
-        valuation = 0.0
-    else:
-        valuation = 25.0 / (1.0 + pe / 20.0)
-    if eps is not None and eps > 0:
-        earnings = 8.0
-    elif profitability == "POSITIVE_TTM_PE_PROXY":
-        earnings = 5.0
-    elif profitability == "HIGH_GROWTH_EARNINGS_UNVERIFIED":
-        earnings = 2.0
-    else:
-        earnings = 0.0
+    raw_cum = max(0.0, float(cumulative_yoy or 0))
+    rev = min(raw_rev, GROWTH_RANKING_CAP_PCT)
+    cum = min(raw_cum, GROWTH_RANKING_CAP_PCT)
     liquidity = float(liquidity_score(median_turnover, latest_turnover, observations))
+    earnings = 8.0 if eps is not None and eps > 0 else 5.0 if profitability == "POSITIVE_TTM_PE_PROXY" else 2.0
+    valuation = 0.0 if pe is not None and pe <= 0 else 4.0 if pe is None else 25.0 / (1.0 + pe / 20.0)
+    growth = 14.0 * math.log1p(rev / 12.0)
+    consistency = 6.0 * math.log1p(cum / 12.0)
+    acceleration = max(0.0, rev - min(cum, rev))
+    accel_score = 12.0 * math.log1p(acceleration / 5.0)
+    if lane == "GROWTH":
+        priority = growth + consistency + 0.65 * valuation + earnings + liquidity + float(data_quality)
+    elif lane == "INFLECTION":
+        priority = 0.65 * growth + accel_score + valuation + earnings + liquidity + float(data_quality)
+    else:
+        priority = 0.35 * growth + 1.35 * valuation + 1.2 * earnings + liquidity + float(data_quality)
+    base_effect_penalty = 10.0 if raw_rev > GROWTH_RANKING_CAP_PCT or raw_cum > GROWTH_RANKING_CAP_PCT else 0.0
+    extreme_penalty = 8.0 if raw_rev > EXTREME_GROWTH_PCT or raw_cum > EXTREME_GROWTH_PCT else 0.0
     cycle_penalty = 10.0 if raw_rev >= 100 and pe is not None and 0 < pe <= 12 else 0.0
     missing_eps_penalty = 3.0 if eps is None else 0.0
-    base_effect_penalty = 8.0 if raw_rev > GROWTH_WINSOR_PCT or raw_cumulative > GROWTH_WINSOR_PCT else 0.0
-    return round(growth + consistency + valuation + earnings + liquidity + float(data_quality) - cycle_penalty - missing_eps_penalty - base_effect_penalty, 4)
+    return round(priority - base_effect_penalty - extreme_penalty - cycle_penalty - missing_eps_penalty, 4)
 
 
 def update_liquidity(history, market, code, turnover, append_snapshot):
@@ -282,7 +278,6 @@ def scan_market(market, datasets, history, append_liquidity):
     income = latest_rows(datasets.get("income", []))
     candidates = []
     coverage = {"profiles": len(profiles), "quotes": len(quotes), "revenue": len(revenue), "income": len(income), "valuation": len(valuation)}
-
     for code, profile in profiles.items():
         industry = industry_of(profile)
         quote, rev, inc, val = quotes.get(code, {}), revenue.get(code, {}), income.get(code, {}), valuation.get(code, {})
@@ -305,20 +300,22 @@ def scan_market(market, datasets, history, append_liquidity):
             market_cap_source = "DIRECT_OFFICIAL_FIELD" if direct_market_cap is not None else None
         series, median_turnover = update_liquidity(history, market, code, turnover, append_liquidity)
         observations = len(series)
-
         liquidity_pass = (median_turnover or 0) >= 20_000_000 if observations >= 10 else (turnover or 0) >= 5_000_000
         market_cap_pass = market_cap is not None and market_cap >= MIN_MARKET_CAP_TWD
-        revenue_pass = rev_yoy is not None and rev_yoy >= 15
         earnings_pass, earnings_basis = profitability_basis(eps, pe, rev_yoy)
-        valuation_pass = pe is None or pe <= 35 or (rev_yoy is not None and rev_yoy >= 35)
-        if not (liquidity_pass and market_cap_pass and revenue_pass and earnings_pass and valuation_pass):
+        lane = discovery_lane(rev_yoy, cum_rev_yoy, pe, eps)
+        if lane == "GROWTH": valuation_pass = pe is None or pe <= 45 or (rev_yoy is not None and rev_yoy >= 50)
+        elif lane == "INFLECTION": valuation_pass = pe is None or pe <= 35
+        elif lane == "MISPRICING_QUALITY": valuation_pass = pe is not None and 0 < pe <= 20
+        else: valuation_pass = False
+        if not (liquidity_pass and market_cap_pass and lane and earnings_pass and valuation_pass):
             continue
-
-        data_quality = quality_score([price, turnover, market_cap, pe, rev_yoy, eps])
+        data_quality = quality_score([price, turnover, market_cap, pe, rev_yoy, cum_rev_yoy, eps])
         screen_score = round(score_revenue(rev_yoy) + score_pe(pe, rev_yoy) + score_eps(eps) + liquidity_score(median_turnover, turnover, observations) + data_quality, 2)
-        priority = continuous_priority(rev_yoy, cum_rev_yoy, pe, eps, earnings_basis, median_turnover, turnover, observations, data_quality)
-        priority_rev_yoy = min(max(0.0, float(rev_yoy or 0)), GROWTH_WINSOR_PCT)
-        priority_cum_yoy = min(max(0.0, float(cum_rev_yoy or 0)), GROWTH_WINSOR_PCT)
+        priority = lane_priority(lane, rev_yoy, cum_rev_yoy, pe, eps, earnings_basis, median_turnover, turnover, observations, data_quality)
+        priority_rev = min(max(0.0, float(rev_yoy or 0)), GROWTH_RANKING_CAP_PCT)
+        priority_cum = min(max(0.0, float(cum_rev_yoy or 0)), GROWTH_RANKING_CAP_PCT)
+        base_effect = (rev_yoy is not None and rev_yoy > GROWTH_RANKING_CAP_PCT) or (cum_rev_yoy is not None and cum_rev_yoy > GROWTH_RANKING_CAP_PCT)
         flags = []
         if observations < 10: flags.append("LIQUIDITY_BOOTSTRAP")
         if not append_liquidity: flags.append("NO_NEW_MARKET_SNAPSHOT")
@@ -327,38 +324,22 @@ def scan_market(market, datasets, history, append_liquidity):
             flags.append("EARNINGS_FILING_NOT_IN_CURRENT_DATASET")
             if earnings_basis == "POSITIVE_TTM_PE_PROXY": flags.append("PROFITABILITY_PROXY_TTM_PE")
             if earnings_basis == "HIGH_GROWTH_EARNINGS_UNVERIFIED": flags.append("EARNINGS_VERIFY")
-        if (rev_yoy is not None and rev_yoy > GROWTH_WINSOR_PCT) or (cum_rev_yoy is not None and cum_rev_yoy > GROWTH_WINSOR_PCT):
-            flags.append("GROWTH_BASE_EFFECT_OUTLIER")
+        if base_effect: flags.append("GROWTH_BASE_EFFECT_OUTLIER")
+        if rev_yoy is not None and rev_yoy > EXTREME_GROWTH_PCT: flags.append("EXTREME_GROWTH_VERIFY_FIRST")
         if market_cap_source == "DERIVED_ISSUED_SHARES_X_CLOSE": flags.append("MARKET_CAP_DERIVED_OFFICIAL_INPUTS")
         candidates.append({
-            "ticker": code,
-            "name": name,
-            "market": market,
-            "industry": industry,
-            "screen_priority": priority,
-            "screen_score": screen_score,
-            "reference_price": price,
-            "revenue_yoy_pct": rev_yoy,
-            "cumulative_revenue_yoy_pct": cum_rev_yoy,
-            "priority_revenue_yoy_pct": priority_rev_yoy,
-            "priority_cumulative_revenue_yoy_pct": priority_cum_yoy,
-            "pe_ttm": pe,
-            "latest_reported_eps": eps,
-            "profitability_basis": earnings_basis,
-            "issued_shares": issued_shares,
-            "market_cap_twd": round(market_cap, 2),
-            "market_cap_source": market_cap_source,
-            "latest_daily_turnover_twd": turnover,
-            "median_turnover_twd": round(median_turnover, 2) if median_turnover is not None else None,
-            "liquidity_observations": observations,
-            "liquidity_mode": "MEDIAN_20D" if observations >= 10 else "BOOTSTRAP_LATEST_DAY",
-            "data_quality_score": data_quality,
-            "flags": flags,
-            "status": "SCREEN_PASS",
-            "promotion_eligible": True,
+            "ticker": code, "name": name, "market": market, "industry": industry, "discovery_lane": lane,
+            "screen_priority": priority, "screen_score": screen_score, "reference_price": price,
+            "revenue_yoy_pct": rev_yoy, "cumulative_revenue_yoy_pct": cum_rev_yoy,
+            "priority_revenue_yoy_pct": priority_rev, "priority_cumulative_revenue_yoy_pct": priority_cum,
+            "pe_ttm": pe, "latest_reported_eps": eps, "profitability_basis": earnings_basis,
+            "issued_shares": issued_shares, "market_cap_twd": round(market_cap, 2), "market_cap_source": market_cap_source,
+            "latest_daily_turnover_twd": turnover, "median_turnover_twd": round(median_turnover, 2) if median_turnover is not None else None,
+            "liquidity_observations": observations, "liquidity_mode": "MEDIAN_20D" if observations >= 10 else "BOOTSTRAP_LATEST_DAY",
+            "data_quality_score": data_quality, "verification_priority": "HIGH" if base_effect or eps is None else "NORMAL",
+            "flags": flags, "status": "SCREEN_PASS", "promotion_eligible": True,
         })
-
-    candidates.sort(key=lambda x: (-x["screen_priority"], -x["screen_score"], -(x.get("revenue_yoy_pct") or -999), x["ticker"]))
+    candidates.sort(key=lambda x: (-x["screen_priority"], -x["screen_score"], x["ticker"]))
     for i, item in enumerate(candidates, 1): item["rank"] = i
     return candidates, coverage
 
@@ -369,7 +350,6 @@ def main():
     history = load("data/liquidity-history.json", {"schema_version": 1, "as_of": None, "window": 20, "series": {}, "market_state": {}})
     history.setdefault("market_state", {})
     source_health, fetched = {}, {}
-
     for market, endpoints in SOURCES.items():
         fetched[market], source_health[market] = {}, {}
         for label, url in endpoints.items():
@@ -380,11 +360,9 @@ def main():
             except Exception as exc:
                 fetched[market][label] = []
                 source_health[market][label] = {"ok": False, "error": f"{type(exc).__name__}: {exc}", "url": url}
-
     all_candidates, coverage, promotion_by_market = [], {}, {}
     critical = {"profiles", "quotes", "valuation", "revenue", "income"}
     previous_by_market = {market: [x for x in previous.get("candidates", []) if x.get("market") == market] for market in SOURCES}
-
     for market in SOURCES:
         market_ok = all(source_health[market].get(label, {}).get("ok") for label in critical)
         promotion_by_market[market] = market_ok
@@ -408,8 +386,7 @@ def main():
                 stale["promotion_eligible"] = False
                 stale["flags"] = list(dict.fromkeys(stale.get("flags", []) + ["SOURCE_DEGRADED"]))
                 all_candidates.append(stale)
-
-    all_candidates.sort(key=lambda x: (not x.get("promotion_eligible", False), -float(x.get("screen_priority") or 0), -float(x.get("screen_score") or 0), x.get("ticker", "")))
+    all_candidates.sort(key=lambda x: (not x.get("promotion_eligible", False), -float(x.get("screen_priority") or 0), x.get("ticker", "")))
     eligible = [x for x in all_candidates if x.get("promotion_eligible")]
     top50 = eligible[:50]
     for i, item in enumerate(top50, 1): item["rank"] = i
@@ -418,82 +395,29 @@ def main():
     incumbent = []
     for stock in alpha.get("stocks", []):
         row = by_ticker.get(stock["ticker"])
-        incumbent.append({
-            "ticker": stock["ticker"],
-            "name": stock.get("name"),
-            "alpha_rank": stock.get("rank"),
-            "alpha_action": stock.get("action"),
-            "screen_rank": row.get("rank") if row else None,
-            "screen_status": row.get("status") if row else "NOT_IN_SCREEN",
-        })
-
+        incumbent.append({"ticker": stock["ticker"], "name": stock.get("name"), "alpha_rank": stock.get("rank"), "alpha_action": stock.get("action"), "screen_rank": row.get("rank") if row else None, "screen_lane": row.get("discovery_lane") if row else None, "screen_status": row.get("status") if row else "NOT_IN_SCREEN"})
     status = "COMPLETE" if all(promotion_by_market.values()) else "DEGRADED"
     out = {
-        "meta": {
-            "schema_version": 2,
-            "as_of": TODAY,
-            "generated_at": NOW.isoformat(timespec="seconds"),
-            "status": status,
-            "coverage": "TWSE + TPEx current common-stock issuer universe; non-financial discovery screen.",
-            "promotion_enabled_by_market": promotion_by_market,
-            "fail_closed": True,
-        },
+        "meta": {"schema_version": 5, "as_of": TODAY, "generated_at": NOW.isoformat(timespec="seconds"), "status": status, "coverage": "TWSE + TPEx common-stock issuer universe; non-financial multi-lane research discovery.", "promotion_enabled_by_market": promotion_by_market, "fail_closed": True},
         "rules": {
-            "exclude_sectors": ["Financials"],
-            "financial_exclusion": "industry code 17 OR issuer-name keywords: 金融/銀行/保險/證券/票券/金控/投信/期貨",
-            "exclude_instruments": ["TDR"],
-            "min_market_cap_twd_billion": 10,
-            "market_cap": {
-                "mode": "HARD_DERIVED",
-                "min_twd": MIN_MARKET_CAP_TWD,
-                "primary_formula": "official close × official issued common shares",
-                "fallback": "direct official market-cap field when issued shares is unavailable",
-                "reason": "TWSE and TPEx company basic datasets both expose issued common shares, so the 10B gate can be applied symmetrically."
-            },
-            "revenue_yoy_pct_min": 15,
-            "ttm_pe_soft_cap": 35,
-            "high_growth_pe_exception_revenue_yoy_pct": 35,
-            "earnings_gate": "positive latest reported EPS; if the current income dataset omits the issuer, positive official TTM PE may serve only as a discovery-level profitability proxy; very high growth without either remains EARNINGS_VERIFY",
-            "profitability_proxy_boundary": "POSITIVE_TTM_PE_PROXY can admit a name to Screen/Deep Research only. It never satisfies Alpha Engine earnings evidence or Buy Gate.",
-            "ranking": {
-                "primary": "screen_priority",
-                "secondary": "screen_score",
-                "growth_winsorization_pct": GROWTH_WINSOR_PCT,
-                "screen_priority": "robust non-saturating log growth using 500% winsorized monthly/cumulative YoY + valuation + profitability + liquidity + data quality - cycle/missing-EPS/base-effect penalties",
-                "screen_score": "legacy bounded explainability score; no longer the primary ranking metric"
-            },
-            "liquidity": {
-                "target_median_daily_turnover_twd_million": 20,
-                "established_after_observations": 10,
-                "bootstrap_latest_day_floor_twd_million": 5,
-                "window_observations": 20,
-                "dedupe": "full-market quote fingerprint; unchanged market snapshots do not add observations",
-            },
+            "exclude_sectors": ["Financials"], "financial_exclusion": "industry code 17 OR issuer-name keywords", "exclude_instruments": ["TDR"],
+            "market_cap": {"mode": "HARD_DERIVED", "min_twd": MIN_MARKET_CAP_TWD, "primary_formula": "official close × official issued common shares", "fallback": "direct official market-cap field"},
+            "discovery_lanes": {"GROWTH": "revenue YoY >=25%; valuation may be wider but outliers are capped and verification-prioritized", "INFLECTION": "revenue YoY >=15% and accelerating versus cumulative trend", "MISPRICING_QUALITY": "revenue YoY >=8%, positive reported EPS and official TTM PE <=20"},
+            "ranking": {"primary": "screen_priority", "secondary": "screen_score", "growth_ranking_cap_pct": GROWTH_RANKING_CAP_PCT, "extreme_growth_verify_pct": EXTREME_GROWTH_PCT, "screen_priority": "lane-specific robust priority; growth above the cap adds no ranking benefit and creates a verification penalty", "screen_score": "legacy explainability only"},
+            "liquidity": {"target_median_daily_turnover_twd_million": 20, "established_after_observations": 10, "bootstrap_latest_day_floor_twd_million": 5, "window_observations": 20, "dedupe": "full-market quote fingerprint"},
             "screen_is_not_buy_gate": True,
-            "research_funnel": "Full TWSE/TPEx common-stock issuer universe → non-financial + >=10B market cap + liquidity/growth/earnings/valuation screen → Top 50 → diverse Deep Research Top 10 + incumbent VERIFY/BUY → Alpha Engine Buy Gate",
-            "universe_policy": "Deep research queue is Top 10 screen candidates plus incumbent BUY/VERIFY names; screen ranking never directly creates BUY CANDIDATE.",
+            "research_funnel": "Official market data -> multi-lane Screen Top50 -> diversity-aware Deep Research -> Python Security Engine -> Buy Gate",
+            "universe_policy": "Screen discovers research candidates only; it never writes security action or portfolio allocation."
         },
-        "source_health": source_health,
-        "coverage_counts": coverage,
-        "candidates": top50,
-        "deep_research_queue": deep,
-        "incumbent_research": incumbent,
-        "notes": [
-            "Market cap is derived symmetrically from official close and official issued common shares for TWSE/TPEx; minimum is NT$10B.",
-            "TDRs are excluded because original-share count × TDR price is not a clean common-stock market-cap comparison.",
-            "Liquidity uses rolling unique market snapshots; holidays and repeated runs do not duplicate observations.",
-            "Any degraded market source disables promotion from that market and preserves prior rows only as stale carryover outside the promotion queue.",
-            "A missing row in the current income endpoint does not automatically exclude a profitable issuer from discovery when official TTM PE is positive; deep research must still verify the actual filed earnings before Alpha scoring.",
-            "screen_priority is non-saturating but winsorizes extreme monthly/cumulative growth at 500% and applies a base-effect penalty so lumpy or near-zero comparison periods cannot dominate research priority.",
-            "Financial issuer exclusion uses industry code 17 plus issuer-name keywords."
-        ],
+        "source_health": source_health, "coverage_counts": coverage, "candidates": top50, "deep_research_queue": deep, "incumbent_research": incumbent,
+        "notes": ["Extreme/base-effect growth is capped at 100% for ranking and marked HIGH verification priority.", "Growth, inflection and mispricing-quality are separate discovery lanes so one regime cannot define the whole opportunity set.", "Market cap and liquidity remain hard gates; missing earnings may use positive official TTM PE only for discovery, never Buy authority."]
     }
     history["schema_version"] = 1
     history["as_of"] = TODAY
     history["window"] = 20
     write("data/liquidity-history.json", history)
     write("data/screen.json", out)
-    print(f"screen status={status}; eligible={len(eligible)}; top50={len(top50)}; deep={len(deep)}")
+    print(f"screen v5 status={status}; eligible={len(eligible)}; top50={len(top50)}; deep={len(deep)}")
     if not any(promotion_by_market.values()):
         print("ERROR: both markets unavailable; fail closed", file=sys.stderr)
         raise SystemExit(2)
