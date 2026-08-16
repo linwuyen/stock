@@ -1,1 +1,1655 @@
-{"meta":{"schema_version":3,"title":"Taiwan Alpha Selection Engine","as_of":"2026-08-10","market_data_as_of":"2026-08-07","cadence":"weekly + event watch","next_review":"2026-08-17","valuation_horizon":"FY2027E / ~12-18 months","note":"2026-08-10 first v3 valuation refresh. Reported facts use first-party evidence where available; FY2027E scenario EPS/multiples are model assumptions, not company guidance."},"methodology":{"score_max":100,"buy_gate":75,"grade_thresholds":{"A":75,"B":65,"C":50},"weights":{"earnings_acceleration":30,"revenue_quality":20,"valuation":25,"structural_catalyst":15,"balance_sheet_cash_flow":10},"penalty_floor":-30},"confidence_methodology":{"score_max":100,"weights":{"evidence_quality":30,"forecast_visibility":25,"circle_of_competence":20,"thesis_clarity":15,"data_freshness":10},"note":"Confidence measures trust in the thesis, not intrinsic attractiveness."},"freshness_policy":{"market_max_calendar_days":3,"market_target":"<= 1 trading day","revenue_max_days":45,"fundamental_max_days":130,"event_max_days":14,"required_for_buy":["market","fundamentals","revenue","events"],"note":"Missing required dates fail Buy Gate."},"decision_policy":{"min_confidence_score":65,"min_margin_of_safety_pct":20,"min_alpha_spread_pct":8,"required_evidence_metrics":["reference_price","valuation_basis","earnings_basis"]},"rotation_event":{"benchmark_ticker":"2330","trigger_price":3000,"meaning":"Event trigger only. Never an automatic sell signal."},"benchmark_asset":{"ticker":"2330","name":"台積電","score":null,"grade":"BENCHMARK","confidence_score":94,"reference_price":2370,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-06-30","revenue_data_as_of":"2026-06-30","event_data_as_of":"2026-08-10","factor_scores":{},"penalties":{},"confidence_factors":{"evidence_quality":30,"forecast_visibility":24,"circle_of_competence":16,"thesis_clarity":14,"data_freshness":10},"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":130,"normalized_eps":125,"forward_pe":18.23,"normalized_pe":18.96,"expected_fair_value":3226.25,"expected_return_pct":36.13,"margin_of_safety_pct":37.13,"scenarios":{"bear":{"eps":110,"multiple":20,"fair_value":2200,"probability":0.25},"base":{"eps":130,"multiple":25,"fair_value":3250,"probability":0.5},"bull":{"eps":145,"multiple":29,"fair_value":4205,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"risk_model":{"downside_pct":20,"liquidity":"VERY_HIGH","cyclicality":"MEDIUM","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"先進製程與AI/HPC需求支撐成長；任何換股都必須先勝過台積本身的預期報酬。","invalidation_condition":"AI/HPC需求、先進製程利用率或毛利結構顯著惡化。","evidence":[{"metric":"reference_price","value":2370,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 31.86","period":"TTM","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026H1 EPS 49.33; Q2 EPS 27.25, GM 67.7%, OM 60.3%","period":"2026H1","observed_at":"2026-07-16","source_type":"TSMC IR","source_url":"https://investor.tsmc.com/english/quarterly-results/2026/q2","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"guidance","value":"2026Q3 revenue US$44.6-45.8bn; GM 65-67%; OM 56-58%","period":"2026Q3","observed_at":"2026-07-16","source_type":"TSMC IR","source_url":"https://investor.tsmc.com/english/quarterly-results/2026/q2","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"event_calendar","value":"July sales scheduled 2026-08-10 13:30 Asia/Taipei; not yet released at 12:21 refresh","period":"2026-08-10","observed_at":"2026-08-10","source_type":"TSMC IR","source_url":"https://investor.tsmc.com/english/financial-calendar","quality":"FIRST_PARTY","status":"VERIFIED"}]},"rotation_model":{"capital_default":3000000,"allocation_mode":"risk_adjusted_when_complete","guardrails":{"max_single_stock_pct":25,"cash_floor_pct":20},"fallback_allocations":[{"ticker":"2301","weight":25},{"ticker":"2376","weight":20},{"ticker":"2382","weight":15},{"ticker":"CASH","name":"現金","weight":40}],"note":"Fallback is display-only when decision gate is blocked."},"stocks":[{"rank":1,"ticker":"2301","name":"光寶科","score":84,"grade":"A","action":"VERIFY","score_provenance":"2026-08-10_V3_REVIEW","factor_scores":{"earnings_acceleration":28,"revenue_quality":18,"valuation":15,"structural_catalyst":15,"balance_sheet_cash_flow":10},"penalties":{"valuation_expectation_risk":-2},"confidence_score":89,"confidence_factors":{"evidence_quality":27,"forecast_visibility":18,"circle_of_competence":20,"thesis_clarity":14,"data_freshness":10},"reference_price":247,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-06-30","revenue_data_as_of":"2026-06-30","event_data_as_of":"2026-08-10","pe_ttm":28.89,"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":10.8,"normalized_eps":10,"forward_pe":22.87,"normalized_pe":24.7,"expected_fair_value":299.6,"expected_return_pct":21.3,"margin_of_safety_pct":22.43,"scenarios":{"bear":{"eps":8.8,"multiple":22,"fair_value":193.6,"probability":0.25},"base":{"eps":10.8,"multiple":28,"fair_value":302.4,"probability":0.5},"bull":{"eps":12.5,"multiple":32,"fair_value":400,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"alpha_spread_pct":-14.83,"risk_model":{"downside_pct":25,"liquidity":"HIGH","cyclicality":"MEDIUM","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"AI/Cloud高階伺服器電源與BBU加速，但換股價值取決於相對台積的估值。","invalidation_condition":"AI電源/BBU成長失速、毛利或營益率回落。","next_check":"下一季EPS/營益率與Power Shelf/HVDC進度。","evidence":[{"metric":"reference_price","value":247,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 28.89","period":"TTM","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026H1 EPS 4.80; Q1 EPS 1.66","period":"2026H1","observed_at":"2026-08-07","source_type":"TWSE / LITEON","source_url":"https://www.twse.com.tw/exchangeReport/TWT48U?response=html","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"revenue_trend","value":"2026H1 revenue NT$96.1bn +25%; June +37%; Cloud & AIoT +80% YoY","period":"2026H1","observed_at":"2026-07-09","source_type":"LITEON","source_url":"https://www.liteon.com/en/news/press-center/content/liteon-monthly-sales-june-2026","quality":"FIRST_PARTY","status":"VERIFIED"}]},{"rank":2,"ticker":"2376","name":"技嘉","score":80,"grade":"A","action":"VERIFY","score_provenance":"2026-08-10_V3_REVIEW","factor_scores":{"earnings_acceleration":26,"revenue_quality":16,"valuation":22,"structural_catalyst":14,"balance_sheet_cash_flow":8},"penalties":{"margin_conversion_risk":-4,"q2_fundamental_staleness":-2},"confidence_score":70,"confidence_factors":{"evidence_quality":22,"forecast_visibility":16,"circle_of_competence":14,"thesis_clarity":13,"data_freshness":5},"reference_price":344,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-03-31","revenue_data_as_of":"2026-06-30","event_data_as_of":"2026-08-10","pe_ttm":16.07,"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":34,"normalized_eps":31,"forward_pe":10.12,"normalized_pe":11.1,"expected_fair_value":512.75,"expected_return_pct":49.06,"margin_of_safety_pct":48.26,"scenarios":{"bear":{"eps":25,"multiple":11,"fair_value":275,"probability":0.25},"base":{"eps":34,"multiple":15,"fair_value":510,"probability":0.5},"bull":{"eps":42,"multiple":18,"fair_value":756,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"alpha_spread_pct":12.93,"risk_model":{"downside_pct":30,"liquidity":"HIGH","cyclicality":"MEDIUM","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"AI Server/rack-scale基建形成高成長與低估值錯配；目前是唯一跨過TSMC +8% Alpha Spread的A級候選。","invalidation_condition":"Q2若顯示營收高增沒有轉成EPS/現金流或毛利惡化，立即下修。","next_check":"Q2正式財報；Q1 fundamental已超過130天freshness gate，未更新前不得升BUY。","evidence":[{"metric":"reference_price","value":344,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 16.07","period":"TTM","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026Q1 EPS 7.86","period":"2026Q1","observed_at":"2026-08-03","source_type":"TWSE","source_url":"https://www.twse.com.tw/exchangeReport/TWT48U?response=html","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"structural_catalyst","value":"Rack-scale AI infrastructure including Vera Rubin NVL72","period":"2026","observed_at":"2026-06-01","source_type":"GIGABYTE","source_url":"https://www.gigabyte.com/tw/press/news/2393","quality":"FIRST_PARTY","status":"VERIFIED"}]},{"rank":3,"ticker":"2382","name":"廣達","score":73,"grade":"B","action":"WATCH","score_provenance":"2026-08-10_V3_REVIEW","factor_scores":{"earnings_acceleration":19,"revenue_quality":13,"valuation":21,"structural_catalyst":13,"balance_sheet_cash_flow":9},"penalties":{"revenue_to_eps_conversion_risk":-2},"confidence_score":68,"confidence_factors":{"evidence_quality":25,"forecast_visibility":13,"circle_of_competence":13,"thesis_clarity":12,"data_freshness":5},"reference_price":298,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-03-31","revenue_data_as_of":"2026-06-30","event_data_as_of":"2026-08-10","pe_ttm":14.98,"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":23,"normalized_eps":20,"forward_pe":12.96,"normalized_pe":14.9,"expected_fair_value":352.5,"expected_return_pct":18.29,"margin_of_safety_pct":15.77,"scenarios":{"bear":{"eps":18,"multiple":12,"fair_value":216,"probability":0.25},"base":{"eps":23,"multiple":15,"fair_value":345,"probability":0.5},"bull":{"eps":28,"multiple":18,"fair_value":504,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"alpha_spread_pct":-17.84,"risk_model":{"downside_pct":28,"liquidity":"HIGH","cyclicality":"MEDIUM","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"AI Server營收高速成長，但營收轉EPS/FCF的品質仍需Q2確認。","invalidation_condition":"AI Server拉高營收但毛利、EPS或FCF持續跟不上。","next_check":"Q2 EPS、毛利與營業現金流。","evidence":[{"metric":"reference_price","value":298,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 14.98","period":"TTM","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026Q1 revenue NT$809.221bn; operating profit NT$23.024bn; EPS 5.50","period":"2026Q1","observed_at":"2026-05-14","source_type":"Quanta","source_url":"https://www.quantatw.com/Quanta/chinese/allnews/allnews_open.aspx?CASENO=NEWS003765","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"revenue_trend","value":"2026 official monthly sales show very strong YoY growth","period":"2026H1","observed_at":"2026-08-10","source_type":"Quanta","source_url":"https://www.quantatw.com/quanta/english/investment/financials_ms.aspx","quality":"FIRST_PARTY","status":"VERIFIED"}]},{"rank":4,"ticker":"2451","name":"創見","score":70,"grade":"B","action":"WATCH","score_provenance":"2026-08-10_V3_REVIEW","factor_scores":{"earnings_acceleration":27,"revenue_quality":18,"valuation":18,"structural_catalyst":7,"balance_sheet_cash_flow":8},"penalties":{"cycle_peak_risk":-8},"confidence_score":65,"confidence_factors":{"evidence_quality":24,"forecast_visibility":11,"circle_of_competence":12,"thesis_clarity":13,"data_freshness":5},"reference_price":297,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-06-30","revenue_data_as_of":"2026-06-30","event_data_as_of":"2026-08-10","pe_ttm":5.17,"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":35,"normalized_eps":35,"forward_pe":8.49,"normalized_pe":8.49,"expected_fair_value":308.75,"expected_return_pct":3.96,"margin_of_safety_pct":-5.72,"scenarios":{"bear":{"eps":25,"multiple":7,"fair_value":175,"probability":0.25},"base":{"eps":35,"multiple":8,"fair_value":280,"probability":0.5},"bull":{"eps":50,"multiple":10,"fair_value":500,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"alpha_spread_pct":-32.17,"risk_model":{"downside_pct":40,"liquidity":"MEDIUM","cyclicality":"HIGH","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"記憶體景氣帶來高盈餘彈性，但Trailing PE受peak-cycle earnings扭曲，必須用normalized EPS。","invalidation_condition":"DRAM/NAND價格反轉或庫存利益消失，使EPS快速均值回歸。","next_check":"Q2財報細項、記憶體價格與庫存。","evidence":[{"metric":"reference_price","value":297,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 5.17; normalized model overrides peak trailing signal","period":"TTM/normalized","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026Q2 consolidated financial report available; normalized EPS used","period":"2026Q2","observed_at":"2026-08-10","source_type":"Transcend IR","source_url":"https://tw.transcend-info.com/about/fin_report","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"revenue_trend","value":"June NT$5.068bn +381.55%; H1 NT$32.444bn +422.17%","period":"2026H1","observed_at":"2026-07-06","source_type":"Transcend","source_url":"https://tw.transcend-info.com/about/month_sales","quality":"FIRST_PARTY","status":"VERIFIED"}]},{"rank":5,"ticker":"3515","name":"華擎","score":67,"grade":"B","action":"WATCH","score_provenance":"2026-08-10_V3_REVIEW","factor_scores":{"earnings_acceleration":19,"revenue_quality":11,"valuation":22,"structural_catalyst":10,"balance_sheet_cash_flow":7},"penalties":{"evidence_gap":-2},"confidence_score":56,"confidence_factors":{"evidence_quality":14,"forecast_visibility":12,"circle_of_competence":13,"thesis_clarity":12,"data_freshness":5},"reference_price":212.5,"reference_price_date":"2026-08-07","fundamental_data_as_of":"2026-03-31","revenue_data_as_of":null,"event_data_as_of":"2026-08-10","pe_ttm":13.73,"valuation_model":{"status":"COMPLETE","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":18,"normalized_eps":17,"forward_pe":11.81,"normalized_pe":12.5,"expected_fair_value":260.5,"expected_return_pct":22.59,"margin_of_safety_pct":18.59,"scenarios":{"bear":{"eps":13,"multiple":10,"fair_value":130,"probability":0.25},"base":{"eps":18,"multiple":14,"fair_value":252,"probability":0.5},"bull":{"eps":24,"multiple":17,"fair_value":408,"probability":0.25}},"assumption_note":"MODEL ASSUMPTION, not company guidance."},"alpha_spread_pct":-13.54,"risk_model":{"downside_pct":35,"liquidity":"MEDIUM","cyclicality":"MEDIUM","status":"REVIEWED"},"thesis_status":"ACTIVE","thesis":"估值不高且Server/AI具上行選擇權，但第一手持續性證據不足。","invalidation_condition":"AI/Server貢獻未連續反映EPS。","next_check":"Q2財報、官方月營收與Server營收占比。","evidence":[{"metric":"reference_price","value":212.5,"period":"2026-08-07","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"valuation_basis","value":"TWSE TTM PE 13.73","period":"TTM","observed_at":"2026-08-07","source_type":"TWSE OpenAPI","source_url":"https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL","quality":"FIRST_PARTY","status":"VERIFIED"},{"metric":"earnings_basis","value":"2026Q1 investor financial information","period":"2026Q1","observed_at":"2026-08-10","source_type":"ASRock IR","source_url":"https://www.asrock.com/general/investor.asp?cat=Finance","quality":"FIRST_PARTY","status":"VERIFIED"}]},{"rank":6,"ticker":"3081","name":"聯亞","score":65,"grade":"B","action":"WATCH","score_provenance":"PENDING_Q2_OFFICIAL_REFRESH","factor_scores":{"earnings_acceleration":26,"revenue_quality":14,"valuation":10,"structural_catalyst":14,"balance_sheet_cash_flow":6},"penalties":{"valuation_uncertainty":-5},"confidence_score":45,"confidence_factors":{"evidence_quality":10,"forecast_visibility":10,"circle_of_competence":8,"thesis_clarity":12,"data_freshness":5},"reference_price":null,"reference_price_date":null,"fundamental_data_as_of":null,"revenue_data_as_of":null,"event_data_as_of":"2026-08-10","pe_ttm":null,"valuation_model":{"status":"VERIFY","horizon":"FY2027E / ~12-18 months","model_type":"scenario_PE","forward_eps":null,"normalized_eps":null,"forward_pe":null,"normalized_pe":null,"expected_fair_value":null,"expected_return_pct":null,"margin_of_safety_pct":null,"scenarios":{"bear":{"eps":null,"multiple":null,"fair_value":null,"probability":0.25},"base":{"eps":null,"multiple":null,"fair_value":null,"probability":0.5},"bull":{"eps":null,"multiple":null,"fair_value":null,"probability":0.25}},"assumption_note":"Pending 2026Q2 official release / forward valuation refresh."},"alpha_spread_pct":null,"risk_model":{"downside_pct":45,"liquidity":"MEDIUM","cyclicality":"HIGH","status":"VERIFY"},"thesis_status":"ACTIVE","thesis":"高速光通訊具結構成長，但估值與Q2證據尚未完成。","invalidation_condition":"估值已過度反映成長或新產品放量低於預期。","next_check":"2026-08-12 Q2財報/法說與最新forward valuation。","evidence":[]}],"watchlist":[{"ticker":"2383","name":"台光電","reason":"高成長但估值要求高；等待screen與forward valuation"},{"ticker":"2360","name":"致茂","reason":"品質佳但估值偏高；等待更佳MOS"},{"ticker":"3450","name":"聯鈞","reason":"高成長、高估值；需事件與估值同步驗證"},{"ticker":"6442","name":"光聖","reason":"高速光通訊成長強，但需更大安全邊際"},{"ticker":"2308","name":"台達電","reason":"優質電源/AI基建，但需與TSMC相對比較"},{"ticker":"2368","name":"金像電","reason":"AI PCB成長強，等待screen與forward valuation"}]}
+{
+  "meta": {
+    "schema_version": 5,
+    "title": "Taiwan Alpha Selection Engine",
+    "as_of": "2026-08-10",
+    "market_data_as_of": "2026-08-07",
+    "cadence": "weekly + event watch",
+    "next_review": "2026-08-17",
+    "valuation_horizon": "FY2027E / ~12-18 months",
+    "note": "2026-08-10 first v3 valuation refresh. Reported facts use first-party evidence where available; FY2027E scenario EPS/multiples are model assumptions, not company guidance.",
+    "decision_engine_version": "security-v5.0.1",
+    "decision_as_of": "2026-08-14",
+    "authority": "PYTHON_CANONICAL_SECURITY_ENGINE",
+    "research_inputs_as_of": "2026-08-10",
+    "screen_inputs_as_of": "2026-08-14",
+    "decision_fingerprint": "fda2887796d3bb1e5617917cc0d71b4cdb393e5ee08ccb305a077930ab913a82"
+  },
+  "methodology": {
+    "score_max": 100,
+    "buy_gate": 75,
+    "grade_thresholds": {
+      "A": 75,
+      "B": 65,
+      "C": 50
+    },
+    "weights": {
+      "earnings_acceleration": 30,
+      "revenue_quality": 20,
+      "valuation": 25,
+      "structural_catalyst": 15,
+      "balance_sheet_cash_flow": 10
+    },
+    "penalty_floor": -30,
+    "score_contract": "Derived from structured features; missing evidence yields INCOMPLETE coverage and VERIFY, never a fabricated zero-quality conclusion."
+  },
+  "confidence_methodology": {
+    "score_max": 100,
+    "weights": {
+      "evidence_quality": 35,
+      "forecast_visibility": 25,
+      "model_completeness": 20,
+      "thesis_falsifiability": 10,
+      "data_freshness": 10
+    },
+    "note": "Deterministic evidence/model/freshness completeness, not attractiveness."
+  },
+  "freshness_policy": {
+    "market_target": "<= 1 observed trading weekday",
+    "revenue_max_days": 45,
+    "fundamental_max_days": 130,
+    "event_max_days": 14,
+    "required_for_buy": [
+      "market",
+      "fundamentals",
+      "revenue",
+      "events"
+    ],
+    "note": "Market freshness uses trading weekdays; event occurrence and event-check timestamps are separate.",
+    "market_max_trading_sessions": 1,
+    "event_check_max_days": 14
+  },
+  "decision_policy": {
+    "min_confidence_score": 65,
+    "min_margin_of_safety_pct": 20,
+    "min_alpha_spread_pct": 8,
+    "required_evidence_metrics": [
+      "reference_price",
+      "valuation_basis",
+      "earnings_basis"
+    ]
+  },
+  "rotation_event": {
+    "benchmark_ticker": "2330",
+    "trigger_price": 3000,
+    "meaning": "EVENT ALERT ONLY. It never gates BUY, rotation review, or allocation."
+  },
+  "benchmark_asset": {
+    "ticker": "2330",
+    "name": "台積電",
+    "score": null,
+    "grade": "BENCHMARK",
+    "confidence_score": 94,
+    "reference_price": 2370,
+    "reference_price_date": "2026-08-07",
+    "fundamental_data_as_of": "2026-06-30",
+    "revenue_data_as_of": "2026-06-30",
+    "event_data_as_of": "2026-08-10",
+    "factor_scores": {},
+    "penalties": {},
+    "confidence_factors": {
+      "evidence_quality": 30,
+      "forecast_visibility": 24,
+      "circle_of_competence": 16,
+      "thesis_clarity": 14,
+      "data_freshness": 10
+    },
+    "valuation_model": {
+      "status": "COMPLETE",
+      "horizon": "FY2027E / ~12-18 months",
+      "model_type": "scenario_PE",
+      "forward_eps": 130,
+      "normalized_eps": 125,
+      "forward_pe": 18.23,
+      "normalized_pe": 18.96,
+      "expected_fair_value": 3226.25,
+      "expected_return_pct": 36.13,
+      "margin_of_safety_pct": 37.13,
+      "scenarios": {
+        "bear": {
+          "eps": 110,
+          "multiple": 20,
+          "fair_value": 2200,
+          "probability": 0.25
+        },
+        "base": {
+          "eps": 130,
+          "multiple": 25,
+          "fair_value": 3250,
+          "probability": 0.5
+        },
+        "bull": {
+          "eps": 145,
+          "multiple": 29,
+          "fair_value": 4205,
+          "probability": 0.25
+        }
+      },
+      "assumption_note": "MODEL ASSUMPTION, not company guidance."
+    },
+    "risk_model": {
+      "downside_pct": 20,
+      "liquidity": "VERY_HIGH",
+      "cyclicality": "MEDIUM",
+      "status": "REVIEWED"
+    },
+    "thesis_status": "ACTIVE",
+    "thesis": "先進製程與AI/HPC需求支撐成長；任何換股都必須先勝過台積本身的預期報酬。",
+    "invalidation_condition": "AI/HPC需求、先進製程利用率或毛利結構顯著惡化。",
+    "evidence": [
+      {
+        "metric": "reference_price",
+        "value": 2370,
+        "period": "2026-08-07",
+        "observed_at": "2026-08-07",
+        "source_type": "TWSE OpenAPI",
+        "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+        "quality": "FIRST_PARTY",
+        "status": "VERIFIED"
+      },
+      {
+        "metric": "valuation_basis",
+        "value": "TWSE TTM PE 31.86",
+        "period": "TTM",
+        "observed_at": "2026-08-07",
+        "source_type": "TWSE OpenAPI",
+        "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+        "quality": "FIRST_PARTY",
+        "status": "VERIFIED"
+      },
+      {
+        "metric": "earnings_basis",
+        "value": "2026H1 EPS 49.33; Q2 EPS 27.25, GM 67.7%, OM 60.3%",
+        "period": "2026H1",
+        "observed_at": "2026-07-16",
+        "source_type": "TSMC IR",
+        "source_url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+        "quality": "FIRST_PARTY",
+        "status": "VERIFIED"
+      },
+      {
+        "metric": "guidance",
+        "value": "2026Q3 revenue US$44.6-45.8bn; GM 65-67%; OM 56-58%",
+        "period": "2026Q3",
+        "observed_at": "2026-07-16",
+        "source_type": "TSMC IR",
+        "source_url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+        "quality": "FIRST_PARTY",
+        "status": "VERIFIED"
+      },
+      {
+        "metric": "event_calendar",
+        "value": "July sales scheduled 2026-08-10 13:30 Asia/Taipei; not yet released at 12:21 refresh",
+        "period": "2026-08-10",
+        "observed_at": "2026-08-10",
+        "source_type": "TSMC IR",
+        "source_url": "https://investor.tsmc.com/english/financial-calendar",
+        "quality": "FIRST_PARTY",
+        "status": "VERIFIED"
+      }
+    ],
+    "valuation_metrics": {
+      "expected_fair_value": 3226.25,
+      "expected_return_pct": 36.1287,
+      "margin_of_safety_pct": 37.1308,
+      "forward_pe": 18.2308,
+      "normalized_pe": 18.96
+    },
+    "freshness": {
+      "ok": false,
+      "checks": {
+        "market": false,
+        "fundamentals": true,
+        "revenue": true,
+        "events": true
+      },
+      "ages": {
+        "market_trading_sessions": 5,
+        "fundamentals_calendar_days": 45,
+        "revenue_calendar_days": 45,
+        "event_check_calendar_days": 4
+      },
+      "dates": {
+        "market_observed_at": "2026-08-07",
+        "fundamental_period_end": "2026-06-30",
+        "revenue_period_end": "2026-06-30",
+        "last_event_at": "2026-08-10",
+        "last_event_checked_at": "2026-08-10"
+      }
+    },
+    "evidence_gate": {
+      "verified_first_party_count": 5,
+      "verified_metric_count": 5,
+      "required_metrics": [
+        "reference_price",
+        "valuation_basis",
+        "earnings_basis"
+      ],
+      "missing_required_metrics": [],
+      "ok": true,
+      "latest_verified_observed_at": "2026-08-10"
+    },
+    "market_expectation": {
+      "status": "COMPLETE",
+      "authority": "ANALYTIC_ONLY",
+      "base_multiple": 25.0,
+      "market_implied_eps": 94.8,
+      "base_case_eps": 130.0,
+      "base_vs_implied_eps_gap_pct": 37.1308,
+      "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+    }
+  },
+  "rotation_model": {
+    "capital_default": 3000000,
+    "allocation_mode": "MOVED_TO_ELEPHANT",
+    "guardrails": {
+      "max_single_stock_pct": 25,
+      "cash_floor_pct": 20
+    },
+    "fallback_allocations": [
+      {
+        "ticker": "2301",
+        "weight": 25
+      },
+      {
+        "ticker": "2376",
+        "weight": 20
+      },
+      {
+        "ticker": "2382",
+        "weight": 15
+      },
+      {
+        "ticker": "CASH",
+        "name": "現金",
+        "weight": 40
+      }
+    ],
+    "note": "Portfolio sizing/cash/debt/leverage ownership moved to linwuyen/Elephant."
+  },
+  "stocks": [
+    {
+      "rank": 1,
+      "ticker": "2376",
+      "name": "技嘉",
+      "score": 32.86,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 5.8065,
+        "revenue_quality": 0.0,
+        "valuation": 22.0527,
+        "structural_catalyst": 15.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "fundamental_staleness": -4,
+        "cash_flow_evidence_gap": -3,
+        "screen_feature_gap": -3
+      },
+      "confidence_score": 81.0,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 19,
+        "model_completeness": 12.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 5.0
+      },
+      "reference_price": 344,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-03-31",
+      "revenue_data_as_of": "2026-06-30",
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 16.07,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 34,
+        "normalized_eps": 31,
+        "forward_pe": 10.12,
+        "normalized_pe": 11.1,
+        "expected_fair_value": 512.75,
+        "expected_return_pct": 49.06,
+        "margin_of_safety_pct": 48.26,
+        "scenarios": {
+          "bear": {
+            "eps": 25,
+            "multiple": 11,
+            "fair_value": 275,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 34,
+            "multiple": 15,
+            "fair_value": 510,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 42,
+            "multiple": 18,
+            "fair_value": 756,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": 12.9265,
+      "risk_model": {
+        "downside_pct": 30,
+        "liquidity": "HIGH",
+        "cyclicality": "MEDIUM",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "AI Server/rack-scale基建形成高成長與低估值錯配；目前是唯一跨過TSMC +8% Alpha Spread的A級候選。",
+      "invalidation_condition": "Q2若顯示營收高增沒有轉成EPS/現金流或毛利惡化，立即下修。",
+      "next_check": "Q2正式財報；Q1 fundamental已超過130天freshness gate，未更新前不得升BUY。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 344,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 16.07",
+          "period": "TTM",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026Q1 EPS 7.86",
+          "period": "2026Q1",
+          "observed_at": "2026-08-03",
+          "source_type": "TWSE",
+          "source_url": "https://www.twse.com.tw/exchangeReport/TWT48U?response=html",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "structural_catalyst",
+          "value": "Rack-scale AI infrastructure including Vera Rubin NVL72",
+          "period": "2026",
+          "observed_at": "2026-06-01",
+          "source_type": "GIGABYTE",
+          "source_url": "https://www.gigabyte.com/tw/press/news/2393",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": false,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "revenue_quality",
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": null,
+        "reported_eps": null,
+        "forward_vs_normalized_eps_pct": 9.6774,
+        "revenue": {
+          "status": "MISSING_REVENUE_GROWTH"
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 512.75,
+          "expected_return_pct": 49.0552,
+          "margin_of_safety_pct": 48.2558,
+          "forward_pe": 10.1176,
+          "normalized_pe": 11.0968
+        },
+        "alpha_spread_pct": 12.9265,
+        "catalyst_basis": "VERIFIED_STRUCTURAL_CATALYST",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 512.75,
+        "expected_return_pct": 49.0552,
+        "margin_of_safety_pct": 48.2558,
+        "forward_pe": 10.1176,
+        "normalized_pe": 11.0968
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": false,
+          "revenue": true,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": 136,
+          "revenue_calendar_days": 45,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-03-31",
+          "revenue_period_end": "2026-06-30",
+          "last_event_at": "2026-08-07",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 4,
+        "verified_metric_count": 4,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-07"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 15.0,
+        "market_implied_eps": 22.9333,
+        "base_case_eps": 34.0,
+        "base_vs_implied_eps_gap_pct": 48.2558,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": true,
+          "alpha_spread": true,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 2,
+      "ticker": "2382",
+      "name": "廣達",
+      "score": 28.93,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 15.0,
+        "revenue_quality": 14,
+        "valuation": 4.9287,
+        "structural_catalyst": 8.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "fundamental_staleness": -4,
+        "growth_base_effect": -6,
+        "cash_flow_evidence_gap": -3
+      },
+      "confidence_score": 91.0,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 25,
+        "model_completeness": 16.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 5.0
+      },
+      "reference_price": 298,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-03-31",
+      "revenue_data_as_of": "2026-06-30",
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 14.98,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 23,
+        "normalized_eps": 20,
+        "forward_pe": 12.96,
+        "normalized_pe": 14.9,
+        "expected_fair_value": 352.5,
+        "expected_return_pct": 18.29,
+        "margin_of_safety_pct": 15.77,
+        "scenarios": {
+          "bear": {
+            "eps": 18,
+            "multiple": 12,
+            "fair_value": 216,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 23,
+            "multiple": 15,
+            "fair_value": 345,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 28,
+            "multiple": 18,
+            "fair_value": 504,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": -17.8401,
+      "risk_model": {
+        "downside_pct": 28,
+        "liquidity": "HIGH",
+        "cyclicality": "MEDIUM",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "AI Server營收高速成長，但營收轉EPS/FCF的品質仍需Q2確認。",
+      "invalidation_condition": "AI Server拉高營收但毛利、EPS或FCF持續跟不上。",
+      "next_check": "Q2 EPS、毛利與營業現金流。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 298,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 14.98",
+          "period": "TTM",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026Q1 revenue NT$809.221bn; operating profit NT$23.024bn; EPS 5.50",
+          "period": "2026Q1",
+          "observed_at": "2026-05-14",
+          "source_type": "Quanta",
+          "source_url": "https://www.quantatw.com/Quanta/chinese/allnews/allnews_open.aspx?CASENO=NEWS003765",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "revenue_trend",
+          "value": "2026 official monthly sales show very strong YoY growth",
+          "period": "2026H1",
+          "observed_at": "2026-08-10",
+          "source_type": "Quanta",
+          "source_url": "https://www.quantatw.com/quanta/english/investment/financials_ms.aspx",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": true,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": "GROWTH",
+        "reported_eps": 12.93,
+        "forward_vs_normalized_eps_pct": 15.0,
+        "revenue": {
+          "status": "COMPLETE",
+          "raw_yoy_pct": 131.31830412017854,
+          "raw_cumulative_yoy_pct": 92.66781063949252,
+          "ranking_cap_pct": 100,
+          "base_effect_outlier": true
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 352.5,
+          "expected_return_pct": 18.2886,
+          "margin_of_safety_pct": 15.7718,
+          "forward_pe": 12.9565,
+          "normalized_pe": 14.9
+        },
+        "alpha_spread_pct": -17.8401,
+        "catalyst_basis": "SINGLE_SUPPORTING_CATALYST_SIGNAL",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 352.5,
+        "expected_return_pct": 18.2886,
+        "margin_of_safety_pct": 15.7718,
+        "forward_pe": 12.9565,
+        "normalized_pe": 14.9
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": false,
+          "revenue": true,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": 136,
+          "revenue_calendar_days": 45,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-03-31",
+          "revenue_period_end": "2026-06-30",
+          "last_event_at": "2026-08-10",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 4,
+        "verified_metric_count": 4,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-10"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 15.0,
+        "market_implied_eps": 19.8667,
+        "base_case_eps": 23.0,
+        "base_vs_implied_eps_gap_pct": 15.7718,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": false,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "margin_of_safety",
+          "alpha_spread",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 3,
+      "ticker": "2451",
+      "name": "創見",
+      "score": 14.0,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 6.0,
+        "revenue_quality": 14,
+        "valuation": 0.0,
+        "structural_catalyst": 8.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "growth_base_effect": -6,
+        "high_cyclicality": -5,
+        "cash_flow_evidence_gap": -3
+      },
+      "confidence_score": 93.5,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 25,
+        "model_completeness": 16.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 7.5
+      },
+      "reference_price": 297,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-06-30",
+      "revenue_data_as_of": "2026-06-30",
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 5.17,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 35,
+        "normalized_eps": 35,
+        "forward_pe": 8.49,
+        "normalized_pe": 8.49,
+        "expected_fair_value": 308.75,
+        "expected_return_pct": 3.96,
+        "margin_of_safety_pct": -5.72,
+        "scenarios": {
+          "bear": {
+            "eps": 25,
+            "multiple": 7,
+            "fair_value": 175,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 35,
+            "multiple": 8,
+            "fair_value": 280,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 50,
+            "multiple": 10,
+            "fair_value": 500,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": -32.1725,
+      "risk_model": {
+        "downside_pct": 40,
+        "liquidity": "MEDIUM",
+        "cyclicality": "HIGH",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "記憶體景氣帶來高盈餘彈性，但Trailing PE受peak-cycle earnings扭曲，必須用normalized EPS。",
+      "invalidation_condition": "DRAM/NAND價格反轉或庫存利益消失，使EPS快速均值回歸。",
+      "next_check": "Q2財報細項、記憶體價格與庫存。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 297,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 5.17; normalized model overrides peak trailing signal",
+          "period": "TTM/normalized",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026Q2 consolidated financial report available; normalized EPS used",
+          "period": "2026Q2",
+          "observed_at": "2026-08-10",
+          "source_type": "Transcend IR",
+          "source_url": "https://tw.transcend-info.com/about/fin_report",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "revenue_trend",
+          "value": "June NT$5.068bn +381.55%; H1 NT$32.444bn +422.17%",
+          "period": "2026H1",
+          "observed_at": "2026-07-06",
+          "source_type": "Transcend",
+          "source_url": "https://tw.transcend-info.com/about/month_sales",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": true,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": "GROWTH",
+        "reported_eps": 46.63,
+        "forward_vs_normalized_eps_pct": 0.0,
+        "revenue": {
+          "status": "COMPLETE",
+          "raw_yoy_pct": 307.65627206955537,
+          "raw_cumulative_yoy_pct": 402.6798478136839,
+          "ranking_cap_pct": 100,
+          "base_effect_outlier": true
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 308.75,
+          "expected_return_pct": 3.9562,
+          "margin_of_safety_pct": -5.7239,
+          "forward_pe": 8.4857,
+          "normalized_pe": 8.4857
+        },
+        "alpha_spread_pct": -32.1725,
+        "catalyst_basis": "SINGLE_SUPPORTING_CATALYST_SIGNAL",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 308.75,
+        "expected_return_pct": 3.9562,
+        "margin_of_safety_pct": -5.7239,
+        "forward_pe": 8.4857,
+        "normalized_pe": 8.4857
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": true,
+          "revenue": true,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": 45,
+          "revenue_calendar_days": 45,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-06-30",
+          "revenue_period_end": "2026-06-30",
+          "last_event_at": "2026-08-10",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 4,
+        "verified_metric_count": 4,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-10"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 8.0,
+        "market_implied_eps": 37.125,
+        "base_case_eps": 35.0,
+        "base_vs_implied_eps_gap_pct": -5.7239,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": false,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "margin_of_safety",
+          "alpha_spread",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 4,
+      "ticker": "2301",
+      "name": "光寶科",
+      "score": 13.81,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 4.8,
+        "revenue_quality": 0.0,
+        "valuation": 7.0091,
+        "structural_catalyst": 8.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "cash_flow_evidence_gap": -3,
+        "screen_feature_gap": -3
+      },
+      "confidence_score": 83.5,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 19,
+        "model_completeness": 12.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 7.5
+      },
+      "reference_price": 247,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-06-30",
+      "revenue_data_as_of": "2026-06-30",
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 28.89,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 10.8,
+        "normalized_eps": 10,
+        "forward_pe": 22.87,
+        "normalized_pe": 24.7,
+        "expected_fair_value": 299.6,
+        "expected_return_pct": 21.3,
+        "margin_of_safety_pct": 22.43,
+        "scenarios": {
+          "bear": {
+            "eps": 8.8,
+            "multiple": 22,
+            "fair_value": 193.6,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 10.8,
+            "multiple": 28,
+            "fair_value": 302.4,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 12.5,
+            "multiple": 32,
+            "fair_value": 400,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": -14.8332,
+      "risk_model": {
+        "downside_pct": 25,
+        "liquidity": "HIGH",
+        "cyclicality": "MEDIUM",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "AI/Cloud高階伺服器電源與BBU加速，但換股價值取決於相對台積的估值。",
+      "invalidation_condition": "AI電源/BBU成長失速、毛利或營益率回落。",
+      "next_check": "下一季EPS/營益率與Power Shelf/HVDC進度。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 247,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 28.89",
+          "period": "TTM",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026H1 EPS 4.80; Q1 EPS 1.66",
+          "period": "2026H1",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE / LITEON",
+          "source_url": "https://www.twse.com.tw/exchangeReport/TWT48U?response=html",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "revenue_trend",
+          "value": "2026H1 revenue NT$96.1bn +25%; June +37%; Cloud & AIoT +80% YoY",
+          "period": "2026H1",
+          "observed_at": "2026-07-09",
+          "source_type": "LITEON",
+          "source_url": "https://www.liteon.com/en/news/press-center/content/liteon-monthly-sales-june-2026",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": false,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "revenue_quality",
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": null,
+        "reported_eps": null,
+        "forward_vs_normalized_eps_pct": 8.0,
+        "revenue": {
+          "status": "MISSING_REVENUE_GROWTH"
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 299.6,
+          "expected_return_pct": 21.2955,
+          "margin_of_safety_pct": 22.4291,
+          "forward_pe": 22.8704,
+          "normalized_pe": 24.7
+        },
+        "alpha_spread_pct": -14.8332,
+        "catalyst_basis": "SINGLE_SUPPORTING_CATALYST_SIGNAL",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 299.6,
+        "expected_return_pct": 21.2955,
+        "margin_of_safety_pct": 22.4291,
+        "forward_pe": 22.8704,
+        "normalized_pe": 24.7
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": true,
+          "revenue": true,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": 45,
+          "revenue_calendar_days": 45,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-06-30",
+          "revenue_period_end": "2026-06-30",
+          "last_event_at": "2026-08-07",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 4,
+        "verified_metric_count": 4,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-07"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 28.0,
+        "market_implied_eps": 8.8214,
+        "base_case_eps": 10.8,
+        "base_vs_implied_eps_gap_pct": 22.4291,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": true,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "alpha_spread",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 5,
+      "ticker": "3515",
+      "name": "華擎",
+      "score": 0,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 3.5294,
+        "revenue_quality": 0.0,
+        "valuation": 5.8088,
+        "structural_catalyst": 0.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "fundamental_staleness": -4,
+        "cash_flow_evidence_gap": -3,
+        "screen_feature_gap": -3
+      },
+      "confidence_score": 74.5,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 19,
+        "model_completeness": 8.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 2.5
+      },
+      "reference_price": 212.5,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-03-31",
+      "revenue_data_as_of": null,
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 13.73,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 18,
+        "normalized_eps": 17,
+        "forward_pe": 11.81,
+        "normalized_pe": 12.5,
+        "expected_fair_value": 260.5,
+        "expected_return_pct": 22.59,
+        "margin_of_safety_pct": 18.59,
+        "scenarios": {
+          "bear": {
+            "eps": 13,
+            "multiple": 10,
+            "fair_value": 130,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 18,
+            "multiple": 14,
+            "fair_value": 252,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 24,
+            "multiple": 17,
+            "fair_value": 408,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": -13.5405,
+      "risk_model": {
+        "downside_pct": 35,
+        "liquidity": "MEDIUM",
+        "cyclicality": "MEDIUM",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "估值不高且Server/AI具上行選擇權，但第一手持續性證據不足。",
+      "invalidation_condition": "AI/Server貢獻未連續反映EPS。",
+      "next_check": "Q2財報、官方月營收與Server營收占比。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 212.5,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 13.73",
+          "period": "TTM",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026Q1 investor financial information",
+          "period": "2026Q1",
+          "observed_at": "2026-08-10",
+          "source_type": "ASRock IR",
+          "source_url": "https://www.asrock.com/general/investor.asp?cat=Finance",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": false,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "revenue_quality",
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": null,
+        "reported_eps": null,
+        "forward_vs_normalized_eps_pct": 5.8824,
+        "revenue": {
+          "status": "MISSING_REVENUE_GROWTH"
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 260.5,
+          "expected_return_pct": 22.5882,
+          "margin_of_safety_pct": 18.5882,
+          "forward_pe": 11.8056,
+          "normalized_pe": 12.5
+        },
+        "alpha_spread_pct": -13.5405,
+        "catalyst_basis": "NO_STRUCTURED_CATALYST_EVIDENCE",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 260.5,
+        "expected_return_pct": 22.5882,
+        "margin_of_safety_pct": 18.5882,
+        "forward_pe": 11.8056,
+        "normalized_pe": 12.5
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": false,
+          "revenue": false,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": 136,
+          "revenue_calendar_days": null,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-03-31",
+          "revenue_period_end": null,
+          "last_event_at": "2026-08-10",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 3,
+        "verified_metric_count": 3,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-10"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 14.0,
+        "market_implied_eps": 15.1786,
+        "base_case_eps": 18.0,
+        "base_vs_implied_eps_gap_pct": 18.5882,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": false,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "margin_of_safety",
+          "alpha_spread",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 6,
+      "ticker": "3081",
+      "name": "聯亞",
+      "score": 0,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 6.0,
+        "revenue_quality": 14,
+        "valuation": 0.0,
+        "structural_catalyst": 0.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "valuation_incomplete": -5,
+        "fundamental_staleness": -4,
+        "growth_base_effect": -6,
+        "high_cyclicality": -5,
+        "cash_flow_evidence_gap": -3
+      },
+      "confidence_score": 26.5,
+      "confidence_factors": {
+        "evidence_quality": 0.0,
+        "forecast_visibility": 10,
+        "model_completeness": 4.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 2.5
+      },
+      "reference_price": null,
+      "reference_price_date": null,
+      "fundamental_data_as_of": null,
+      "revenue_data_as_of": null,
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": null,
+      "valuation_model": {
+        "status": "VERIFY",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": null,
+        "normalized_eps": null,
+        "forward_pe": null,
+        "normalized_pe": null,
+        "expected_fair_value": null,
+        "expected_return_pct": null,
+        "margin_of_safety_pct": null,
+        "scenarios": {
+          "bear": {
+            "eps": null,
+            "multiple": null,
+            "fair_value": null,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": null,
+            "multiple": null,
+            "fair_value": null,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": null,
+            "multiple": null,
+            "fair_value": null,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "Pending 2026Q2 official release / forward valuation refresh."
+      },
+      "alpha_spread_pct": null,
+      "risk_model": {
+        "downside_pct": 45,
+        "liquidity": "MEDIUM",
+        "cyclicality": "HIGH",
+        "status": "VERIFY"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "高速光通訊具結構成長，但估值與Q2證據尚未完成。",
+      "invalidation_condition": "估值已過度反映成長或新產品放量低於預期。",
+      "next_check": "2026-08-12 Q2財報/法說與最新forward valuation。",
+      "evidence": [],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": false,
+          "revenue_quality": true,
+          "valuation": false,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "earnings_acceleration",
+          "valuation",
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": "GROWTH",
+        "reported_eps": 7.75,
+        "forward_vs_normalized_eps_pct": null,
+        "revenue": {
+          "status": "COMPLETE",
+          "raw_yoy_pct": 176.53575803052206,
+          "raw_cumulative_yoy_pct": 120.95247227766829,
+          "ranking_cap_pct": 100,
+          "base_effect_outlier": true
+        },
+        "valuation_metrics": {
+          "expected_fair_value": null,
+          "expected_return_pct": null,
+          "margin_of_safety_pct": null,
+          "forward_pe": null,
+          "normalized_pe": null
+        },
+        "alpha_spread_pct": null,
+        "catalyst_basis": "NO_STRUCTURED_CATALYST_EVIDENCE",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": null,
+        "expected_return_pct": null,
+        "margin_of_safety_pct": null,
+        "forward_pe": null,
+        "normalized_pe": null
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": false,
+          "revenue": false,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 5,
+          "fundamentals_calendar_days": null,
+          "revenue_calendar_days": null,
+          "event_check_calendar_days": 4
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": null,
+          "revenue_period_end": null,
+          "last_event_at": null,
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 0,
+        "verified_metric_count": 0,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "ok": false,
+        "latest_verified_observed_at": null
+      },
+      "market_expectation": {
+        "status": "INCOMPLETE",
+        "authority": "ANALYTIC_ONLY"
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": false,
+          "valuation_complete": false,
+          "margin_of_safety": false,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": false,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "confidence",
+          "valuation_complete",
+          "margin_of_safety",
+          "alpha_spread",
+          "freshness",
+          "evidence",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "2383",
+      "name": "台光電",
+      "reason": "高成長但估值要求高；等待screen與forward valuation"
+    },
+    {
+      "ticker": "2360",
+      "name": "致茂",
+      "reason": "品質佳但估值偏高；等待更佳MOS"
+    },
+    {
+      "ticker": "3450",
+      "name": "聯鈞",
+      "reason": "高成長、高估值；需事件與估值同步驗證"
+    },
+    {
+      "ticker": "6442",
+      "name": "光聖",
+      "reason": "高速光通訊成長強，但需更大安全邊際"
+    },
+    {
+      "ticker": "2308",
+      "name": "台達電",
+      "reason": "優質電源/AI基建，但需與TSMC相對比較"
+    },
+    {
+      "ticker": "2368",
+      "name": "金像電",
+      "reason": "AI PCB成長強，等待screen與forward valuation"
+    }
+  ],
+  "rotation_review": {
+    "status": "BLOCKED",
+    "security_authority": "PYTHON_SECURITY_BUY_GATE",
+    "portfolio_authority": "ELEPHANT_CAPITAL_ALLOCATION_OS",
+    "tsmc_3000_event_triggered": false,
+    "event_is_gate": false,
+    "buy_candidate_tickers": [],
+    "best_relative_alpha_ticker": null,
+    "rule": "Only complete securities that pass the full Buy Gate can become BUY CANDIDATE; TSMC 3000 is informational.",
+    "allocations": []
+  }
+}
