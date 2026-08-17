@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": 5,
     "as_of": "2026-08-17",
-    "generated_at": "2026-08-17T14:21:55+08:00",
+    "generated_at": "2026-08-17T18:16:43+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx common-stock issuer universe; non-financial multi-lane research discovery.",
     "promotion_enabled_by_market": {
@@ -150,7 +150,7 @@
         "ok": true,
         "rows": 1378,
         "url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-        "new_market_snapshot": true,
+        "new_market_snapshot": false,
         "transport": {
           "primary_attempts": 1,
           "fallback_used": null,
@@ -228,7 +228,7 @@
         "ok": true,
         "rows": 1013,
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes",
-        "new_market_snapshot": false,
+        "new_market_snapshot": true,
         "transport": {
           "primary_attempts": 1,
           "fallback_used": null,
@@ -294,7 +294,7 @@
       "revenue": 1084,
       "income": 967,
       "valuation": 1083,
-      "new_market_snapshot": true,
+      "new_market_snapshot": false,
       "income_coverage_ratio": 0.888
     },
     "TPEX": {
@@ -303,7 +303,7 @@
       "revenue": 890,
       "income": 857,
       "valuation": 889,
-      "new_market_snapshot": false,
+      "new_market_snapshot": true,
       "income_coverage_ratio": 0.9629
     }
   },
@@ -335,6 +335,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -370,6 +371,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -384,28 +386,27 @@
       "market": "TPEX",
       "industry": "31",
       "discovery_lane": "GROWTH",
-      "screen_priority": 76.6286,
-      "screen_score": 81.0,
-      "reference_price": 1010.0,
+      "screen_priority": 77.5772,
+      "screen_score": 82.0,
+      "reference_price": 1025.0,
       "revenue_yoy_pct": 99.48843930635839,
       "cumulative_revenue_yoy_pct": 97.12714229178272,
       "priority_revenue_yoy_pct": 99.48843930635839,
       "priority_cumulative_revenue_yoy_pct": 97.12714229178272,
-      "pe_ttm": 42.78,
+      "pe_ttm": 43.41,
       "latest_reported_eps": 13.31,
       "profitability_basis": "LATEST_REPORTED_EPS",
       "issued_shares": 23392500.0,
-      "market_cap_twd": 23626425000.0,
+      "market_cap_twd": 23977312500.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 112090000.0,
-      "median_turnover_twd": 102212500.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 226400000.0,
+      "median_turnover_twd": 112090000.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -441,6 +442,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -476,6 +478,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -511,6 +514,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -546,6 +550,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -581,6 +586,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -616,6 +622,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -651,6 +658,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -686,6 +694,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -721,6 +730,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -756,6 +766,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -791,6 +802,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -826,6 +838,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -861,6 +874,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -896,6 +910,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -923,15 +938,14 @@
       "issued_shares": 53608456.0,
       "market_cap_twd": 12329944880.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 78350000.0,
-      "median_turnover_twd": 72271000.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 52206500.0,
+      "median_turnover_twd": 66192000.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -941,74 +955,37 @@
       "deep_research_selected": false
     },
     {
-      "ticker": "3088",
-      "name": "艾訊股份有限公司",
-      "market": "TPEX",
-      "industry": "25",
-      "discovery_lane": "GROWTH",
-      "screen_priority": 72.7705,
-      "screen_score": 92.0,
-      "reference_price": 128.5,
-      "revenue_yoy_pct": 66.91675371109733,
-      "cumulative_revenue_yoy_pct": 45.47725625456599,
-      "priority_revenue_yoy_pct": 66.91675371109733,
-      "priority_cumulative_revenue_yoy_pct": 45.47725625456599,
-      "pe_ttm": 16.1,
-      "latest_reported_eps": 4.28,
-      "profitability_basis": "LATEST_REPORTED_EPS",
-      "issued_shares": 108649017.0,
-      "market_cap_twd": 13961398684.5,
-      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 244480500.0,
-      "median_turnover_twd": 247950000.0,
-      "liquidity_observations": 2,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "data_quality_score": 10.0,
-      "verification_priority": "NORMAL",
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
-        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 19,
-      "research_industry_key": "IND:25",
-      "deep_research_selected": false
-    },
-    {
       "ticker": "5274",
       "name": "信驊科技股份有限公司",
       "market": "TPEX",
       "industry": "24",
       "discovery_lane": "GROWTH",
-      "screen_priority": 72.7081,
+      "screen_priority": 72.7869,
       "screen_score": 82.0,
-      "reference_price": 17690.0,
+      "reference_price": 17020.0,
       "revenue_yoy_pct": 97.59287014515903,
       "cumulative_revenue_yoy_pct": 68.05540554444981,
       "priority_revenue_yoy_pct": 97.59287014515903,
       "priority_cumulative_revenue_yoy_pct": 68.05540554444981,
-      "pe_ttm": 118.0,
+      "pe_ttm": 113.53,
       "latest_reported_eps": 78.28,
       "profitability_basis": "LATEST_REPORTED_EPS",
       "issued_shares": 41582953.0,
-      "market_cap_twd": 735602438570.0,
+      "market_cap_twd": 707741860060.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 4445440000.0,
-      "median_turnover_twd": 3509957500.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 2192695000.0,
+      "median_turnover_twd": 2574475000.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 20,
+      "rank": 19,
       "research_industry_key": "IND:24",
       "deep_research_selected": false
     },
@@ -1039,11 +1016,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 21,
+      "rank": 20,
       "research_industry_key": "IND:27",
       "deep_research_selected": false
     },
@@ -1074,11 +1052,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 22,
+      "rank": 21,
       "research_industry_key": "IND:25",
       "deep_research_selected": false
     },
@@ -1109,12 +1088,13 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 23,
+      "rank": 22,
       "research_industry_key": "IND:29",
       "deep_research_selected": false
     },
@@ -1145,11 +1125,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 24,
+      "rank": 23,
       "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
@@ -1180,11 +1161,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 25,
+      "rank": 24,
       "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
@@ -1215,11 +1197,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 26,
+      "rank": 25,
       "research_industry_key": "IND:31",
       "deep_research_selected": false
     },
@@ -1250,12 +1233,48 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 26,
+      "research_industry_key": "IND:27",
+      "deep_research_selected": false
+    },
+    {
+      "ticker": "3088",
+      "name": "艾訊股份有限公司",
+      "market": "TPEX",
+      "industry": "25",
+      "discovery_lane": "GROWTH",
+      "screen_priority": 71.8005,
+      "screen_score": 91.0,
+      "reference_price": 127.5,
+      "revenue_yoy_pct": 66.91675371109733,
+      "cumulative_revenue_yoy_pct": 45.47725625456599,
+      "priority_revenue_yoy_pct": 66.91675371109733,
+      "priority_cumulative_revenue_yoy_pct": 45.47725625456599,
+      "pe_ttm": 15.98,
+      "latest_reported_eps": 4.28,
+      "profitability_basis": "LATEST_REPORTED_EPS",
+      "issued_shares": 108649017.0,
+      "market_cap_twd": 13852749667.5,
+      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
+      "latest_daily_turnover_twd": 111939500.0,
+      "median_turnover_twd": 244480500.0,
+      "liquidity_observations": 3,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "data_quality_score": 10.0,
+      "verification_priority": "NORMAL",
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 27,
-      "research_industry_key": "IND:27",
+      "research_industry_key": "IND:25",
       "deep_research_selected": false
     },
     {
@@ -1285,6 +1304,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1321,6 +1341,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1357,6 +1378,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1392,6 +1414,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1428,6 +1451,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1463,6 +1487,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1498,6 +1523,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1533,49 +1559,13 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 35,
       "research_industry_key": "IND:29",
-      "deep_research_selected": false
-    },
-    {
-      "ticker": "3147",
-      "name": "大綜電腦系統股份有限公司",
-      "market": "TPEX",
-      "industry": "30",
-      "discovery_lane": "GROWTH",
-      "screen_priority": 71.114,
-      "screen_score": 96.0,
-      "reference_price": 232.0,
-      "revenue_yoy_pct": 117.44110952011255,
-      "cumulative_revenue_yoy_pct": 101.16184418007562,
-      "priority_revenue_yoy_pct": 100.0,
-      "priority_cumulative_revenue_yoy_pct": 100.0,
-      "pe_ttm": 14.42,
-      "latest_reported_eps": 11.26,
-      "profitability_basis": "LATEST_REPORTED_EPS",
-      "issued_shares": 43686831.0,
-      "market_cap_twd": 10135344792.0,
-      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 143862500.0,
-      "median_turnover_twd": 283949750.0,
-      "liquidity_observations": 2,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "data_quality_score": 10.0,
-      "verification_priority": "HIGH",
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
-        "GROWTH_BASE_EFFECT_OUTLIER",
-        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 36,
-      "research_industry_key": "IND:30",
       "deep_research_selected": false
     },
     {
@@ -1605,48 +1595,13 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 37,
-      "research_industry_key": "IND:21",
-      "deep_research_selected": false
-    },
-    {
-      "ticker": "1815",
-      "name": "富喬工業股份有限公司",
-      "market": "TPEX",
-      "industry": "28",
-      "discovery_lane": "GROWTH",
-      "screen_priority": 71.1096,
-      "screen_score": 82.0,
-      "reference_price": 91.5,
-      "revenue_yoy_pct": 68.10608415742232,
-      "cumulative_revenue_yoy_pct": 46.895566129278095,
-      "priority_revenue_yoy_pct": 68.10608415742232,
-      "priority_cumulative_revenue_yoy_pct": 46.895566129278095,
-      "pe_ttm": 26.52,
-      "latest_reported_eps": 2.24,
-      "profitability_basis": "LATEST_REPORTED_EPS",
-      "issued_shares": 585479487.0,
-      "market_cap_twd": 53571373060.5,
-      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 691919900.0,
-      "median_turnover_twd": 1702472400.0,
-      "liquidity_observations": 2,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "data_quality_score": 10.0,
-      "verification_priority": "NORMAL",
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
         "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 38,
-      "research_industry_key": "IND:28",
+      "rank": 36,
+      "research_industry_key": "IND:21",
       "deep_research_selected": false
     },
     {
@@ -1655,34 +1610,68 @@
       "market": "TPEX",
       "industry": "27",
       "discovery_lane": "GROWTH",
-      "screen_priority": 70.9217,
+      "screen_priority": 70.9932,
       "screen_score": 80.0,
-      "reference_price": 1375.0,
+      "reference_price": 1330.0,
       "revenue_yoy_pct": 82.01583372219015,
       "cumulative_revenue_yoy_pct": 70.78905876182232,
       "priority_revenue_yoy_pct": 82.01583372219015,
       "priority_cumulative_revenue_yoy_pct": 70.78905876182232,
-      "pe_ttm": 109.3,
+      "pe_ttm": 105.72,
       "latest_reported_eps": 8.15,
       "profitability_basis": "LATEST_REPORTED_EPS",
       "issued_shares": 68805125.0,
-      "market_cap_twd": 94607046875.0,
+      "market_cap_twd": 91510816250.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 3478500000.0,
-      "median_turnover_twd": 3388205000.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 1668105000.0,
+      "median_turnover_twd": 3297910000.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 39,
+      "rank": 37,
       "research_industry_key": "IND:27",
+      "deep_research_selected": false
+    },
+    {
+      "ticker": "1815",
+      "name": "富喬工業股份有限公司",
+      "market": "TPEX",
+      "industry": "28",
+      "discovery_lane": "GROWTH",
+      "screen_priority": 70.8985,
+      "screen_score": 82.0,
+      "reference_price": 96.5,
+      "revenue_yoy_pct": 68.10608415742232,
+      "cumulative_revenue_yoy_pct": 46.895566129278095,
+      "priority_revenue_yoy_pct": 68.10608415742232,
+      "priority_cumulative_revenue_yoy_pct": 46.895566129278095,
+      "pe_ttm": 27.97,
+      "latest_reported_eps": 2.24,
+      "profitability_basis": "LATEST_REPORTED_EPS",
+      "issued_shares": 585479487.0,
+      "market_cap_twd": 56498770495.5,
+      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
+      "latest_daily_turnover_twd": 1063020000.0,
+      "median_turnover_twd": 1063020000.0,
+      "liquidity_observations": 3,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "data_quality_score": 10.0,
+      "verification_priority": "NORMAL",
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
+        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 38,
+      "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
     {
@@ -1712,12 +1701,48 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 39,
+      "research_industry_key": "IND:26",
+      "deep_research_selected": false
+    },
+    {
+      "ticker": "6613",
+      "name": "朋億股份有限公司",
+      "market": "TPEX",
+      "industry": "31",
+      "discovery_lane": "GROWTH",
+      "screen_priority": 70.8104,
+      "screen_score": 93.0,
+      "reference_price": 262.5,
+      "revenue_yoy_pct": 64.32464525774992,
+      "cumulative_revenue_yoy_pct": 49.03603900870384,
+      "priority_revenue_yoy_pct": 64.32464525774992,
+      "priority_cumulative_revenue_yoy_pct": 49.03603900870384,
+      "pe_ttm": 15.52,
+      "latest_reported_eps": 8.51,
+      "profitability_basis": "LATEST_REPORTED_EPS",
+      "issued_shares": 77801485.0,
+      "market_cap_twd": 20422889812.5,
+      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
+      "latest_daily_turnover_twd": 87314000.0,
+      "median_turnover_twd": 87314000.0,
+      "liquidity_observations": 3,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "data_quality_score": 10.0,
+      "verification_priority": "NORMAL",
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 40,
-      "research_industry_key": "IND:26",
+      "research_industry_key": "IND:31",
       "deep_research_selected": false
     },
     {
@@ -1747,6 +1772,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1761,28 +1787,27 @@
       "market": "TPEX",
       "industry": "31",
       "discovery_lane": "GROWTH",
-      "screen_priority": 70.7193,
+      "screen_priority": 70.6989,
       "screen_score": 87.0,
-      "reference_price": 104.5,
+      "reference_price": 105.0,
       "revenue_yoy_pct": 46.432595277750565,
       "cumulative_revenue_yoy_pct": 68.68290900725333,
       "priority_revenue_yoy_pct": 46.432595277750565,
       "priority_cumulative_revenue_yoy_pct": 68.68290900725333,
-      "pe_ttm": 15.62,
+      "pe_ttm": 15.7,
       "latest_reported_eps": 3.66,
       "profitability_basis": "LATEST_REPORTED_EPS",
       "issued_shares": 595980243.0,
-      "market_cap_twd": 62279935393.5,
+      "market_cap_twd": 62577925515.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 953671500.0,
-      "median_turnover_twd": 780411000.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 389100500.0,
+      "median_turnover_twd": 607150500.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1818,6 +1843,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1827,39 +1853,38 @@
       "deep_research_selected": false
     },
     {
-      "ticker": "6613",
-      "name": "朋億股份有限公司",
+      "ticker": "8043",
+      "name": "蜜望實企業股份有限公司",
       "market": "TPEX",
-      "industry": "31",
+      "industry": "28",
       "discovery_lane": "GROWTH",
-      "screen_priority": 70.6734,
-      "screen_score": 93.0,
-      "reference_price": 271.5,
-      "revenue_yoy_pct": 64.32464525774992,
-      "cumulative_revenue_yoy_pct": 49.03603900870384,
-      "priority_revenue_yoy_pct": 64.32464525774992,
-      "priority_cumulative_revenue_yoy_pct": 49.03603900870384,
-      "pe_ttm": 16.06,
-      "latest_reported_eps": 8.51,
+      "screen_priority": 70.4739,
+      "screen_score": 77.0,
+      "reference_price": 145.5,
+      "revenue_yoy_pct": 63.24124378684545,
+      "cumulative_revenue_yoy_pct": 61.67192630543382,
+      "priority_revenue_yoy_pct": 63.24124378684545,
+      "priority_cumulative_revenue_yoy_pct": 61.67192630543382,
+      "pe_ttm": 35.23,
+      "latest_reported_eps": 1.7,
       "profitability_basis": "LATEST_REPORTED_EPS",
-      "issued_shares": 77801485.0,
-      "market_cap_twd": 21123103177.5,
+      "issued_shares": 79907170.0,
+      "market_cap_twd": 11626493235.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 77118500.0,
-      "median_turnover_twd": 379442750.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 324484500.0,
+      "median_turnover_twd": 384939500.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 44,
-      "research_industry_key": "IND:31",
+      "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
     {
@@ -1889,47 +1914,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
-      ],
-      "status": "SCREEN_PASS",
-      "promotion_eligible": true,
-      "rank": 45,
-      "research_industry_key": "IND:28",
-      "deep_research_selected": false
-    },
-    {
-      "ticker": "8043",
-      "name": "蜜望實企業股份有限公司",
-      "market": "TPEX",
-      "industry": "28",
-      "discovery_lane": "GROWTH",
-      "screen_priority": 70.4611,
-      "screen_score": 77.0,
-      "reference_price": 146.0,
-      "revenue_yoy_pct": 63.24124378684545,
-      "cumulative_revenue_yoy_pct": 61.67192630543382,
-      "priority_revenue_yoy_pct": 63.24124378684545,
-      "priority_cumulative_revenue_yoy_pct": 61.67192630543382,
-      "pe_ttm": 35.35,
-      "latest_reported_eps": 1.7,
-      "profitability_basis": "LATEST_REPORTED_EPS",
-      "issued_shares": 79907170.0,
-      "market_cap_twd": 11666446820.0,
-      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 561440500.0,
-      "median_turnover_twd": 473190000.0,
-      "liquidity_observations": 2,
-      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
-      "data_quality_score": 10.0,
-      "verification_priority": "NORMAL",
-      "flags": [
-        "LIQUIDITY_BOOTSTRAP",
         "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 46,
+      "rank": 45,
       "research_industry_key": "IND:28",
       "deep_research_selected": false
     },
@@ -1960,11 +1950,12 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
-      "rank": 47,
+      "rank": 46,
       "research_industry_key": "IND:27",
       "deep_research_selected": false
     },
@@ -1995,13 +1986,50 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
+        "GROWTH_BASE_EFFECT_OUTLIER",
+        "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
+      ],
+      "status": "SCREEN_PASS",
+      "promotion_eligible": true,
+      "rank": 47,
+      "research_industry_key": "IND:31",
+      "deep_research_selected": false
+    },
+    {
+      "ticker": "3147",
+      "name": "大綜電腦系統股份有限公司",
+      "market": "TPEX",
+      "industry": "30",
+      "discovery_lane": "GROWTH",
+      "screen_priority": 70.1388,
+      "screen_score": 95.0,
+      "reference_price": 230.5,
+      "revenue_yoy_pct": 117.44110952011255,
+      "cumulative_revenue_yoy_pct": 101.16184418007562,
+      "priority_revenue_yoy_pct": 100.0,
+      "priority_cumulative_revenue_yoy_pct": 100.0,
+      "pe_ttm": 14.33,
+      "latest_reported_eps": 11.26,
+      "profitability_basis": "LATEST_REPORTED_EPS",
+      "issued_shares": 43686831.0,
+      "market_cap_twd": 10069814545.5,
+      "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
+      "latest_daily_turnover_twd": 74883000.0,
+      "median_turnover_twd": 143862500.0,
+      "liquidity_observations": 3,
+      "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
+      "data_quality_score": 10.0,
+      "verification_priority": "HIGH",
+      "flags": [
+        "LIQUIDITY_BOOTSTRAP",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
       "promotion_eligible": true,
       "rank": 48,
-      "research_industry_key": "IND:31",
+      "research_industry_key": "IND:30",
       "deep_research_selected": false
     },
     {
@@ -2031,6 +2059,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2066,6 +2095,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2103,6 +2133,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2138,6 +2169,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2173,6 +2205,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2187,28 +2220,27 @@
       "market": "TPEX",
       "industry": "31",
       "discovery_lane": "GROWTH",
-      "screen_priority": 76.6286,
-      "screen_score": 81.0,
-      "reference_price": 1010.0,
+      "screen_priority": 77.5772,
+      "screen_score": 82.0,
+      "reference_price": 1025.0,
       "revenue_yoy_pct": 99.48843930635839,
       "cumulative_revenue_yoy_pct": 97.12714229178272,
       "priority_revenue_yoy_pct": 99.48843930635839,
       "priority_cumulative_revenue_yoy_pct": 97.12714229178272,
-      "pe_ttm": 42.78,
+      "pe_ttm": 43.41,
       "latest_reported_eps": 13.31,
       "profitability_basis": "LATEST_REPORTED_EPS",
       "issued_shares": 23392500.0,
-      "market_cap_twd": 23626425000.0,
+      "market_cap_twd": 23977312500.0,
       "market_cap_source": "DERIVED_ISSUED_SHARES_X_CLOSE",
-      "latest_daily_turnover_twd": 112090000.0,
-      "median_turnover_twd": 102212500.0,
-      "liquidity_observations": 2,
+      "latest_daily_turnover_twd": 226400000.0,
+      "median_turnover_twd": 112090000.0,
+      "liquidity_observations": 3,
       "liquidity_mode": "BOOTSTRAP_LATEST_DAY",
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
-        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2244,6 +2276,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2279,6 +2312,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2314,6 +2348,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2349,6 +2384,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2384,6 +2420,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2419,6 +2456,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2448,20 +2486,20 @@
       "screen_status": "SCREEN_PASS"
     },
     {
-      "ticker": "2451",
-      "name": "創見",
+      "ticker": "2301",
+      "name": "光寶科",
       "alpha_rank": 3,
       "alpha_action": "VERIFY",
-      "screen_rank": 183,
+      "screen_rank": 128,
       "screen_lane": "GROWTH",
       "screen_status": "SCREEN_PASS"
     },
     {
-      "ticker": "2301",
-      "name": "光寶科",
+      "ticker": "2451",
+      "name": "創見",
       "alpha_rank": 4,
       "alpha_action": "VERIFY",
-      "screen_rank": 128,
+      "screen_rank": 183,
       "screen_lane": "GROWTH",
       "screen_status": "SCREEN_PASS"
     },
@@ -2479,7 +2517,7 @@
       "name": "聯亞",
       "alpha_rank": 6,
       "alpha_action": "VERIFY",
-      "screen_rank": 31,
+      "screen_rank": 28,
       "screen_lane": "GROWTH",
       "screen_status": "SCREEN_PASS"
     }
