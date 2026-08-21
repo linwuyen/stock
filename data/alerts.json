@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_evaluated_at": "2026-08-21T14:23:25+08:00",
+  "last_evaluated_at": "2026-08-21T18:15:46+08:00",
   "active_buy_candidates": [],
   "notifications": [],
   "policy": {
@@ -15,5 +15,5 @@
     "entered": [],
     "exited": []
   },
-  "last_decision_fingerprint": "cf11bdf41090f9bbb77b667c32c0f3368a8982b430f80c7c9adccedebe518890"
+  "last_decision_fingerprint": "a69cfdf07de3aead69d911b182e84399d9158238c9a1af541678f482ff74c31e"
 }

@@ -13,7 +13,7 @@
     "authority": "PYTHON_CANONICAL_SECURITY_ENGINE",
     "research_inputs_as_of": "2026-08-10",
     "screen_inputs_as_of": "2026-08-21",
-    "decision_fingerprint": "cf11bdf41090f9bbb77b667c32c0f3368a8982b430f80c7c9adccedebe518890"
+    "decision_fingerprint": "a69cfdf07de3aead69d911b182e84399d9158238c9a1af541678f482ff74c31e"
   },
   "methodology": {
     "score_max": 100,
@@ -272,27 +272,26 @@
       "rank": 1,
       "ticker": "2376",
       "name": "技嘉",
-      "score": 32.86,
+      "score": 52.82,
       "grade": "VERIFY",
       "action": "VERIFY",
       "score_provenance": "security-v5.0.1",
       "factor_scores": {
-        "earnings_acceleration": 5.8065,
-        "revenue_quality": 0.0,
+        "earnings_acceleration": 11.8065,
+        "revenue_quality": 10.9633,
         "valuation": 22.0527,
         "structural_catalyst": 15.0,
         "balance_sheet_cash_flow": 0.0
       },
       "penalties": {
         "fundamental_staleness": -4,
-        "cash_flow_evidence_gap": -3,
-        "screen_feature_gap": -3
+        "cash_flow_evidence_gap": -3
       },
-      "confidence_score": 78.5,
+      "confidence_score": 88.5,
       "confidence_factors": {
         "evidence_quality": 35.0,
-        "forecast_visibility": 19,
-        "model_completeness": 12.0,
+        "forecast_visibility": 25,
+        "model_completeness": 16.0,
         "thesis_falsifiability": 10,
         "data_freshness": 2.5
       },
@@ -392,23 +391,26 @@
         "status": "INCOMPLETE",
         "coverage": {
           "earnings_acceleration": true,
-          "revenue_quality": false,
+          "revenue_quality": true,
           "valuation": true,
           "structural_catalyst": true,
           "balance_sheet_cash_flow": false
         },
         "missing_factors": [
-          "revenue_quality",
           "balance_sheet_cash_flow"
         ],
         "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
       },
       "feature_inputs": {
-        "screen_lane": null,
-        "reported_eps": null,
+        "screen_lane": "GROWTH",
+        "reported_eps": 17.73,
         "forward_vs_normalized_eps_pct": 9.6774,
         "revenue": {
-          "status": "MISSING_REVENUE_GROWTH"
+          "status": "COMPLETE",
+          "raw_yoy_pct": 59.67101651519066,
+          "raw_cumulative_yoy_pct": 49.96169077295545,
+          "ranking_cap_pct": 100,
+          "base_effect_outlier": false
         },
         "valuation_metrics": {
           "expected_fair_value": 512.75,
@@ -498,6 +500,239 @@
     },
     {
       "rank": 2,
+      "ticker": "2382",
+      "name": "廣達",
+      "score": 28.93,
+      "grade": "VERIFY",
+      "action": "VERIFY",
+      "score_provenance": "security-v5.0.1",
+      "factor_scores": {
+        "earnings_acceleration": 15.0,
+        "revenue_quality": 14,
+        "valuation": 4.9287,
+        "structural_catalyst": 8.0,
+        "balance_sheet_cash_flow": 0.0
+      },
+      "penalties": {
+        "fundamental_staleness": -4,
+        "growth_base_effect": -6,
+        "cash_flow_evidence_gap": -3
+      },
+      "confidence_score": 88.5,
+      "confidence_factors": {
+        "evidence_quality": 35.0,
+        "forecast_visibility": 25,
+        "model_completeness": 16.0,
+        "thesis_falsifiability": 10,
+        "data_freshness": 2.5
+      },
+      "reference_price": 298,
+      "reference_price_date": "2026-08-07",
+      "fundamental_data_as_of": "2026-03-31",
+      "revenue_data_as_of": "2026-06-30",
+      "event_data_as_of": "2026-08-10",
+      "pe_ttm": 14.98,
+      "valuation_model": {
+        "status": "COMPLETE",
+        "horizon": "FY2027E / ~12-18 months",
+        "model_type": "scenario_PE",
+        "forward_eps": 23,
+        "normalized_eps": 20,
+        "forward_pe": 12.96,
+        "normalized_pe": 14.9,
+        "expected_fair_value": 352.5,
+        "expected_return_pct": 18.29,
+        "margin_of_safety_pct": 15.77,
+        "scenarios": {
+          "bear": {
+            "eps": 18,
+            "multiple": 12,
+            "fair_value": 216,
+            "probability": 0.25
+          },
+          "base": {
+            "eps": 23,
+            "multiple": 15,
+            "fair_value": 345,
+            "probability": 0.5
+          },
+          "bull": {
+            "eps": 28,
+            "multiple": 18,
+            "fair_value": 504,
+            "probability": 0.25
+          }
+        },
+        "assumption_note": "MODEL ASSUMPTION, not company guidance."
+      },
+      "alpha_spread_pct": -17.8401,
+      "risk_model": {
+        "downside_pct": 28,
+        "liquidity": "HIGH",
+        "cyclicality": "MEDIUM",
+        "status": "REVIEWED"
+      },
+      "thesis_status": "ACTIVE",
+      "thesis": "AI Server營收高速成長，但營收轉EPS/FCF的品質仍需Q2確認。",
+      "invalidation_condition": "AI Server拉高營收但毛利、EPS或FCF持續跟不上。",
+      "next_check": "Q2 EPS、毛利與營業現金流。",
+      "evidence": [
+        {
+          "metric": "reference_price",
+          "value": 298,
+          "period": "2026-08-07",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "valuation_basis",
+          "value": "TWSE TTM PE 14.98",
+          "period": "TTM",
+          "observed_at": "2026-08-07",
+          "source_type": "TWSE OpenAPI",
+          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "earnings_basis",
+          "value": "2026Q1 revenue NT$809.221bn; operating profit NT$23.024bn; EPS 5.50",
+          "period": "2026Q1",
+          "observed_at": "2026-05-14",
+          "source_type": "Quanta",
+          "source_url": "https://www.quantatw.com/Quanta/chinese/allnews/allnews_open.aspx?CASENO=NEWS003765",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        },
+        {
+          "metric": "revenue_trend",
+          "value": "2026 official monthly sales show very strong YoY growth",
+          "period": "2026H1",
+          "observed_at": "2026-08-10",
+          "source_type": "Quanta",
+          "source_url": "https://www.quantatw.com/quanta/english/investment/financials_ms.aspx",
+          "quality": "FIRST_PARTY",
+          "status": "VERIFIED"
+        }
+      ],
+      "score_coverage": {
+        "status": "INCOMPLETE",
+        "coverage": {
+          "earnings_acceleration": true,
+          "revenue_quality": true,
+          "valuation": true,
+          "structural_catalyst": true,
+          "balance_sheet_cash_flow": false
+        },
+        "missing_factors": [
+          "balance_sheet_cash_flow"
+        ],
+        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
+      },
+      "feature_inputs": {
+        "screen_lane": "GROWTH",
+        "reported_eps": 12.93,
+        "forward_vs_normalized_eps_pct": 15.0,
+        "revenue": {
+          "status": "COMPLETE",
+          "raw_yoy_pct": 131.31830412017854,
+          "raw_cumulative_yoy_pct": 92.66781063949252,
+          "ranking_cap_pct": 100,
+          "base_effect_outlier": true
+        },
+        "valuation_metrics": {
+          "expected_fair_value": 352.5,
+          "expected_return_pct": 18.2886,
+          "margin_of_safety_pct": 15.7718,
+          "forward_pe": 12.9565,
+          "normalized_pe": 14.9
+        },
+        "alpha_spread_pct": -17.8401,
+        "catalyst_basis": "SINGLE_SUPPORTING_CATALYST_SIGNAL",
+        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
+      },
+      "valuation_metrics": {
+        "expected_fair_value": 352.5,
+        "expected_return_pct": 18.2886,
+        "margin_of_safety_pct": 15.7718,
+        "forward_pe": 12.9565,
+        "normalized_pe": 14.9
+      },
+      "freshness": {
+        "ok": false,
+        "checks": {
+          "market": false,
+          "fundamentals": false,
+          "revenue": false,
+          "events": true
+        },
+        "ages": {
+          "market_trading_sessions": 10,
+          "fundamentals_calendar_days": 143,
+          "revenue_calendar_days": 52,
+          "event_check_calendar_days": 11
+        },
+        "dates": {
+          "market_observed_at": "2026-08-07",
+          "fundamental_period_end": "2026-03-31",
+          "revenue_period_end": "2026-06-30",
+          "last_event_at": "2026-08-10",
+          "last_event_checked_at": "2026-08-10"
+        }
+      },
+      "evidence_gate": {
+        "verified_first_party_count": 4,
+        "verified_metric_count": 4,
+        "required_metrics": [
+          "reference_price",
+          "valuation_basis",
+          "earnings_basis"
+        ],
+        "missing_required_metrics": [],
+        "ok": true,
+        "latest_verified_observed_at": "2026-08-10"
+      },
+      "market_expectation": {
+        "status": "COMPLETE",
+        "authority": "ANALYTIC_ONLY",
+        "base_multiple": 15.0,
+        "market_implied_eps": 19.8667,
+        "base_case_eps": 23.0,
+        "base_vs_implied_eps_gap_pct": 15.7718,
+        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
+      },
+      "buy_gate": {
+        "ok": false,
+        "checks": {
+          "score_complete": false,
+          "score": false,
+          "confidence": true,
+          "valuation_complete": true,
+          "margin_of_safety": false,
+          "alpha_spread": false,
+          "freshness": false,
+          "evidence": true,
+          "benchmark_complete": true,
+          "benchmark_freshness": false,
+          "benchmark_evidence": true,
+          "thesis": true
+        },
+        "failed": [
+          "score_complete",
+          "score",
+          "margin_of_safety",
+          "alpha_spread",
+          "freshness",
+          "benchmark_freshness"
+        ],
+        "authority": "PYTHON_SECURITY_BUY_GATE"
+      }
+    },
+    {
+      "rank": 3,
       "ticker": "2301",
       "name": "光寶科",
       "score": 13.81,
@@ -717,236 +952,6 @@
         "failed": [
           "score_complete",
           "score",
-          "alpha_spread",
-          "freshness",
-          "benchmark_freshness"
-        ],
-        "authority": "PYTHON_SECURITY_BUY_GATE"
-      }
-    },
-    {
-      "rank": 3,
-      "ticker": "2382",
-      "name": "廣達",
-      "score": 11.93,
-      "grade": "VERIFY",
-      "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
-      "factor_scores": {
-        "earnings_acceleration": 9.0,
-        "revenue_quality": 0.0,
-        "valuation": 4.9287,
-        "structural_catalyst": 8.0,
-        "balance_sheet_cash_flow": 0.0
-      },
-      "penalties": {
-        "fundamental_staleness": -4,
-        "cash_flow_evidence_gap": -3,
-        "screen_feature_gap": -3
-      },
-      "confidence_score": 78.5,
-      "confidence_factors": {
-        "evidence_quality": 35.0,
-        "forecast_visibility": 19,
-        "model_completeness": 12.0,
-        "thesis_falsifiability": 10,
-        "data_freshness": 2.5
-      },
-      "reference_price": 298,
-      "reference_price_date": "2026-08-07",
-      "fundamental_data_as_of": "2026-03-31",
-      "revenue_data_as_of": "2026-06-30",
-      "event_data_as_of": "2026-08-10",
-      "pe_ttm": 14.98,
-      "valuation_model": {
-        "status": "COMPLETE",
-        "horizon": "FY2027E / ~12-18 months",
-        "model_type": "scenario_PE",
-        "forward_eps": 23,
-        "normalized_eps": 20,
-        "forward_pe": 12.96,
-        "normalized_pe": 14.9,
-        "expected_fair_value": 352.5,
-        "expected_return_pct": 18.29,
-        "margin_of_safety_pct": 15.77,
-        "scenarios": {
-          "bear": {
-            "eps": 18,
-            "multiple": 12,
-            "fair_value": 216,
-            "probability": 0.25
-          },
-          "base": {
-            "eps": 23,
-            "multiple": 15,
-            "fair_value": 345,
-            "probability": 0.5
-          },
-          "bull": {
-            "eps": 28,
-            "multiple": 18,
-            "fair_value": 504,
-            "probability": 0.25
-          }
-        },
-        "assumption_note": "MODEL ASSUMPTION, not company guidance."
-      },
-      "alpha_spread_pct": -17.8401,
-      "risk_model": {
-        "downside_pct": 28,
-        "liquidity": "HIGH",
-        "cyclicality": "MEDIUM",
-        "status": "REVIEWED"
-      },
-      "thesis_status": "ACTIVE",
-      "thesis": "AI Server營收高速成長，但營收轉EPS/FCF的品質仍需Q2確認。",
-      "invalidation_condition": "AI Server拉高營收但毛利、EPS或FCF持續跟不上。",
-      "next_check": "Q2 EPS、毛利與營業現金流。",
-      "evidence": [
-        {
-          "metric": "reference_price",
-          "value": 298,
-          "period": "2026-08-07",
-          "observed_at": "2026-08-07",
-          "source_type": "TWSE OpenAPI",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_AVG_ALL",
-          "quality": "FIRST_PARTY",
-          "status": "VERIFIED"
-        },
-        {
-          "metric": "valuation_basis",
-          "value": "TWSE TTM PE 14.98",
-          "period": "TTM",
-          "observed_at": "2026-08-07",
-          "source_type": "TWSE OpenAPI",
-          "source_url": "https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL",
-          "quality": "FIRST_PARTY",
-          "status": "VERIFIED"
-        },
-        {
-          "metric": "earnings_basis",
-          "value": "2026Q1 revenue NT$809.221bn; operating profit NT$23.024bn; EPS 5.50",
-          "period": "2026Q1",
-          "observed_at": "2026-05-14",
-          "source_type": "Quanta",
-          "source_url": "https://www.quantatw.com/Quanta/chinese/allnews/allnews_open.aspx?CASENO=NEWS003765",
-          "quality": "FIRST_PARTY",
-          "status": "VERIFIED"
-        },
-        {
-          "metric": "revenue_trend",
-          "value": "2026 official monthly sales show very strong YoY growth",
-          "period": "2026H1",
-          "observed_at": "2026-08-10",
-          "source_type": "Quanta",
-          "source_url": "https://www.quantatw.com/quanta/english/investment/financials_ms.aspx",
-          "quality": "FIRST_PARTY",
-          "status": "VERIFIED"
-        }
-      ],
-      "score_coverage": {
-        "status": "INCOMPLETE",
-        "coverage": {
-          "earnings_acceleration": true,
-          "revenue_quality": false,
-          "valuation": true,
-          "structural_catalyst": true,
-          "balance_sheet_cash_flow": false
-        },
-        "missing_factors": [
-          "revenue_quality",
-          "balance_sheet_cash_flow"
-        ],
-        "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
-      },
-      "feature_inputs": {
-        "screen_lane": null,
-        "reported_eps": null,
-        "forward_vs_normalized_eps_pct": 15.0,
-        "revenue": {
-          "status": "MISSING_REVENUE_GROWTH"
-        },
-        "valuation_metrics": {
-          "expected_fair_value": 352.5,
-          "expected_return_pct": 18.2886,
-          "margin_of_safety_pct": 15.7718,
-          "forward_pe": 12.9565,
-          "normalized_pe": 14.9
-        },
-        "alpha_spread_pct": -17.8401,
-        "catalyst_basis": "SINGLE_SUPPORTING_CATALYST_SIGNAL",
-        "cash_flow_basis": "MISSING_DEDICATED_CASH_FLOW_EVIDENCE"
-      },
-      "valuation_metrics": {
-        "expected_fair_value": 352.5,
-        "expected_return_pct": 18.2886,
-        "margin_of_safety_pct": 15.7718,
-        "forward_pe": 12.9565,
-        "normalized_pe": 14.9
-      },
-      "freshness": {
-        "ok": false,
-        "checks": {
-          "market": false,
-          "fundamentals": false,
-          "revenue": false,
-          "events": true
-        },
-        "ages": {
-          "market_trading_sessions": 10,
-          "fundamentals_calendar_days": 143,
-          "revenue_calendar_days": 52,
-          "event_check_calendar_days": 11
-        },
-        "dates": {
-          "market_observed_at": "2026-08-07",
-          "fundamental_period_end": "2026-03-31",
-          "revenue_period_end": "2026-06-30",
-          "last_event_at": "2026-08-10",
-          "last_event_checked_at": "2026-08-10"
-        }
-      },
-      "evidence_gate": {
-        "verified_first_party_count": 4,
-        "verified_metric_count": 4,
-        "required_metrics": [
-          "reference_price",
-          "valuation_basis",
-          "earnings_basis"
-        ],
-        "missing_required_metrics": [],
-        "ok": true,
-        "latest_verified_observed_at": "2026-08-10"
-      },
-      "market_expectation": {
-        "status": "COMPLETE",
-        "authority": "ANALYTIC_ONLY",
-        "base_multiple": 15.0,
-        "market_implied_eps": 19.8667,
-        "base_case_eps": 23.0,
-        "base_vs_implied_eps_gap_pct": 15.7718,
-        "guardrail": "Expectation gap cannot create or upgrade BUY authority."
-      },
-      "buy_gate": {
-        "ok": false,
-        "checks": {
-          "score_complete": false,
-          "score": false,
-          "confidence": true,
-          "valuation_complete": true,
-          "margin_of_safety": false,
-          "alpha_spread": false,
-          "freshness": false,
-          "evidence": true,
-          "benchmark_complete": true,
-          "benchmark_freshness": false,
-          "benchmark_evidence": true,
-          "thesis": true
-        },
-        "failed": [
-          "score_complete",
-          "score",
-          "margin_of_safety",
           "alpha_spread",
           "freshness",
           "benchmark_freshness"
@@ -1413,8 +1418,8 @@
       "action": "VERIFY",
       "score_provenance": "security-v5.0.1",
       "factor_scores": {
-        "earnings_acceleration": 6.0,
-        "revenue_quality": 14,
+        "earnings_acceleration": 0.0,
+        "revenue_quality": 0.0,
         "valuation": 0.0,
         "structural_catalyst": 0.0,
         "balance_sheet_cash_flow": 0.0
@@ -1422,15 +1427,15 @@
       "penalties": {
         "valuation_incomplete": -5,
         "fundamental_staleness": -4,
-        "growth_base_effect": -6,
         "high_cyclicality": -5,
-        "cash_flow_evidence_gap": -3
+        "cash_flow_evidence_gap": -3,
+        "screen_feature_gap": -3
       },
-      "confidence_score": 26.5,
+      "confidence_score": 16.5,
       "confidence_factors": {
         "evidence_quality": 0.0,
-        "forecast_visibility": 10,
-        "model_completeness": 4.0,
+        "forecast_visibility": 4,
+        "model_completeness": 0.0,
         "thesis_falsifiability": 10,
         "data_freshness": 2.5
       },
@@ -1489,28 +1494,25 @@
         "status": "INCOMPLETE",
         "coverage": {
           "earnings_acceleration": false,
-          "revenue_quality": true,
+          "revenue_quality": false,
           "valuation": false,
           "structural_catalyst": true,
           "balance_sheet_cash_flow": false
         },
         "missing_factors": [
           "earnings_acceleration",
+          "revenue_quality",
           "valuation",
           "balance_sheet_cash_flow"
         ],
         "rule": "Missing structured factor evidence is VERIFY, never silently equivalent to negative evidence."
       },
       "feature_inputs": {
-        "screen_lane": "GROWTH",
-        "reported_eps": 7.75,
+        "screen_lane": null,
+        "reported_eps": null,
         "forward_vs_normalized_eps_pct": null,
         "revenue": {
-          "status": "COMPLETE",
-          "raw_yoy_pct": 176.53575803052206,
-          "raw_cumulative_yoy_pct": 120.95247227766829,
-          "ranking_cap_pct": 100,
-          "base_effect_outlier": true
+          "status": "MISSING_REVENUE_GROWTH"
         },
         "valuation_metrics": {
           "expected_fair_value": null,
