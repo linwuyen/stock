@@ -29,19 +29,31 @@
     </aside>
   </section>
 
+  <section class="meaning-strip" aria-label="指標語意與權限邊界">
+    <article><span class="kicker">ALPHA SCORE</span><b>證據化的相對吸引力分數</b><p>是多個 deterministic factor 的綜合分數，不是報酬率，也不是上漲機率。</p></article>
+    <article><span class="kicker">CONFIDENCE</span><b>這次判斷有多少可用證據</b><p>反映 evidence、freshness 與資料完整度；不是「有幾 % 會漲」。</p></article>
+    <article><span class="kicker">EXPECTED RETURN</span><b>估值情境下的模型期望</b><p>必須連同假設、MOS、benchmark 與 downside 一起看，不能單獨當 BUY 訊號。</p></article>
+    <article><span class="kicker">SCREEN PRIORITY</span><b>研究排序，不是投資排序</b><p>只決定先研究誰；只有 Python Buy Gate 能產生 BUY CANDIDATE。</p></article>
+  </section>
+
   <section>
-    <div class="section-head"><div><span class="kicker">SECURITY AUTHORITY</span><h2>What can actually pass the Buy Gate?</h2></div><p>Portfolio sizing、cash、debt、leverage 不在這裡；由 Elephant 負責。</p></div>
+    <div class="section-head"><div><span class="kicker">SECURITY AUTHORITY</span><h2>What can actually pass the Buy Gate?</h2></div><p>這裡回答「這檔股票是否值得成為 BUY CANDIDATE」；Portfolio sizing、cash、debt、leverage 一律交給 Elephant。</p></div>
     <div id="stocks" class="cards"></div>
   </section>
 
   <section class="panel">
-    <div class="section-head"><div><span class="kicker">DISCOVERY</span><h2>Multi-lane Deep Research Queue</h2></div><b id="screenMeta">—</b></div>
+    <div class="section-head"><div><span class="kicker">DISCOVERY</span><h2>Multi-lane Deep Research Queue</h2><p>Discovery 只產生研究候選；排名高不代表可以買。</p></div><b id="screenMeta">—</b></div>
     <div id="queue" class="queue"></div>
   </section>
 
   <section class="panel">
-    <div class="section-head"><div><span class="kicker">CALIBRATION</span><h2>Realized Alpha</h2></div><b id="calStatus">—</b></div>
+    <div class="section-head"><div><span class="kicker">CALIBRATION</span><h2>Realized Alpha Diagnostics</h2><p>各 horizon 顯示 BUY-entry cohort 相對 TSMC 的平均已實現超額價格報酬；<code>n</code> 是樣本數。樣本少時只作校準證據，不宣稱已證明預測力。</p></div><b id="calStatus">—</b></div>
     <div id="performance" class="performance"></div>
+  </section>
+
+  <section class="system-contract">
+    <span class="kicker">THREE-REPO CONTRACT</span>
+    <p><b>Consultant_System</b> 提供外部研究 context；<b>stock</b> 擁有個股 BUY / VERIFY / WATCH / AVOID authority；<b>Elephant</b> 才把個股候選放進總經、流動性、負債、集中度與部位風險之下做資本配置。任何一層都不能越權替下一層做決定。</p>
   </section>
 
   <footer>TSMC 3000 is an event alert, never a decision gate. No automatic trading.</footer>
