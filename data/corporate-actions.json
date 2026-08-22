@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "source": {
+    "authority": "TWSE OpenAPI",
+    "url": "https://openapi.twse.com.tw/v1/exchangeReport/TWT48U_ALL",
+    "first_party": true,
+    "contract": "prospective append-only ex-right/ex-dividend ledger"
+  },
+  "source_window": {
+    "row_count": 0,
+    "min_date": null,
+    "max_date": null
+  },
+  "ledger": {
+    "action_count": 0,
+    "coverage_start": null,
+    "coverage_end": null,
+    "historical_backfill_complete": false,
+    "note": "Ledger starts prospectively. The first successful official sync establishes coverage; pre-capture actions are never inferred."
+  },
+  "actions": []
+}
