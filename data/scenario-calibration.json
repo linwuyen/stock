@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "method": "Prospective Bear/Base/Bull probability calibration at 52 weeks using midpoint fair-value bins and multiclass Brier score.",
+  "horizon_weeks": 52,
+  "resolution_tolerance_days": 14,
+  "minimum_spacing_days": 28,
+  "minimum_resolved_samples": 30,
+  "status": "INSUFFICIENT_HISTORY",
+  "resolved_samples": 0,
+  "pending_samples": 0,
+  "multiclass_brier_score": null,
+  "mean_forecast_probabilities": null,
+  "empirical_outcome_frequencies": null,
+  "forecasts": []
+}
