@@ -51,12 +51,14 @@ jobs:
           python scripts/normalize_screen_v5.py
           python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
+          python scripts/sync_scenario_calibration.py
       - name: Security-engine invariants
         run: |
           python scripts/validate.py
           python scripts/validate_screen_priority.py
           python scripts/validate_source_resilience.py
           python scripts/validate_transport_semantics.py
+          python scripts/sync_scenario_calibration.py --check
       - name: Performance dataset consistency
         run: python scripts/rebuild_performance.py --check
 
