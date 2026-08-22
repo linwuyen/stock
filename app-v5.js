@@ -16,7 +16,7 @@ function renderHero(data){
   $('#decisionTitle').textContent=d.title;
   $('#decisionAction').textContent=d.action;
   $('#decisionAction').className=`decision-action ${d.action==='BUY CANDIDATE'?'buy':'block'}`;
-  $('#decisionMeta').innerHTML=[badge(`Alpha ${s.score??'—'}`),badge(`Confidence ${s.confidence_score??'—'}`),badge(`ER ${pct(v.expected_return_pct)}`),badge(`Spread ${pct(s.alpha_spread_pct)}`),badge(`Base upside ${pct(v.margin_of_safety_pct)}`)].join('');
+  $('#decisionMeta').innerHTML=[badge(`Alpha ${s.score??'—'}`),badge(`Confidence ${s.confidence_score??'—'}`),badge(`ER ${pct(v.expected_return_pct)}`),badge(`Spread ${pct(s.alpha_spread_pct)}`),badge(`Base upside ${pct(v.base_upside_pct)}`)].join('');
   $('#decisionWhy').textContent=d.action==='BUY CANDIDATE'?'Full Python Buy Gate passed.':`Blocked by: ${failed(s)}`;
   $('#authority').textContent=`${data.meta.decision_engine_version} · ${data.meta.authority}`;
   $('#fingerprint').textContent=data.meta.decision_fingerprint;
@@ -25,7 +25,7 @@ function renderHero(data){
 function renderStocks(data){
   $('#stocks').innerHTML=(data.stocks||[]).map(s=>{
     const v=s.valuation_metrics||{},e=s.market_expectation||{};
-    return `<article class="card"><div class="row"><div><h3>${esc(s.ticker)} ${esc(s.name)}</h3>${badge(s.action,s.action==='BUY CANDIDATE'?'good':'')}</div><strong class="score">${fmt.format(s.score)}</strong></div><div class="metrics"><span>Confidence <b>${fmt.format(s.confidence_score)}</b></span><span>ER <b>${pct(v.expected_return_pct)}</b></span><span>Spread <b>${pct(s.alpha_spread_pct)}</b></span><span title="資料欄位仍名為 margin_of_safety_pct；實際定義為 base fair value / reference price - 1">Base upside <b>${pct(v.margin_of_safety_pct)}</b></span></div><p><b>Failed gates:</b> ${esc(failed(s))}</p><p><b>Market implied EPS:</b> ${e.status==='COMPLETE'?fmt.format(e.market_implied_eps):'—'} · Base gap ${pct(e.base_vs_implied_eps_gap_pct)}</p><p><b>Next evidence:</b> ${esc(s.next_check||'—')}</p><details><summary>Deterministic score inputs</summary><pre>${esc(JSON.stringify({factors:s.factor_scores,penalties:s.penalties,features:s.feature_inputs,freshness:s.freshness},null,2))}</pre></details></article>`;
+    return `<article class="card"><div class="row"><div><h3>${esc(s.ticker)} ${esc(s.name)}</h3>${badge(s.action,s.action==='BUY CANDIDATE'?'good':'')}</div><strong class="score">${fmt.format(s.score)}</strong></div><div class="metrics"><span>Confidence <b>${fmt.format(s.confidence_score)}</b></span><span>ER <b>${pct(v.expected_return_pct)}</b></span><span>Spread <b>${pct(s.alpha_spread_pct)}</b></span><span title="Base fair value / reference price - 1；不是 classical margin of safety">Base upside <b>${pct(v.base_upside_pct)}</b></span></div><p><b>Failed gates:</b> ${esc(failed(s))}</p><p><b>Market implied EPS:</b> ${e.status==='COMPLETE'?fmt.format(e.market_implied_eps):'—'} · Base gap ${pct(e.base_vs_implied_eps_gap_pct)}</p><p><b>Next evidence:</b> ${esc(s.next_check||'—')}</p><details><summary>Deterministic score inputs</summary><pre>${esc(JSON.stringify({factors:s.factor_scores,penalties:s.penalties,features:s.feature_inputs,freshness:s.freshness},null,2))}</pre></details></article>`;
   }).join('');
 }
 function renderScreen(screen){

@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import build_alpha
+import build_alpha_v6 as build_alpha
 
 ROOT = Path(__file__).resolve().parents[1]
 TZ = ZoneInfo("Asia/Taipei")
@@ -19,8 +19,16 @@ def write(path, obj):
     (ROOT / path).write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def migrate_alert_payloads(out):
+    for note in out.get("notifications", []):
+        payload = note.get("payload") or {}
+        if "margin_of_safety_pct" in payload and "base_upside_pct" not in payload:
+            payload["base_upside_pct"] = payload.pop("margin_of_safety_pct")
+    return out
+
+
 def build(alpha, alerts):
-    out = json.loads(json.dumps(alerts))
+    out = migrate_alert_payloads(json.loads(json.dumps(alerts)))
     previous_active = {x["ticker"] if isinstance(x, dict) else x for x in out.get("active_buy_candidates", [])}
     current_stocks = {x["ticker"]: x for x in alpha.get("stocks", []) if x.get("action") == "BUY CANDIDATE"}
     current_active = set(current_stocks)
@@ -49,7 +57,7 @@ def build(alpha, alerts):
                 "confidence_score": stock.get("confidence_score"),
                 "expected_return_pct": (stock.get("valuation_metrics") or {}).get("expected_return_pct"),
                 "alpha_spread_pct": stock.get("alpha_spread_pct"),
-                "margin_of_safety_pct": (stock.get("valuation_metrics") or {}).get("margin_of_safety_pct"),
+                "base_upside_pct": (stock.get("valuation_metrics") or {}).get("base_upside_pct"),
                 "invalidation_condition": stock.get("invalidation_condition"),
             },
         })

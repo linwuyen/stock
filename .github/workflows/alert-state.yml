@@ -1,4 +1,4 @@
-name: Sync Security Decision State
+name: Sync Security Decision State V6
 
 on:
   push:
@@ -7,8 +7,10 @@ on:
       - 'data/alpha.json'
       - 'data/screen.json'
       - 'scripts/build_alpha.py'
+      - 'scripts/build_alpha_v6.py'
       - 'scripts/normalize_screen_v5.py'
       - 'scripts/sync_alert_state.py'
+      - 'scripts/sync_scenario_calibration.py'
       - 'scripts/validate.py'
       - '.github/workflows/alert-state.yml'
   workflow_dispatch:
@@ -17,7 +19,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: security-decision-state
+  group: security-decision-state-v6
   cancel-in-progress: true
 
 jobs:
@@ -30,22 +32,24 @@ jobs:
       - name: Build canonical state
         run: |
           python scripts/normalize_screen_v5.py
-          python scripts/build_alpha.py
+          python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
+          python scripts/sync_scenario_calibration.py
       - name: Validate
         run: |
           python scripts/validate.py
           python scripts/validate_screen_priority.py
           python scripts/rebuild_performance.py --check
+          python scripts/sync_scenario_calibration.py --check
       - name: Commit derived state only when changed
         run: |
-          if git diff --quiet -- data/screen.json data/alpha.json data/alerts.json; then
+          if git diff --quiet -- data/screen.json data/alpha.json data/alerts.json data/scenario-calibration.json; then
             echo 'No security-decision state change.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/screen.json data/alpha.json data/alerts.json
-          git commit -m 'data: sync canonical security decisions'
+          git add data/screen.json data/alpha.json data/alerts.json data/scenario-calibration.json
+          git commit -m 'data: sync canonical security decisions and calibration ledger'
           git pull --rebase origin main
           git push
