@@ -1,4 +1,4 @@
-# Taiwan Security Alpha Engine V5
+# Taiwan Security Alpha Engine V6
 
 `linwuyen/stock` is the **security research and BUY-authority layer** for Taiwan equities.
 
@@ -27,7 +27,9 @@ Screen V5 — discovery only
         ↓
 Deep Research / first-party evidence
         ↓
-Python Security Engine (`scripts/build_alpha.py`)
+Frozen V5 economic core
+        ↓
+V6 canonical schema (`scripts/build_alpha_v6.py`)
         ↓
 Deterministic Alpha + Confidence
 Valuation / Expectation Gap / Freshness
@@ -64,7 +66,7 @@ Elephant Capital Allocation OS
 
 ## Screen V5
 
-The market screen is a research-discovery system, never a Buy Gate.
+The market screen remains schema V5 and is a research-discovery system, never a Buy Gate.
 
 Three lanes prevent one market regime from consuming the entire queue:
 
@@ -74,38 +76,51 @@ Three lanes prevent one market regime from consuming the entire queue:
 
 Market cap and liquidity remain hard gates.
 
-### Extreme-growth handling
+Revenue growth used for ranking is capped at **100%**. Growth above 100% creates a base-effect verification penalty and `HIGH` verification priority; growth above 200% receives an additional `EXTREME_GROWTH_VERIFY_FIRST` flag. Raw growth is preserved for research while extreme base effects cannot dominate ranking.
 
-Revenue growth used for ranking is capped at **100%**. Growth above 100% creates a base-effect verification penalty and `HIGH` verification priority; growth above 200% receives an additional `EXTREME_GROWTH_VERIFY_FIRST` flag.
+## Security Engine V6
 
-This preserves the raw number for research while preventing a near-zero comparison base from dominating the ranking.
+V6 is a **versioned semantic schema migration**, not a silent model change. The economic calculations remain frozen in the V5 core for this migration and the V6 builder provides the canonical names and artifact contract.
 
-## Deterministic Security Engine
+The legacy field called `margin_of_safety_pct` actually meant:
 
-`scripts/build_alpha.py` ignores stored legacy `factor_scores` as authority and derives the current decision from structured fields:
+```text
+base_upside_pct = base_fair_value / reference_price - 1
+```
 
-- current screen features
-- forward / normalized scenario valuation
-- margin of safety and relative return versus TSMC
-- verified first-party evidence
-- explicit catalyst and cash-flow evidence
-- freshness
-- risk/cyclicality fields
+V6 therefore renames:
+
+```text
+margin_of_safety_pct       → base_upside_pct
+min_margin_of_safety_pct   → min_base_upside_pct
+buy_gate.margin_of_safety  → buy_gate.base_upside
+```
+
+The formula and Buy Gate threshold are unchanged. Classical margin of safety, `(fair_value - price) / fair_value`, is **not** introduced by this migration.
+
+The V6 builder is idempotent: repeated build/alert/validation calls in one workflow may consume either a checked-in V5 or V6 artifact, while the frozen V5 core receives only an in-memory compatibility view. The repository is never temporarily downgraded on disk.
 
 The canonical artifact carries:
 
-- `decision_engine_version`
+- `schema_version = 6`
+- `decision_engine_version = security-v6.0.0`
 - `decision_fingerprint`
 - deterministic `factor_scores`
 - deterministic `confidence_factors`
-- `valuation_metrics`
+- `valuation_metrics.base_upside_pct`
 - `market_expectation`
 - `freshness`
 - `evidence_gate`
 - `buy_gate`
 - canonical `action`
 
-`validate.py` rebuilds the artifact in memory and requires exact equality. This prevents hand-edited derived scores/actions from silently becoming authority.
+`validate.py` rebuilds the artifact in memory and requires exact equality, and rejects legacy MOS-named schema keys. This prevents hand-edited derived scores/actions from silently becoming authority.
+
+## Expected Return semantics
+
+Expected Return is scenario-probability-weighted fair-value upside. Scenario probabilities are **model priors**, not empirically calibrated probabilities unless prospective outcome data later passes the declared calibration requirements.
+
+Expected Return cannot create BUY authority by itself. It must pass the complete Security Buy Gate together with evidence, freshness, Base upside, and benchmark-relative alpha spread.
 
 ## Market-implied expectation
 
@@ -117,7 +132,7 @@ market_implied_eps = reference_price / base_case_multiple
 
 The gap between Base EPS and market-implied EPS is `ANALYTIC_ONLY`; it explains the mispricing thesis but cannot create BUY authority.
 
-## Freshness V2
+## Freshness
 
 Market freshness uses trading weekdays rather than calendar days. Fundamental and revenue ages remain calendar-based.
 
@@ -132,31 +147,23 @@ so “no new event was found today” is not confused with “an event occurred 
 
 ## TSMC 3000
 
-TSMC 3000 is an **event alert only**.
+TSMC 3000 is an **event alert only**. It never gates BUY CANDIDATE, rotation review, position sizing, or portfolio allocation.
 
-It never gates:
+## Prospective calibration
 
-- BUY CANDIDATE
-- rotation review
-- position sizing
-- portfolio allocation
+Existing point-in-time historical snapshots and `performance.json` are the realized-alpha learning record. Primary calibration uses actual BUY-entry transitions and realized excess **price** return versus TSMC at 1/4/13/26/52 weeks.
 
-A security must pass the complete Security Buy Gate and beat the benchmark hurdle regardless of whether TSMC has touched 3000.
-
-## Calibration
-
-Existing point-in-time historical snapshots and `performance.json` remain the learning record. Primary calibration continues to use BUY-entry transitions and realized excess price return versus TSMC at 1/4/13/26/52 weeks.
-
-The engine should not add new scoring complexity until prospective history demonstrates predictive value.
+The minimum sample requirement remains fail-closed. `INSUFFICIENT_HISTORY` is a valid production state and must never be relabeled as predictive validation just to make a dashboard green.
 
 ## Safety invariants
 
 - Screen never writes BUY.
 - Missing required evidence fails closed.
 - Incomplete/stale valuation cannot pass BUY.
+- Alpha, Confidence and scenario probabilities are not interchangeable quantities.
 - Browser JavaScript cannot create action authority.
 - TSMC 3000 is not a gate.
 - Portfolio allocation is not owned here.
 - No automatic trading.
 
-See `docs/SECURITY_ENGINE_V5.md` for implementation contracts.
+See `docs/SECURITY_ENGINE_V6.md` for the V6 implementation contract. `docs/SECURITY_ENGINE_V5.md` remains historical documentation for the frozen economic core.
