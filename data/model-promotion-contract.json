@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "contract": "pre_registered_security_model_promotion_v1",
+  "registered_at": "2026-08-23",
+  "authority": "GOVERNANCE_ONLY",
+  "automatic_promotion": false,
+  "immutable_without_version_bump": true,
+  "rules": {
+    "realized_return_calibration": {
+      "eligible_return_metric": "EXCESS_TOTAL_RETURN_VS_2330",
+      "price_return_diagnostic_not_eligible": true,
+      "minimum_samples_per_primary_horizon": 30,
+      "primary_horizons_weeks": [13, 26, 52],
+      "minimum_unique_tickers": 5,
+      "requires_point_in_time_entry_state": true,
+      "requires_corporate_action_complete": true,
+      "promotion_evidence": {
+        "mean_excess_total_return_13w_gt_pct": 0,
+        "mean_excess_total_return_26w_gt_pct": 0,
+        "mean_excess_total_return_52w_floor_pct": -3,
+        "bootstrap_ci_required": true,
+        "max_allowed_material_subgroup_regression_pct": 5
+      }
+    },
+    "scenario_probability_challenger": {
+      "minimum_resolved_forecasts": 30,
+      "minimum_unique_tickers": 5,
+      "same_forecast_outcomes_required": true,
+      "minimum_absolute_brier_improvement": 0.02,
+      "log_loss_must_not_worsen": true,
+      "no_horizon_or_bucket_redefinition_after_outcomes": true,
+      "promotion_requires_versioned_review": true
+    },
+    "buy_gate_change": {
+      "requires_both_realized_and_probability_evidence": true,
+      "cannot_be_triggered_by_voi": true,
+      "cannot_be_triggered_by_macro": true,
+      "requires_explicit_version_bump": true
+    }
+  }
+}
