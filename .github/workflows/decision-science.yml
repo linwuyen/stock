@@ -1,0 +1,53 @@
+name: Sync Decision Science Evidence
+
+on:
+  schedule:
+    - cron: '30 10 * * 1-5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/alpha.json'
+      - 'data/history/**'
+      - 'data/scenario-calibration.json'
+      - 'scripts/sync_corporate_actions.py'
+      - 'scripts/rebuild_performance.py'
+      - 'scripts/build_research_voi.py'
+      - 'scripts/validate_decision_science.py'
+      - 'data/model-promotion-contract.json'
+      - '.github/workflows/decision-science.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stock-decision-science
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Capture first-party corporate actions
+        run: python scripts/sync_corporate_actions.py
+      - name: Rebuild research value-of-information priority
+        run: python scripts/build_research_voi.py
+      - name: Rebuild total-return calibration
+        run: python scripts/rebuild_performance.py
+      - name: Validate decision-science contracts
+        run: python scripts/validate_decision_science.py
+      - name: Persist prospective evidence only when changed
+        run: |
+          if git diff --quiet -- data/corporate-actions.json data/research-voi.json data/performance.json; then
+            echo 'No decision-science evidence change.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/corporate-actions.json data/research-voi.json data/performance.json
+          git commit -m 'data: sync decision-science evidence'
+          git pull --rebase origin main
+          git push

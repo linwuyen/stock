@@ -55,7 +55,17 @@ def validate_alerts(alerts,alpha):
     assert alerts["policy"].get("notify_only_on_transition_into_buy_candidate") is True;assert alerts["policy"].get("never_notify_for_screen_only") is True;assert alerts["policy"].get("never_execute_trade") is True
     expected=sorted(x["ticker"] for x in alpha.get("stocks",[]) if x.get("action")=="BUY CANDIDATE");actual=sorted(x["ticker"] if isinstance(x,dict) else x for x in alerts.get("active_buy_candidates",[]));assert actual==expected,f"alert state stale: {actual} != {expected}"
 def validate_performance(p):
-    assert p["meta"]["primary_cohort"]=="BUY_CANDIDATE";assert p["meta"]["return_type"]=="PRICE_RETURN_EX_DIVIDENDS";assert [x["weeks"] for x in p["horizons"]]==[1,4,13,26,52];assert p["meta"]["status"] in {"CALIBRATED","INSUFFICIENT_HISTORY"}
+    assert int(p["meta"].get("schema_version") or 0)==3
+    assert p["meta"]["primary_cohort"]=="BUY_CANDIDATE"
+    assert p["meta"]["return_type"]=="TOTAL_RETURN_CASH_DISTRIBUTIONS_NO_REINVESTMENT"
+    assert p["meta"].get("corporate_action_source")=="TWSE_TWT48U_ALL"
+    assert [x["weeks"] for x in p["horizons"]]==[1,4,13,26,52]
+    assert p["meta"]["status"] in {"CALIBRATED","INSUFFICIENT_HISTORY"}
+    assert int(p.get("minimum_samples_for_calibration") or 0)>=30
+    for row in p["horizons"]:
+        assert "mean_excess_total_return_pct" in row
+        assert "mean_excess_price_return_pct" in row
+        assert int(row.get("price_return_diagnostic_sample_size") or 0)>=int(row.get("sample_size") or 0)
 def main():
     a=load("data/alpha.json");s=load("data/screen.json");alerts=load("data/alerts.json");p=load("data/performance.json");liq=load("data/liquidity-history.json");validate_screen(s);validate_alpha(a);validate_alerts(alerts,a);validate_performance(p);assert liq.get("schema_version",0)>=1 and liq.get("window")==20
     print("SECURITY ENGINE V6 VALIDATION PASS");print("decision fingerprint:",a["meta"]["decision_fingerprint"]);print("actions:",{x["ticker"]:x["action"] for x in a["stocks"]})

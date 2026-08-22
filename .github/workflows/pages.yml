@@ -52,6 +52,7 @@ jobs:
           python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
           python scripts/sync_scenario_calibration.py
+          python scripts/build_research_voi.py
       - name: Security-engine invariants
         run: |
           python scripts/validate.py
@@ -59,6 +60,7 @@ jobs:
           python scripts/validate_source_resilience.py
           python scripts/validate_transport_semantics.py
           python scripts/sync_scenario_calibration.py --check
+          python scripts/validate_decision_science.py
       - name: Performance dataset consistency
         run: python scripts/rebuild_performance.py --check
 
@@ -78,6 +80,7 @@ jobs:
         run: |
           python scripts/normalize_screen_v5.py
           python scripts/build_alpha_v6.py
+          python scripts/build_research_voi.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

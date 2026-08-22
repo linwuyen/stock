@@ -1,30 +1,102 @@
 {
   "meta": {
-    "schema_version": 2,
+    "schema_version": 3,
     "as_of": "2026-08-10",
     "status": "INSUFFICIENT_HISTORY",
     "benchmark": "2330",
     "primary_cohort": "BUY_CANDIDATE",
-    "return_type": "PRICE_RETURN_EX_DIVIDENDS",
-    "method": "Primary calibration measures forward stock price return minus TSMC price return for actual BUY_CANDIDATE entry transitions at 1/4/13/26/52 weeks. A-grade entry transitions are tracked separately as diagnostics. Cash dividends are not yet included, so this dataset must not be described as total return.",
+    "return_type": "TOTAL_RETURN_CASH_DISTRIBUTIONS_NO_REINVESTMENT",
+    "method": "Primary calibration measures forward cash-distribution-inclusive holding-period return minus TSMC on actual BUY_CANDIDATE entry transitions at 1/4/13/26/52 weeks. TWSE ex-right/ex-dividend events are captured prospectively. Periods beginning before action-ledger coverage, or containing unsupported stock actions, remain unresolved rather than being approximated. Price-return excess is retained only as a diagnostic.",
     "primary_entry_count": 0,
-    "a_grade_entry_count": 2
+    "a_grade_entry_count": 2,
+    "corporate_action_source": "TWSE_TWT48U_ALL",
+    "corporate_action_coverage_start": null
   },
   "minimum_samples_for_calibration": 30,
   "horizons": [
-    {"weeks":1,"sample_size":0,"mean_excess_return_pct":null},
-    {"weeks":4,"sample_size":0,"mean_excess_return_pct":null},
-    {"weeks":13,"sample_size":0,"mean_excess_return_pct":null},
-    {"weeks":26,"sample_size":0,"mean_excess_return_pct":null},
-    {"weeks":52,"sample_size":0,"mean_excess_return_pct":null}
+    {
+      "weeks": 1,
+      "sample_size": 0,
+      "mean_excess_total_return_pct": null,
+      "price_return_diagnostic_sample_size": 0,
+      "mean_excess_price_return_pct": null,
+      "unresolved_total_return_samples": 0
+    },
+    {
+      "weeks": 4,
+      "sample_size": 0,
+      "mean_excess_total_return_pct": null,
+      "price_return_diagnostic_sample_size": 0,
+      "mean_excess_price_return_pct": null,
+      "unresolved_total_return_samples": 0
+    },
+    {
+      "weeks": 13,
+      "sample_size": 0,
+      "mean_excess_total_return_pct": null,
+      "price_return_diagnostic_sample_size": 0,
+      "mean_excess_price_return_pct": null,
+      "unresolved_total_return_samples": 0
+    },
+    {
+      "weeks": 26,
+      "sample_size": 0,
+      "mean_excess_total_return_pct": null,
+      "price_return_diagnostic_sample_size": 0,
+      "mean_excess_price_return_pct": null,
+      "unresolved_total_return_samples": 0
+    },
+    {
+      "weeks": 52,
+      "sample_size": 0,
+      "mean_excess_total_return_pct": null,
+      "price_return_diagnostic_sample_size": 0,
+      "mean_excess_price_return_pct": null,
+      "unresolved_total_return_samples": 0
+    }
   ],
   "diagnostic_cohorts": {
     "A_GRADE": [
-      {"weeks":1,"sample_size":0,"mean_excess_return_pct":null},
-      {"weeks":4,"sample_size":0,"mean_excess_return_pct":null},
-      {"weeks":13,"sample_size":0,"mean_excess_return_pct":null},
-      {"weeks":26,"sample_size":0,"mean_excess_return_pct":null},
-      {"weeks":52,"sample_size":0,"mean_excess_return_pct":null}
+      {
+        "weeks": 1,
+        "sample_size": 0,
+        "mean_excess_total_return_pct": null,
+        "price_return_diagnostic_sample_size": 0,
+        "mean_excess_price_return_pct": null,
+        "unresolved_total_return_samples": 0
+      },
+      {
+        "weeks": 4,
+        "sample_size": 0,
+        "mean_excess_total_return_pct": null,
+        "price_return_diagnostic_sample_size": 0,
+        "mean_excess_price_return_pct": null,
+        "unresolved_total_return_samples": 0
+      },
+      {
+        "weeks": 13,
+        "sample_size": 0,
+        "mean_excess_total_return_pct": null,
+        "price_return_diagnostic_sample_size": 0,
+        "mean_excess_price_return_pct": null,
+        "unresolved_total_return_samples": 0
+      },
+      {
+        "weeks": 26,
+        "sample_size": 0,
+        "mean_excess_total_return_pct": null,
+        "price_return_diagnostic_sample_size": 0,
+        "mean_excess_price_return_pct": null,
+        "unresolved_total_return_samples": 0
+      },
+      {
+        "weeks": 52,
+        "sample_size": 0,
+        "mean_excess_total_return_pct": null,
+        "price_return_diagnostic_sample_size": 0,
+        "mean_excess_price_return_pct": null,
+        "unresolved_total_return_samples": 0
+      }
     ]
   },
   "score_buckets": [],
