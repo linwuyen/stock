@@ -1,4 +1,4 @@
-name: Validate and Deploy Security Engine V5
+name: Validate and Deploy Security Engine V6
 
 on:
   pull_request:
@@ -49,7 +49,7 @@ jobs:
       - name: Normalize migration snapshot and build canonical security decisions
         run: |
           python scripts/normalize_screen_v5.py
-          python scripts/build_alpha.py
+          python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
       - name: Security-engine invariants
         run: |
@@ -75,7 +75,7 @@ jobs:
       - name: Rebuild canonical published decision artifacts
         run: |
           python scripts/normalize_screen_v5.py
-          python scripts/build_alpha.py
+          python scripts/build_alpha_v6.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
