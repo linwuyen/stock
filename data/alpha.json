@@ -1,6 +1,6 @@
 {
   "meta": {
-    "schema_version": 5,
+    "schema_version": 6,
     "title": "Taiwan Alpha Selection Engine",
     "as_of": "2026-08-10",
     "market_data_as_of": "2026-08-07",
@@ -8,12 +8,25 @@
     "next_review": "2026-08-17",
     "valuation_horizon": "FY2027E / ~12-18 months",
     "note": "2026-08-10 first v3 valuation refresh. Reported facts use first-party evidence where available; FY2027E scenario EPS/multiples are model assumptions, not company guidance.",
-    "decision_engine_version": "security-v5.0.1",
+    "decision_engine_version": "security-v6.0.0",
     "decision_as_of": "2026-08-21",
     "authority": "PYTHON_CANONICAL_SECURITY_ENGINE",
     "research_inputs_as_of": "2026-08-10",
     "screen_inputs_as_of": "2026-08-21",
-    "decision_fingerprint": "a69cfdf07de3aead69d911b182e84399d9158238c9a1af541678f482ff74c31e"
+    "decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+    "schema_migration": {
+      "from": 5,
+      "to": 6,
+      "semantic_change": false,
+      "renamed": [
+        "legacy MOS-named valuation field -> base_upside_pct",
+        "legacy MOS-named policy threshold -> min_base_upside_pct",
+        "legacy MOS-named Buy Gate check -> buy_gate.base_upside"
+      ],
+      "definition": "base_upside_pct = base_fair_value / reference_price - 1",
+      "classical_margin_of_safety": "not implemented by this migration",
+      "compatibility": "V6 builder may consume either checked-in V5 or V6 Alpha state; the V5 economic core receives an in-memory compatibility view only."
+    }
   },
   "methodology": {
     "score_max": 100,
@@ -61,7 +74,7 @@
   },
   "decision_policy": {
     "min_confidence_score": 65,
-    "min_margin_of_safety_pct": 20,
+    "min_base_upside_pct": 20,
     "min_alpha_spread_pct": 8,
     "required_evidence_metrics": [
       "reference_price",
@@ -104,7 +117,7 @@
       "normalized_pe": 18.96,
       "expected_fair_value": 3226.25,
       "expected_return_pct": 36.13,
-      "margin_of_safety_pct": 37.13,
+      "base_upside_pct": 37.13,
       "scenarios": {
         "bear": {
           "eps": 110,
@@ -191,7 +204,7 @@
     "valuation_metrics": {
       "expected_fair_value": 3226.25,
       "expected_return_pct": 36.1287,
-      "margin_of_safety_pct": 37.1308,
+      "base_upside_pct": 37.1308,
       "forward_pe": 18.2308,
       "normalized_pe": 18.96
     },
@@ -275,7 +288,7 @@
       "score": 52.82,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 11.8065,
         "revenue_quality": 10.9633,
@@ -311,7 +324,7 @@
         "normalized_pe": 11.1,
         "expected_fair_value": 512.75,
         "expected_return_pct": 49.06,
-        "margin_of_safety_pct": 48.26,
+        "base_upside_pct": 48.26,
         "scenarios": {
           "bear": {
             "eps": 25,
@@ -415,7 +428,7 @@
         "valuation_metrics": {
           "expected_fair_value": 512.75,
           "expected_return_pct": 49.0552,
-          "margin_of_safety_pct": 48.2558,
+          "base_upside_pct": 48.2558,
           "forward_pe": 10.1176,
           "normalized_pe": 11.0968
         },
@@ -426,7 +439,7 @@
       "valuation_metrics": {
         "expected_fair_value": 512.75,
         "expected_return_pct": 49.0552,
-        "margin_of_safety_pct": 48.2558,
+        "base_upside_pct": 48.2558,
         "forward_pe": 10.1176,
         "normalized_pe": 11.0968
       },
@@ -480,7 +493,7 @@
           "score": false,
           "confidence": true,
           "valuation_complete": true,
-          "margin_of_safety": true,
+          "base_upside": true,
           "alpha_spread": true,
           "freshness": false,
           "evidence": true,
@@ -505,7 +518,7 @@
       "score": 28.93,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 15.0,
         "revenue_quality": 14,
@@ -542,7 +555,7 @@
         "normalized_pe": 14.9,
         "expected_fair_value": 352.5,
         "expected_return_pct": 18.29,
-        "margin_of_safety_pct": 15.77,
+        "base_upside_pct": 15.77,
         "scenarios": {
           "bear": {
             "eps": 18,
@@ -646,7 +659,7 @@
         "valuation_metrics": {
           "expected_fair_value": 352.5,
           "expected_return_pct": 18.2886,
-          "margin_of_safety_pct": 15.7718,
+          "base_upside_pct": 15.7718,
           "forward_pe": 12.9565,
           "normalized_pe": 14.9
         },
@@ -657,7 +670,7 @@
       "valuation_metrics": {
         "expected_fair_value": 352.5,
         "expected_return_pct": 18.2886,
-        "margin_of_safety_pct": 15.7718,
+        "base_upside_pct": 15.7718,
         "forward_pe": 12.9565,
         "normalized_pe": 14.9
       },
@@ -711,7 +724,7 @@
           "score": false,
           "confidence": true,
           "valuation_complete": true,
-          "margin_of_safety": false,
+          "base_upside": false,
           "alpha_spread": false,
           "freshness": false,
           "evidence": true,
@@ -723,7 +736,7 @@
         "failed": [
           "score_complete",
           "score",
-          "margin_of_safety",
+          "base_upside",
           "alpha_spread",
           "freshness",
           "benchmark_freshness"
@@ -738,7 +751,7 @@
       "score": 13.81,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 4.8,
         "revenue_quality": 0.0,
@@ -774,7 +787,7 @@
         "normalized_pe": 24.7,
         "expected_fair_value": 299.6,
         "expected_return_pct": 21.3,
-        "margin_of_safety_pct": 22.43,
+        "base_upside_pct": 22.43,
         "scenarios": {
           "bear": {
             "eps": 8.8,
@@ -875,7 +888,7 @@
         "valuation_metrics": {
           "expected_fair_value": 299.6,
           "expected_return_pct": 21.2955,
-          "margin_of_safety_pct": 22.4291,
+          "base_upside_pct": 22.4291,
           "forward_pe": 22.8704,
           "normalized_pe": 24.7
         },
@@ -886,7 +899,7 @@
       "valuation_metrics": {
         "expected_fair_value": 299.6,
         "expected_return_pct": 21.2955,
-        "margin_of_safety_pct": 22.4291,
+        "base_upside_pct": 22.4291,
         "forward_pe": 22.8704,
         "normalized_pe": 24.7
       },
@@ -940,7 +953,7 @@
           "score": false,
           "confidence": true,
           "valuation_complete": true,
-          "margin_of_safety": true,
+          "base_upside": true,
           "alpha_spread": false,
           "freshness": false,
           "evidence": true,
@@ -966,7 +979,7 @@
       "score": 0,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 0.0,
         "revenue_quality": 0.0,
@@ -1003,7 +1016,7 @@
         "normalized_pe": 8.49,
         "expected_fair_value": 308.75,
         "expected_return_pct": 3.96,
-        "margin_of_safety_pct": -5.72,
+        "base_upside_pct": -5.72,
         "scenarios": {
           "bear": {
             "eps": 25,
@@ -1104,7 +1117,7 @@
         "valuation_metrics": {
           "expected_fair_value": 308.75,
           "expected_return_pct": 3.9562,
-          "margin_of_safety_pct": -5.7239,
+          "base_upside_pct": -5.7239,
           "forward_pe": 8.4857,
           "normalized_pe": 8.4857
         },
@@ -1115,7 +1128,7 @@
       "valuation_metrics": {
         "expected_fair_value": 308.75,
         "expected_return_pct": 3.9562,
-        "margin_of_safety_pct": -5.7239,
+        "base_upside_pct": -5.7239,
         "forward_pe": 8.4857,
         "normalized_pe": 8.4857
       },
@@ -1169,7 +1182,7 @@
           "score": false,
           "confidence": true,
           "valuation_complete": true,
-          "margin_of_safety": false,
+          "base_upside": false,
           "alpha_spread": false,
           "freshness": false,
           "evidence": true,
@@ -1181,7 +1194,7 @@
         "failed": [
           "score_complete",
           "score",
-          "margin_of_safety",
+          "base_upside",
           "alpha_spread",
           "freshness",
           "benchmark_freshness"
@@ -1196,7 +1209,7 @@
       "score": 0,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 3.5294,
         "revenue_quality": 0.0,
@@ -1233,7 +1246,7 @@
         "normalized_pe": 12.5,
         "expected_fair_value": 260.5,
         "expected_return_pct": 22.59,
-        "margin_of_safety_pct": 18.59,
+        "base_upside_pct": 18.59,
         "scenarios": {
           "bear": {
             "eps": 13,
@@ -1324,7 +1337,7 @@
         "valuation_metrics": {
           "expected_fair_value": 260.5,
           "expected_return_pct": 22.5882,
-          "margin_of_safety_pct": 18.5882,
+          "base_upside_pct": 18.5882,
           "forward_pe": 11.8056,
           "normalized_pe": 12.5
         },
@@ -1335,7 +1348,7 @@
       "valuation_metrics": {
         "expected_fair_value": 260.5,
         "expected_return_pct": 22.5882,
-        "margin_of_safety_pct": 18.5882,
+        "base_upside_pct": 18.5882,
         "forward_pe": 11.8056,
         "normalized_pe": 12.5
       },
@@ -1389,7 +1402,7 @@
           "score": false,
           "confidence": true,
           "valuation_complete": true,
-          "margin_of_safety": false,
+          "base_upside": false,
           "alpha_spread": false,
           "freshness": false,
           "evidence": true,
@@ -1401,7 +1414,7 @@
         "failed": [
           "score_complete",
           "score",
-          "margin_of_safety",
+          "base_upside",
           "alpha_spread",
           "freshness",
           "benchmark_freshness"
@@ -1416,7 +1429,7 @@
       "score": 0,
       "grade": "VERIFY",
       "action": "VERIFY",
-      "score_provenance": "security-v5.0.1",
+      "score_provenance": "security-v6.0.0",
       "factor_scores": {
         "earnings_acceleration": 0.0,
         "revenue_quality": 0.0,
@@ -1455,7 +1468,7 @@
         "normalized_pe": null,
         "expected_fair_value": null,
         "expected_return_pct": null,
-        "margin_of_safety_pct": null,
+        "base_upside_pct": null,
         "scenarios": {
           "bear": {
             "eps": null,
@@ -1517,7 +1530,7 @@
         "valuation_metrics": {
           "expected_fair_value": null,
           "expected_return_pct": null,
-          "margin_of_safety_pct": null,
+          "base_upside_pct": null,
           "forward_pe": null,
           "normalized_pe": null
         },
@@ -1528,7 +1541,7 @@
       "valuation_metrics": {
         "expected_fair_value": null,
         "expected_return_pct": null,
-        "margin_of_safety_pct": null,
+        "base_upside_pct": null,
         "forward_pe": null,
         "normalized_pe": null
       },
@@ -1581,7 +1594,7 @@
           "score": false,
           "confidence": false,
           "valuation_complete": false,
-          "margin_of_safety": false,
+          "base_upside": false,
           "alpha_spread": false,
           "freshness": false,
           "evidence": false,
@@ -1595,7 +1608,7 @@
           "score",
           "confidence",
           "valuation_complete",
-          "margin_of_safety",
+          "base_upside",
           "alpha_spread",
           "freshness",
           "evidence",

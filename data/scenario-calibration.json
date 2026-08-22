@@ -7,9 +7,172 @@
   "minimum_resolved_samples": 30,
   "status": "INSUFFICIENT_HISTORY",
   "resolved_samples": 0,
-  "pending_samples": 0,
+  "pending_samples": 6,
   "multiclass_brier_score": null,
   "mean_forecast_probabilities": null,
   "empirical_outcome_frequencies": null,
-  "forecasts": []
+  "forecasts": [
+    {
+      "forecast_id": "2026-08-10-2301-c3b29127",
+      "ticker": "2301",
+      "name": "光寶科",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "c3b29127e52a16fb1eb6",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 247,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 193.6,
+        "base": 302.4,
+        "bull": 400.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 248.0,
+        "base_bull_midpoint": 351.2
+      },
+      "status": "PENDING",
+      "resolution": null
+    },
+    {
+      "forecast_id": "2026-08-10-2330-817d4cb6",
+      "ticker": "2330",
+      "name": "台積電",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "817d4cb66cb08886f1e4",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 2370,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 2200.0,
+        "base": 3250.0,
+        "bull": 4205.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 2725.0,
+        "base_bull_midpoint": 3727.5
+      },
+      "status": "PENDING",
+      "resolution": null
+    },
+    {
+      "forecast_id": "2026-08-10-2376-be9f9ae1",
+      "ticker": "2376",
+      "name": "技嘉",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "be9f9ae16cd860ef8e61",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 344,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 275.0,
+        "base": 510.0,
+        "bull": 756.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 392.5,
+        "base_bull_midpoint": 633.0
+      },
+      "status": "PENDING",
+      "resolution": null
+    },
+    {
+      "forecast_id": "2026-08-10-2382-03a2bdfe",
+      "ticker": "2382",
+      "name": "廣達",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "03a2bdfea21c356fbf02",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 298,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 216.0,
+        "base": 345.0,
+        "bull": 504.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 280.5,
+        "base_bull_midpoint": 424.5
+      },
+      "status": "PENDING",
+      "resolution": null
+    },
+    {
+      "forecast_id": "2026-08-10-2451-0d50f904",
+      "ticker": "2451",
+      "name": "創見",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "0d50f904fd9000fd6545",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 297,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 175.0,
+        "base": 280.0,
+        "bull": 500.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 227.5,
+        "base_bull_midpoint": 390.0
+      },
+      "status": "PENDING",
+      "resolution": null
+    },
+    {
+      "forecast_id": "2026-08-10-3515-aeecab87",
+      "ticker": "3515",
+      "name": "華擎",
+      "forecast_at": "2026-08-10",
+      "resolution_due": "2027-08-09",
+      "scenario_signature": "aeecab87b54a8a6f3387",
+      "source_decision_fingerprint": "6c0561ff880b38846d6c83965f2d303819879a3bfa813ecdbf2df58e0aa4c000",
+      "reference_price_at_forecast": 212.5,
+      "reference_price_date": "2026-08-07",
+      "fair_values": {
+        "bear": 130.0,
+        "base": 252.0,
+        "bull": 408.0
+      },
+      "probabilities": {
+        "bear": 0.25,
+        "base": 0.5,
+        "bull": 0.25
+      },
+      "bin_boundaries": {
+        "bear_base_midpoint": 191.0,
+        "base_bull_midpoint": 330.0
+      },
+      "status": "PENDING",
+      "resolution": null
+    }
+  ]
 }

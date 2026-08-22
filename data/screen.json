@@ -2381,7 +2381,7 @@
       "promotion_eligible": true,
       "rank": 8,
       "research_industry_key": "IND:14",
-      "deep_research_selected": false
+      "deep_research_selected": true
     },
     {
       "ticker": "9958",
@@ -2416,7 +2416,7 @@
       "promotion_eligible": true,
       "rank": 9,
       "research_industry_key": "IND:10",
-      "deep_research_selected": false
+      "deep_research_selected": true
     }
   ],
   "incumbent_research": [
