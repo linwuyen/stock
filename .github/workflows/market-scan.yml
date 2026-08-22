@@ -1,4 +1,4 @@
-name: Refresh Full-Market Screen V5
+name: Refresh Full-Market Screen V6
 
 on:
   workflow_dispatch:
@@ -13,6 +13,7 @@ on:
       - 'scripts/refine_screen.py'
       - 'scripts/normalize_screen_v5.py'
       - 'scripts/build_alpha.py'
+      - 'scripts/build_alpha_v6.py'
       - 'scripts/sync_alert_state.py'
       - 'scripts/validate.py'
       - 'scripts/validate_screen_priority.py'
@@ -25,7 +26,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: alpha-market-scan-v5
+  group: alpha-market-scan-v6
   cancel-in-progress: true
 
 jobs:
@@ -54,7 +55,7 @@ jobs:
       - name: Normalize schema and rebuild security authority
         run: |
           python scripts/normalize_screen_v5.py
-          python scripts/build_alpha.py
+          python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
 
       - name: Validate repository invariants
