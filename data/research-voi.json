@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-21",
+  "contract": "non_authoritative-value-of-information-research-priority-v1",
+  "authority": false,
+  "score_influence": false,
+  "buy_gate_influence": false,
+  "method": "Ranks already-researched securities by decision-boundary proximity, evidence/freshness gaps, model uncertainty and whether a concrete next question exists. It is a research scheduling proxy, not a probability of decision change and not a capital-sizing model.",
+  "weights": {
+    "gate_proximity": 0.4,
+    "evidence_gap": 0.35,
+    "model_uncertainty": 0.15,
+    "researchability": 0.1
+  },
+  "rows": [
+    {
+      "ticker": "2376",
+      "name": "技嘉",
+      "upstream_action": "VERIFY",
+      "research_priority": 79.0,
+      "research_lane": "EVIDENCE_CLOSURE",
+      "gate_proximity": 84.2,
+      "evidence_gap": 91.0,
+      "model_uncertainty": 23.5,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "freshness",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 63.4,
+        "confidence": 0.0,
+        "base_upside": 0.0,
+        "alpha_spread": 0.0
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score"
+      ],
+      "next_question": "Q2正式財報；Q1 fundamental已超過130天freshness gate，未更新前不得升BUY。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 1
+    },
+    {
+      "ticker": "3515",
+      "name": "華擎",
+      "upstream_action": "VERIFY",
+      "research_priority": 76.6,
+      "research_lane": "DECISION_REASSESSMENT",
+      "gate_proximity": 60.5,
+      "evidence_gap": 100.0,
+      "model_uncertainty": 49.5,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "base_upside",
+        "alpha_spread",
+        "freshness",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "revenue_quality",
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 100.0,
+        "confidence": 0.0,
+        "base_upside": 4.0,
+        "alpha_spread": 53.9
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score",
+        "base_upside",
+        "alpha_spread"
+      ],
+      "next_question": "Q2財報、官方月營收與Server營收占比。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 2
+    },
+    {
+      "ticker": "2301",
+      "name": "光寶科",
+      "upstream_action": "VERIFY",
+      "research_priority": 75.7,
+      "research_lane": "DECISION_REASSESSMENT",
+      "gate_proximity": 60.7,
+      "evidence_gap": 100.0,
+      "model_uncertainty": 43.0,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "alpha_spread",
+        "freshness",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "revenue_quality",
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 100.0,
+        "confidence": 0.0,
+        "base_upside": 0.0,
+        "alpha_spread": 57.1
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score",
+        "alpha_spread"
+      ],
+      "next_question": "下一季EPS/營益率與Power Shelf/HVDC進度。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 3
+    },
+    {
+      "ticker": "2382",
+      "name": "廣達",
+      "upstream_action": "VERIFY",
+      "research_priority": 67.7,
+      "research_lane": "DECISION_REASSESSMENT",
+      "gate_proximity": 55.8,
+      "evidence_gap": 91.0,
+      "model_uncertainty": 23.5,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "base_upside",
+        "alpha_spread",
+        "freshness",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 100.0,
+        "confidence": 0.0,
+        "base_upside": 12.1,
+        "alpha_spread": 64.6
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score",
+        "base_upside",
+        "alpha_spread"
+      ],
+      "next_question": "Q2 EPS、毛利與營業現金流。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 4
+    },
+    {
+      "ticker": "2451",
+      "name": "創見",
+      "upstream_action": "VERIFY",
+      "research_priority": 64.1,
+      "research_lane": "DECISION_REASSESSMENT",
+      "gate_proximity": 31.6,
+      "evidence_gap": 100.0,
+      "model_uncertainty": 43.0,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "base_upside",
+        "alpha_spread",
+        "freshness",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "revenue_quality",
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 100.0,
+        "confidence": 0.0,
+        "base_upside": 73.5,
+        "alpha_spread": 100.0
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score",
+        "base_upside",
+        "alpha_spread"
+      ],
+      "next_question": "Q2財報細項、記憶體價格與庫存。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 5
+    },
+    {
+      "ticker": "3081",
+      "name": "聯亞",
+      "upstream_action": "VERIFY",
+      "research_priority": 60.0,
+      "research_lane": "DECISION_REASSESSMENT",
+      "gate_proximity": 0.0,
+      "evidence_gap": 100.0,
+      "model_uncertainty": 100.0,
+      "failed_buy_gate_checks": [
+        "score_complete",
+        "score",
+        "confidence",
+        "valuation_complete",
+        "base_upside",
+        "alpha_spread",
+        "freshness",
+        "evidence",
+        "benchmark_freshness"
+      ],
+      "missing_factors": [
+        "earnings_acceleration",
+        "revenue_quality",
+        "valuation",
+        "balance_sheet_cash_flow"
+      ],
+      "economic_shortfalls": {
+        "score": 100.0,
+        "confidence": 100.0,
+        "base_upside": 100.0,
+        "alpha_spread": 100.0
+      },
+      "blocker_classes": [
+        "evidence/freshness",
+        "score",
+        "base_upside",
+        "alpha_spread",
+        "confidence"
+      ],
+      "next_question": "2026-08-12 Q2財報/法說與最新forward valuation。",
+      "guardrail": "Research priority cannot create or upgrade BUY authority.",
+      "rank": 6
+    }
+  ]
+}

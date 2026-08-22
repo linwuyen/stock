@@ -10,7 +10,7 @@
     "primary_entry_count": 0,
     "a_grade_entry_count": 2,
     "corporate_action_source": "TWSE_TWT48U_ALL",
-    "corporate_action_coverage_start": null
+    "corporate_action_coverage_start": "2026-08-20"
   },
   "minimum_samples_for_calibration": 30,
   "horizons": [

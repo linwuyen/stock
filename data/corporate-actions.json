@@ -7,16 +7,1115 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 0,
-    "min_date": null,
-    "max_date": null
+    "row_count": 122,
+    "min_date": "2026-08-20",
+    "max_date": "2026-10-07"
   },
   "ledger": {
-    "action_count": 0,
-    "coverage_start": null,
-    "coverage_end": null,
+    "action_count": 122,
+    "coverage_start": "2026-08-20",
+    "coverage_end": "2026-10-07",
     "historical_backfill_complete": false,
-    "note": "Ledger starts prospectively. The first successful official sync establishes coverage; pre-capture actions are never inferred."
+    "note": "Ledger is prospective from first capture. Missing pre-capture actions are never inferred."
   },
-  "actions": []
+  "actions": [
+    {
+      "date": "2026-08-20",
+      "ticker": "1597",
+      "name": "直得",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.7,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "1714",
+      "name": "和桐",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.18,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "2377",
+      "name": "微星",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 4.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "2472",
+      "name": "立隆電",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "2505",
+      "name": "國揚",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "2539",
+      "name": "櫻花建",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.6,
+      "stock_dividend_ratio_raw": 0.22,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "4441",
+      "name": "振大環球",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 10.8,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "4764",
+      "name": "雙鍵",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "5222",
+      "name": "全訊",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.09996664,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "6177",
+      "name": "達麗",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "6666",
+      "name": "羅麗芬-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "6691",
+      "name": "洋基工程",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 21.0,
+      "stock_dividend_ratio_raw": 0.1,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-20",
+      "ticker": "6805",
+      "name": "富世達",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 12.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-21",
+      "ticker": "00771",
+      "name": "元大US高息特別股",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.21,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-21",
+      "ticker": "00850",
+      "name": "元大臺灣ESG永續",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.85,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-21",
+      "ticker": "2458",
+      "name": "義隆",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 4.426,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "1454",
+      "name": "台富",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.1,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "1737",
+      "name": "臺鹽",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.4,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "2413",
+      "name": "環科",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "2468",
+      "name": "華經",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "2484",
+      "name": "希華",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.7,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "2527",
+      "name": "宏璟",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "4746",
+      "name": "台耀",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-24",
+      "ticker": "9958",
+      "name": "世紀鋼",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "00907",
+      "name": "永豐優息存股",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.24,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "1722",
+      "name": "台肥",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "2012",
+      "name": "春雨",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.3,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "2201",
+      "name": "裕隆",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.56,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "5284",
+      "name": "jpp-KY",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "5534",
+      "name": "長虹",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 5.063943,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "6873",
+      "name": "泓德能源",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.537729,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-25",
+      "ticker": "9921",
+      "name": "巨大",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.818553,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "1583",
+      "name": "程泰",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.1,
+      "stock_dividend_ratio_raw": 0.08999999,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "2227",
+      "name": "裕日車",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.84,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "2420",
+      "name": "新巨",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "2753",
+      "name": "八方雲集",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.05,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "4582",
+      "name": "聚恆-創",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.794117,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "6216",
+      "name": "居易",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.03002,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "6914",
+      "name": "阜爾運通",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 6.0,
+      "stock_dividend_ratio_raw": 0.2,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "6955",
+      "name": "邦睿生技-創",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.22499993,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "7818",
+      "name": "溢泰實業",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.036375,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-26",
+      "ticker": "8442",
+      "name": "威宏-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "1315",
+      "name": "達新",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "1339",
+      "name": "昭輝",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "1409",
+      "name": "新纖",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.9,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "1734",
+      "name": "杏輝",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.06,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2059",
+      "name": "川湖",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 51.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2415",
+      "name": "錩新",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.48,
+      "stock_dividend_ratio_raw": 0.11111111,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2428",
+      "name": "興勤",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 5.9,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2439",
+      "name": "美律",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 4.084236,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2441",
+      "name": "超豐",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.009077,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "2901",
+      "name": "欣欣",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.37317,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "3016",
+      "name": "嘉晶",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "3025",
+      "name": "星通",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "3528",
+      "name": "安馳",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.38,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "3702",
+      "name": "大聯大",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.643236,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "4736",
+      "name": "泰博",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 5.070926,
+      "stock_dividend_ratio_raw": 0.10141852,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "6770",
+      "name": "力積電",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.23,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-27",
+      "ticker": "9946",
+      "name": "三發地產",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.383888,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "1453",
+      "name": "大將",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.03,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "1709",
+      "name": "和益",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "2072",
+      "name": "世紀風電",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 6.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "2101",
+      "name": "南港",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.6,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "2250",
+      "name": "IKKA-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "2364",
+      "name": "倫飛",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 2.0,
+      "stock_dividend_ratio_raw": 0.1,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "2383",
+      "name": "台光電",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 25.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "5283",
+      "name": "禾聯碩",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.2,
+      "stock_dividend_ratio_raw": 0.15999999,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "6183",
+      "name": "關貿",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.55,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "7730",
+      "name": "暉盛-創",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": 0.05000001,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-28",
+      "ticker": "7822",
+      "name": "倍利科",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 6.385436,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "1531",
+      "name": "高林股",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "1795",
+      "name": "美時",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 2.565316,
+      "stock_dividend_ratio_raw": 0.01300671,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "2905",
+      "name": "三商",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.3,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "3209",
+      "name": "全科",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 2.0,
+      "stock_dividend_ratio_raw": 0.04999999,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "9105",
+      "name": "泰金寶-DR",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.067011,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-08-31",
+      "ticker": "9917",
+      "name": "中保科",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.05,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "00939",
+      "name": "統一台灣高息動能",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "00984D",
+      "name": "主動聯博全球非投",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "1732",
+      "name": "毛寶",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.6,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "1783",
+      "name": "和康生",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.999598,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "2701",
+      "name": "萬企",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.28,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "2889",
+      "name": "國票金",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.5,
+      "stock_dividend_ratio_raw": 0.0089,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "3052",
+      "name": "夆典",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.6,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "3135",
+      "name": "凌航",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 3.258584,
+      "stock_dividend_ratio_raw": 0.04768659,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "3416",
+      "name": "融程電",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.04976171,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "4977",
+      "name": "眾達-KY",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "6534",
+      "name": "正瀚-創",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.008501,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "9941",
+      "name": "裕融",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 4.38,
+      "stock_dividend_ratio_raw": 0.02,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-01",
+      "ticker": "9941A",
+      "name": "裕融甲特",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.339375,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "00406A",
+      "name": "主動中信台灣收益",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "00946",
+      "name": "群益科技高息成長",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "00953B",
+      "name": "群益優選非投等債",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "00985B",
+      "name": "群益ESG投等債0-5",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "2464",
+      "name": "盟立",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.471403,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "2845",
+      "name": "遠東銀",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.514,
+      "stock_dividend_ratio_raw": 0.01194999,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "2923",
+      "name": "鼎固-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.12,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "3013",
+      "name": "晟銘電",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.04,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "3346",
+      "name": "麗清",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.11,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "4438",
+      "name": "廣越",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.3,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "6139",
+      "name": "亞翔",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 22.996187,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "6426",
+      "name": "統新",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "6669",
+      "name": "緯穎",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 1.9827946,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-02",
+      "ticker": "6753",
+      "name": "龍德造船",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.249351,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-03",
+      "ticker": "1203",
+      "name": "味王",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-03",
+      "ticker": "3661",
+      "name": "世芯-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 32.551656,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-03",
+      "ticker": "7780",
+      "name": "大研生醫*",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.116588,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-03",
+      "ticker": "8466",
+      "name": "美吉吉-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.3,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-07",
+      "ticker": "00400A",
+      "name": "主動國泰動能高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-07",
+      "ticker": "01010T",
+      "name": "京城樂富R1",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.09872,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-07",
+      "ticker": "1466",
+      "name": "聚隆",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-07",
+      "ticker": "6533",
+      "name": "晶心科",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-08",
+      "ticker": "2706",
+      "name": "第一店",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.35,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-09",
+      "ticker": "6133",
+      "name": "金橋",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-10",
+      "ticker": "5906",
+      "name": "台南-KY",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.2,
+      "stock_dividend_ratio_raw": 0.05000001,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-10",
+      "ticker": "6504",
+      "name": "南六",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-14",
+      "ticker": "5243",
+      "name": "乙盛-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 2.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-23",
+      "ticker": "1808",
+      "name": "潤隆",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-23",
+      "ticker": "2542",
+      "name": "興富發",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 4.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-29",
+      "ticker": "2109",
+      "name": "華豐",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.5,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-10-01",
+      "ticker": "9927",
+      "name": "泰銘",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 5.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-10-06",
+      "ticker": "2614",
+      "name": "東森",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.4,
+      "stock_dividend_ratio_raw": 0.08,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-10-07",
+      "ticker": "6108",
+      "name": "競國",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    }
+  ]
 }
