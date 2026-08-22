@@ -2,12 +2,21 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-import build_alpha
+import build_alpha_v6 as build_alpha
 
 ROOT=Path(__file__).resolve().parents[1]
 ALLOWED_ACTIONS={"BUY CANDIDATE","VERIFY","WATCH","AVOID"}
 ALLOWED_LANES={"GROWTH","INFLECTION","MISPRICING_QUALITY"}
+LEGACY_KEYS={"margin_of_safety_pct","min_margin_of_safety_pct","margin_of_safety"}
 def load(path):return json.loads((ROOT/path).read_text(encoding="utf-8"))
+
+def assert_no_legacy_keys(obj,path="root"):
+    if isinstance(obj,dict):
+        for k,v in obj.items():
+            assert k not in LEGACY_KEYS,f"legacy field {path}.{k}"
+            assert_no_legacy_keys(v,f"{path}.{k}")
+    elif isinstance(obj,list):
+        for i,v in enumerate(obj):assert_no_legacy_keys(v,f"{path}[{i}]")
 
 def validate_screen(screen):
     meta=screen.get("meta") or {};rules=screen.get("rules") or {}
@@ -27,13 +36,15 @@ def validate_screen(screen):
             assert "GROWTH_BASE_EFFECT_OUTLIER" in (row.get("flags") or []);assert row.get("verification_priority")=="HIGH";assert float(row.get("priority_revenue_yoy_pct") or 0)<=cap;assert float(row.get("priority_cumulative_revenue_yoy_pct") or 0)<=cap
 
 def validate_alpha(alpha):
-    assert int(alpha["meta"].get("schema_version") or 0)>=5;assert alpha["meta"].get("authority")=="PYTHON_CANONICAL_SECURITY_ENGINE";assert alpha["meta"].get("decision_engine_version")==build_alpha.ENGINE_VERSION;assert alpha["meta"].get("decision_fingerprint");assert "market_max_calendar_days" not in alpha["freshness_policy"]
-    expected=build_alpha.generate(write=False);assert expected==alpha,"alpha.json is not canonical; run scripts/build_alpha.py"
-    b=alpha["benchmark_asset"];assert b.get("valuation_metrics") is not None and b.get("freshness") is not None and b.get("evidence_gate") is not None
+    assert int(alpha["meta"].get("schema_version") or 0)==6;assert alpha["meta"].get("authority")=="PYTHON_CANONICAL_SECURITY_ENGINE";assert alpha["meta"].get("decision_engine_version")==build_alpha.ENGINE_VERSION;assert alpha["meta"].get("decision_fingerprint");assert "market_max_calendar_days" not in alpha["freshness_policy"]
+    assert "min_base_upside_pct" in alpha.get("decision_policy",{});assert "min_margin_of_safety_pct" not in alpha.get("decision_policy",{})
+    expected=build_alpha.generate(write=False);assert expected==alpha,"alpha.json is not canonical; run scripts/build_alpha_v6.py"
+    assert_no_legacy_keys(alpha)
+    b=alpha["benchmark_asset"];assert b.get("valuation_metrics") is not None and b.get("freshness") is not None and b.get("evidence_gate") is not None;assert "base_upside_pct" in b.get("valuation_metrics",{})
     ranks=[];order=[]
     for s in alpha.get("stocks",[]):
         ranks.append(s["rank"]);status=s.get("score_coverage",{}).get("status");order.append((status!="COMPLETE",-float(s.get("score") or 0)))
-        assert s.get("action") in ALLOWED_ACTIONS;assert s.get("score_provenance")==build_alpha.ENGINE_VERSION;assert set(s.get("factor_scores") or {})==set(build_alpha.DEFAULT_WEIGHTS);assert set(s.get("confidence_factors") or {})==set(build_alpha.CONFIDENCE_WEIGHTS);assert s.get("buy_gate",{}).get("authority")=="PYTHON_SECURITY_BUY_GATE";assert s.get("market_expectation",{}).get("authority")=="ANALYTIC_ONLY"
+        assert s.get("action") in ALLOWED_ACTIONS;assert s.get("score_provenance")==build_alpha.ENGINE_VERSION;assert set(s.get("factor_scores") or {})==set(build_alpha.DEFAULT_WEIGHTS);assert set(s.get("confidence_factors") or {})==set(build_alpha.CONFIDENCE_WEIGHTS);assert s.get("buy_gate",{}).get("authority")=="PYTHON_SECURITY_BUY_GATE";assert s.get("market_expectation",{}).get("authority")=="ANALYTIC_ONLY";assert "base_upside_pct" in s.get("valuation_metrics",{});assert "base_upside" in s.get("buy_gate",{}).get("checks",{})
         assert status in {"COMPLETE","INCOMPLETE"}
         if status=="INCOMPLETE":assert s.get("action")=="VERIFY" or s.get("thesis_status")=="INVALIDATED","missing data must verify, not masquerade as negative evidence"
         if s["action"]=="BUY CANDIDATE":assert status=="COMPLETE" and s["buy_gate"]["ok"] is True
@@ -47,5 +58,5 @@ def validate_performance(p):
     assert p["meta"]["primary_cohort"]=="BUY_CANDIDATE";assert p["meta"]["return_type"]=="PRICE_RETURN_EX_DIVIDENDS";assert [x["weeks"] for x in p["horizons"]]==[1,4,13,26,52];assert p["meta"]["status"] in {"CALIBRATED","INSUFFICIENT_HISTORY"}
 def main():
     a=load("data/alpha.json");s=load("data/screen.json");alerts=load("data/alerts.json");p=load("data/performance.json");liq=load("data/liquidity-history.json");validate_screen(s);validate_alpha(a);validate_alerts(alerts,a);validate_performance(p);assert liq.get("schema_version",0)>=1 and liq.get("window")==20
-    print("SECURITY ENGINE V5 VALIDATION PASS");print("decision fingerprint:",a["meta"]["decision_fingerprint"]);print("actions:",{x["ticker"]:x["action"] for x in a["stocks"]})
+    print("SECURITY ENGINE V6 VALIDATION PASS");print("decision fingerprint:",a["meta"]["decision_fingerprint"]);print("actions:",{x["ticker"]:x["action"] for x in a["stocks"]})
 if __name__=="__main__":main()
