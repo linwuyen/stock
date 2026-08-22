@@ -1,4 +1,4 @@
-name: Sync Security Decision State
+name: Sync Security Decision State V6
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
       - 'data/alpha.json'
       - 'data/screen.json'
       - 'scripts/build_alpha.py'
+      - 'scripts/build_alpha_v6.py'
       - 'scripts/normalize_screen_v5.py'
       - 'scripts/sync_alert_state.py'
       - 'scripts/validate.py'
@@ -17,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: security-decision-state
+  group: security-decision-state-v6
   cancel-in-progress: true
 
 jobs:
@@ -30,7 +31,7 @@ jobs:
       - name: Build canonical state
         run: |
           python scripts/normalize_screen_v5.py
-          python scripts/build_alpha.py
+          python scripts/build_alpha_v6.py
           python scripts/sync_alert_state.py
       - name: Validate
         run: |
