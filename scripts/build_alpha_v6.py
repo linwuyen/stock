@@ -70,11 +70,11 @@ def generate(write: bool = False) -> dict:
         "from": 5,
         "to": 6,
         "semantic_change": False,
-        "renamed": {
-            "margin_of_safety_pct": "base_upside_pct",
-            "min_margin_of_safety_pct": "min_base_upside_pct",
-            "buy_gate.margin_of_safety": "buy_gate.base_upside",
-        },
+        "renamed": [
+            "margin_of_safety_pct -> base_upside_pct",
+            "min_margin_of_safety_pct -> min_base_upside_pct",
+            "buy_gate.margin_of_safety -> buy_gate.base_upside",
+        ],
         "definition": "base_upside_pct = base_fair_value / reference_price - 1",
         "classical_margin_of_safety": "not implemented by this migration",
     }
