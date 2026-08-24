@@ -1,8 +1,8 @@
 {
   "meta": {
     "schema_version": 5,
-    "as_of": "2026-08-23",
-    "generated_at": "2026-08-23T02:57:53+08:00",
+    "as_of": "2026-08-24",
+    "generated_at": "2026-08-24T14:25:32+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx common-stock issuer universe; non-financial multi-lane research discovery.",
     "promotion_enabled_by_market": {
@@ -150,7 +150,7 @@
         "ok": true,
         "rows": 1377,
         "url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-        "new_market_snapshot": true,
+        "new_market_snapshot": false,
         "transport": {
           "primary_attempts": 1,
           "fallback_used": null,
@@ -260,11 +260,9 @@
         "rows": 890,
         "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap05_O",
         "transport": {
-          "primary_attempts": 2,
+          "primary_attempts": 1,
           "fallback_used": null,
-          "errors": [
-            "attempt 1: RuntimeError: attempt 1: HTTPError: HTTP Error 520: <none>"
-          ],
+          "errors": [],
           "optional_degraded": false,
           "semantic_min_rows": 500,
           "rows": 890
@@ -296,7 +294,7 @@
       "revenue": 1084,
       "income": 983,
       "valuation": 1081,
-      "new_market_snapshot": true,
+      "new_market_snapshot": false,
       "income_coverage_ratio": 0.9027
     },
     "TPEX": {
@@ -337,6 +335,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -372,6 +371,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -407,6 +407,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -442,6 +443,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -513,6 +515,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -548,6 +551,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -583,6 +587,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -618,6 +623,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -653,6 +659,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -688,6 +695,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -723,6 +731,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -758,6 +767,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -793,6 +803,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -864,6 +875,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -899,6 +911,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -934,6 +947,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -969,6 +983,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1005,6 +1020,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1040,6 +1056,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1075,6 +1092,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1110,6 +1128,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1145,6 +1164,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1180,6 +1200,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1216,6 +1237,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1251,6 +1273,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1286,6 +1309,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1357,6 +1381,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1429,6 +1454,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1464,6 +1490,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1535,6 +1562,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1606,6 +1634,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1641,6 +1670,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1712,6 +1742,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1747,6 +1778,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1818,6 +1850,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1853,6 +1886,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1888,6 +1922,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1923,6 +1958,7 @@
       "verification_priority": "HIGH",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1959,6 +1995,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1994,6 +2031,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2029,6 +2067,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2103,6 +2142,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2138,6 +2178,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2173,6 +2214,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2208,6 +2250,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2243,6 +2286,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2314,6 +2358,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2349,6 +2394,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2384,6 +2430,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2419,6 +2466,7 @@
       "verification_priority": "NORMAL",
       "flags": [
         "LIQUIDITY_BOOTSTRAP",
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
