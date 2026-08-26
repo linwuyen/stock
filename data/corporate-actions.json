@@ -8,13 +8,13 @@
   },
   "source_window": {
     "row_count": 118,
-    "min_date": "2026-08-21",
-    "max_date": "2026-10-07"
+    "min_date": "2026-08-24",
+    "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 131,
+    "action_count": 134,
     "coverage_start": "2026-08-20",
-    "coverage_end": "2026-10-07",
+    "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
     "note": "Ledger is prospective from first capture. Missing pre-capture actions are never inferred."
   },
@@ -1092,6 +1092,24 @@
     },
     {
       "date": "2026-09-09",
+      "ticker": "1438",
+      "name": "三地開發",
+      "ex_right_or_dividend": "權息",
+      "cash_dividend_per_share": 0.2,
+      "stock_dividend_ratio_raw": 0.08,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-09",
+      "ticker": "3059",
+      "name": "華晶科",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.998614,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-09",
       "ticker": "3706",
       "name": "神達",
       "ex_right_or_dividend": "權息",
@@ -1195,6 +1213,15 @@
       "name": "台鎔科技",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 0.533326,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-10-28",
+      "ticker": "4552",
+      "name": "力達-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.6,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     }

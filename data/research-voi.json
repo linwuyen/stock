@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-08-25",
+  "as_of": "2026-08-26",
   "contract": "non_authoritative-value-of-information-research-priority-v1",
   "authority": false,
   "score_influence": false,
@@ -17,11 +17,11 @@
       "ticker": "2376",
       "name": "技嘉",
       "upstream_action": "VERIFY",
-      "research_priority": 82.2,
+      "research_priority": 79.4,
       "research_lane": "EVIDENCE_CLOSURE",
-      "gate_proximity": 75.0,
-      "evidence_gap": 100.0,
-      "model_uncertainty": 48.0,
+      "gate_proximity": 84.2,
+      "evidence_gap": 91.0,
+      "model_uncertainty": 26.0,
       "failed_buy_gate_checks": [
         "score_complete",
         "score",
@@ -29,11 +29,10 @@
         "benchmark_freshness"
       ],
       "missing_factors": [
-        "revenue_quality",
         "balance_sheet_cash_flow"
       ],
       "economic_shortfalls": {
-        "score": 100.0,
+        "score": 63.4,
         "confidence": 0.0,
         "base_upside": 0.0,
         "alpha_spread": 0.0
@@ -122,11 +121,11 @@
       "ticker": "2382",
       "name": "廣達",
       "upstream_action": "VERIFY",
-      "research_priority": 74.5,
+      "research_priority": 68.1,
       "research_lane": "DECISION_REASSESSMENT",
       "gate_proximity": 55.8,
-      "evidence_gap": 100.0,
-      "model_uncertainty": 48.0,
+      "evidence_gap": 91.0,
+      "model_uncertainty": 26.0,
       "failed_buy_gate_checks": [
         "score_complete",
         "score",
@@ -136,7 +135,6 @@
         "benchmark_freshness"
       ],
       "missing_factors": [
-        "revenue_quality",
         "balance_sheet_cash_flow"
       ],
       "economic_shortfalls": {
@@ -214,6 +212,7 @@
       ],
       "missing_factors": [
         "earnings_acceleration",
+        "revenue_quality",
         "valuation",
         "balance_sheet_cash_flow"
       ],
