@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 118,
-    "min_date": "2026-08-24",
+    "row_count": 114,
+    "min_date": "2026-08-25",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 134,
+    "action_count": 138,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -1128,6 +1128,15 @@
     },
     {
       "date": "2026-09-10",
+      "ticker": "2062",
+      "name": "橋椿",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-10",
       "ticker": "5906",
       "name": "台南-KY",
       "ex_right_or_dividend": "權息",
@@ -1145,11 +1154,38 @@
       "source": "TWSE_TWT48U_ALL"
     },
     {
+      "date": "2026-09-10",
+      "ticker": "9802",
+      "name": "鈺齊-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.1,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-10",
+      "ticker": "9906",
+      "name": "欣巴巴",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": 0.00848624,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
       "date": "2026-09-14",
       "ticker": "5243",
       "name": "乙盛-KY",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 2.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "1517",
+      "name": "利奇",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.2,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
