@@ -9,11 +9,11 @@
     "valuation_horizon": "FY2027E / ~12-18 months",
     "note": "2026-08-10 first v3 valuation refresh. Reported facts use first-party evidence where available; FY2027E scenario EPS/multiples are model assumptions, not company guidance.",
     "decision_engine_version": "security-v6.0.0",
-    "decision_as_of": "2026-08-26",
+    "decision_as_of": "2026-08-28",
     "authority": "PYTHON_CANONICAL_SECURITY_ENGINE",
     "research_inputs_as_of": "2026-08-10",
-    "screen_inputs_as_of": "2026-08-26",
-    "decision_fingerprint": "490f50c0246d871683154e80b8f641a95e2367d42de5a19352e466cef3c21ed6",
+    "screen_inputs_as_of": "2026-08-28",
+    "decision_fingerprint": "e1c41b6306db8aeee834e259ba3f6cd545664af5bf4fc2965371b7d4f4ee5080",
     "schema_migration": {
       "from": 5,
       "to": 6,
@@ -217,10 +217,10 @@
         "events": false
       },
       "ages": {
-        "market_trading_sessions": 13,
-        "fundamentals_calendar_days": 57,
-        "revenue_calendar_days": 57,
-        "event_check_calendar_days": 16
+        "market_trading_sessions": 15,
+        "fundamentals_calendar_days": 59,
+        "revenue_calendar_days": 59,
+        "event_check_calendar_days": 18
       },
       "dates": {
         "market_observed_at": "2026-08-07",
@@ -452,10 +452,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
-          "fundamentals_calendar_days": 148,
-          "revenue_calendar_days": 57,
-          "event_check_calendar_days": 16
+          "market_trading_sessions": 15,
+          "fundamentals_calendar_days": 150,
+          "revenue_calendar_days": 59,
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",
@@ -683,10 +683,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
-          "fundamentals_calendar_days": 148,
-          "revenue_calendar_days": 57,
-          "event_check_calendar_days": 16
+          "market_trading_sessions": 15,
+          "fundamentals_calendar_days": 150,
+          "revenue_calendar_days": 59,
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",
@@ -912,10 +912,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
-          "fundamentals_calendar_days": 57,
-          "revenue_calendar_days": 57,
-          "event_check_calendar_days": 16
+          "market_trading_sessions": 15,
+          "fundamentals_calendar_days": 59,
+          "revenue_calendar_days": 59,
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",
@@ -1141,10 +1141,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
-          "fundamentals_calendar_days": 57,
-          "revenue_calendar_days": 57,
-          "event_check_calendar_days": 16
+          "market_trading_sessions": 15,
+          "fundamentals_calendar_days": 59,
+          "revenue_calendar_days": 59,
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",
@@ -1361,10 +1361,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
-          "fundamentals_calendar_days": 148,
+          "market_trading_sessions": 15,
+          "fundamentals_calendar_days": 150,
           "revenue_calendar_days": null,
-          "event_check_calendar_days": 16
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",
@@ -1554,10 +1554,10 @@
           "events": false
         },
         "ages": {
-          "market_trading_sessions": 13,
+          "market_trading_sessions": 15,
           "fundamentals_calendar_days": null,
           "revenue_calendar_days": null,
-          "event_check_calendar_days": 16
+          "event_check_calendar_days": 18
         },
         "dates": {
           "market_observed_at": "2026-08-07",

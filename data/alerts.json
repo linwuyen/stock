@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_evaluated_at": "2026-08-26T18:21:00+08:00",
+  "last_evaluated_at": "2026-08-28T00:50:44+08:00",
   "active_buy_candidates": [],
   "notifications": [],
   "policy": {
@@ -10,10 +10,10 @@
     "never_notify_for_screen_only": true,
     "never_execute_trade": true
   },
-  "last_evaluated_alpha_as_of": "2026-08-26",
+  "last_evaluated_alpha_as_of": "2026-08-28",
   "last_transition": {
     "entered": [],
     "exited": []
   },
-  "last_decision_fingerprint": "490f50c0246d871683154e80b8f641a95e2367d42de5a19352e466cef3c21ed6"
+  "last_decision_fingerprint": "e1c41b6306db8aeee834e259ba3f6cd545664af5bf4fc2965371b7d4f4ee5080"
 }
