@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 114,
-    "min_date": "2026-08-25",
+    "row_count": 107,
+    "min_date": "2026-08-26",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 138,
+    "action_count": 139,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -978,7 +978,7 @@
       "ticker": "8466",
       "name": "美吉吉-KY",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": 0.3,
+      "cash_dividend_per_share": 0.301938,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -1132,6 +1132,15 @@
       "name": "橋椿",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 1.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-10",
+      "ticker": "4912",
+      "name": "聯德控股-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.800477,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
