@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 107,
-    "min_date": "2026-08-26",
+    "row_count": 99,
+    "min_date": "2026-08-27",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 139,
+    "action_count": 141,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -708,7 +708,7 @@
       "ticker": "00939",
       "name": "統一台灣高息動能",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.125,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -717,7 +717,7 @@
       "ticker": "00984D",
       "name": "主動聯博全球非投",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.085,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -1182,10 +1182,28 @@
     },
     {
       "date": "2026-09-14",
+      "ticker": "2530",
+      "name": "華建",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.46,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-14",
       "ticker": "5243",
       "name": "乙盛-KY",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 2.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-15",
+      "ticker": "01009T",
+      "name": "王道圓滿R1",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 0.130476,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
