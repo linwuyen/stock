@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 99,
-    "min_date": "2026-08-27",
+    "row_count": 84,
+    "min_date": "2026-08-28",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 141,
+    "action_count": 143,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -825,7 +825,7 @@
       "ticker": "00406A",
       "name": "主動中信台灣收益",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.138,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -834,7 +834,7 @@
       "ticker": "00946",
       "name": "群益科技高息成長",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.058,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -843,7 +843,7 @@
       "ticker": "00953B",
       "name": "群益優選非投等債",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.067,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -852,7 +852,7 @@
       "ticker": "00985B",
       "name": "群益ESG投等債0-5",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.053,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -1182,6 +1182,15 @@
     },
     {
       "date": "2026-09-14",
+      "ticker": "00401A",
+      "name": "主動摩根台灣鑫收",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-14",
       "ticker": "2530",
       "name": "華建",
       "ex_right_or_dividend": "息",
@@ -1204,6 +1213,15 @@
       "name": "王道圓滿R1",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 0.130476,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-15",
+      "ticker": "6924",
+      "name": "榮惠-KY創",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.5,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
