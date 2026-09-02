@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 84,
-    "min_date": "2026-08-28",
+    "row_count": 107,
+    "min_date": "2026-08-31",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 143,
+    "action_count": 177,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -1209,6 +1209,33 @@
     },
     {
       "date": "2026-09-15",
+      "ticker": "00936",
+      "name": "台新永續高息中小",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-15",
+      "ticker": "00962",
+      "name": "台新AI優息動能",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-15",
+      "ticker": "009803",
+      "name": "玉山市值動能50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-15",
       "ticker": "01009T",
       "name": "王道圓滿R1",
       "ex_right_or_dividend": "息",
@@ -1227,10 +1254,289 @@
     },
     {
       "date": "2026-09-16",
+      "ticker": "00404A",
+      "name": "主動聯博動能50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00730",
+      "name": "富邦臺灣優質高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00770",
+      "name": "國泰北美科技",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00896",
+      "name": "中信綠能及電動車",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00900",
+      "name": "富邦特選高股息30",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00915",
+      "name": "凱基優選高股息30",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00919",
+      "name": "群益台灣精選高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00921",
+      "name": "兆豐龍頭等權重",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00934",
+      "name": "中信成長高股息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00935",
+      "name": "野村臺灣新科技50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00943",
+      "name": "兆豐電子高息等權",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00944",
+      "name": "野村趨勢動能高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00945B",
+      "name": "凱基美國非投等債",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00952",
+      "name": "凱基台灣AI50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00961",
+      "name": "FT臺灣永續高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00963",
+      "name": "中信全球高股息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00964",
+      "name": "中信亞太高股息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00972",
+      "name": "野村日本動能高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "009802",
+      "name": "富邦旗艦50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "009809",
+      "name": "富邦淨零ESG50",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00981A",
+      "name": "主動統一台股增長",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00981T",
+      "name": "平衡凱基雙核收息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00982D",
+      "name": "主動富邦動態入息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00983D",
+      "name": "主動富邦複合收益",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "00999A",
+      "name": "主動野村臺灣高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
       "ticker": "1517",
       "name": "利奇",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 0.2,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "2330",
+      "name": "台積電",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 7.000001,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-18",
+      "ticker": "00728",
+      "name": "第一金工業30",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-18",
+      "ticker": "00918",
+      "name": "大華優利高填息30",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-18",
+      "ticker": "00994A",
+      "name": "主動第一金台股優",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-21",
+      "ticker": "00713",
+      "name": "元大台灣高息低波",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-23",
+      "ticker": "00930",
+      "name": "永豐ESG低碳高息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
