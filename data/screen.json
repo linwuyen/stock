@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": 5,
     "as_of": "2026-09-03",
-    "generated_at": "2026-09-03T18:07:06+08:00",
+    "generated_at": "2026-09-03T21:55:35+08:00",
     "status": "COMPLETE",
     "coverage": "TWSE + TPEx common-stock issuer universe; non-financial multi-lane research discovery.",
     "promotion_enabled_by_market": {
@@ -150,7 +150,7 @@
         "ok": true,
         "rows": 1380,
         "url": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-        "new_market_snapshot": true,
+        "new_market_snapshot": false,
         "transport": {
           "primary_attempts": 1,
           "fallback_used": null,
@@ -214,11 +214,9 @@
         "rows": 890,
         "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
         "transport": {
-          "primary_attempts": 2,
+          "primary_attempts": 1,
           "fallback_used": null,
-          "errors": [
-            "attempt 1: RuntimeError: attempt 1: IncompleteRead: IncompleteRead(556664 bytes read, 514142 more expected)"
-          ],
+          "errors": [],
           "optional_degraded": false,
           "semantic_min_rows": 500,
           "rows": 890
@@ -230,7 +228,7 @@
         "ok": true,
         "rows": 1013,
         "url": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes",
-        "new_market_snapshot": true,
+        "new_market_snapshot": false,
         "transport": {
           "primary_attempts": 1,
           "fallback_used": null,
@@ -296,7 +294,7 @@
       "revenue": 1084,
       "income": 1048,
       "valuation": 1081,
-      "new_market_snapshot": true,
+      "new_market_snapshot": false,
       "income_coverage_ratio": 0.9632
     },
     "TPEX": {
@@ -305,7 +303,7 @@
       "revenue": 890,
       "income": 883,
       "valuation": 886,
-      "new_market_snapshot": true,
+      "new_market_snapshot": false,
       "income_coverage_ratio": 0.9921
     }
   },
@@ -336,6 +334,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -370,6 +369,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -404,6 +404,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -438,6 +439,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -472,6 +474,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -506,6 +509,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -540,6 +544,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -574,6 +579,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -608,6 +614,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -642,6 +649,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -676,6 +684,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -710,6 +719,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -744,6 +754,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -778,6 +789,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -812,6 +824,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -846,6 +859,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "HIGH",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -881,6 +895,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -915,6 +930,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -949,6 +965,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -983,6 +1000,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1017,6 +1035,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1051,6 +1070,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1085,6 +1105,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1119,6 +1140,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1153,6 +1175,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1187,6 +1210,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1221,6 +1245,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1255,6 +1280,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "HIGH",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1290,6 +1316,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1324,6 +1351,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1358,6 +1386,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1392,6 +1421,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "HIGH",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1427,6 +1457,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1461,6 +1492,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1495,6 +1527,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1529,6 +1562,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1563,6 +1597,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1597,6 +1632,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1631,6 +1667,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1665,6 +1702,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1699,6 +1737,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "HIGH",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "GROWTH_BASE_EFFECT_OUTLIER",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
@@ -1734,6 +1773,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1768,6 +1808,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1802,6 +1843,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1836,6 +1878,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1870,6 +1913,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1904,6 +1948,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1938,6 +1983,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -1972,6 +2018,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2006,6 +2053,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2042,6 +2090,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2076,6 +2125,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2110,6 +2160,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2144,6 +2195,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2178,6 +2230,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2212,6 +2265,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2246,6 +2300,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2280,6 +2335,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2314,6 +2370,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
@@ -2348,6 +2405,7 @@
       "data_quality_score": 10.0,
       "verification_priority": "NORMAL",
       "flags": [
+        "NO_NEW_MARKET_SNAPSHOT",
         "MARKET_CAP_DERIVED_OFFICIAL_INPUTS"
       ],
       "status": "SCREEN_PASS",
