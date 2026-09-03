@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 107,
-    "min_date": "2026-08-31",
+    "row_count": 108,
+    "min_date": "2026-09-01",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 177,
+    "action_count": 184,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -987,7 +987,7 @@
       "ticker": "00400A",
       "name": "主動國泰動能高息",
       "ex_right_or_dividend": "息",
-      "cash_dividend_per_share": null,
+      "cash_dividend_per_share": 0.12,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
@@ -1461,6 +1461,15 @@
     },
     {
       "date": "2026-09-16",
+      "ticker": "00982T",
+      "name": "平衡兆豐台美動能",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
       "ticker": "00983D",
       "name": "主動富邦複合收益",
       "ex_right_or_dividend": "息",
@@ -1492,6 +1501,60 @@
       "name": "台積電",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": 7.000001,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "4763",
+      "name": "材料*-KY",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 3.05,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-16",
+      "ticker": "6830",
+      "name": "汎銓",
+      "ex_right_or_dividend": "權",
+      "cash_dividend_per_share": 0.0,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-17",
+      "ticker": "00710B",
+      "name": "復華彭博非投等債",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-17",
+      "ticker": "00711B",
+      "name": "復華彭博新興債",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-17",
+      "ticker": "00712",
+      "name": "復華富時不動產",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-17",
+      "ticker": "00929",
+      "name": "復華台灣科技優息",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": null,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
