@@ -7,12 +7,12 @@
     "contract": "prospective append-only ex-right/ex-dividend ledger"
   },
   "source_window": {
-    "row_count": 108,
-    "min_date": "2026-09-01",
+    "row_count": 96,
+    "min_date": "2026-09-02",
     "max_date": "2026-10-28"
   },
   "ledger": {
-    "action_count": 184,
+    "action_count": 185,
     "coverage_start": "2026-08-20",
     "coverage_end": "2026-10-28",
     "historical_backfill_complete": false,
@@ -1555,6 +1555,15 @@
       "name": "復華台灣科技優息",
       "ex_right_or_dividend": "息",
       "cash_dividend_per_share": null,
+      "stock_dividend_ratio_raw": null,
+      "source": "TWSE_TWT48U_ALL"
+    },
+    {
+      "date": "2026-09-17",
+      "ticker": "5306",
+      "name": "桂盟",
+      "ex_right_or_dividend": "息",
+      "cash_dividend_per_share": 1.074628,
       "stock_dividend_ratio_raw": null,
       "source": "TWSE_TWT48U_ALL"
     },
